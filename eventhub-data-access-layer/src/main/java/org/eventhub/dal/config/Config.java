@@ -29,7 +29,7 @@ import java.util.Properties;
 @Configuration
 @EnableTransactionManagement
 @EnableJpaRepositories("org.eventhub.dal.dao")
-@PropertySource("classpath:org/eventhub/dal/config/datastore.properties")
+@PropertySource("org/eventhub/dal/config/datastore.properties")
 public class Config {
 
     @Value("${jdbc.driver}")
@@ -62,7 +62,7 @@ public class Config {
         Properties properties=new Properties();
         properties.setProperty("hibernate.dialect","org.hibernate.dialect.MySQL8Dialect");
         properties.setProperty("hibernate.show_sql","true");
-        properties.setProperty("hibernate.hbm2ddl.auto","create");
+        properties.setProperty("hibernate.hbm2ddl.auto","update");
         entityManagerFactoryBean.setJpaProperties(properties);
         return entityManagerFactoryBean;
     }

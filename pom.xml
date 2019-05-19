@@ -7,7 +7,7 @@
     <groupId>org.eventhub</groupId>
     <artifactId>eventhub-parent</artifactId>
     <packaging>pom</packaging>
-    <version>${eventhub.parent}</version>
+    <version>1.0-SNAPSHOT</version>
     <modules>
         <module>eventhub-web</module>
         <module>eventhub-service-layer</module>
@@ -41,10 +41,21 @@
         <eventhub.business.layer>1.0-SNAPSHOT</eventhub.business.layer>
         <eventhub.web>1.0-SNAPSHOT</eventhub.web>
 
+        <junit>4.12</junit>
+        <h2>1.4.199</h2>
     </properties>
 
     <dependencyManagement>
         <dependencies>
+
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit}</version>
+                <scope>test</scope>
+            </dependency>
+
+
             <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
             <dependency>
                 <groupId>mysql</groupId>
@@ -130,6 +141,12 @@
                 <version>${eventhub.web}</version>
             </dependency>
 
+            <dependency>
+                <groupId>com.h2database</groupId>
+                <artifactId>h2</artifactId>
+                <version>${h2}</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 
@@ -153,8 +170,10 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-war-plugin</artifactId>
+                    <version>${maven.war}</version>
                     <configuration>
                         <warName>${project.artifactId}</warName>
+                        <failOnMissingWebXml>false</failOnMissingWebXml>
                     </configuration>
                     <executions>
                         <execution>
