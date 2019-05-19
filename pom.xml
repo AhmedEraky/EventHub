@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.eventhub</groupId>
+    <artifactId>eventhub-parent</artifactId>
+    <packaging>pom</packaging>
+    <version>${eventhub.parent}</version>
+    <modules>
+        <module>eventhub-web</module>
+        <module>eventhub-service-layer</module>
+        <module>eventhub-data-access-layer</module>
+        <module>eventhub-common</module>
+        <module>eventhub-business-layer</module>
+    </modules>
+
+    <properties>
+
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+
+        <spring>5.1.6.RELEASE</spring>
+        <spring.data.jpa>2.1.6.RELEASE</spring.data.jpa>
+        <spring.web.mvc>5.1.6.RELEASE</spring.web.mvc>
+        <spring.test>5.1.6.RELEASE</spring.test>
+
+        <mysql.connectorj>8.0.15</mysql.connectorj>
+        <hibernate.core>5.4.1.Final</hibernate.core>
+        <hibernate.validator>6.0.16.Final</hibernate.validator>
+
+        <eventhub.parent>1.0-SNAPSHOT</eventhub.parent>
+        <eventhub.common>1.0-SNAPSHOT</eventhub.common>
+        <eventhub.data.access.layer>1.0-SNAPSHOT</eventhub.data.access.layer>
+        <eventhub.service.layer>1.0-SNAPSHOT</eventhub.service.layer>
+        <eventhub.business.layer>1.0-SNAPSHOT</eventhub.business.layer>
+        <eventhub.web>1.0-SNAPSHOT</eventhub.web>
+
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql.connectorj}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.springframework/spring-beans -->
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-context</artifactId>
+                <version>${spring}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.springframework.data/spring-data-jpa -->
+            <dependency>
+                <groupId>org.springframework.data</groupId>
+                <artifactId>spring-data-jpa</artifactId>
+                <version>${spring.data.jpa}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-webmvc</artifactId>
+                <version>${spring.web.mvc}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.springframework/spring-test -->
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-test</artifactId>
+                <version>${spring.test}</version>
+                <scope>test</scope>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.hibernate.validator/hibernate-validator -->
+            <dependency>
+                <groupId>org.hibernate.validator</groupId>
+                <artifactId>hibernate-validator</artifactId>
+                <version>${hibernate.validator}</version>
+            </dependency>
+
+
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-core</artifactId>
+                <version>${hibernate.core}</version>
+            </dependency>
+
+
+            <dependency>
+                <groupId>org.eventhub</groupId>
+                <artifactId>eventhub-common</artifactId>
+                <version>${eventhub.common}</version>
+            </dependency>
+
+
+            <dependency>
+                <groupId>org.eventhub</groupId>
+                <artifactId>eventhub-data-access-layer</artifactId>
+                <version>${eventhub.data.access.layer}</version>
+            </dependency>
+
+
+            <dependency>
+                <groupId>org.eventhub</groupId>
+                <artifactId>eventhub-service-layer</artifactId>
+                <version>${eventhub.service.layer}</version>
+            </dependency>
+
+
+            <dependency>
+                <groupId>org.eventhub</groupId>
+                <artifactId>eventhub-business-layer</artifactId>
+                <version>${eventhub.business.layer}</version>
+            </dependency>
+
+
+            <dependency>
+                <groupId>org.eventhub</groupId>
+                <artifactId>eventhub-web</artifactId>
+                <version>${eventhub.web}</version>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+
+            </plugins>
+        </pluginManagement>
+    </build>
+
+
+</project>

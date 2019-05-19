@@ -1,0 +1,22 @@
+# Copied from https://github.com/github/gitignore
+### IntelliJ Idea ###
+*.iml
+*.ipr
+*.iws
+.idea/
+
+### Maven ###
+*/target/*
+pom.xml.versionsBackup
+#############
+
+### Java ###
+*.class
+#############
+
+### Java Package Files ###
+*.jar
+*.war
+*.ear
+#############
+
