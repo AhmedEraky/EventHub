@@ -13,10 +13,10 @@ import org.springframework.data.domain.Pageable;
 import java.util.List;
 
 /**
- * RolePriviledeRepository has methods to retrieve Data from database based on some properties
+ * RolePrivilegeRepository has methods to retrieve Data from database based on some properties
  * @author Amr Elkady <amrelkady93@gmail.com>
  */
-public interface RolePriviledeRepository extends BaseRepository<RolePrivilege> {
+public interface RolePrivilegeRepository extends BaseRepository<RolePrivilege> {
 
     /**
      * retrieve  {@link org.eventhub.common.model.entity.RolePrivilege} based on {@link org.eventhub.common.model.entity.Privilege}

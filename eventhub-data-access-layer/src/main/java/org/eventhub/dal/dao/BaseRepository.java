@@ -36,14 +36,33 @@ public interface BaseRepository<T extends BaseEntity> extends JpaRepository<T, U
     public void softDelete(UUID uuid);
 
     /**
+     * @description soft delete an object
+     * @author Ahmed Eraky <ahmedmoeraky@gmail.com>
+     */
+    @Query("update #{#entityName} e set e.deleted=true where e=?1")
+    @Modifying
+    @Override
+    void delete(T t);
+
+    /**
+     * @description soft delete an object by ID
+     * @author Ahmed Eraky <ahmedmoeraky@gmail.com>
+     */
+    @Query("update #{#entityName} e set e.deleted=true where e.uuid=?1")
+    @Modifying
+    @Transactional
+    @Override
+    void deleteById(UUID uuid);
+
+    /**
      * @description retrieve the existing entities
      * @return list of entity
      * @author Aya Taha
      */
     @Query("from #{#entityName} e where e.deleted=0")
     public Page<T> findAll(Pageable pageable);
-    
-    
+
+
 
     /**
      * @description retrieve deleted entities
@@ -54,25 +73,26 @@ public interface BaseRepository<T extends BaseEntity> extends JpaRepository<T, U
     public List<T> findAllDeleted(Pageable pageable);
 
     @Override
-   @Query("from #{#entityName} e where e.deleted=0")
+    @Query("from #{#entityName} e where e.deleted=0")
     public <S extends T> List<S> findAll(Example<S> exmpl, Sort sort);
 
     @Override
     @Query("from #{#entityName} e where e.deleted=0")
     public <S extends T> Page<S> findAll(Example<S> exmpl, Pageable pageable);
-    
-     @Override
-     @Query("select e from #{#entityName} e where e.uuid in ?1 and e.deleted = 0")
+
+    @Override
+    @Query("select e from #{#entityName} e where e.uuid in ?1 and e.deleted = 0")
     public List<T> findAllById(Iterable<UUID> itrbl);
 
     @Override
     @Query("from #{#entityName} e where e.deleted=0")
     public List<T> findAll(Sort sort);
-    
+
+
 
     @Override
     @Query("from #{#entityName} e where  e.uuid=?1 and e.deleted=0")
     public T getOne(UUID id);
 
-  
+
 }
