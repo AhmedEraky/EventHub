@@ -31,6 +31,9 @@
         <hibernate.core>5.4.1.Final</hibernate.core>
         <hibernate.validator>6.0.16.Final</hibernate.validator>
 
+        <maven.javadoc>3.1.0</maven.javadoc>
+        <maven.war>3.2.2</maven.war>
+
         <eventhub.parent>1.0-SNAPSHOT</eventhub.parent>
         <eventhub.common>1.0-SNAPSHOT</eventhub.common>
         <eventhub.data.access.layer>1.0-SNAPSHOT</eventhub.data.access.layer>
@@ -133,6 +136,36 @@
     <build>
         <pluginManagement>
             <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-javadoc-plugin</artifactId>
+                    <version>${maven.javadoc}</version>
+                    <executions>
+                        <execution>
+                            <id>attach-javadocs</id>
+                            <goals>
+                                <goal>jar</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-war-plugin</artifactId>
+                    <configuration>
+                        <warName>${project.artifactId}</warName>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <id>default-war</id>
+                            <phase>package</phase>
+                            <goals>
+                                <goal>war</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
 
             </plugins>
         </pluginManagement>
