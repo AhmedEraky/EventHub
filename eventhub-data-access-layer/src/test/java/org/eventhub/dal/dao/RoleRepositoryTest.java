@@ -138,8 +138,10 @@ public class RoleRepositoryTest implements BaseRepositoryTest {
         assertEquals(bRole.getName(), aRole.getName());
 
         UUID id = bRole.getUuid();
+        Long count = roleRepository.count();
         roleRepository.softDelete(id);
         assertNull("Object Should not Exist", roleRepository.getOne(id));
+        assertEquals(count, (Long) roleRepository.count());
     }
 
     /**
