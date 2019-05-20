@@ -188,7 +188,6 @@ public class EventCoordinatorRepositoryTest implements BaseRepositoryTest {
     }
 
     @Test
-    @Override
     public void testFindByName() {
     }
 
