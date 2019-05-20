@@ -103,7 +103,6 @@ public class PrivilegeRepositoryTest implements BaseRepositoryTest{
      * @author Menna Ahmed <menna4a.helmi@gmail.com>
      */
     @Test
-    @Override
     public void testFindByName() {
 
     }

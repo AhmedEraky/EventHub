@@ -171,16 +171,6 @@ public class MaterialRepositoryTest implements BaseRepositoryTest{
     }
 
     /**
-     * test find by name Method
-     * {@link org.eventhub.dal.dao.MaterialRepository}
-     * @author Menna Ahmed <menna4a.helmi@gmail.com>
-     */
-    @Test
-    @Override
-    public void testFindByName() {
-    }
-
-    /**
      * test save Method
      * {@link org.eventhub.dal.dao.MaterialRepository}
      * @author Menna Ahmed <menna4a.helmi@gmail.com>

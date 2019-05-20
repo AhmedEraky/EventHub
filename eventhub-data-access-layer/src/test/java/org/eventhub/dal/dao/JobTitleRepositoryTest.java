@@ -103,7 +103,6 @@ public class JobTitleRepositoryTest implements BaseRepositoryTest{
      * @author Menna Ahmed <menna4a.helmi@gmail.com>
      */
     @Test
-    @Override
     public void testFindByName() {
         JobTitle jobTitle = new JobTitle(null,"Developer");
         int size = jobTitleRepository.findAllByName(jobTitle.getName(),pageable).size();

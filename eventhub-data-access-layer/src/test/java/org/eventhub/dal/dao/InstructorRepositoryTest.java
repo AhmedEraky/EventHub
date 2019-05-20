@@ -110,16 +110,6 @@ public class InstructorRepositoryTest implements BaseRepositoryTest
 
     }
 
-    /**
-     * test find by name Method
-     * {@link org.eventhub.dal.dao.InstructorRepository}
-     * @author Menna Ahmed <menna4a.helmi@gmail.com>
-     */
-    @Override
-    public void testFindByName()
-    {
-
-    }
 
     /**
      * test find by system user Method
