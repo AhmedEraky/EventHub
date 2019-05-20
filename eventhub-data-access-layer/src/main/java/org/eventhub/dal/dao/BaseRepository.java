@@ -94,5 +94,9 @@ public interface BaseRepository<T extends BaseEntity> extends JpaRepository<T, U
     @Query("from #{#entityName} e where  e.uuid=?1 and e.deleted=0")
     public T getOne(UUID id);
 
+    default public void update(T entity){
+        save(entity);
+    }
+
 
 }
