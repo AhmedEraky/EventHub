@@ -60,7 +60,7 @@ public interface SystemUserRepository extends BaseRepository<SystemUser> {
      * @author Amr Elkady <amrelkady93@gmail.com>
      */
     @Query(value = "from SystemUser su where su.country=?1 and su.deleted=0")
-    List<SystemUser> findAllByCountry(Country country);
+    List<SystemUser> findAllByCountry(Country country,Pageable pageable);
 
     /**
      * retrieve  {@link org.eventhub.common.model.entity.SystemUser} based on {@link org.eventhub.common.model.entity.JobTitle}
