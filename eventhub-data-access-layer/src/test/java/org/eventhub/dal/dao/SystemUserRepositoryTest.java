@@ -165,7 +165,6 @@ public class SystemUserRepositoryTest implements BaseRepositoryTest{
 
 
 
-    @Override
     public void testFindByName() {
     }
 

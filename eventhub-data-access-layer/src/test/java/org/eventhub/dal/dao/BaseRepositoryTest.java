@@ -26,8 +26,6 @@ public interface BaseRepositoryTest {
     @Test
     void testSoftDelete();
 
-    @Test
-    void testFindByName();
 
     @Test
     void testSave();

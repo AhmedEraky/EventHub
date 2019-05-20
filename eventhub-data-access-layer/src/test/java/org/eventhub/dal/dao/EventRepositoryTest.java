@@ -133,7 +133,6 @@ public class EventRepositoryTest implements BaseRepositoryTest {
     }
 
     @Test
-    @Override
     public void testFindByName() {
     }
 
