@@ -22,18 +22,6 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface EventGuestRepository extends BaseRepository<EventGuest>{
-    
-  /**
-     *  retrieve EventGuest based on feedbackRating
-     * @param feedbackRating 
-     * @return EventGuest {@link org.eventhub.common.model.entity.EventGuest}
-     * @author Aya Taha
-     */
-  @Query(value="from EventGuest as eg where  eg.feedbackRating=?1 and eg.deleted=0")   
-    public List<EventGuest> findAllByFeedbackRating(Integer feedbackRating, Pageable pageable);
-    
-
-    
    /**
      *  retrieve EventGuest based on event
      * @param event 

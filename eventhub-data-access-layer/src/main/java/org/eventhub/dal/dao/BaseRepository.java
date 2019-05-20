@@ -26,7 +26,7 @@ import org.springframework.data.domain.Pageable;
 public interface BaseRepository<T extends BaseEntity> extends JpaRepository<T, UUID> {
 
     /**
-     * @description soft delete an object
+     *  soft delete an object
      * @param uuid the id of the entity
      * @author Aya Taha
      */
@@ -36,7 +36,7 @@ public interface BaseRepository<T extends BaseEntity> extends JpaRepository<T, U
     public void softDelete(UUID uuid);
 
     /**
-     * @description soft delete an object
+     *  soft delete an object
      * @author Ahmed Eraky <ahmedmoeraky@gmail.com>
      */
     @Query("update #{#entityName} e set e.deleted=true where e=?1")
@@ -45,7 +45,7 @@ public interface BaseRepository<T extends BaseEntity> extends JpaRepository<T, U
     void delete(T t);
 
     /**
-     * @description soft delete an object by ID
+     *  soft delete an object by ID
      * @author Ahmed Eraky <ahmedmoeraky@gmail.com>
      */
     @Query("update #{#entityName} e set e.deleted=true where e.uuid=?1")
@@ -55,7 +55,7 @@ public interface BaseRepository<T extends BaseEntity> extends JpaRepository<T, U
     void deleteById(UUID uuid);
 
     /**
-     * @description retrieve the existing entities
+     *  retrieve the existing entities
      * @return list of entity
      * @author Aya Taha
      */
@@ -65,7 +65,7 @@ public interface BaseRepository<T extends BaseEntity> extends JpaRepository<T, U
 
 
     /**
-     * @description retrieve deleted entities
+     *  retrieve deleted entities
      * @return list of deleted entities
      * @author Aya Taha
      */

@@ -29,7 +29,7 @@ public interface EventRepository extends BaseRepository<Event>{
      * @author Aya Taha
      */ 
      @Query(value="from Event as e where lower(e.name) like lower(CONCAT('%',?1,'%')) and e.deleted=0")
-    public List<Event> findByName(String name, Pageable pageable);
+    public List<Event> findAllByName(String name, Pageable pageable);
     
    /**
      *  retrieve Event based on address
