@@ -19,10 +19,15 @@ import java.util.UUID;
 
 import static org.junit.Assert.*;
 
+/**
+ * Test class for {@link org.eventhub.dal.dao.SystemUserRepository}
+ * @author Amr Elkady <amrelkady93@gmail.com>
+ */
+
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = {Config.class}, loader = AnnotationConfigContextLoader.class)
 @Transactional
-public class SystemUserRepositoryTest {
+public class SystemUserRepositoryTest implements BaseRepositoryTest{
 
     @Autowired
     SystemUserRepository systemUserRepository;
@@ -38,7 +43,29 @@ public class SystemUserRepositoryTest {
     Pageable pageable = PageRequest.of(0, 555555);
 
 
+    /**
+     * test count Method
+     * {@link org.eventhub.dal.dao.SystemUserRepository}
+     * @author Amr Elkady <amrelkady93@gmail.com>
+     */
     @Test
+    @Override
+    public void testCount() {
+        SystemUser bSystemUser=
+                new SystemUser(null,"amrelkady","Amr","12345","amrelkady93@gmail.com");
+        long bSize=systemUserRepository.count();
+        systemUserRepository.save(bSystemUser);
+        long aSize=systemUserRepository.count();
+        assertEquals(bSize+1,aSize);
+    }
+
+    /**
+     * test Save Method
+     * {@link org.eventhub.dal.dao.SystemUserRepository}
+     * @author Amr Elkady <amrelkady93@gmail.com>
+     */
+    @Test
+    @Override
     public void testSave(){
         SystemUser bSystemUser=
                 new SystemUser(null,"amrelkady","Amr","12345","amrelkady93@gmail.com");
@@ -48,20 +75,64 @@ public class SystemUserRepositoryTest {
 
     }
 
-//    @Test
+    /**
+     * test FindAllDeleted Method
+     * {@link org.eventhub.dal.dao.SystemUserRepository}
+     * @author Amr Elkady <amrelkady93@gmail.com>
+     */
+    @Test
+    @Override
+    public void testFindAllDeleted() {
+        SystemUser bSystemUser=
+                new SystemUser(null,"amrelkady","Amr","12345","amrelkady93@gmail.com");
+        long bSize=systemUserRepository.findAllDeleted(pageable).size();
+        systemUserRepository.save(bSystemUser);
+        systemUserRepository.delete(bSystemUser);
+        long aSize=systemUserRepository.findAllDeleted(pageable).size();
+        assertEquals(bSize+1,aSize);
+    }
+
+    /**
+     * test FindAll Method
+     * {@link org.eventhub.dal.dao.SystemUserRepository}
+     * @author Amr Elkady <amrelkady93@gmail.com>
+     */
+    @Test
+    @Override
+    public void testFindAll() {
+        SystemUser bSystemUser=
+                new SystemUser(null,"amrelkady","Amr","12345","amrelkady93@gmail.com");
+        long bSize=systemUserRepository.findAll().size();
+        systemUserRepository.save(bSystemUser);
+        long aSize=systemUserRepository.findAll().size();
+        assertEquals(bSize+1,aSize);
+    }
+
+    /**
+     * test Update Method
+     * {@link org.eventhub.dal.dao.SystemUserRepository}
+     * @author Amr Elkady <amrelkady93@gmail.com>
+     */
+    @Test
+    @Override
     public void testUpdate(){
         SystemUser bSystemUser=
                 new SystemUser(null,"amrelkady","Amr","12345","amrelkady93@gmail.com");
         systemUserRepository.save(bSystemUser);
-        SystemUser aSystemUser=systemUserRepository.findById(bSystemUser.getUuid()).get();
-        aSystemUser.setEmail("afterupdate@iti.com");
-        systemUserRepository.save(aSystemUser);
+        bSystemUser.setEmail("afterupdate@iti.com");
+        systemUserRepository.update(bSystemUser);
         SystemUser aUpdateSystemUser=systemUserRepository.findById(bSystemUser.getUuid()).get();
-        assertNotEquals(aUpdateSystemUser.getEmail(),bSystemUser.getEmail());
+        assertEquals(aUpdateSystemUser.getEmail(),bSystemUser.getEmail());
     }
 
+    /**
+     * test SoftDelete Method
+     * {@link org.eventhub.dal.dao.SystemUserRepository}
+     * @author Amr Elkady <amrelkady93@gmail.com>
+     */
     @Test
-    public void testSoftDeleted(){
+    @Override
+    public void testSoftDelete(){
         SystemUser bSystemUser=
                 new SystemUser(null,"amrelkady","Amr","12345","amrelkady93@gmail.com");
         systemUserRepository.save(bSystemUser);
@@ -73,7 +144,13 @@ public class SystemUserRepositoryTest {
     }
 
 
+    /**
+     * test DeleteByID Method
+     * {@link org.eventhub.dal.dao.SystemUserRepository}
+     * @author Amr Elkady <amrelkady93@gmail.com>
+     */
     @Test
+    @Override
     public void testDeleteByID(){
         SystemUser bSystemUser=
                 new SystemUser(null,"amrelkady","Amr","12345","amrelkady93@gmail.com");
@@ -86,7 +163,19 @@ public class SystemUserRepositoryTest {
         assertNull(systemUserRepository.getOne(bSystemUser.getUuid()));
     }
 
+
+
+    @Override
+    public void testFindByName() {
+    }
+
+    /**
+     * test Delete Method
+     * {@link org.eventhub.dal.dao.VipRepository}
+     * @author Amr Elkady <amrelkady93@gmail.com>
+     */
     @Test
+    @Override
     public void testDelete(){
         SystemUser bSystemUser=
                 new SystemUser(null,"amrelkady","Amr","12345","amrelkady93@gmail.com");
@@ -99,6 +188,11 @@ public class SystemUserRepositoryTest {
         assertNull(systemUserRepository.getOne(bSystemUser.getUuid()));
     }
 
+    /**
+     * test FindAllByUserName Method
+     * {@link org.eventhub.dal.dao.SystemUserRepository}
+     * @author Amr Elkady <amrelkady93@gmail.com>
+     */
     @Test
     public void testFindAllByUserName(){
 
@@ -110,6 +204,11 @@ public class SystemUserRepositoryTest {
         assertEquals(bSize+1,aSize);
     }
 
+    /**
+     * test FindByEmail Method
+     * {@link org.eventhub.dal.dao.SystemUserRepository}
+     * @author Amr Elkady <amrelkady93@gmail.com>
+     */
     @Test
     public void testFindByEmail(){
 
@@ -120,17 +219,27 @@ public class SystemUserRepositoryTest {
         assertEquals(bSystemUser.getUuid(),aSystemUser.getUuid());
     }
 
+    /**
+     * test FindAllByFirstName Method
+     * {@link org.eventhub.dal.dao.SystemUserRepository}
+     * @author Amr Elkady <amrelkady93@gmail.com>
+     */
     @Test
     public void testFindAllByFirstName(){
 
         SystemUser bSystemUser=
                 new SystemUser(null,"amrelkady","Amr","12345","amrelkady93@gmail.com");
-        int bSize=systemUserRepository.findAllByUsername(bSystemUser.getFirstName(),pageable).size();
+        int bSize=systemUserRepository.findAllByFirstName(bSystemUser.getFirstName(),pageable).size();
         systemUserRepository.save(bSystemUser);
-        int aSize=systemUserRepository.findAllByUsername(bSystemUser.getFirstName(),pageable).size();
+        int aSize=systemUserRepository.findAllByFirstName(bSystemUser.getFirstName(),pageable).size();
         assertEquals(bSize+1,aSize);
     }
 
+    /**
+     * test FindBySystemUserPhones Method
+     * {@link org.eventhub.dal.dao.SystemUserRepository}
+     * @author Amr Elkady <amrelkady93@gmail.com>
+     */
     @Test
     public void testFindBySystemUserPhones(){
 
@@ -149,8 +258,13 @@ public class SystemUserRepositoryTest {
         assertEquals(bSystemUser.getUuid(),aSystemUser.getUuid());
     }
 
+    /**
+     * test FindAllByCountry Method
+     * {@link org.eventhub.dal.dao.SystemUserRepository}
+     * @author Amr Elkady <amrelkady93@gmail.com>
+     */
     @Test
-    public void findAllByCountry(){
+    public void testFindAllByCountry(){
         SystemUser bSystemUser=
                 new SystemUser(null,"amrelkady","Amr","12345","amrelkady93@gmail.com");
         Country country=new Country(null,"Egypt");
@@ -162,6 +276,11 @@ public class SystemUserRepositoryTest {
         assertEquals(bSize+1,aSize);
     }
 
+    /**
+     * test AllByJobTitle Method
+     * {@link org.eventhub.dal.dao.SystemUserRepository}
+     * @author Amr Elkady <amrelkady93@gmail.com>
+     */
     @Test
     public void findAllByJobTitle(){
         SystemUser bSystemUser=
@@ -175,6 +294,11 @@ public class SystemUserRepositoryTest {
         assertEquals(bSize+1,aSize);
     }
 
+    /**
+     * test AllByOrganization Method
+     * {@link org.eventhub.dal.dao.VipRepository}
+     * @author Amr Elkady <amrelkady93@gmail.com>
+     */
     @Test
     public void findAllByOrganization(){
         SystemUser bSystemUser=
