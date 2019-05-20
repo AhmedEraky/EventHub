@@ -1,6 +1,6 @@
 package org.eventhub.dal.dao;
 
-import jdk.javadoc.internal.doclets.formats.html.markup.HtmlAttr;
+
 import org.eventhub.common.model.entity.Role;
 import org.eventhub.common.model.entity.SystemUser;
 import org.eventhub.common.model.entity.SystemUserHasRole;

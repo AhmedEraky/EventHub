@@ -11,7 +11,6 @@ import java.util.List;
 import java.util.Set;
 import java.util.UUID;
 import org.eventhub.common.model.entity.Event;
-import org.eventhub.common.model.entity.EventGuest;
 import org.eventhub.common.model.entity.Hall;
 import org.eventhub.common.model.entity.Organization;
 import org.eventhub.common.model.entity.Session;
@@ -133,9 +132,9 @@ public class EventRepositoryTest implements BaseRepositoryTest {
         assertNull(eventRepository.getOne(id));
     }
 
+    @Test
     @Override
     public void testFindByName() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     /**
@@ -176,7 +175,7 @@ public class EventRepositoryTest implements BaseRepositoryTest {
     @Test
     @Override
     public void testFindAll() {
-        Pageable pageable = PageRequest.of(0, 555555);
+
         int bCount = eventRepository.findAll().size();
         Event event = insertEvent();
         eventRepository.save(event);
@@ -196,12 +195,10 @@ public class EventRepositoryTest implements BaseRepositoryTest {
         Event event = insertEvent();
         eventRepository.save(event);
         Event event1 = eventRepository.getOne(event.getUuid());
-
         Organization organization = new Organization(null, "org2");
         organizationRepository.save(organization);
         List<Event> events = eventRepository.findAllByName("name", pageable);
         events.get(0).setOrganization(organization);
-
         eventRepository.update(events.get(0));
         System.out.println(events.get(0).getOrganization().getName());
         assertEquals(event1.getOrganization().getName(), events.get(0).getOrganization().getName());
@@ -398,8 +395,6 @@ public class EventRepositoryTest implements BaseRepositoryTest {
         assertEquals(event.getOrganization(), events.get(0).getOrganization());
     }
 
-    
-     
     /**
      * test Method findAllBySystemUser
      * {@link org.eventhub.dal.dao.EventRepository}
@@ -417,8 +412,7 @@ public class EventRepositoryTest implements BaseRepositoryTest {
         List<Event> events = eventRepository.findAllBySystemUser(systemUser, pageable);
         assertEquals(event.getSystemUser(), events.get(0).getSystemUser());
     }
-       
-    
+
     private Event insertEvent() {
         Event event = new Event(null, "name", "shortDescription", "address", new Date(), new Date(), "style");
         SystemUser systemUser = new SystemUser(null, "username", "firstName", "password", "email");

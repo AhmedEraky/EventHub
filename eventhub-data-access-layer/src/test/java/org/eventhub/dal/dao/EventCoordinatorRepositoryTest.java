@@ -17,13 +17,11 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.support.AnnotationConfigContextLoader;
 import org.springframework.transaction.annotation.Transactional;
-
 import java.util.UUID;
 import org.eventhub.common.model.entity.Event;
 import org.eventhub.common.model.entity.EventCoordinator;
 import org.eventhub.common.model.entity.Organization;
 import org.eventhub.common.model.entity.SystemUser;
-
 import static org.junit.Assert.*;
 
 /**
@@ -34,7 +32,7 @@ import static org.junit.Assert.*;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = {Config.class}, loader = AnnotationConfigContextLoader.class)
 @Transactional
-public class EventCoordinatorRepositoryTest implements BaseRepositoryTest{
+public class EventCoordinatorRepositoryTest implements BaseRepositoryTest {
 
     @Autowired
     EventCoordinatorRepository eventCoordinatorRepository;
@@ -80,7 +78,7 @@ public class EventCoordinatorRepositoryTest implements BaseRepositoryTest{
     }
 
     /**
-     * test  Method deleteByID
+     * test Method deleteByID
      * {@link org.eventhub.dal.dao.EventCoordinatorRepository}
      *
      * @author Aya Taha
@@ -111,13 +109,12 @@ public class EventCoordinatorRepositoryTest implements BaseRepositoryTest{
     public void testSave() {
         EventCoordinator eventCoordinator = insertEventCooridnator();
         eventCoordinatorRepository.save(eventCoordinator);
-
         EventCoordinator eventCoordinator1 = eventCoordinatorRepository.findById(eventCoordinator.getUuid()).get();
         assertEquals(eventCoordinator1.getEvent().getName(), eventCoordinator.getEvent().getName());
     }
 
     /**
-     * test  Method update
+     * test Method update
      * {@link org.eventhub.dal.dao.EventCoordinatorRepository}
      *
      * @author Aya Taha
@@ -125,88 +122,76 @@ public class EventCoordinatorRepositoryTest implements BaseRepositoryTest{
     @Test
     @Override
     public void testUpdate() {
-        Pageable pageable = PageRequest.of(0, 555555);
+        
         EventCoordinator eventCoordinator = insertEventCooridnator();
         eventCoordinatorRepository.save(eventCoordinator);
-        EventCoordinator eventCoordinator1 = eventCoordinatorRepository.getOne(eventCoordinator.getUuid());
-        //add new event
-        List<SystemUser> systemUsers = systemUserRepository.findAllByFirstName("firstName", pageable);
-        Organization organization = new Organization(null, "orgn");
-        organizationRepository.save(organization);
-        Event eventn = new Event(null, "name2", "shortDescription", "address", new Date(), new Date(), "style");
-        eventn.setOrganization(organization);
-        eventn.setSystemUser(systemUsers.get(0));
-        eventRepository.save(eventn);
-        //update
-        List<Event> events = eventRepository.findAllByName("name2", pageable);
-        eventCoordinator1.setEvent(events.get(0));
+        EventCoordinator eventCoordinator1=updateEventCoordinator(eventCoordinator);
         eventCoordinatorRepository.update(eventCoordinator1);
         EventCoordinator eventCoordinator2 = eventCoordinatorRepository.getOne(eventCoordinator.getUuid());
         System.out.println(eventCoordinator2.getEvent().getName());
         assertEquals(eventCoordinator1.getEvent().getName(), eventCoordinator2.getEvent().getName());
 
     }
-    
+
     /**
      * test findAll Deleted Method
      * {@link org.eventhub.dal.dao.EventCoordinatorRepository}
+     *
      * @author Aya Taha
      */
-    
-    
     @Test
     @Override
-    public void testFindAllDeleted(){
+    public void testFindAllDeleted() {
         Pageable pageable = PageRequest.of(0, 555555);
-        int bCount=eventCoordinatorRepository.findAllDeleted(pageable).size();
-        EventCoordinator eventCoordinator =insertEventCooridnator();
+        int bCount = eventCoordinatorRepository.findAllDeleted(pageable).size();
+        EventCoordinator eventCoordinator = insertEventCooridnator();
         eventCoordinatorRepository.save(eventCoordinator);
         eventCoordinatorRepository.delete(eventCoordinator);
-        assertEquals(bCount+1,eventCoordinatorRepository.findAllDeleted(pageable).size());
+        assertEquals(bCount + 1, eventCoordinatorRepository.findAllDeleted(pageable).size());
     }
+
     /**
      * test findAll Method
      * {@link org.eventhub.dal.dao.EventCoordinatorRepository}
+     *
      * @author Aya Taha
      */
     @Override
     @Test
-    public void testFindAll(){
+    public void testFindAll() {
         Pageable pageable = PageRequest.of(0, 555555);
-        int bCount=eventCoordinatorRepository.findAll().size();
-        EventCoordinator eventCoordinator =insertEventCooridnator();
+        int bCount = eventCoordinatorRepository.findAll().size();
+        EventCoordinator eventCoordinator = insertEventCooridnator();
         eventCoordinatorRepository.save(eventCoordinator);
-        int aCount=eventCoordinatorRepository.findAll().size();
-        assertEquals(bCount+1,aCount);
+        int aCount = eventCoordinatorRepository.findAll().size();
+        assertEquals(bCount + 1, aCount);
     }
 
-    
-     /**
+    /**
      * test SoftDelete Method
      * {@link org.eventhub.dal.dao.EventCoordinatorRepository}
+     *
      * @author Aya Taha
      */
-    
     @Test
     @Override
     public void testSoftDelete() {
-         EventCoordinator eventCoordinator =insertEventCooridnator();
+        EventCoordinator eventCoordinator = insertEventCooridnator();
         eventCoordinatorRepository.save(eventCoordinator);
-        EventCoordinator eventCoordinator1=eventCoordinatorRepository.getOne(eventCoordinator.getUuid());
-        assertEquals(eventCoordinator.getEvent().getName(),eventCoordinator1.getEvent().getName());
-        UUID id=eventCoordinator.getUuid();
+        EventCoordinator eventCoordinator1 = eventCoordinatorRepository.getOne(eventCoordinator.getUuid());
+        assertEquals(eventCoordinator.getEvent().getName(), eventCoordinator1.getEvent().getName());
+        UUID id = eventCoordinator.getUuid();
         System.out.println(eventCoordinatorRepository.count());
         eventCoordinatorRepository.softDelete(id);
         System.out.println(eventCoordinatorRepository.count());
         assertNull(eventCoordinatorRepository.getOne(id));
     }
 
+    @Test
     @Override
     public void testFindByName() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
-    
+
     /**
      * test findAllBySystemUser Method
      * {@link org.eventhub.dal.dao.EventCoordinatorRepository}
@@ -243,7 +228,6 @@ public class EventCoordinatorRepositoryTest implements BaseRepositoryTest{
 
     private EventCoordinator insertEventCooridnator() {
         SystemUser systemUser = new SystemUser(null, "username", "firstName", "password", "email");
-
         systemUserRepository.save(systemUser);
         Organization organization = new Organization(null, "org");
         organizationRepository.save(organization);
@@ -254,10 +238,21 @@ public class EventCoordinatorRepositoryTest implements BaseRepositoryTest{
         EventCoordinator eventCoordinator = new EventCoordinator(null);
         eventCoordinator.setEvent(event);
         eventCoordinator.setSystemUser(systemUser);
-
         return eventCoordinator;
     }
-    
-    
+    private EventCoordinator updateEventCoordinator(EventCoordinator oldEventCoordinator){
+        Pageable pageable = PageRequest.of(0, 555555);
+        EventCoordinator eventCoordinator1 = eventCoordinatorRepository.getOne(oldEventCoordinator.getUuid());
+        List<SystemUser> systemUsers = systemUserRepository.findAllByFirstName("firstName", pageable);
+        Organization organization = new Organization(null, "orgn");
+        organizationRepository.save(organization);
+        Event eventn = new Event(null, "name2", "shortDescription", "address", new Date(), new Date(), "style");
+        eventn.setOrganization(organization);
+        eventn.setSystemUser(systemUsers.get(0));
+        eventRepository.save(eventn);
+        //update
+        List<Event> events = eventRepository.findAllByName("name2", pageable);
+       return eventCoordinator1; 
+    }
 
 }

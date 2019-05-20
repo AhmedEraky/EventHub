@@ -33,7 +33,7 @@ import org.springframework.transaction.annotation.Transactional;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = {Config.class}, loader = AnnotationConfigContextLoader.class)
 @Transactional
-public class EventGuestRepositoryTest implements BaseRepositoryTest{
+public class EventGuestRepositoryTest implements BaseRepositoryTest {
 
     @Autowired
     EventGuestRepository eventGuestRepository;
@@ -116,95 +116,81 @@ public class EventGuestRepositoryTest implements BaseRepositoryTest{
     }
 
     /**
-     * test Method update
-     * {@link org.eventhub.dal.dao.EventGuestRepository}
+     * test Method update {@link org.eventhub.dal.dao.EventGuestRepository}
      *
      * @author Aya Taha
      */
     @Test
     @Override
     public void testUpdate() {
-        Pageable pageable = PageRequest.of(0, 555555);
+
         EventGuest eventGuest = insertEventGuest();
         eventGuestRepository.save(eventGuest);
-        EventGuest eventGuest1 = eventGuestRepository.findById(eventGuest.getUuid()).get();
-        //add new event
-        List<SystemUser> systemUsers = systemUserRepository.findAllByFirstName("firstName", pageable);
-        Organization organization = new Organization(null, "orgn");
-        organizationRepository.save(organization);
-        Event eventn = new Event(null, "name2", "shortDescription", "address", new Date(), new Date(), "style");
-        eventn.setOrganization(organization);
-        eventn.setSystemUser(systemUsers.get(0));
-        eventRepository.save(eventn);
-        //update
-        List<Event> events = eventRepository.findAllByName("name2", pageable);
-        eventGuest1.setEvent(events.get(0));
+         EventGuest eventGuest1=updateEventGuest(eventGuest);
         eventGuestRepository.update(eventGuest1);
         EventGuest eventGuest2 = eventGuestRepository.getOne(eventGuest.getUuid());
         System.out.println(eventGuest2.getEvent().getName());
         assertEquals(eventGuest1.getEvent().getName(), eventGuest2.getEvent().getName());
 
     }
-    
-    
-     
-    
+
     /**
      * test findAll Deleted Method
      * {@link org.eventhub.dal.dao.EventGuestRepository}
+     *
      * @author Aya Taha
      */
- 
     @Test
     @Override
-    public void testFindAllDeleted(){
+    public void testFindAllDeleted() {
         Pageable pageable = PageRequest.of(0, 555555);
-        int bCount=eventGuestRepository.findAllDeleted(pageable).size();
-        EventGuest eventGuest =insertEventGuest();
+        int bCount = eventGuestRepository.findAllDeleted(pageable).size();
+        EventGuest eventGuest = insertEventGuest();
         eventGuestRepository.save(eventGuest);
         eventGuestRepository.delete(eventGuest);
-        assertEquals(bCount+1,eventGuestRepository.findAllDeleted(pageable).size());
+        assertEquals(bCount + 1, eventGuestRepository.findAllDeleted(pageable).size());
     }
+
     /**
-     * test findAll Method
-     * {@link org.eventhub.dal.dao.EventGuestRepository}
+     * test findAll Method {@link org.eventhub.dal.dao.EventGuestRepository}
+     *
      * @author Aya Taha
      */
     @Override
     @Test
-    public void testFindAll(){
-        
-        int bCount=eventGuestRepository.findAll().size();
-        EventGuest eventGuest =insertEventGuest();
+    public void testFindAll() {
+
+        int bCount = eventGuestRepository.findAll().size();
+        EventGuest eventGuest = insertEventGuest();
         eventGuestRepository.save(eventGuest);
-        int aCount=eventGuestRepository.findAll().size();
-        assertEquals(bCount+1,aCount);
+        int aCount = eventGuestRepository.findAll().size();
+        assertEquals(bCount + 1, aCount);
     }
 
-     /**
-     * test SoftDelete Method
-     * {@link org.eventhub.dal.dao.EventGuestRepository}
+    /**
+     * test SoftDelete Method {@link org.eventhub.dal.dao.EventGuestRepository}
+     *
      * @author Aya Taha
      */
     @Test
     @Override
     public void testSoftDelete() {
-         EventGuest eventGuest =insertEventGuest();
+        EventGuest eventGuest = insertEventGuest();
         eventGuestRepository.save(eventGuest);
-        EventGuest eventGuest1=eventGuestRepository.getOne(eventGuest.getUuid());
-        assertEquals(eventGuest.getEvent().getName(),eventGuest1.getEvent().getName());
-        UUID id=eventGuest.getUuid();
+        EventGuest eventGuest1 = eventGuestRepository.getOne(eventGuest.getUuid());
+        assertEquals(eventGuest.getEvent().getName(), eventGuest1.getEvent().getName());
+        UUID id = eventGuest.getUuid();
         System.out.println(eventGuestRepository.count());
         eventGuestRepository.softDelete(id);
         System.out.println(eventGuestRepository.count());
         assertNull(eventGuestRepository.getOne(id));
     }
 
+    @Test
     @Override
     public void testFindByName() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
     /**
      * test findAllBySystemUser Method
      * {@link org.eventhub.dal.dao.EventGuestRepository}
@@ -240,9 +226,7 @@ public class EventGuestRepositoryTest implements BaseRepositoryTest{
     }
 
     private EventGuest insertEventGuest() {
-
         SystemUser systemUser = new SystemUser(null, "username", "firstName", "password", "email");
-
         systemUserRepository.save(systemUser);
         Organization organization = new Organization(null, "org");
         organizationRepository.save(organization);
@@ -254,5 +238,20 @@ public class EventGuestRepositoryTest implements BaseRepositoryTest{
         eventGuest.setEvent(event);
         eventGuest.setSystemUser(systemUser);
         return eventGuest;
+    }
+
+    private EventGuest updateEventGuest(EventGuest eventGuest) {
+        Pageable pageable = PageRequest.of(0, 555555);
+        EventGuest eventGuest1 = eventGuestRepository.findById(eventGuest.getUuid()).get();
+        List<SystemUser> systemUsers = systemUserRepository.findAllByFirstName("firstName", pageable);
+        Organization organization = new Organization(null, "orgn");
+        organizationRepository.save(organization);
+        Event eventn = new Event(null, "name2", "shortDescription", "address", new Date(), new Date(), "style");
+        eventn.setOrganization(organization);
+        eventn.setSystemUser(systemUsers.get(0));
+        eventRepository.save(eventn);
+        List<Event> events = eventRepository.findAllByName("name2", pageable);
+        eventGuest1.setEvent(events.get(0));
+        return eventGuest1;
     }
 }
