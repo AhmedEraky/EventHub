@@ -140,10 +140,6 @@ public class VipSpeaksInSessionRepositoryTest implements BaseRepositoryTest {
         assertEquals(bCount,aCount);
     }
 
-    @Override
-    public void testFindByName() {
-
-    }
 
     /**
      * test save Method

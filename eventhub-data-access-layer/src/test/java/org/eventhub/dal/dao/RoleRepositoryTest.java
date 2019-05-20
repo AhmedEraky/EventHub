@@ -39,7 +39,6 @@ public class RoleRepositoryTest implements BaseRepositoryTest {
      *
      * @author Mohamed Gamal <mohamedj239@gmail.com>
      */
-    @Override
     @Test
     public void testFindByName() {
         Role bRole = new Role(null, "dummyRole");

@@ -129,7 +129,6 @@ public class SponsorshipTypeRepositoryTest implements BaseRepositoryTest{
      * @author Mohamed Gamal <mohamedj239@gmail.com>
      */
     @Test
-    @Override
     public void testFindByName() {
         SponsorshipType bSponsorshipType = new SponsorshipType(null,"dummyType");
         sponsorshipTypeRepository.save(bSponsorshipType);

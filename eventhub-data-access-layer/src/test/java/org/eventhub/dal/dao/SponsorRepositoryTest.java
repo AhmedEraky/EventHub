@@ -134,7 +134,7 @@ public class SponsorRepositoryTest implements BaseRepositoryTest {
      *
      * @author Mohamed Gamal <mohamedj239@gmail.com>
      */
-    @Override
+
     @Test
     public void testFindByName() {
         Sponsor bSponsor = saveSponsor();
