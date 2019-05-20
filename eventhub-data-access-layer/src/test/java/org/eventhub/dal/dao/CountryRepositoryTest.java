@@ -51,7 +51,6 @@ public class CountryRepositoryTest implements BaseRepositoryTest {
     @Override
     @Test
     public void testDelete(){
-        Pageable pageable = PageRequest.of(0, 555555);
         Country bCountry =new Country(null,"Egypt");
         countryRepository.save(bCountry);
         Country aCountry=countryRepository.getOne(bCountry.getUuid());
@@ -110,7 +109,6 @@ public class CountryRepositoryTest implements BaseRepositoryTest {
      * {@link org.eventhub.dal.dao.CountryRepository}
      * @author Ahmed Eraky <ahmedmoeraky@gmail.com>
      */
-    @Override
     @Test
     public void testFindByName(){
         Pageable pageable = PageRequest.of(0, 555555);

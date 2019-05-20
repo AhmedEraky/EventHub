@@ -187,7 +187,6 @@ public class EventGuestRepositoryTest implements BaseRepositoryTest {
     }
 
     @Test
-    @Override
     public void testFindByName() {
     }
 
