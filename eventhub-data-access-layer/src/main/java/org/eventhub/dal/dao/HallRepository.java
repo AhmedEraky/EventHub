@@ -73,6 +73,6 @@ public interface HallRepository extends BaseRepository<Hall>{
      * @author Aya Taha
      */
     @Query(value="from Hall as h where ?1 member of h.sessionInHalls and  h.deleted=0")
-    public List<Hall> findAllBySessionInHalls(Session sessionInHall, Pageable pageable);
+    public List<Hall> findAllBySessionInHalls(SessionInHall sessionInHall, Pageable pageable);
 
 }

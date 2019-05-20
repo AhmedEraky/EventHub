@@ -77,14 +77,7 @@ public interface EventRepository extends BaseRepository<Event>{
     public List<Event> findAllByEndDate(Date endDate, Pageable pageable);
    
     
-    /**
-     * retrieve Event based on logo
-     * @param logo 
-     * @return Event {@link org.eventhub.common.model.entity.Event}
-     * @author Aya Taha
-     */ 
-     @Query(value="from Event as e where e.logo=?1 and e.deleted=0")
-    public Event findByLogo(byte[] logo);
+   
     
     /**
      *  retrieve Event based on published
@@ -102,7 +95,7 @@ public interface EventRepository extends BaseRepository<Event>{
      * @author Aya Taha
      */
     @Query(value="from Event as e where ?1 member of e.sponsors and  e.deleted=0")   
-    public Event findBySponors(Sponsor sponsor);
+    public Event findBySponor(Sponsor sponsor);
     
      /**
      *  retrieve Event based on sessions
@@ -111,7 +104,7 @@ public interface EventRepository extends BaseRepository<Event>{
      * @author Aya Taha
      */
     @Query(value="from Event as e where ?1 member of e.sessions and  e.deleted=0")   
-    public Event findBySessions(Session session);
+    public Event findBySession(Session session);
     
      /**
      *  retrieve Event based on halls
@@ -120,25 +113,11 @@ public interface EventRepository extends BaseRepository<Event>{
      * @author Aya Taha
      */
       @Query(value="from Event as e where ?1 member of e.halls and  e.deleted=0")   
-    public Event findByHalls(Hall hall);
+    public Event findByHall(Hall hall);
     
-     /**
-     *  retrieve Event based on eventGuests
-     * @param eventGuest {@link org.eventhub.common.model.entity.EventGuest}
-     * @return Event {@link org.eventhub.common.model.entity.Event}
-     * @author Aya Taha
-     */
-     @Query(value="from Event as e where ?1 member of e.eventGuests and  e.deleted=0")   
-    public Event findByEventGuests(EventGuest eventGuest);
+   
     
-     /**
-     * retrieve Event based on eventCoordinators
-     * @param eventCoordinator  {@link org.eventhub.common.model.entity.EventCoordinator}
-     * @return Event {@link org.eventhub.common.model.entity.Event}
-     * @author Aya Taha
-     */
-     @Query(value="from Event as e where ?1 member of e.eventCoordinators and  e.deleted=0")   
-    public Event findByEventCoordinators(EventCoordinator eventCoordinator);
+     
   
      /**
      *  retrieve Event based on organization
@@ -147,7 +126,7 @@ public interface EventRepository extends BaseRepository<Event>{
      * @author Aya Taha
      */
        @Query(value="from Event as e where e.organization=?1 and  e.deleted=0")   
-    public List<Event> findAllByEventOrganization(Organization organization, Pageable pageable);
+    public List<Event> findAllByOrganization(Organization organization, Pageable pageable);
     
      /**
      *  retrieve Event based on systemUser

@@ -34,7 +34,7 @@ import static org.junit.Assert.*;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = {Config.class}, loader = AnnotationConfigContextLoader.class)
 @Transactional
-public class EventCoordinatorRepositoryTest {
+public class EventCoordinatorRepositoryTest implements BaseRepositoryTest{
 
     @Autowired
     EventCoordinatorRepository eventCoordinatorRepository;
@@ -51,6 +51,7 @@ public class EventCoordinatorRepositoryTest {
      * @author Aya Taha
      */
     @Test
+    @Override
     public void testCount() {
         long bCount = eventCoordinatorRepository.count();
         EventCoordinator eventCoordinator = insertEventCooridnator();
@@ -60,12 +61,13 @@ public class EventCoordinatorRepositoryTest {
     }
 
     /**
-     * test Soft Delete Using Method delete
+     * test Method delete
      * {@link org.eventhub.dal.dao.EventCoordinatorRepository}
      *
      * @author Aya Taha
      */
     @Test
+    @Override
     public void testDelete() {
         EventCoordinator eventCoordinator = insertEventCooridnator();
         eventCoordinatorRepository.save(eventCoordinator);
@@ -78,12 +80,13 @@ public class EventCoordinatorRepositoryTest {
     }
 
     /**
-     * test Soft Delete Using Method deleteByID
+     * test  Method deleteByID
      * {@link org.eventhub.dal.dao.EventCoordinatorRepository}
      *
      * @author Aya Taha
      */
     @Test
+    @Override
     public void testDeleteByID() {
 
         EventCoordinator eventCoordinator = insertEventCooridnator();
@@ -104,6 +107,7 @@ public class EventCoordinatorRepositoryTest {
      * @author Aya Taha
      */
     @Test
+    @Override
     public void testSave() {
         EventCoordinator eventCoordinator = insertEventCooridnator();
         eventCoordinatorRepository.save(eventCoordinator);
@@ -113,12 +117,13 @@ public class EventCoordinatorRepositoryTest {
     }
 
     /**
-     * test Soft Delete Using Method update
+     * test  Method update
      * {@link org.eventhub.dal.dao.EventCoordinatorRepository}
      *
      * @author Aya Taha
      */
     @Test
+    @Override
     public void testUpdate() {
         Pageable pageable = PageRequest.of(0, 555555);
         EventCoordinator eventCoordinator = insertEventCooridnator();
@@ -135,13 +140,73 @@ public class EventCoordinatorRepositoryTest {
         //update
         List<Event> events = eventRepository.findAllByName("name2", pageable);
         eventCoordinator1.setEvent(events.get(0));
-        eventCoordinatorRepository.save(eventCoordinator1);
+        eventCoordinatorRepository.update(eventCoordinator1);
         EventCoordinator eventCoordinator2 = eventCoordinatorRepository.getOne(eventCoordinator.getUuid());
         System.out.println(eventCoordinator2.getEvent().getName());
         assertEquals(eventCoordinator1.getEvent().getName(), eventCoordinator2.getEvent().getName());
 
     }
+    
+    /**
+     * test findAll Deleted Method
+     * {@link org.eventhub.dal.dao.EventCoordinatorRepository}
+     * @author Aya Taha
+     */
+    
+    
+    @Test
+    @Override
+    public void testFindAllDeleted(){
+        Pageable pageable = PageRequest.of(0, 555555);
+        int bCount=eventCoordinatorRepository.findAllDeleted(pageable).size();
+        EventCoordinator eventCoordinator =insertEventCooridnator();
+        eventCoordinatorRepository.save(eventCoordinator);
+        eventCoordinatorRepository.delete(eventCoordinator);
+        assertEquals(bCount+1,eventCoordinatorRepository.findAllDeleted(pageable).size());
+    }
+    /**
+     * test findAll Method
+     * {@link org.eventhub.dal.dao.EventCoordinatorRepository}
+     * @author Aya Taha
+     */
+    @Override
+    @Test
+    public void testFindAll(){
+        Pageable pageable = PageRequest.of(0, 555555);
+        int bCount=eventCoordinatorRepository.findAll().size();
+        EventCoordinator eventCoordinator =insertEventCooridnator();
+        eventCoordinatorRepository.save(eventCoordinator);
+        int aCount=eventCoordinatorRepository.findAll().size();
+        assertEquals(bCount+1,aCount);
+    }
 
+    
+     /**
+     * test SoftDelete Method
+     * {@link org.eventhub.dal.dao.EventCoordinatorRepository}
+     * @author Aya Taha
+     */
+    
+    @Test
+    @Override
+    public void testSoftDelete() {
+         EventCoordinator eventCoordinator =insertEventCooridnator();
+        eventCoordinatorRepository.save(eventCoordinator);
+        EventCoordinator eventCoordinator1=eventCoordinatorRepository.getOne(eventCoordinator.getUuid());
+        assertEquals(eventCoordinator.getEvent().getName(),eventCoordinator1.getEvent().getName());
+        UUID id=eventCoordinator.getUuid();
+        System.out.println(eventCoordinatorRepository.count());
+        eventCoordinatorRepository.softDelete(id);
+        System.out.println(eventCoordinatorRepository.count());
+        assertNull(eventCoordinatorRepository.getOne(id));
+    }
+
+    @Override
+    public void testFindByName() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    
     /**
      * test findAllBySystemUser Method
      * {@link org.eventhub.dal.dao.EventCoordinatorRepository}
@@ -172,7 +237,7 @@ public class EventCoordinatorRepositoryTest {
         eventCoordinatorRepository.save(eventCoordinator);
         List<Event> events = eventRepository.findAllByName("name", pageable);
         List<EventCoordinator> eventCoordinators = eventCoordinatorRepository.findAllByEvent(events.get(0), pageable);
-        assertEquals(eventCoordinators.get(0).getSystemUser().getFirstName(), eventCoordinator.getSystemUser().getFirstName());
+        assertEquals(eventCoordinators.get(0).getEvent().getName(), eventCoordinator.getEvent().getName());
 
     }
 
@@ -192,5 +257,7 @@ public class EventCoordinatorRepositoryTest {
 
         return eventCoordinator;
     }
+    
+    
 
 }

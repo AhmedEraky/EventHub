@@ -9,7 +9,6 @@ import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 import org.eventhub.common.model.entity.Event;
-import org.eventhub.common.model.entity.EventCoordinator;
 import org.eventhub.common.model.entity.EventGuest;
 import org.eventhub.common.model.entity.Organization;
 import org.eventhub.common.model.entity.SystemUser;
@@ -34,7 +33,7 @@ import org.springframework.transaction.annotation.Transactional;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = {Config.class}, loader = AnnotationConfigContextLoader.class)
 @Transactional
-public class EventGuestRepositoryTest {
+public class EventGuestRepositoryTest implements BaseRepositoryTest{
 
     @Autowired
     EventGuestRepository eventGuestRepository;
@@ -51,6 +50,7 @@ public class EventGuestRepositoryTest {
      * @author Aya Taha
      */
     @Test
+    @Override
     public void testCount() {
         long bCount = eventGuestRepository.count();
         EventGuest eventGuest = insertEventGuest();
@@ -66,6 +66,7 @@ public class EventGuestRepositoryTest {
      * @author Aya Taha
      */
     @Test
+    @Override
     public void testDelete() {
         EventGuest eventGuest = insertEventGuest();
         eventGuestRepository.save(eventGuest);
@@ -84,6 +85,7 @@ public class EventGuestRepositoryTest {
      * @author Aya Taha
      */
     @Test
+    @Override
     public void testDeleteByID() {
 
         EventGuest eventGuest = insertEventGuest();
@@ -104,6 +106,7 @@ public class EventGuestRepositoryTest {
      * @author Aya Taha
      */
     @Test
+    @Override
     public void testSave() {
         EventGuest eventGuest = insertEventGuest();
         eventGuestRepository.save(eventGuest);
@@ -113,12 +116,13 @@ public class EventGuestRepositoryTest {
     }
 
     /**
-     * test Soft Delete Using Method update
+     * test Method update
      * {@link org.eventhub.dal.dao.EventGuestRepository}
      *
      * @author Aya Taha
      */
     @Test
+    @Override
     public void testUpdate() {
         Pageable pageable = PageRequest.of(0, 555555);
         EventGuest eventGuest = insertEventGuest();
@@ -135,13 +139,72 @@ public class EventGuestRepositoryTest {
         //update
         List<Event> events = eventRepository.findAllByName("name2", pageable);
         eventGuest1.setEvent(events.get(0));
-        eventGuestRepository.save(eventGuest1);
+        eventGuestRepository.update(eventGuest1);
         EventGuest eventGuest2 = eventGuestRepository.getOne(eventGuest.getUuid());
         System.out.println(eventGuest2.getEvent().getName());
         assertEquals(eventGuest1.getEvent().getName(), eventGuest2.getEvent().getName());
 
     }
+    
+    
+     
+    
+    /**
+     * test findAll Deleted Method
+     * {@link org.eventhub.dal.dao.EventGuestRepository}
+     * @author Aya Taha
+     */
+ 
+    @Test
+    @Override
+    public void testFindAllDeleted(){
+        Pageable pageable = PageRequest.of(0, 555555);
+        int bCount=eventGuestRepository.findAllDeleted(pageable).size();
+        EventGuest eventGuest =insertEventGuest();
+        eventGuestRepository.save(eventGuest);
+        eventGuestRepository.delete(eventGuest);
+        assertEquals(bCount+1,eventGuestRepository.findAllDeleted(pageable).size());
+    }
+    /**
+     * test findAll Method
+     * {@link org.eventhub.dal.dao.EventGuestRepository}
+     * @author Aya Taha
+     */
+    @Override
+    @Test
+    public void testFindAll(){
+        
+        int bCount=eventGuestRepository.findAll().size();
+        EventGuest eventGuest =insertEventGuest();
+        eventGuestRepository.save(eventGuest);
+        int aCount=eventGuestRepository.findAll().size();
+        assertEquals(bCount+1,aCount);
+    }
 
+     /**
+     * test SoftDelete Method
+     * {@link org.eventhub.dal.dao.EventGuestRepository}
+     * @author Aya Taha
+     */
+    @Test
+    @Override
+    public void testSoftDelete() {
+         EventGuest eventGuest =insertEventGuest();
+        eventGuestRepository.save(eventGuest);
+        EventGuest eventGuest1=eventGuestRepository.getOne(eventGuest.getUuid());
+        assertEquals(eventGuest.getEvent().getName(),eventGuest1.getEvent().getName());
+        UUID id=eventGuest.getUuid();
+        System.out.println(eventGuestRepository.count());
+        eventGuestRepository.softDelete(id);
+        System.out.println(eventGuestRepository.count());
+        assertNull(eventGuestRepository.getOne(id));
+    }
+
+    @Override
+    public void testFindByName() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
     /**
      * test findAllBySystemUser Method
      * {@link org.eventhub.dal.dao.EventGuestRepository}
