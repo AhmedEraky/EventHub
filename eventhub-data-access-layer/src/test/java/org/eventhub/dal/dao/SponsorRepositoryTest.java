@@ -100,10 +100,11 @@ public class SponsorRepositoryTest implements BaseRepositoryTest {
         assertEquals(bSponsor.getName(), aSponsor.getName());
 
         UUID id = bSponsor.getUuid();
-        Long count = sponsorRepository.count();
+        long bCount = sponsorRepository.count();
         sponsorRepository.deleteById(id);
+        long aCount = sponsorRepository.count();
         assertNull("Object Should not Exist", sponsorRepository.getOne(id));
-        assertEquals(count, (Long) sponsorRepository.count());
+        assertEquals(bCount, aCount);
     }
 
     /**
