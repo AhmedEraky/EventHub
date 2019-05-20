@@ -213,7 +213,6 @@ public class SponsorRepositoryTest implements BaseRepositoryTest {
 
     }
 
-    
     private Sponsor saveSponsor() {
         Sponsor bSponsor = new Sponsor(null, "dummySponsor");
         Event event = new Event(null, "dummyEvent", "dummyShortDescription", "dummyAddress", new Date(), new Date(), "dummyStyle");
