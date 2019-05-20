@@ -45,7 +45,7 @@ public interface VipRepository extends BaseRepository<Vip> {
      * @author Aya Taha
      */
     @Query(value = "from Vip as v where v.jobTitle=?1 and  v.deleted=0")
-    public List<Vip> findByJobTitle(JobTitle jobTitle, Pageable pageable);
+    public List<Vip> findAllByJobTitle(JobTitle jobTitle, Pageable pageable);
 
     /**
      *  retrieve Event based on organization
@@ -54,6 +54,6 @@ public interface VipRepository extends BaseRepository<Vip> {
      * @author Aya Taha
      */
     @Query(value = "from Vip as v where v.organization=?1 and  v.deleted=0")
-    public List<Vip> findByOrganization(Organization organization, Pageable pageable);
+    public List<Vip> findAllByOrganization(Organization organization, Pageable pageable);
 
 }

@@ -96,9 +96,9 @@ public class CountryRepositoryTest implements BaseRepositoryTest {
         Country aCountry=countryRepository.getOne(bCountry.getUuid());
         assertEquals(bCountry.getName(),aCountry.getName());
         UUID id=bCountry.getUuid();
-        System.out.println(countryRepository.count());
+        //System.out.println(countryRepository.count());
         countryRepository.softDelete(id);
-        System.out.println(countryRepository.count());
+        //System.out.println(countryRepository.count());
         assertNull(countryRepository.getOne(id));
     }
 

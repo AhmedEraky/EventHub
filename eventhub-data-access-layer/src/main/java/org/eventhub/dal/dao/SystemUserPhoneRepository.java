@@ -27,5 +27,5 @@ public interface SystemUserPhoneRepository extends BaseRepository<SystemUserPhon
      * @author Aya Taha
      */
     @Query(value = "from SystemUserPhone as sp where sp.systemUser=?1 and  sp.deleted=0")
-    public List<SystemUserPhone> findBySystemUser(SystemUser systemUser, Pageable pageable);
+    public List<SystemUserPhone> findAllBySystemUser(SystemUser systemUser, Pageable pageable);
 }
