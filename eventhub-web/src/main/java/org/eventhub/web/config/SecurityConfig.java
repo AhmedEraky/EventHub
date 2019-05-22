@@ -31,7 +31,7 @@ import java.util.concurrent.TimeUnit;
 @Configuration
 @ComponentScan("org.eventhub.web")
 @EnableWebSecurity
-@Import({AppConfig.class, WebviewsConfig.class})
+@Import({AppConfig.class})
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 
@@ -54,7 +54,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         auth.jdbcAuthentication().dataSource(datasource).usersByUsernameQuery(
                 "select email,password,deleted from system_user where email=? ").rolePrefix("ROLE_").authoritiesByUsernameQuery(
         "select email,user_name from system_user where email=?");
-
 
         auth.inMemoryAuthentication().withUser("a").password("a").roles("USER");
     }
