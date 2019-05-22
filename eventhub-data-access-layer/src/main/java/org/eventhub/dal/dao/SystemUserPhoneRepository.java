@@ -13,7 +13,7 @@ import org.springframework.data.jpa.repository.Query;
 /**
  *  SystemUserPhone interface has the needed methods to retrieve
  * according to Unique key or join sql
- * @author
+ * @author   Aya Taha (aya.taha.ali.93@gmail.com)
  */
 
 public interface SystemUserPhoneRepository extends BaseRepository<SystemUserPhone> {

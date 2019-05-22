@@ -26,7 +26,6 @@ public interface BaseRepository<T extends BaseEntity> extends JpaRepository<T, U
 
     /**
      * soft delete an object
-     *
      * @param uuid the id of the entity
      * @author Aya Taha (aya.taha.ali.93@gmail.com)
      */
@@ -87,7 +86,7 @@ public interface BaseRepository<T extends BaseEntity> extends JpaRepository<T, U
      * @param exmpl Example
      * @param sort Sorting data
      * @return List of entity
-     * @Author Aya Taha (aya.taha.ali.93@gmail.com)
+     * @author Aya Taha (aya.taha.ali.93@gmail.com)
      */
     @Override
     @Query("from #{#entityName} e where e.deleted=0")
@@ -100,7 +99,7 @@ public interface BaseRepository<T extends BaseEntity> extends JpaRepository<T, U
      * @param exmpl Example
      * @param pageable set number and size of pages
      * @return List of entity
-     * @Author Aya Taha (aya.taha.ali.93@gmail.com)
+     * @author Aya Taha (aya.taha.ali.93@gmail.com)
      */
     @Override
     @Query("from #{#entityName} e where e.deleted=0")
@@ -111,7 +110,7 @@ public interface BaseRepository<T extends BaseEntity> extends JpaRepository<T, U
      *
      * @param itrbl Iterable of UUID
      * @return list of entity type
-     * @Author Aya Taha (aya.taha.ali.93@gmail.com)
+     * @author Aya Taha (aya.taha.ali.93@gmail.com)
      */
     @Override
     @Query("select e from #{#entityName} e where e.uuid in ?1 and e.deleted = 0")
@@ -122,7 +121,7 @@ public interface BaseRepository<T extends BaseEntity> extends JpaRepository<T, U
      *
      * @param sort Sorting data
      * @return list of entity type
-     * @Author Aya Taha (aya.taha.ali.93@gmail.com)
+     * @author Aya Taha (aya.taha.ali.93@gmail.com)
      */
     @Override
     @Query("from #{#entityName} e where e.deleted=0")
@@ -133,7 +132,7 @@ public interface BaseRepository<T extends BaseEntity> extends JpaRepository<T, U
      *
      * @param id the id of entity
      * @return entity entity type
-     * @Author Aya Taha (aya.taha.ali.93@gmail.com)
+     * @author Aya Taha (aya.taha.ali.93@gmail.com)
      */
     @Override
     @Query("from #{#entityName} e where  e.uuid=?1 and e.deleted=0")
@@ -143,7 +142,7 @@ public interface BaseRepository<T extends BaseEntity> extends JpaRepository<T, U
      * update entity
      *
      * @param entity Entity type
-     * @Author Aya Taha (aya.taha.ali.93@gmail.com)
+     * @author Aya Taha (aya.taha.ali.93@gmail.com)
      */
     default public void update(T entity) {
         save(entity);

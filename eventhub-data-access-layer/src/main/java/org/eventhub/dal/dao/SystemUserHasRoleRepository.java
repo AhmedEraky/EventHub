@@ -22,7 +22,7 @@ public interface SystemUserHasRoleRepository extends BaseRepository<SystemUserHa
     List<SystemUserHasRole> findAllByRole(Role role, Pageable pageable);
 
     /**
-     * retrieve  {@link org.eventhub.common.model.entity.SystemUserHasRole} based on {@link org.eventhub.common.model.entity.SystemUser[[}
+     * retrieve  {@link org.eventhub.common.model.entity.SystemUserHasRole} based on {@link org.eventhub.common.model.entity.SystemUser}
      * @param systemUser  {@link org.eventhub.common.model.entity.SystemUser}
      * @param pageable set number and size of pages 
      * @return {@link org.eventhub.common.model.entity.SystemUserHasRole}

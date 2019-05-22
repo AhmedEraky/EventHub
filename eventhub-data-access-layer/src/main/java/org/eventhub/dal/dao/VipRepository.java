@@ -9,7 +9,6 @@ import org.eventhub.common.model.entity.*;
 import java.util.List;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.Query;
-import org.springframework.stereotype.Repository;
 
 /**
  *  Vip interface has the needed methods to retrieve according to
@@ -22,6 +21,7 @@ public interface VipRepository extends BaseRepository<Vip> {
     /**
      * retrieve Vip based on name
      * @param name of {@link org.eventhub.common.model.entity.Vip}
+     * @param pageable set number and size of pages
      * @return Vip {@link org.eventhub.common.model.entity.Vip}
      * @author Aya Taha (aya.taha.ali.93@gmail.com)
      */
