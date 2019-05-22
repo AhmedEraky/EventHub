@@ -18,7 +18,7 @@ import org.eventhub.common.model.entity.SessionType;
 import org.eventhub.common.model.entity.Sponsor;
 import org.eventhub.common.model.entity.SponsorshipType;
 import org.eventhub.common.model.entity.SystemUser;
-import org.eventhub.dal.config.Config;
+import org.eventhub.dal.config.AppConfig;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 import org.junit.Test;
@@ -37,7 +37,7 @@ import org.springframework.transaction.annotation.Transactional;
  * @author Aya Taha
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = {Config.class}, loader = AnnotationConfigContextLoader.class)
+@ContextConfiguration(classes = {AppConfig.class}, loader = AnnotationConfigContextLoader.class)
 @Transactional
 public class EventRepositoryTest implements BaseRepositoryTest {
 

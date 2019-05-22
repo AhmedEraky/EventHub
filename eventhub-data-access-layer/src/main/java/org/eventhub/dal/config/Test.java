@@ -24,7 +24,7 @@ public class Test {
        EntityManager entityManager;
     
     public static void main(String[] args) {
-       ApplicationContext context = new AnnotationConfigApplicationContext(Config.class);
+       ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
        
         SystemUserRepository systemUserRepository = context.getBean(SystemUserRepository.class);
         Random rand = new Random();

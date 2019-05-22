@@ -3,7 +3,7 @@ package org.eventhub.dal.dao;
 import org.eventhub.common.model.entity.JobTitle;
 import org.eventhub.common.model.entity.Organization;
 import org.eventhub.common.model.entity.Vip;
-import org.eventhub.dal.config.Config;
+import org.eventhub.dal.config.AppConfig;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +21,7 @@ import static org.junit.Assert.*;
  */
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = {Config.class}, loader = AnnotationConfigContextLoader.class)
+@ContextConfiguration(classes = {AppConfig.class}, loader = AnnotationConfigContextLoader.class)
 @Transactional
 public class VipRepositoryTest implements BaseRepositoryTest {
 
