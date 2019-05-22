@@ -19,7 +19,7 @@ import org.springframework.stereotype.Repository;
  * EventCoordinator interface has the needed methods to retrieve according to Unique key or join sql 
  * @author Aya Taha
  */
-@Repository
+
 public interface EventCoordinatorRepository extends BaseRepository<EventCoordinator>{
     
     /**

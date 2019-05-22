@@ -16,7 +16,7 @@ import org.springframework.stereotype.Repository;
  * according to Unique key or join sql
  * @author
  */
-@Repository
+
 public interface SystemUserPhoneRepository extends BaseRepository<SystemUserPhone> {
 
     /**
