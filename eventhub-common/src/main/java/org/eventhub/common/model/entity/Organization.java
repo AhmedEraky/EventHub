@@ -6,7 +6,7 @@
 package org.eventhub.common.model.entity;
 
 import java.io.Serializable;
-import java.util.Set;
+import java.util.List;
 import java.util.UUID;
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
@@ -37,11 +37,11 @@ public class Organization extends BaseEntity implements Serializable {
     @Column(name = "logo")
     private byte[] logo;
     @OneToMany(mappedBy = "organization")
-    private Set<SystemUser> systemUsers;
+    private List<SystemUser> systemUsers;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "organization")
-    private Set<Event> events;
+    private List<Event> events;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "organization")
-    private Set<Vip> vips;
+    private List<Vip> vips;
 
     public Organization() {
     }
@@ -80,29 +80,29 @@ public class Organization extends BaseEntity implements Serializable {
     }
 
     @XmlTransient
-    public Set<SystemUser> getSystemUsers() {
+    public List<SystemUser> getSystemUsers() {
         return systemUsers;
     }
 
-    public void setSystemUsers(Set<SystemUser> systemUsers) {
+    public void setSystemUsers(List<SystemUser> systemUsers) {
         this.systemUsers = systemUsers;
     }
 
     @XmlTransient
-    public Set<Event> getEvents() {
+    public List<Event> getEvents() {
         return events;
     }
 
-    public void setEvents(Set<Event> events) {
+    public void setEvents(List<Event> events) {
         this.events = events;
     }
 
     @XmlTransient
-    public Set<Vip> getVips() {
+    public List<Vip> getVips() {
         return vips;
     }
 
-    public void setVips(Set<Vip> vips) {
+    public void setVips(List<Vip> vips) {
         this.vips = vips;
     }
 

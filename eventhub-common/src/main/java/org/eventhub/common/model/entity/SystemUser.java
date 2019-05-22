@@ -6,7 +6,7 @@
 package org.eventhub.common.model.entity;
 
 import java.io.Serializable;
-import java.util.Set;
+import java.util.List;
 import java.util.UUID;
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
@@ -49,15 +49,15 @@ public class SystemUser extends BaseEntity implements Serializable {
     @Column(name = "profile_image",length=100)
     private String profileImage;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "systemUser")
-    private Set<SystemUserPhone> systemUserPhones;
+    private List<SystemUserPhone> systemUserPhones;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "systemUser")
-    private Set<EventGuest> eventGuests;
+    private List<EventGuest> eventGuests;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "systemUser")
-    private Set<Instructor> instructors;
+    private List<Instructor> instructors;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "systemUser")
-    private Set<SystemUserHasRole> systemUserHasRoles;
+    private List<SystemUserHasRole> systemUserHasRoles;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "systemUser")
-    private Set<EventCoordinator> eventCoordinators;
+    private List<EventCoordinator> eventCoordinators;
     @JoinColumn(name = "country", referencedColumnName = "uuid")
     @ManyToOne
     private Country country;
@@ -68,7 +68,7 @@ public class SystemUser extends BaseEntity implements Serializable {
     @ManyToOne
     private Organization organization;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "systemUser")
-    private Set<Event> event;
+    private List<Event> event;
 
     public SystemUser() {
     }
@@ -142,47 +142,47 @@ public class SystemUser extends BaseEntity implements Serializable {
     }
 
     @XmlTransient
-    public Set<SystemUserPhone> getSystemUserPhones() {
+    public List<SystemUserPhone> getSystemUserPhones() {
         return systemUserPhones;
     }
 
-    public void setSystemUserPhones(Set<SystemUserPhone> systemUserPhones) {
+    public void setSystemUserPhones(List<SystemUserPhone> systemUserPhones) {
         this.systemUserPhones = systemUserPhones;
     }
 
     @XmlTransient
-    public Set<EventGuest> getEventGuests() {
+    public List<EventGuest> getEventGuests() {
         return eventGuests;
     }
 
-    public void setEventGuests(Set<EventGuest> eventGuests) {
+    public void setEventGuests(List<EventGuest> eventGuests) {
         this.eventGuests = eventGuests;
     }
 
     @XmlTransient
-    public Set<Instructor> getInstructors() {
+    public List<Instructor> getInstructors() {
         return instructors;
     }
 
-    public void setInstructors(Set<Instructor> instructors) {
+    public void setInstructors(List<Instructor> instructors) {
         this.instructors = instructors;
     }
 
     @XmlTransient
-    public Set<SystemUserHasRole> getSystemUserHasRoles() {
+    public List<SystemUserHasRole> getSystemUserHasRoles() {
         return systemUserHasRoles;
     }
 
-    public void setSystemUserHasRoles(Set<SystemUserHasRole> systemUserHasRoles) {
+    public void setSystemUserHasRoles(List<SystemUserHasRole> systemUserHasRoles) {
         this.systemUserHasRoles = systemUserHasRoles;
     }
 
     @XmlTransient
-    public Set<EventCoordinator> getEventCoordinators() {
+    public List<EventCoordinator> getEventCoordinators() {
         return eventCoordinators;
     }
 
-    public void setEventCoordinators(Set<EventCoordinator> eventCoordinators) {
+    public void setEventCoordinators(List<EventCoordinator> eventCoordinators) {
         this.eventCoordinators = eventCoordinators;
     }
 
@@ -211,11 +211,11 @@ public class SystemUser extends BaseEntity implements Serializable {
     }
 
     @XmlTransient
-    public Set<Event> getEventSet() {
+    public List<Event> getEventSet() {
         return event;
     }
 
-    public void setEventSet(Set<Event> event) {
+    public void setEventSet(List<Event> event) {
         this.event = event;
     }
 

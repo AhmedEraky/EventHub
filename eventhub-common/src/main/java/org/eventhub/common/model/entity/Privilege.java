@@ -6,7 +6,7 @@
 package org.eventhub.common.model.entity;
 
 import java.io.Serializable;
-import java.util.Set;
+import java.util.List;
 import java.util.UUID;
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
@@ -33,7 +33,7 @@ public class Privilege extends BaseEntity implements Serializable {
     @Column(name = "description",length=100)
     private String description;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "privilege")
-    private Set<RolePrivilege> rolePrivileges;
+    private List<RolePrivilege> rolePrivileges;
 
     public Privilege() {
     }
@@ -64,11 +64,11 @@ public class Privilege extends BaseEntity implements Serializable {
     }
 
     @XmlTransient
-    public Set<RolePrivilege> getRolePrivileges() {
+    public List<RolePrivilege> getRolePrivileges() {
         return rolePrivileges;
     }
 
-    public void setRolePrivileges(Set<RolePrivilege> rolePrivileges) {
+    public void setRolePrivileges(List<RolePrivilege> rolePrivileges) {
         this.rolePrivileges = rolePrivileges;
     }
 

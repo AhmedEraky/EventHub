@@ -6,7 +6,7 @@
 package org.eventhub.common.model.entity;
 
 import java.io.Serializable;
-import java.util.Set;
+import java.util.List;
 import java.util.UUID;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -33,7 +33,7 @@ public class Instructor extends BaseEntity implements Serializable {
     @Column(name = "job_title",length=45)
     private String jobTitle;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "instructor")
-    private Set<SessionInstructor> sessionInstructors;
+    private List<SessionInstructor> sessionInstructors;
     @JoinColumn(name = "system_user", referencedColumnName = "uuid")
     @ManyToOne(optional = false)
     private SystemUser systemUser;
@@ -62,11 +62,11 @@ public class Instructor extends BaseEntity implements Serializable {
     }
 
     @XmlTransient
-    public Set<SessionInstructor> getSessionInstructors() {
+    public List<SessionInstructor> getSessionInstructors() {
         return sessionInstructors;
     }
 
-    public void setSessionInstructors(Set<SessionInstructor> sessionInstructors) {
+    public void setSessionInstructors(List<SessionInstructor> sessionInstructors) {
         this.sessionInstructors = sessionInstructors;
     }
 

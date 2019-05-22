@@ -7,7 +7,7 @@ package org.eventhub.common.model.entity;
 
 import java.io.Serializable;
 import java.util.Date;
-import java.util.Set;
+import java.util.List;
 import java.util.UUID;
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
@@ -53,11 +53,9 @@ public class Event extends BaseEntity implements Serializable {
     private String slogan;
     @Column(name = "abbreviation",length=45)
     private String abbreviation;
-    @Basic(optional = false)
     @Column(name = "start_date")
     @Temporal(TemporalType.TIMESTAMP)
     private Date startDate;
-    @Basic(optional = false)
     @Column(name = "end_date")
     @Temporal(TemporalType.TIMESTAMP)
     private Date endDate;
@@ -72,15 +70,15 @@ public class Event extends BaseEntity implements Serializable {
     @Column(name = "style",length=10)
     private String style;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "event")
-    private Set<Sponsor> sponsors;
+    private List<Sponsor> sponsors;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "event")
-    private Set<Session> sessions;
+    private List<Session> sessions;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "event")
-    private Set<Hall> halls;
+    private List<Hall> halls;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "event")
-    private Set<EventGuest> eventGuests;
+    private List<EventGuest> eventGuests;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "event")
-    private Set<EventCoordinator> eventCoordinators;
+    private List<EventCoordinator> eventCoordinators;
     @JoinColumn(name = "organization", referencedColumnName = "uuid")
     @ManyToOne(optional = false)
     private Organization organization;
@@ -210,47 +208,47 @@ public class Event extends BaseEntity implements Serializable {
     }
 
     @XmlTransient
-    public Set<Sponsor> getSponsors() {
+    public List<Sponsor> getSponsors() {
         return sponsors;
     }
 
-    public void setSponsors(Set<Sponsor> sponsors) {
+    public void setSponsors(List<Sponsor> sponsors) {
         this.sponsors = sponsors;
     }
 
     @XmlTransient
-    public Set<Session> getSessions() {
+    public List<Session> getSessions() {
         return sessions;
     }
 
-    public void setSessions(Set<Session> sessions) {
+    public void setSessions(List<Session> sessions) {
         this.sessions = sessions;
     }
 
     @XmlTransient
-    public Set<Hall> getHalls() {
+    public List<Hall> getHalls() {
         return halls;
     }
 
-    public void setHalls(Set<Hall> halls) {
+    public void setHalls(List<Hall> halls) {
         this.halls = halls;
     }
 
     @XmlTransient
-    public Set<EventGuest> getEventGuests() {
+    public List<EventGuest> getEventGuests() {
         return eventGuests;
     }
 
-    public void setEventGuests(Set<EventGuest> eventGuests) {
+    public void setEventGuests(List<EventGuest> eventGuests) {
         this.eventGuests = eventGuests;
     }
 
     @XmlTransient
-    public Set<EventCoordinator> getEventCoordinators() {
+    public List<EventCoordinator> getEventCoordinators() {
         return eventCoordinators;
     }
 
-    public void setEventCoordinators(Set<EventCoordinator> eventCoordinators) {
+    public void setEventCoordinators(List<EventCoordinator> eventCoordinators) {
         this.eventCoordinators = eventCoordinators;
     }
 
