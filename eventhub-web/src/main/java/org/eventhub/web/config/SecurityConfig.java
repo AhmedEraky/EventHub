@@ -55,7 +55,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 "select email,password,deleted from system_user where email=? ").rolePrefix("ROLE_").authoritiesByUsernameQuery(
         "select email,user_name from system_user where email=?");
 
-
         auth.inMemoryAuthentication().withUser("a").password("a").roles("USER");
     }
 
