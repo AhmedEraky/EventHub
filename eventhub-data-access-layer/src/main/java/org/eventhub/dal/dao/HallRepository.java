@@ -16,7 +16,7 @@ import org.springframework.data.domain.Pageable;import org.eventhub.common.model
  * Hall interface has the needed methods to retrieve according to Unique key or join sql 
  * @author Aya Taha
  */
-@Repository
+
 public interface HallRepository extends BaseRepository<Hall>{
 
 

@@ -20,7 +20,7 @@ public class InsertAspect {
      * @return Object the result of insert object
      *
      */
-    @Around("execution(*.com.eventhub.model.dal.daos..insert(..)")
+    @Around("execution(* com.eventhub.model.dal.daos..insert(..)")
     public Object beforeInsert(ProceedingJoinPoint joinPoint) {
 
         Object result = null;

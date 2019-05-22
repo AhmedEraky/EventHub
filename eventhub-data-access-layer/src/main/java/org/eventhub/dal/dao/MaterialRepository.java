@@ -23,7 +23,7 @@ import org.springframework.data.domain.Pageable;
 public interface MaterialRepository extends BaseRepository<Material> {
 
     /**
-     * @description to retrieve material based on Path
+     *  retrieve material based on Path
      * @param path
      * @return  Material {@link org.eventhub.common.model.entity.Material}
      *  @author Aya Taha
@@ -32,7 +32,7 @@ public interface MaterialRepository extends BaseRepository<Material> {
     public Material findByPath(String path);
     
     /**
-     * @description to retrieve material based on sessionInstructor
+     *  retrieve material based on sessionInstructor
      * @param sessionInstructor {@link org.eventhub.common.model.entity.SessionInstructor}
      * @return list of Material {@link org.eventhub.common.model.entity.Material}
      *  @author Aya Taha

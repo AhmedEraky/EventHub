@@ -16,7 +16,7 @@ import org.springframework.data.domain.Pageable;
  * according to Unique key or join sql
  * @author Aya Taha
  */
-@Repository
+
 public interface InstructorRepository extends BaseRepository<Instructor>{
 
     /**

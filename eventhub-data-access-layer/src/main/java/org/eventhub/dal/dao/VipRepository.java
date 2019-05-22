@@ -16,7 +16,7 @@ import org.springframework.stereotype.Repository;
  * Unique key or join sql
  * @author
  */
-@Repository
+
 public interface VipRepository extends BaseRepository<Vip> {
 
     /**
