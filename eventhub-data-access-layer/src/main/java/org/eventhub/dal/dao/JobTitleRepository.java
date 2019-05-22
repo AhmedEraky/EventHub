@@ -19,7 +19,7 @@ public interface JobTitleRepository extends BaseRepository<JobTitle> {
 
      /**
      *  retrieve JobTitle based on name
-     * @param name 
+     * @param name of {@link org.eventhub.common.model.entity.JobTitle}
      * @param pageable set number and size of pages 
      * @return  JobTitle {@link org.eventhub.common.model.entity.JobTitle}
      * @author Aya Taha (aya.taha.ali.93@gmail.com)

@@ -24,7 +24,7 @@ public interface MaterialRepository extends BaseRepository<Material> {
 
     /**
      *  retrieve material based on Path
-     * @param path
+     * @param path of {@link org.eventhub.common.model.entity.Material}
      * @return  Material {@link org.eventhub.common.model.entity.Material}
      *  @author Aya Taha (aya.taha.ali.93@gmail.com)
      */

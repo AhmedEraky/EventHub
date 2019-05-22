@@ -20,7 +20,7 @@ public interface InstructorRepository extends BaseRepository<Instructor>{
 
     /**
      *  retrieve Instructor based on bio
-     * @param bio
+     * @param bio of {@link org.eventhub.common.model.entity.Instructor}
      * @return Instructor {@link org.eventhub.common.model.entity.Instructor}
      * @author Aya Taha (aya.taha.ali.93@gmail.com)
      */
@@ -37,8 +37,8 @@ public interface InstructorRepository extends BaseRepository<Instructor>{
     public Instructor findByJobTitle(String jobTitle);
 
     /**
-     *  retrieve Instructor based on   sessionInstructor
-     * @param sessionInstructor
+     *  retrieve Instructor based on  sessionInstructor
+     * @param sessionInstructor  {@link org.eventhub.common.model.entity.SessionInstructor}
      * {@link org.eventhub.common.model.entity.SessionInstructor}
      * @return Instructor {@link org.eventhub.common.model.entity.Instructor}
      * @author Aya Taha (aya.taha.ali.93@gmail.com)
