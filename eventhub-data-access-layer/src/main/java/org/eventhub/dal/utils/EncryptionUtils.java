@@ -33,7 +33,7 @@ public class EncryptionUtils {
      * To be used for hashing password this method use one way hashing algorithm PBKDF2
      * TODO: change salt, each user should have his own salt for example uuid
      *
-     * @param password
+     * @param password plain password
      * @return hashed password
      * @author Ibrahim Yousre (ib.yousre@gmail.com)
      */
@@ -52,9 +52,9 @@ public class EncryptionUtils {
     /**
      * this method convert plain text to encrypt by AES algorithm
      *
-     * @param plainText
+     * @param plainText plain text
      * @return encrypted text with encoding to base64
-     * @author Amr Elkady <amrelkady93@gmail.com>
+     * @author Amr Elkady (amrelkady93@gmail.com)
      * {@link https://stackoverflow.com/a/30591269/5331778}
      */
     public static String encrypt(String plainText) {
@@ -72,9 +72,9 @@ public class EncryptionUtils {
     /**
      * this method convert encrypt to plain text by AES algorithm
      *
-     * @param encryptionText
+     * @param encryptionText encrypted text
      * @return original text
-     * @author Amr Elkady <amrelkady93@gmail.com>
+     * @author Amr Elkady (amrelkady93@gmail.com)
      * {@link https://stackoverflow.com/a/30591269/5331778}
      */
     public static String decrypt(String encryptionText) {

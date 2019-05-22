@@ -16,7 +16,7 @@ import org.eventhub.dal.utils.EncryptionUtils;
 /**
  * this aspect class to encrypt password before insert it in DataBase
  *
- * @author Amr Elkady <amrelkady93@gmail.com>
+ * @author Amr Elkady (amrelkady93@gmail.com)
  */
 @Aspect
 public class EncryptPassword {
@@ -27,7 +27,7 @@ public class EncryptPassword {
      * encrypt password of {@link org.eventhub.common.model.entity.SystemUser}
      * @param joinPoint to access information 
      * @return Object the result of insert object
-     *
+     * @author Amr Elkady (amrelkady93@gmail.com)
      */
     @Around("execution(* com.eventhub.model.dal.daos.SystemUserRepository.save(..))")
     public Object beforeInsert(ProceedingJoinPoint joinPoint) {
