@@ -6,7 +6,7 @@
 package org.eventhub.common.model.entity;
 
 import java.io.Serializable;
-import java.util.Set;
+import java.util.List;
 import java.util.UUID;
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
@@ -42,7 +42,7 @@ public class Hall extends BaseEntity implements Serializable {
     @ManyToOne(optional = false)
     private Event event;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "hall")
-    private Set<SessionInHall> sessionInHalls;
+    private List<SessionInHall> sessionInHalls;
 
     public Hall() {
     }
@@ -97,11 +97,11 @@ public class Hall extends BaseEntity implements Serializable {
     }
 
     @XmlTransient
-    public Set<SessionInHall> getSessionInHalls() {
+    public List<SessionInHall> getSessionInHalls() {
         return sessionInHalls;
     }
 
-    public void setSessionInHalls(Set<SessionInHall> sessionInHalls) {
+    public void setSessionInHalls(List<SessionInHall> sessionInHalls) {
         this.sessionInHalls = sessionInHalls;
     }
 

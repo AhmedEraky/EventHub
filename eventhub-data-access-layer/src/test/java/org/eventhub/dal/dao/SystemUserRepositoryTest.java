@@ -13,8 +13,8 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.support.AnnotationConfigContextLoader;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 import static org.junit.Assert.*;
 
@@ -241,7 +241,7 @@ public class SystemUserRepositoryTest implements BaseRepositoryTest{
     @Test
     public void testFindBySystemUserPhones(){
 
-        Set<SystemUserPhone> testSet=new HashSet<>();
+        List<SystemUserPhone> testSet=new ArrayList<>();
         SystemUser bSystemUser=
                 new SystemUser(null,"amrelkady","Amr","12345","amrelkady93@gmail.com");
         SystemUserPhone systemUserPhone =new SystemUserPhone(null,"01117538430");

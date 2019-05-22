@@ -6,9 +6,9 @@
 package org.eventhub.dal.dao;
 
 import java.util.Date;
-import java.util.HashSet;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
+import java.util.List;
 import java.util.UUID;
 import org.eventhub.common.model.entity.Event;
 import org.eventhub.common.model.entity.Hall;
@@ -326,7 +326,7 @@ public class EventRepositoryTest implements BaseRepositoryTest {
         sponsor.setEvent(event);
         sponsor.setSponsorshipType(sponsorshipType);
         sponsorRepository.save(sponsor);
-        Set<Sponsor> sponsors = new HashSet<>();
+        List<Sponsor> sponsors = new ArrayList<>();
         sponsors.add(sponsor);
         event.setSponsors(sponsors);
         Event event1 = eventRepository.findBySponor(sponsor);
@@ -348,7 +348,7 @@ public class EventRepositoryTest implements BaseRepositoryTest {
         eventRepository.save(event);
         session.setEvent(event);
         sessionRepository.save(session);
-        Set<Session> sessions = new HashSet<>();
+        List<Session> sessions = new ArrayList<>();
         sessions.add(session);
         event.setSessions(sessions);
 
@@ -368,7 +368,7 @@ public class EventRepositoryTest implements BaseRepositoryTest {
         eventRepository.save(event);
         hall.setEvent(event);
         hallRepository.save(hall);
-        Set<Hall> halls = new HashSet<>();
+        List<Hall> halls = new ArrayList<>();
         halls.add(hall);
         event.setHalls(halls);
 
