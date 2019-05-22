@@ -16,7 +16,6 @@ import org.springframework.data.repository.NoRepositoryBean;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.data.domain.Pageable;
 
-
 /**
  *
  * @author Ibrahim Yousre (ib.yousre@gmail.com)
@@ -26,7 +25,8 @@ import org.springframework.data.domain.Pageable;
 public interface BaseRepository<T extends BaseEntity> extends JpaRepository<T, UUID> {
 
     /**
-     *  soft delete an object
+     * soft delete an object
+     *
      * @param uuid the id of the entity
      * @author Aya Taha (aya.taha.ali.93@gmail.com)
      */
@@ -36,7 +36,8 @@ public interface BaseRepository<T extends BaseEntity> extends JpaRepository<T, U
     public void softDelete(UUID uuid);
 
     /**
-     *  soft delete an object
+     * soft delete an object
+     *
      * @author Ahmed Eraky (ahmedmoeraky@gmail.com)
      * @param t the domain type the repository manages
      */
@@ -46,10 +47,11 @@ public interface BaseRepository<T extends BaseEntity> extends JpaRepository<T, U
     void delete(T t);
 
     /**
-     *  soft delete an object by ID
+     * soft delete an object by ID
+     *
      * @param uuid the id of the entity
      * @author Ahmed Eraky (ahmedmoeraky@gmail.com)
-     * 
+     *
      */
     @Query("update #{#entityName} e set e.deleted=true where e.uuid=?1")
     @Modifying
@@ -58,8 +60,9 @@ public interface BaseRepository<T extends BaseEntity> extends JpaRepository<T, U
     void deleteById(UUID uuid);
 
     /**
-     *  retrieve the existing entities
-     * @param pageable Set of pages
+     * retrieve the existing entities
+     *
+     * @param pageable set number and size of pages
      * @return list of entity
      * @author Aya Taha (aya.taha.ali.93@gmail.com)
      */
@@ -67,22 +70,23 @@ public interface BaseRepository<T extends BaseEntity> extends JpaRepository<T, U
     @Override
     public Page<T> findAll(Pageable pageable);
 
-
-
     /**
-     *  retrieve all deleted entities
-     * @param pageable Set of pages
+     * retrieve all deleted entities
+     *
+     * @param pageable set number and size of pages
      * @return list of deleted entities
      * @author Aya Taha (aya.taha.ali.93@gmail.com)
      */
     @Query("from #{#entityName} e where e.deleted=1")
     public List<T> findAllDeleted(Pageable pageable);
+
     /**
      * retrieve deleted and undeleted entities
+     *
      * @param <S> entity type
      * @param exmpl Example
      * @param sort Sorting data
-     * @return List of entity 
+     * @return List of entity
      * @Author Aya Taha (aya.taha.ali.93@gmail.com)
      */
     @Override
@@ -91,9 +95,11 @@ public interface BaseRepository<T extends BaseEntity> extends JpaRepository<T, U
 
     /**
      * retrieve deleted and undeleted entities
-     @param <S> entity type
+     *
+     * @param <S> entity type
      * @param exmpl Example
-     * @return List of entity 
+     * @param pageable set number and size of pages
+     * @return List of entity
      * @Author Aya Taha (aya.taha.ali.93@gmail.com)
      */
     @Override
@@ -101,7 +107,8 @@ public interface BaseRepository<T extends BaseEntity> extends JpaRepository<T, U
     public <S extends T> Page<S> findAll(Example<S> exmpl, Pageable pageable);
 
     /**
-     * retrieve undeleted  entities by iterable of id
+     * retrieve undeleted entities by iterable of id
+     *
      * @param itrbl Iterable of UUID
      * @return list of entity type
      * @Author Aya Taha (aya.taha.ali.93@gmail.com)
@@ -111,9 +118,10 @@ public interface BaseRepository<T extends BaseEntity> extends JpaRepository<T, U
     public List<T> findAllById(Iterable<UUID> itrbl);
 
     /**
-     *  retrieve undeleted by Sort
+     * retrieve undeleted by Sort
+     *
      * @param sort Sorting data
-     * @return  list of entity type
+     * @return list of entity type
      * @Author Aya Taha (aya.taha.ali.93@gmail.com)
      */
     @Override
@@ -122,23 +130,23 @@ public interface BaseRepository<T extends BaseEntity> extends JpaRepository<T, U
 
     /**
      * retrieve entity by id
-     * @param id the id of entity 
-     * @return entity  entity type
+     *
+     * @param id the id of entity
+     * @return entity entity type
      * @Author Aya Taha (aya.taha.ali.93@gmail.com)
      */
-
     @Override
     @Query("from #{#entityName} e where  e.uuid=?1 and e.deleted=0")
     public T getOne(UUID id);
 
     /**
      * update entity
+     *
      * @param entity Entity type
      * @Author Aya Taha (aya.taha.ali.93@gmail.com)
      */
-    default public void update(T entity){
+    default public void update(T entity) {
         save(entity);
     }
-
 
 }

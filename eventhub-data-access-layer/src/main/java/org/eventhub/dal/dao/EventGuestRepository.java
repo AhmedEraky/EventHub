@@ -13,7 +13,6 @@ import org.eventhub.common.model.entity.EventGuest;
 import org.eventhub.common.model.entity.SystemUser;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.Query;
-import org.springframework.stereotype.Repository;
 
 
 /**
@@ -24,7 +23,8 @@ import org.springframework.stereotype.Repository;
 public interface EventGuestRepository extends BaseRepository<EventGuest>{
    /**
      *  retrieve EventGuest based on event
-     * @param event 
+     * @param event {@link org.eventhub.common.model.entity.Event}
+     * @param pageable  set number and size of pages
      * @return List of EventGuest {@link org.eventhub.common.model.entity.EventGuest}
      * @author Aya Taha (aya.taha.ali.93@gmail.com)
      */         
@@ -34,7 +34,8 @@ public interface EventGuestRepository extends BaseRepository<EventGuest>{
     
     /**
      *  retrieve EventGuest based on systemUser
-     * @param systemUser 
+     * @param systemUser  {@link org.eventhub.common.model.entity.SystemUser}
+     * @param pageable set number and size of pages
      * @return list of EventGuest {@link org.eventhub.common.model.entity.EventGuest}
      * @author Aya Taha (aya.taha.ali.93@gmail.com)
      */ 

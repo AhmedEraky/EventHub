@@ -20,7 +20,8 @@ public interface CountryRepository extends BaseRepository<Country>{
 
     /**
      *  retrieve Country based on name
-     * @param name
+     * @param name Country name
+     * @param pageable set number and size of pages
      * @return Country {@link org.eventhub.common.model.entity.Country}
      */
     @Query(value= "from Country as c where lower(c.name) like lower(CONCAT('%',?1,'%')) and c.deleted=0")
