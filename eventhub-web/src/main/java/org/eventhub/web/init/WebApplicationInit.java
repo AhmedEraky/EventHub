@@ -2,7 +2,6 @@ package org.eventhub.web.init;
 import org.eventhub.web.config.AppConfig;
 import org.eventhub.web.config.SecurityConfig;
 import org.eventhub.web.config.WebAppConfig;
-import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 public class WebApplicationInit extends AbstractAnnotationConfigDispatcherServletInitializer {
