@@ -31,7 +31,7 @@ import org.springframework.transaction.annotation.Transactional;
 /**
  * Test Class for {@link org.eventhub.dal.dao.EventCoordinatorRepository}
  *
- * @author Aya Taha
+ * @author Aya Taha (aya.taha.ali.93@gmail.com)
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = {Config.class}, loader = AnnotationConfigContextLoader.class)
@@ -56,7 +56,7 @@ public class HallRepositoryTest implements BaseRepositoryTest {
     /**
      * test count Method {@link org.eventhub.dal.dao.HallRepository}
      *
-     * @author Aya Taha
+     * @author Aya Taha (aya.taha.ali.93@gmail.com)
      */
     @Test
     @Override
@@ -71,7 +71,7 @@ public class HallRepositoryTest implements BaseRepositoryTest {
     /**
      * test Method delete {@link org.eventhub.dal.dao.HallRepository}
      *
-     * @author Aya Taha
+     * @author Aya Taha (aya.taha.ali.93@gmail.com)
      */
     @Test
     @Override
@@ -89,7 +89,7 @@ public class HallRepositoryTest implements BaseRepositoryTest {
     /**
      * test save Method {@link org.eventhub.dal.dao.HallRepository}
      *
-     * @author Aya Taha
+     * @author Aya Taha (aya.taha.ali.93@gmail.com)
      */
     @Test
     @Override
@@ -103,7 +103,7 @@ public class HallRepositoryTest implements BaseRepositoryTest {
     /**
      * test Method update {@link org.eventhub.dal.dao.HallRepository}
      *
-     * @author Aya Taha
+     * @author Aya Taha (aya.taha.ali.93@gmail.com)
      */
     @Test
     @Override
@@ -120,7 +120,7 @@ public class HallRepositoryTest implements BaseRepositoryTest {
     /**
      * test findAll Deleted Method {@link org.eventhub.dal.dao.HallRepository}
      *
-     * @author Aya Taha
+     * @author Aya Taha (aya.taha.ali.93@gmail.com)
      */
     @Test
     @Override
@@ -136,7 +136,7 @@ public class HallRepositoryTest implements BaseRepositoryTest {
     /**
      * test findAll Method {@link org.eventhub.dal.dao.HallRepository}
      *
-     * @author Aya Taha
+     * @author Aya Taha (aya.taha.ali.93@gmail.com)
      */
     @Override
     @Test
@@ -152,7 +152,7 @@ public class HallRepositoryTest implements BaseRepositoryTest {
     /**
      * test SoftDelete Method {@link org.eventhub.dal.dao.HallRepository}
      *
-     * @author Aya Taha
+     * @author Aya Taha (aya.taha.ali.93@gmail.com)
      */
     @Test
     @Override
@@ -171,7 +171,7 @@ public class HallRepositoryTest implements BaseRepositoryTest {
     /**
      * test Method deleteByID {@link org.eventhub.dal.dao.HallRepository}
      *
-     * @author Aya Taha
+     * @author Aya Taha (aya.taha.ali.93@gmail.com)
      */
     @Test
     @Override
@@ -195,7 +195,7 @@ public class HallRepositoryTest implements BaseRepositoryTest {
     /**
      * test Method findAllByFloor {@link org.eventhub.dal.dao.HallRepository}
      *
-     * @author Aya Taha
+     * @author Aya Taha (aya.taha.ali.93@gmail.com)
      */
     @Test
     public void testFindAllByFloor() {
@@ -210,7 +210,7 @@ public class HallRepositoryTest implements BaseRepositoryTest {
     /**
      * test Method findAllByBuilding {@link org.eventhub.dal.dao.HallRepository}
      *
-     * @author Aya Taha
+     * @author Aya Taha (aya.taha.ali.93@gmail.com)
      */
     @Test
     public void testFindAllByBuilding() {
@@ -225,7 +225,7 @@ public class HallRepositoryTest implements BaseRepositoryTest {
     /**
      * test Method findAllByName {@link org.eventhub.dal.dao.HallRepository}
      *
-     * @author Aya Taha
+     * @author Aya Taha (aya.taha.ali.93@gmail.com)
      */
     @Test
     public void testFindAllByName() {
@@ -239,7 +239,7 @@ public class HallRepositoryTest implements BaseRepositoryTest {
     /**
      * test Method findAllByCapacity {@link org.eventhub.dal.dao.HallRepository}
      *
-     * @author Aya Taha
+     * @author Aya Taha (aya.taha.ali.93@gmail.com)
      */
     @Test
     public void testFindAllByCapacity() {
@@ -254,7 +254,7 @@ public class HallRepositoryTest implements BaseRepositoryTest {
     /**
      * test findAllByEvent Method {@link org.eventhub.dal.dao.HallRepository}
      *
-     * @author Aya Taha
+     * @author Aya Taha (aya.taha.ali.93@gmail.com)
      */
     @Test
     public void testFindAllByEvent() {
@@ -271,7 +271,7 @@ public class HallRepositoryTest implements BaseRepositoryTest {
      * test findAllBySessionInHalls Method
      * {@link org.eventhub.dal.dao.HallRepository}
      *
-     * @author Aya Taha
+     * @author Aya Taha (aya.taha.ali.93@gmail.com)
      */
     @Test
     public void testFindAllBySessionInHalls() {

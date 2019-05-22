@@ -13,7 +13,7 @@ import org.springframework.data.domain.Pageable;
 
 /**
  *Country interface has the needed methods to retrieve according to Unique key or join sql 
- * @author Aya Taha
+ * @author Aya Taha (aya.taha.ali.93@gmail.com)
  */
 
 public interface CountryRepository extends BaseRepository<Country>{

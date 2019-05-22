@@ -19,7 +19,7 @@ import static org.junit.Assert.assertEquals;
 
 /**
  * Test class for {@link org.eventhub.dal.dao.SystemUserHasRoleRepository}
- * @author Amr Elkady <amrelkady93@gmail.com>
+ * @author Amr Elkady (amrelkady93@gmail.com)
  */
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -39,7 +39,7 @@ public class SystemUserHasRoleRepositoryTest implements BaseRepositoryTest {
     /**
      * test count Method
      * {@link org.eventhub.dal.dao.SystemUserHasRoleRepository}
-     * @author Amr Elkady <amrelkady93@gmail.com>
+     * @author Amr Elkady (amrelkady93@gmail.com)
      */
     @Test
     @Override
@@ -62,7 +62,7 @@ public class SystemUserHasRoleRepositoryTest implements BaseRepositoryTest {
     /**
      * test Save Method
      * {@link org.eventhub.dal.dao.SystemUserHasRoleRepository}
-     * @author Amr Elkady <amrelkady93@gmail.com>
+     * @author Amr Elkady (amrelkady93@gmail.com)
      */
     @Test
     @Override
@@ -85,7 +85,7 @@ public class SystemUserHasRoleRepositoryTest implements BaseRepositoryTest {
     /**
      * test Update Method
      * {@link org.eventhub.dal.dao.SystemUserHasRoleRepository}
-     * @author Amr Elkady <amrelkady93@gmail.com>
+     * @author Amr Elkady (amrelkady93@gmail.com)
      */
     @Test
     @Override
@@ -112,7 +112,7 @@ public class SystemUserHasRoleRepositoryTest implements BaseRepositoryTest {
     /**
      * test Delete Method
      * {@link org.eventhub.dal.dao.SystemUserHasRoleRepository}
-     * @author Amr Elkady <amrelkady93@gmail.com>
+     * @author Amr Elkady (amrelkady93@gmail.com)
      */
     @Test
     @Override
@@ -137,7 +137,7 @@ public class SystemUserHasRoleRepositoryTest implements BaseRepositoryTest {
     /**
      * test DeleteByID Method
      * {@link org.eventhub.dal.dao.SystemUserHasRoleRepository}
-     * @author Amr Elkady <amrelkady93@gmail.com>
+     * @author Amr Elkady (amrelkady93@gmail.com)
      */
     @Test
     @Override
@@ -161,7 +161,7 @@ public class SystemUserHasRoleRepositoryTest implements BaseRepositoryTest {
     /**
      * test SoftDelete Method
      * {@link org.eventhub.dal.dao.SystemUserHasRoleRepository}
-     * @author Amr Elkady <amrelkady93@gmail.com>
+     * @author Amr Elkady (amrelkady93@gmail.com)
      */
     @Test
     @Override
@@ -185,7 +185,7 @@ public class SystemUserHasRoleRepositoryTest implements BaseRepositoryTest {
     /**
      * test FindAllDeleted Method
      * {@link org.eventhub.dal.dao.SystemUserHasRoleRepository}
-     * @author Amr Elkady <amrelkady93@gmail.com>
+     * @author Amr Elkady (amrelkady93@gmail.com)
      */
     @Test
     @Override
@@ -209,7 +209,7 @@ public class SystemUserHasRoleRepositoryTest implements BaseRepositoryTest {
     /**
      * test FindByName Method
      * {@link org.eventhub.dal.dao.SystemUserHasRoleRepository}
-     * @author Amr Elkady <amrelkady93@gmail.com>
+     * @author Amr Elkady (amrelkady93@gmail.com)
      */
     @Test
     public void testFindByName() {
@@ -219,7 +219,7 @@ public class SystemUserHasRoleRepositoryTest implements BaseRepositoryTest {
     /**
      * test FindAll Method
      * {@link org.eventhub.dal.dao.SystemUserHasRoleRepository}
-     * @author Amr Elkady <amrelkady93@gmail.com>
+     * @author Amr Elkady (amrelkady93@gmail.com)
      */
     @Test
     @Override
@@ -242,7 +242,7 @@ public class SystemUserHasRoleRepositoryTest implements BaseRepositoryTest {
     /**
      * test FindAllByRole Method
      * {@link org.eventhub.dal.dao.SystemUserHasRoleRepository}
-     * @author Amr Elkady <amrelkady93@gmail.com>
+     * @author Amr Elkady (amrelkady93@gmail.com)
      */
     @Test
     public void testFindAllByRole(){
@@ -265,7 +265,7 @@ public class SystemUserHasRoleRepositoryTest implements BaseRepositoryTest {
     /**
      * test FindAllByUserSystem Method
      * {@link org.eventhub.dal.dao.SystemUserHasRoleRepository}
-     * @author Amr Elkady <amrelkady93@gmail.com>
+     * @author Amr Elkady (amrelkady93@gmail.com)
      */
     @Test
     public void testFindAllByUserSystem(){

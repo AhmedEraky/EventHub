@@ -9,7 +9,7 @@ import java.util.List;
 
 /**
  * SessionInstructorRepository has methods to retrieve Data from database based on some properties
- * @author Amr Elkady <amrelkady93@gmail.com>
+ * @author Amr Elkady (amrelkady93@gmail.com)
  */
 public interface SessionInstructorRepository extends BaseRepository<SessionInstructor> {
 

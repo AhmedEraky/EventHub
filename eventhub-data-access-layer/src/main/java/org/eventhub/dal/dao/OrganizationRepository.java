@@ -13,7 +13,7 @@ import java.util.List;
 
 /**
  * OrganizationRepository has method to retrieve Data from database based on some properties
- * @author Amr Elkady <amrelkady93@gmail.com>
+ * @author Amr Elkady (amrelkady93@gmail.com)
  */
 public interface OrganizationRepository extends BaseRepository<Organization> {
 
@@ -21,7 +21,7 @@ public interface OrganizationRepository extends BaseRepository<Organization> {
      * retrieve list of {@link org.eventhub.common.model.entity.Organization} based on name
      * @param name of {@link org.eventhub.common.model.entity.Organization}
      * @return {@link org.eventhub.common.model.entity.Organization}
-     * @author Amr Elkady <amrelkady93@gmail.com>
+     * @author Amr Elkady (amrelkady93@gmail.com)
      */
     @Query(value = "from Organization o where lower(o.name) like lower(CONCAT('%',?1, '%')) and o.deleted=0")
     List<Organization> findAllByName(String name, Pageable pageable);
@@ -30,7 +30,7 @@ public interface OrganizationRepository extends BaseRepository<Organization> {
      * retrieve  {@link org.eventhub.common.model.entity.Organization} based on {@link org.eventhub.common.model.entity.SystemUser}
      * @param systemUser {@link org.eventhub.common.model.entity.SystemUser}
      * @return {@link org.eventhub.common.model.entity.Organization}
-     * @author Amr Elkady <amrelkady93@gmail.com>
+     * @author Amr Elkady (amrelkady93@gmail.com)
      */
     @Query(value = "from Organization o where  ?1 member of o.systemUsers and o.deleted=0")
     Organization findBySystemUsers(SystemUser systemUser);
@@ -39,7 +39,7 @@ public interface OrganizationRepository extends BaseRepository<Organization> {
      * retrieve  {@link org.eventhub.common.model.entity.Organization} based on {@link org.eventhub.common.model.entity.Event}
      * @param event  {@link org.eventhub.common.model.entity.Event}
      * @return {@link org.eventhub.common.model.entity.Organization}
-     * @author Amr Elkady <amrelkady93@gmail.com>
+     * @author Amr Elkady (amrelkady93@gmail.com)
      */
     @Query(value = "from Organization o where ?1 member of o.events and o.deleted=0")
     Organization findByEvents(Event event);
@@ -48,7 +48,7 @@ public interface OrganizationRepository extends BaseRepository<Organization> {
      * retrieve  {@link org.eventhub.common.model.entity.Organization} based on {@link org.eventhub.common.model.entity.Event}
      * @param vip  {@link org.eventhub.common.model.entity.Vip}
      * @return {@link org.eventhub.common.model.entity.Organization}
-     * @author Amr Elkady <amrelkady93@gmail.com>
+     * @author Amr Elkady (amrelkady93@gmail.com)
      */
     @Query(value = "from Organization o where ?1 member of o.vips and o.deleted=0")
     Organization findByVips(Vip vip);

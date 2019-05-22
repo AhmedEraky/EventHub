@@ -17,7 +17,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 /**
  * Test class for {@link org.eventhub.dal.dao.PrivilegeRepository}
- * @author Menna Ahmed <menna4a.helmi@gmail.com>
+ * @author Menna Ahmed (menna4a.helmi@gmail.com)
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = {Config.class}, loader = AnnotationConfigContextLoader.class)
@@ -38,7 +38,7 @@ public class PrivilegeRepositoryTest implements BaseRepositoryTest{
     /**
      * test count Method
      * {@link org.eventhub.dal.dao.PrivilegeRepository}
-     * @author Menna Ahmed <menna4a.helmi@gmail.com>
+     * @author Menna Ahmed (menna4a.helmi@gmail.com)
      */
     @Test
     @Override
@@ -54,7 +54,7 @@ public class PrivilegeRepositoryTest implements BaseRepositoryTest{
     /**
      * test delete Method
      * {@link org.eventhub.dal.dao.PrivilegeRepository}
-     * @author Menna Ahmed <menna4a.helmi@gmail.com>
+     * @author Menna Ahmed (menna4a.helmi@gmail.com)
      */
     @Test
     @Override
@@ -69,7 +69,7 @@ public class PrivilegeRepositoryTest implements BaseRepositoryTest{
     /**
      * test delete by id Method
      * {@link org.eventhub.dal.dao.PrivilegeRepository}
-     * @author Menna Ahmed <menna4a.helmi@gmail.com>
+     * @author Menna Ahmed (menna4a.helmi@gmail.com)
      */
     @Test
     @Override
@@ -84,7 +84,7 @@ public class PrivilegeRepositoryTest implements BaseRepositoryTest{
     /**
      * test soft delete Method
      * {@link org.eventhub.dal.dao.PrivilegeRepository}
-     * @author Menna Ahmed <menna4a.helmi@gmail.com>
+     * @author Menna Ahmed (menna4a.helmi@gmail.com)
      */
     @Test
     @Override
@@ -100,7 +100,7 @@ public class PrivilegeRepositoryTest implements BaseRepositoryTest{
     /**
      * test find Privilege by name Method
      * {@link org.eventhub.dal.dao.PrivilegeRepository}
-     * @author Menna Ahmed <menna4a.helmi@gmail.com>
+     * @author Menna Ahmed (menna4a.helmi@gmail.com)
      */
     @Test
     public void testFindByName() {
@@ -110,7 +110,7 @@ public class PrivilegeRepositoryTest implements BaseRepositoryTest{
     /**
      * test save Method
      * {@link org.eventhub.dal.dao.PrivilegeRepository}
-     * @author Menna Ahmed <menna4a.helmi@gmail.com>
+     * @author Menna Ahmed (menna4a.helmi@gmail.com)
      */
     @Test
     @Override
@@ -125,7 +125,7 @@ public class PrivilegeRepositoryTest implements BaseRepositoryTest{
     /**
      * test find all deleted Privilege Method
      * {@link org.eventhub.dal.dao.PrivilegeRepository}
-     * @author Menna Ahmed <menna4a.helmi@gmail.com>
+     * @author Menna Ahmed (menna4a.helmi@gmail.com)
      */
     @Test
     @Override
@@ -141,7 +141,7 @@ public class PrivilegeRepositoryTest implements BaseRepositoryTest{
     /**
      * test find all privileges Method
      * {@link org.eventhub.dal.dao.PrivilegeRepository}
-     * @author Menna Ahmed <menna4a.helmi@gmail.com>
+     * @author Menna Ahmed (menna4a.helmi@gmail.com)
      */
     @Test
     @Override
@@ -157,7 +157,7 @@ public class PrivilegeRepositoryTest implements BaseRepositoryTest{
     /**
      * test update Method
      * {@link org.eventhub.dal.dao.PrivilegeRepository}
-     * @author Menna Ahmed <menna4a.helmi@gmail.com>
+     * @author Menna Ahmed (menna4a.helmi@gmail.com)
      */
     @Test
     @Override
@@ -174,7 +174,7 @@ public class PrivilegeRepositoryTest implements BaseRepositoryTest{
     /**
      * test find Privilege by RolePrivilege Method
      * {@link org.eventhub.dal.dao.PrivilegeRepository}
-     * @author Menna Ahmed <menna4a.helmi@gmail.com>
+     * @author Menna Ahmed (menna4a.helmi@gmail.com)
      */
     @Test
     public void testFindByRolePrivilege(){
@@ -192,7 +192,7 @@ public class PrivilegeRepositoryTest implements BaseRepositoryTest{
     /**
      * instantiate Privilege Method
      * {@link org.eventhub.dal.dao.PrivilegeRepository}
-     * @author Menna Ahmed <menna4a.helmi@gmail.com>
+     * @author Menna Ahmed (menna4a.helmi@gmail.com)
      */
     private Privilege preparePrivilegeToSave(){
         Privilege privilege = new Privilege(null,"user");
@@ -201,7 +201,7 @@ public class PrivilegeRepositoryTest implements BaseRepositoryTest{
     /**
      * instantiate RolePrivilege Method
      * {@link org.eventhub.dal.dao.PrivilegeRepository}
-     * @author Menna Ahmed <menna4a.helmi@gmail.com>
+     * @author Menna Ahmed (menna4a.helmi@gmail.com)
      */
     private RolePrivilege prepareRolePrivilegeToSave(Privilege privilege, Role role){
         RolePrivilege rolePrivilege = new RolePrivilege(null);

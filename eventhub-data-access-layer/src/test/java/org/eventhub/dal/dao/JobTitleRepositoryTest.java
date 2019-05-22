@@ -16,7 +16,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 /**
  * Test class for {@link org.eventhub.dal.dao.JobTitleRepository}
- * @author Menna Ahmed <menna4a.helmi@gmail.com>
+ * @author Menna Ahmed (menna4a.helmi@gmail.com)
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = {Config.class}, loader = AnnotationConfigContextLoader.class)
@@ -38,7 +38,7 @@ public class JobTitleRepositoryTest implements BaseRepositoryTest{
     /**
      * test count Method
      * {@link org.eventhub.dal.dao.JobTitleRepository}
-     * @author Menna Ahmed <menna4a.helmi@gmail.com>
+     * @author Menna Ahmed (menna4a.helmi@gmail.com)
      */
     @Test
     @Override
@@ -54,7 +54,7 @@ public class JobTitleRepositoryTest implements BaseRepositoryTest{
     /**
      * test delete Method
      * {@link org.eventhub.dal.dao.JobTitleRepository}
-     * @author Menna Ahmed <menna4a.helmi@gmail.com>
+     * @author Menna Ahmed (menna4a.helmi@gmail.com)
      */
     @Test
     @Override
@@ -69,7 +69,7 @@ public class JobTitleRepositoryTest implements BaseRepositoryTest{
     /**
      * test delete by id Method
      * {@link org.eventhub.dal.dao.JobTitleRepository}
-     * @author Menna Ahmed <menna4a.helmi@gmail.com>
+     * @author Menna Ahmed (menna4a.helmi@gmail.com)
      */
     @Test
     @Override
@@ -85,7 +85,7 @@ public class JobTitleRepositoryTest implements BaseRepositoryTest{
     /**
      * test soft delete Method
      * {@link org.eventhub.dal.dao.JobTitleRepository}
-     * @author Menna Ahmed <menna4a.helmi@gmail.com>
+     * @author Menna Ahmed (menna4a.helmi@gmail.com)
      */
     @Test
     @Override
@@ -100,7 +100,7 @@ public class JobTitleRepositoryTest implements BaseRepositoryTest{
     /**
      * test find JobTitle by name Method
      * {@link org.eventhub.dal.dao.JobTitleRepository}
-     * @author Menna Ahmed <menna4a.helmi@gmail.com>
+     * @author Menna Ahmed (menna4a.helmi@gmail.com)
      */
     @Test
     public void testFindByName() {
@@ -115,7 +115,7 @@ public class JobTitleRepositoryTest implements BaseRepositoryTest{
     /**
      * test save Method
      * {@link org.eventhub.dal.dao.JobTitleRepository}
-     * @author Menna Ahmed <menna4a.helmi@gmail.com>
+     * @author Menna Ahmed (menna4a.helmi@gmail.com)
      */
     @Test
     @Override
@@ -131,7 +131,7 @@ public class JobTitleRepositoryTest implements BaseRepositoryTest{
     /**
      * test find all deleted JobTitles Method
      * {@link org.eventhub.dal.dao.JobTitleRepository}
-     * @author Menna Ahmed <menna4a.helmi@gmail.com>
+     * @author Menna Ahmed (menna4a.helmi@gmail.com)
      */
     @Test
     @Override
@@ -148,7 +148,7 @@ public class JobTitleRepositoryTest implements BaseRepositoryTest{
     /**
      * test find all JobTitles Method
      * {@link org.eventhub.dal.dao.JobTitleRepository}
-     * @author Menna Ahmed <menna4a.helmi@gmail.com>
+     * @author Menna Ahmed (menna4a.helmi@gmail.com)
      */
     @Test
     @Override
@@ -164,7 +164,7 @@ public class JobTitleRepositoryTest implements BaseRepositoryTest{
     /**
      * test update Method
      * {@link org.eventhub.dal.dao.JobTitleRepository}
-     * @author Menna Ahmed <menna4a.helmi@gmail.com>
+     * @author Menna Ahmed (menna4a.helmi@gmail.com)
      */
     @Test
     @Override

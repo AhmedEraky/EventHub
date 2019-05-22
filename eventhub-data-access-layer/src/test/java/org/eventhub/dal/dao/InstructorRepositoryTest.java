@@ -21,7 +21,7 @@ import java.util.Optional;
 
 /**
  * Test class for {@link org.eventhub.dal.dao.InstructorRepository}
- * @author Menna Ahmed <menna4a.helmi@gmail.com>
+ * @author Menna Ahmed (menna4a.helmi@gmail.com)
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = {Config.class}, loader = AnnotationConfigContextLoader.class)
@@ -41,7 +41,7 @@ public class InstructorRepositoryTest implements BaseRepositoryTest
     /**
      * test count Method
      * {@link org.eventhub.dal.dao.InstructorRepository}
-     * @author Menna Ahmed <menna4a.helmi@gmail.com>
+     * @author Menna Ahmed (menna4a.helmi@gmail.com)
      */
     @Override
     @Test
@@ -59,7 +59,7 @@ public class InstructorRepositoryTest implements BaseRepositoryTest
     /**
      * test delete Method
      * {@link org.eventhub.dal.dao.InstructorRepository}
-     * @author Menna Ahmed <menna4a.helmi@gmail.com>
+     * @author Menna Ahmed (menna4a.helmi@gmail.com)
      */
     @Override
     @Test
@@ -77,7 +77,7 @@ public class InstructorRepositoryTest implements BaseRepositoryTest
     /**
      * test delete by Id Method
      * {@link org.eventhub.dal.dao.InstructorRepository}
-     * @author Menna Ahmed <menna4a.helmi@gmail.com>
+     * @author Menna Ahmed (menna4a.helmi@gmail.com)
      */
     @Test
     @Override
@@ -95,7 +95,7 @@ public class InstructorRepositoryTest implements BaseRepositoryTest
     /**
      * test soft delete Method
      * {@link org.eventhub.dal.dao.InstructorRepository}
-     * @author Menna Ahmed <menna4a.helmi@gmail.com>
+     * @author Menna Ahmed (menna4a.helmi@gmail.com)
      */
     @Test
     @Override
@@ -114,7 +114,7 @@ public class InstructorRepositoryTest implements BaseRepositoryTest
     /**
      * test find by system user Method
      * {@link org.eventhub.dal.dao.InstructorRepository}
-     * @author Menna Ahmed <menna4a.helmi@gmail.com>
+     * @author Menna Ahmed (menna4a.helmi@gmail.com)
      */
     @Test
     public void testFindAllBySystemUser(){
@@ -132,7 +132,7 @@ public class InstructorRepositoryTest implements BaseRepositoryTest
     /**
      * test save Method
      * {@link org.eventhub.dal.dao.InstructorRepository}
-     * @author Menna Ahmed <menna4a.helmi@gmail.com>
+     * @author Menna Ahmed (menna4a.helmi@gmail.com)
      */
     @Test
     @Override
@@ -149,7 +149,7 @@ public class InstructorRepositoryTest implements BaseRepositoryTest
     /**
      * test find all deleted Method
      * {@link org.eventhub.dal.dao.InstructorRepository}
-     * @author Menna Ahmed <menna4a.helmi@gmail.com>
+     * @author Menna Ahmed (menna4a.helmi@gmail.com)
      */
     @Test
     @Override
@@ -173,7 +173,7 @@ public class InstructorRepositoryTest implements BaseRepositoryTest
     /**
      * test find all Method
      * {@link org.eventhub.dal.dao.InstructorRepository}
-     * @author Menna Ahmed <menna4a.helmi@gmail.com>
+     * @author Menna Ahmed (menna4a.helmi@gmail.com)
      */
     @Test
     @Override
@@ -193,7 +193,7 @@ public class InstructorRepositoryTest implements BaseRepositoryTest
     /**
      * test update Method
      * {@link org.eventhub.dal.dao.InstructorRepository}
-     * @author Menna Ahmed <menna4a.helmi@gmail.com>
+     * @author Menna Ahmed (menna4a.helmi@gmail.com)
      */
     @Test
     @Override
@@ -213,7 +213,7 @@ public class InstructorRepositoryTest implements BaseRepositoryTest
     /**
      * test find all by bio Method
      * {@link org.eventhub.dal.dao.InstructorRepository}
-     * @author Menna Ahmed <menna4a.helmi@gmail.com>
+     * @author Menna Ahmed (menna4a.helmi@gmail.com)
      */
     @Test
     public void testFindAllByBio(){
@@ -232,7 +232,7 @@ public class InstructorRepositoryTest implements BaseRepositoryTest
     /**
      * test find by job title Method
      * {@link org.eventhub.dal.dao.InstructorRepository}
-     * @author Menna Ahmed <menna4a.helmi@gmail.com>
+     * @author Menna Ahmed (menna4a.helmi@gmail.com)
      */
     @Test
     public void testFindByJobTitle(){
@@ -250,7 +250,7 @@ public class InstructorRepositoryTest implements BaseRepositoryTest
     /**
      * test find by id Method
      * {@link org.eventhub.dal.dao.InstructorRepository}
-     * @author Menna Ahmed <menna4a.helmi@gmail.com>
+     * @author Menna Ahmed (menna4a.helmi@gmail.com)
      */
     @Test
     public void testFindById(){
@@ -266,7 +266,7 @@ public class InstructorRepositoryTest implements BaseRepositoryTest
     /**
      *  to instatiate Instructor to be Used
      * {@link org.eventhub.dal.dao.InstructorRepository}
-     * @author Menna Ahmed <menna4a.helmi@gmail.com>
+     * @author Menna Ahmed (menna4a.helmi@gmail.com)
      */
     private Instructor prepareInstructorToSave(SystemUser systemUser){
         Instructor instructor = new Instructor();
@@ -280,7 +280,7 @@ public class InstructorRepositoryTest implements BaseRepositoryTest
     /**
      *  to instatiate SystemUser to be Used
      * {@link org.eventhub.dal.dao.InstructorRepository}
-     * @author Menna Ahmed <menna4a.helmi@gmail.com>
+     * @author Menna Ahmed (menna4a.helmi@gmail.com)
      */
     private SystemUser prepareSystemUserToSave(){
         SystemUser systemUser =  new SystemUser(null,"MennaAhmed","Menna","41111","menna4a.helmi@gmail.com");

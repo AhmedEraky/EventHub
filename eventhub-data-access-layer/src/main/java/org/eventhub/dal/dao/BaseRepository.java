@@ -28,7 +28,7 @@ public interface BaseRepository<T extends BaseEntity> extends JpaRepository<T, U
     /**
      *  soft delete an object
      * @param uuid the id of the entity
-     * @author Aya Taha
+     * @author Aya Taha (aya.taha.ali.93@gmail.com)
      */
     @Query("update #{#entityName} e set e.deleted=true where e.uuid=?1")
     @Modifying
@@ -57,7 +57,7 @@ public interface BaseRepository<T extends BaseEntity> extends JpaRepository<T, U
     /**
      *  retrieve the existing entities
      * @return list of entity
-     * @author Aya Taha
+     * @author Aya Taha (aya.taha.ali.93@gmail.com)
      */
     @Query("from #{#entityName} e where e.deleted=0")
     public Page<T> findAll(Pageable pageable);
@@ -67,7 +67,7 @@ public interface BaseRepository<T extends BaseEntity> extends JpaRepository<T, U
     /**
      *  retrieve deleted entities
      * @return list of deleted entities
-     * @author Aya Taha
+     * @author Aya Taha (aya.taha.ali.93@gmail.com)
      */
     @Query("from #{#entityName} e where e.deleted=1")
     public List<T> findAllDeleted(Pageable pageable);

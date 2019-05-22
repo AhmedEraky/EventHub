@@ -20,7 +20,7 @@ import static org.junit.Assert.*;
 
 /**
  * Test class for {@link org.eventhub.dal.dao.SystemUserPhoneRepository}
- * @author Amr Elkady <amrelkady93@gmail.com>
+ * @author Amr Elkady (amrelkady93@gmail.com)
  */
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -38,7 +38,7 @@ public class SystemUserPhoneRepositoryTest implements BaseRepositoryTest {
     /**
      * test count Method
      * {@link org.eventhub.dal.dao.SystemUserPhoneRepository}
-     * @author Amr Elkady <amrelkady93@gmail.com>
+     * @author Amr Elkady (amrelkady93@gmail.com)
      */
     @Test
     @Override
@@ -57,7 +57,7 @@ public class SystemUserPhoneRepositoryTest implements BaseRepositoryTest {
     /**
      * test Save Method
      * {@link org.eventhub.dal.dao.SystemUserPhoneRepository}
-     * @author Amr Elkady <amrelkady93@gmail.com>
+     * @author Amr Elkady (amrelkady93@gmail.com)
      */
     @Test
     @Override
@@ -75,7 +75,7 @@ public class SystemUserPhoneRepositoryTest implements BaseRepositoryTest {
     /**
      * test Update Method
      * {@link org.eventhub.dal.dao.SystemUserPhoneRepository}
-     * @author Amr Elkady <amrelkady93@gmail.com>
+     * @author Amr Elkady (amrelkady93@gmail.com)
      */
     @Test
     @Override
@@ -95,7 +95,7 @@ public class SystemUserPhoneRepositoryTest implements BaseRepositoryTest {
     /**
      * test FindAllDeleted Method
      * {@link org.eventhub.dal.dao.SystemUserPhoneRepository}
-     * @author Amr Elkady <amrelkady93@gmail.com>
+     * @author Amr Elkady (amrelkady93@gmail.com)
      */
     @Test
     @Override
@@ -115,7 +115,7 @@ public class SystemUserPhoneRepositoryTest implements BaseRepositoryTest {
     /**
      * test Delete Method
      * {@link org.eventhub.dal.dao.SystemUserPhoneRepository}
-     * @author Amr Elkady <amrelkady93@gmail.com>
+     * @author Amr Elkady (amrelkady93@gmail.com)
      */
     @Test
     @Override
@@ -135,7 +135,7 @@ public class SystemUserPhoneRepositoryTest implements BaseRepositoryTest {
     /**
      * test SoftDelete Method
      * {@link org.eventhub.dal.dao.SystemUserPhoneRepository}
-     * @author Amr Elkady <amrelkady93@gmail.com>
+     * @author Amr Elkady (amrelkady93@gmail.com)
      */
     @Test
     @Override
@@ -155,7 +155,7 @@ public class SystemUserPhoneRepositoryTest implements BaseRepositoryTest {
     /**
      * test FindAll Method
      * {@link org.eventhub.dal.dao.SystemUserPhoneRepository}
-     * @author Amr Elkady <amrelkady93@gmail.com>
+     * @author Amr Elkady (amrelkady93@gmail.com)
      */
     @Test
     @Override
@@ -174,7 +174,7 @@ public class SystemUserPhoneRepositoryTest implements BaseRepositoryTest {
     /**
      * test FindByName Method
      * {@link org.eventhub.dal.dao.SystemUserPhoneRepository}
-     * @author Amr Elkady <amrelkady93@gmail.com>
+     * @author Amr Elkady (amrelkady93@gmail.com)
      */
     @Test
     public void testFindByName() {
@@ -184,7 +184,7 @@ public class SystemUserPhoneRepositoryTest implements BaseRepositoryTest {
     /**
      * test DeleteByID Method
      * {@link org.eventhub.dal.dao.SystemUserPhoneRepository}
-     * @author Amr Elkady <amrelkady93@gmail.com>
+     * @author Amr Elkady (amrelkady93@gmail.com)
      */
     @Test
     @Override
@@ -204,7 +204,7 @@ public class SystemUserPhoneRepositoryTest implements BaseRepositoryTest {
     /**
      * test FindAllByUserSystem Method
      * {@link org.eventhub.dal.dao.SystemUserPhoneRepository}
-     * @author Amr Elkady <amrelkady93@gmail.com>
+     * @author Amr Elkady (amrelkady93@gmail.com)
      */
     @Test
     public void testFindAllByUserSystem(){

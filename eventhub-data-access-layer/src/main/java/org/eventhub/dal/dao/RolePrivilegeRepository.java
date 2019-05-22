@@ -14,7 +14,7 @@ import java.util.List;
 
 /**
  * RolePrivilegeRepository has methods to retrieve Data from database based on some properties
- * @author Amr Elkady <amrelkady93@gmail.com>
+ * @author Amr Elkady (amrelkady93@gmail.com)
  */
 public interface RolePrivilegeRepository extends BaseRepository<RolePrivilege> {
 
@@ -22,7 +22,7 @@ public interface RolePrivilegeRepository extends BaseRepository<RolePrivilege> {
      * retrieve  {@link org.eventhub.common.model.entity.RolePrivilege} based on {@link org.eventhub.common.model.entity.Privilege}
      * @param privilege {@link org.eventhub.common.model.entity.Privilege}
      * @return {@link org.eventhub.common.model.entity.RolePrivilege}
-     * @author Amr Elkady <amrelkady93@gmail.com>
+     * @author Amr Elkady (amrelkady93@gmail.com)
      */
     @Query(value = "from RolePrivilege rp where rp.privilege=?1 and rp.deleted=0")
     List<RolePrivilege> findAllByPrivilege(Privilege privilege, Pageable pageable);
@@ -31,7 +31,7 @@ public interface RolePrivilegeRepository extends BaseRepository<RolePrivilege> {
      * retrieve  {@link org.eventhub.common.model.entity.RolePrivilege} based on {@link org.eventhub.common.model.entity.Role}
      * @param role {@link org.eventhub.common.model.entity.Role}
      * @return {@link org.eventhub.common.model.entity.RolePrivilege}
-     * @author Amr Elkady <amrelkady93@gmail.com>
+     * @author Amr Elkady (amrelkady93@gmail.com)
      */
     @Query(value = "from RolePrivilege rp where rp.role=?1 and rp.deleted=0")
     List<RolePrivilege> findAllByRole(Role role, Pageable pageable);

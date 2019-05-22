@@ -17,7 +17,7 @@ import static org.junit.Assert.*;
 
 /**
  * Test class for {@link org.eventhub.dal.dao.VipRepository}
- * @author Amr Elkady <amrelkady93@gmail.com>
+ * @author Amr Elkady (amrelkady93@gmail.com)
  */
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -37,7 +37,7 @@ public class VipRepositoryTest implements BaseRepositoryTest {
     /**
      * test count Method
      * {@link org.eventhub.dal.dao.VipRepository}
-     * @author Amr Elkady <amrelkady93@gmail.com>
+     * @author Amr Elkady (amrelkady93@gmail.com)
      */
     @Test
     @Override
@@ -58,7 +58,7 @@ public class VipRepositoryTest implements BaseRepositoryTest {
     /**
      * test Save Method
      * {@link org.eventhub.dal.dao.VipRepository}
-     * @author Amr Elkady <amrelkady93@gmail.com>
+     * @author Amr Elkady (amrelkady93@gmail.com)
      */
     @Test
     @Override
@@ -79,7 +79,7 @@ public class VipRepositoryTest implements BaseRepositoryTest {
     /**
      * test FindByName Method
      * {@link org.eventhub.dal.dao.VipRepository}
-     * @author Amr Elkady <amrelkady93@gmail.com>
+     * @author Amr Elkady (amrelkady93@gmail.com)
      */
     @Test
     public void testFindByName() {
@@ -100,7 +100,7 @@ public class VipRepositoryTest implements BaseRepositoryTest {
     /**
      * test Delete Method
      * {@link org.eventhub.dal.dao.VipRepository}
-     * @author Amr Elkady <amrelkady93@gmail.com>
+     * @author Amr Elkady (amrelkady93@gmail.com)
      */
     @Test
     @Override
@@ -123,7 +123,7 @@ public class VipRepositoryTest implements BaseRepositoryTest {
     /**
      * test DeleteByID Method
      * {@link org.eventhub.dal.dao.VipRepository}
-     * @author Amr Elkady <amrelkady93@gmail.com>
+     * @author Amr Elkady (amrelkady93@gmail.com)
      */
     @Test
     @Override
@@ -146,7 +146,7 @@ public class VipRepositoryTest implements BaseRepositoryTest {
     /**
      * test SoftDelete Method
      * {@link org.eventhub.dal.dao.VipRepository}
-     * @author Amr Elkady <amrelkady93@gmail.com>
+     * @author Amr Elkady (amrelkady93@gmail.com)
      */
     @Test
     @Override
@@ -168,7 +168,7 @@ public class VipRepositoryTest implements BaseRepositoryTest {
     /**
      * test FindAllDeleted Method
      * {@link org.eventhub.dal.dao.VipRepository}
-     * @author Amr Elkady <amrelkady93@gmail.com>
+     * @author Amr Elkady (amrelkady93@gmail.com)
      */
     @Test
     @Override
@@ -191,7 +191,7 @@ public class VipRepositoryTest implements BaseRepositoryTest {
     /**
      * test FindAll Method
      * {@link org.eventhub.dal.dao.VipRepository}
-     * @author Amr Elkady <amrelkady93@gmail.com>
+     * @author Amr Elkady (amrelkady93@gmail.com)
      */
     @Test
     @Override
@@ -212,7 +212,7 @@ public class VipRepositoryTest implements BaseRepositoryTest {
     /**
      * test Update Method
      * {@link org.eventhub.dal.dao.VipRepository}
-     * @author Amr Elkady <amrelkady93@gmail.com>
+     * @author Amr Elkady (amrelkady93@gmail.com)
      */
     @Test
     @Override
@@ -235,7 +235,7 @@ public class VipRepositoryTest implements BaseRepositoryTest {
     /**
      * test FindByJobTitle Method
      * {@link org.eventhub.dal.dao.VipRepository}
-     * @author Amr Elkady <amrelkady93@gmail.com>
+     * @author Amr Elkady (amrelkady93@gmail.com)
      */
     @Test
     public void testFindByJobTitle(){
@@ -255,7 +255,7 @@ public class VipRepositoryTest implements BaseRepositoryTest {
     /**
      * test FindAllByOrganization Method
      * {@link org.eventhub.dal.dao.VipRepository}
-     * @author Amr Elkady <amrelkady93@gmail.com>
+     * @author Amr Elkady (amrelkady93@gmail.com)
      */
     @Test
     public void testFindAllByOrganization(){
