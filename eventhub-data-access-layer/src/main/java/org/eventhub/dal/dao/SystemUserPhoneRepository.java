@@ -9,7 +9,6 @@ import org.eventhub.common.model.entity.*;
 import java.util.List;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.Query;
-import org.springframework.stereotype.Repository;
 
 /**
  *  SystemUserPhone interface has the needed methods to retrieve
