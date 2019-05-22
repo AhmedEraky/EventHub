@@ -2,10 +2,8 @@ package org.eventhub.dal.dao;
 
 
 import org.eventhub.common.model.entity.Instructor;
-import org.eventhub.common.model.entity.JobTitle;
-import org.eventhub.common.model.entity.SessionInstructor;
 import org.eventhub.common.model.entity.SystemUser;
-import org.eventhub.dal.config.Config;
+import org.eventhub.dal.config.AppConfig;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -24,7 +22,7 @@ import java.util.Optional;
  * @author Menna Ahmed <menna4a.helmi@gmail.com>
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = {Config.class}, loader = AnnotationConfigContextLoader.class)
+@ContextConfiguration(classes = {AppConfig.class}, loader = AnnotationConfigContextLoader.class)
 @Transactional
 public class InstructorRepositoryTest implements BaseRepositoryTest
 {
