@@ -33,14 +33,14 @@ public class WebViewsConfig implements WebMvcConfigurer {
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/resources/**").addResourceLocations("/statics/")
+        registry.addResourceHandler("/resources/**").addResourceLocations("/resources/")
                 .setCacheControl(CacheControl.maxAge(2, TimeUnit.HOURS).cachePublic());
     }
 
     @Bean
     public ThemeSource themeSource() {
         ResourceBundleThemeSource themeSource = new ResourceBundleThemeSource();
-        themeSource.setBasenamePrefix("theme/");
+        themeSource.setBasenamePrefix("org/eventhub/web/config/theme/");
         return themeSource;
     }
 
@@ -54,7 +54,7 @@ public class WebViewsConfig implements WebMvcConfigurer {
     @Bean("messageSource")
     public MessageSource messageSource() {
         ReloadableResourceBundleMessageSource messageSource=new ReloadableResourceBundleMessageSource();
-        messageSource.setBasename("file:/org/eventhub/web/config/locale/messages");
+        messageSource.setBasename("classpath:org/eventhub/web/config/locale/messages");
         messageSource.setDefaultEncoding("UTF-8");
         messageSource.setUseCodeAsDefaultMessage(true);
         return messageSource;
