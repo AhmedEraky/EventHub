@@ -5,7 +5,8 @@
  */
 package org.eventhub.dal.aspects;
 
-
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
@@ -13,39 +14,36 @@ import org.eventhub.common.model.entity.SystemUser;
 import org.eventhub.dal.utils.EncryptionUtils;
 
 /**
- * @Description this aspect class to encrypt password before insert it in DataBase
+ * this aspect class to encrypt password before insert it in DataBase
+ *
  * @author Amr Elkady <amrelkady93@gmail.com>
  */
 @Aspect
 public class EncryptPassword {
-    
+
     EncryptionUtils passwordencryptionUtility;
 
-    
     /**
      * encrypt password of {@link org.eventhub.common.model.entity.SystemUser}
+     *
      * @param joinPoint
-     * @return Object the result of insert object 
-     *  
+     * @return Object the result of insert object
+     *
      */
-    @Around("execution(*.com.eventhub.model.dal.daos.SystemUserRepository.insert(..))")
+    @Around("execution(* com.eventhub.model.dal.daos.SystemUserRepository.save(..))")
     public Object beforeInsert(ProceedingJoinPoint joinPoint) {
-        
-        Object result = null;
-        passwordencryptionUtility=
-                new EncryptionUtils();
+
+        Object[] arg = joinPoint.getArgs();
+        SystemUser systemUser = (SystemUser) arg[0];
+        String plainPassword = systemUser.getPassword();
+        String newPassword = EncryptionUtils.hash(plainPassword);
+        systemUser.setPassword(newPassword);
         try {
-            Object[] arg = joinPoint.getArgs();
-            SystemUser systemUser = (SystemUser) arg[0];
-            String plainPassword = systemUser.getPassword();
-            String newPassword=
-                    passwordencryptionUtility.encrypt(plainPassword);
-            systemUser.setPassword(new String(newPassword));
-            result = joinPoint.proceed();
+            return joinPoint.proceed();
         } catch (Throwable ex) {
-            ex.printStackTrace();
+            throw new RuntimeException(ex);
         }
-        return result;
+
     }
 
 }
