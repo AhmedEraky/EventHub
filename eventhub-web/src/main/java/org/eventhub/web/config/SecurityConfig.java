@@ -13,7 +13,6 @@ import javax.sql.DataSource;
 
 @Configuration
 @ComponentScan("org.eventhub.web")
-@PropertySource("classpath:org/eventhub/web/config/datastore.properties")
 @EnableWebSecurity
 @Import(AppConfig.class)
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
@@ -38,8 +37,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         auth.jdbcAuthentication().dataSource(datasource).usersByUsernameQuery(
                 "select email,password,deleted from system_user where email=? ").rolePrefix("ROLE_").authoritiesByUsernameQuery(
         "select email,user_name from system_user where email=?");
-
-        auth.getDefaultUserDetailsService().loadUserByUsername("aa1@gmail.com");
 
         auth.inMemoryAuthentication().withUser("a").password("a").roles("USER");
     }
