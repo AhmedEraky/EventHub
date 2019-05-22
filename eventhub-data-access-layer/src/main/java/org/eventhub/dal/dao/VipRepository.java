@@ -21,7 +21,7 @@ public interface VipRepository extends BaseRepository<Vip> {
 
     /**
      * retrieve Vip based on name
-     * @param name
+     * @param name of {@link org.eventhub.common.model.entity.Vip}
      * @return Vip {@link org.eventhub.common.model.entity.Vip}
      * @author Aya Taha (aya.taha.ali.93@gmail.com)
      */
@@ -30,7 +30,7 @@ public interface VipRepository extends BaseRepository<Vip> {
 
     /**
      *  retrieve Vip based on VipSpeaksInSessions
-     * @param vipSpeaksInSession
+     * @param vipSpeaksInSession of {@link org.eventhub.common.model.entity.VipSpeaksInSession}
      * {@link org.eventhub.common.model.entity.VipSpeaksInSession}
      * @return Vip {@link org.eventhub.common.model.entity.Vip}
      * @author Aya Taha (aya.taha.ali.93@gmail.com)

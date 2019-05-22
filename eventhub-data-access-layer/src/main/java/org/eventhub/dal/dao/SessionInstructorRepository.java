@@ -5,7 +5,6 @@
  */
 package org.eventhub.dal.dao;
 import org.eventhub.common.model.entity.*;
-import java.util.List;
 
 /**
  * SessionInstructorRepository has methods to retrieve Data from database based on some properties
