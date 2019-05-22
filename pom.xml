@@ -32,6 +32,9 @@
         <hibernate.core>5.4.1.Final</hibernate.core>
         <hibernate.validator>6.0.16.Final</hibernate.validator>
 
+        <jstl>1.2</jstl>
+        <apache.tiles>3.0.7</apache.tiles>
+
         <maven.javadoc>3.1.0</maven.javadoc>
         <maven.war>3.2.2</maven.war>
 
@@ -151,6 +154,18 @@
                 <groupId>com.h2database</groupId>
                 <artifactId>h2</artifactId>
                 <version>${h2}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.tiles</groupId>
+                <artifactId>tiles-extras</artifactId>
+                <version>${apache.tiles}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>jstl</artifactId>
+                <version>${jstl}</version>
             </dependency>
 
         </dependencies>

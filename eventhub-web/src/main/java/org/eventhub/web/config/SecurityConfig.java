@@ -31,7 +31,7 @@ import java.util.concurrent.TimeUnit;
 @Configuration
 @ComponentScan("org.eventhub.web")
 @EnableWebSecurity
-@Import({AppConfig.class})
+@Import({AppConfig.class, WebViewsConfig.class})
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 
