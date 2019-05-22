@@ -34,6 +34,7 @@ public interface MaterialRepository extends BaseRepository<Material> {
     /**
      *  retrieve material based on sessionInstructor
      * @param sessionInstructor {@link org.eventhub.common.model.entity.SessionInstructor}
+     * @param pageable set number and size of pages 
      * @return list of Material {@link org.eventhub.common.model.entity.Material}
      *  @author Aya Taha (aya.taha.ali.93@gmail.com)
      */

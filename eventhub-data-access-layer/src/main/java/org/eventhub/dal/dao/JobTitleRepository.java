@@ -8,7 +8,6 @@ package org.eventhub.dal.dao;
 import org.eventhub.common.model.entity.*;
 import java.util.List;
 import org.springframework.data.jpa.repository.Query;
-import org.springframework.stereotype.Repository;
 import org.springframework.data.domain.Pageable;
 
 /**
@@ -20,7 +19,8 @@ public interface JobTitleRepository extends BaseRepository<JobTitle> {
 
      /**
      *  retrieve JobTitle based on name
-     * @param name
+     * @param name 
+     * @param pageable set number and size of pages 
      * @return  JobTitle {@link org.eventhub.common.model.entity.JobTitle}
      * @author Aya Taha (aya.taha.ali.93@gmail.com)
      */

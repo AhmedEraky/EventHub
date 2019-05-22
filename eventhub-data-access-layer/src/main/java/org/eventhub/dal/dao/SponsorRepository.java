@@ -23,6 +23,7 @@ public interface SponsorRepository extends BaseRepository<Sponsor> {
     /**
      * retrieve  {@link org.eventhub.common.model.entity.Sponsor} based on {@link org.eventhub.common.model.entity.Event}
      * @param event  {@link org.eventhub.common.model.entity.Event}
+     * @param pageable set number and size of pages 
      * @return {@link org.eventhub.common.model.entity.Sponsor}
      * @author Amr Elkady (amrelkady93@gmail.com)
      */
@@ -32,6 +33,7 @@ public interface SponsorRepository extends BaseRepository<Sponsor> {
     /**
      * retrieve  {@link org.eventhub.common.model.entity.Sponsor} based on {@link org.eventhub.common.model.entity.SponsorshipType}
      * @param sponsorshipType  {@link org.eventhub.common.model.entity.SponsorshipType}
+     * @param pageable set number and size of pages 
      * @return {@link org.eventhub.common.model.entity.Sponsor}
      * @author Amr Elkady (amrelkady93@gmail.com)
      */

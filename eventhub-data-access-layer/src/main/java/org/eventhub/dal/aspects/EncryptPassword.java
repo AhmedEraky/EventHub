@@ -25,8 +25,7 @@ public class EncryptPassword {
 
     /**
      * encrypt password of {@link org.eventhub.common.model.entity.SystemUser}
-     *
-     * @param joinPoint
+     * @param joinPoint to access information 
      * @return Object the result of insert object
      *
      */

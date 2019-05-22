@@ -14,6 +14,7 @@ public interface SystemUserHasRoleRepository extends BaseRepository<SystemUserHa
     /**
      * retrieve  {@link org.eventhub.common.model.entity.SystemUserHasRole} based on {@link org.eventhub.common.model.entity.Role}
      * @param role  {@link org.eventhub.common.model.entity.Role}
+     * @param pageable set number and size of pages 
      * @return {@link org.eventhub.common.model.entity.SystemUserHasRole}
      * @author Amr Elkady (amrelkady93@gmail.com)
      */
@@ -23,6 +24,7 @@ public interface SystemUserHasRoleRepository extends BaseRepository<SystemUserHa
     /**
      * retrieve  {@link org.eventhub.common.model.entity.SystemUserHasRole} based on {@link org.eventhub.common.model.entity.SystemUser[[}
      * @param systemUser  {@link org.eventhub.common.model.entity.SystemUser}
+     * @param pageable set number and size of pages 
      * @return {@link org.eventhub.common.model.entity.SystemUserHasRole}
      * @author Amr Elkady (amrelkady93@gmail.com)
      */

@@ -50,6 +50,7 @@ public interface InstructorRepository extends BaseRepository<Instructor>{
     /**
      *  retrieve Instructor based on systemUser
      * @param systemUser {@link org.eventhub.common.model.entity.SystemUser}
+     * @param pageable set number and size of pages 
      * @return list of Instructor {@link org.eventhub.common.model.entity.Instructor}
      * @author Aya Taha (aya.taha.ali.93@gmail.com)
      */

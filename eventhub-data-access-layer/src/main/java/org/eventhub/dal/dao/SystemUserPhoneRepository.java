@@ -21,6 +21,7 @@ public interface SystemUserPhoneRepository extends BaseRepository<SystemUserPhon
     /**
      *  retrieve SystemUserPhone based on SystemUser
      * @param systemUser {@link org.eventhub.common.model.entity.SystemUser}
+     * @param pageable set number and size of pages 
      * @return list of SystemUserPhone
      * {@link org.eventhub.common.model.entity.SystemUserPhone}
      * @author Aya Taha (aya.taha.ali.93@gmail.com)

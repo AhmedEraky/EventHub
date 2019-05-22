@@ -11,7 +11,6 @@ import java.util.List;
 import org.eventhub.common.model.entity.VipSpeaksInSession;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.Query;
-import org.springframework.stereotype.Repository;
 
 /**
  *VipSpeaksInSession interface has the needed methods to retrieve according to Unique key or join sql 
@@ -23,6 +22,7 @@ public interface VipSpeaksInSessionRepository  extends BaseRepository<VipSpeaksI
     /**
      * retrieve VipSpeaksInSession based on session
      * @param session  {@link org.eventhub.common.model.entity.Session}
+     * @param pageable set number and size of pages 
      * @return list of VipSpeaksInSession {@link org.eventhub.common.model.entity.VipSpeaksInSession}
      * @author Aya Taha (aya.taha.ali.93@gmail.com)
      */
@@ -33,6 +33,7 @@ public interface VipSpeaksInSessionRepository  extends BaseRepository<VipSpeaksI
      /**
      *  retrieve VipSpeaksInSession based on Vip
      * @param vip  {@link org.eventhub.common.model.entity.Vip}
+     * @param pageable set number and size of pages
      * @return Set of VipSpeaksInSession {@link org.eventhub.common.model.entity.VipSpeaksInSession}
      * @author Aya Taha (aya.taha.ali.93@gmail.com)
      */

@@ -41,6 +41,7 @@ public interface VipRepository extends BaseRepository<Vip> {
     /**
      *  retrieve Event based on jobTitle
      * @param jobTitle {@link org.eventhub.common.model.entity.JobTitle}
+     * @param pageable set number and size of pages 
      * @return list of Vip {@link org.eventhub.common.model.entity.Vip}
      * @author Aya Taha (aya.taha.ali.93@gmail.com)
      */
@@ -50,6 +51,7 @@ public interface VipRepository extends BaseRepository<Vip> {
     /**
      *  retrieve Event based on organization
      * @param organization {@link org.eventhub.common.model.entity.Organization}
+     * @param pageable set number and size of pages 
      * @return list of Vip {@link org.eventhub.common.model.entity.Vip}
      * @author Aya Taha (aya.taha.ali.93@gmail.com)
      */

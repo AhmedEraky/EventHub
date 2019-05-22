@@ -20,6 +20,7 @@ public interface OrganizationRepository extends BaseRepository<Organization> {
     /**
      * retrieve list of {@link org.eventhub.common.model.entity.Organization} based on name
      * @param name of {@link org.eventhub.common.model.entity.Organization}
+     * @param pageable set number and size of pages 
      * @return {@link org.eventhub.common.model.entity.Organization}
      * @author Amr Elkady (amrelkady93@gmail.com)
      */

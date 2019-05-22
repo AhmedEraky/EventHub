@@ -19,6 +19,7 @@ public interface PrivilegeRepository extends BaseRepository<Privilege> {
     /**
      * retrieve  {@link org.eventhub.common.model.entity.Privilege} based on name
      * @param name of {@link org.eventhub.common.model.entity.Privilege}
+     * @param pageable set number and size of pages 
      * @return {@link org.eventhub.common.model.entity.Privilege}
      * @author Amr Elkady (amrelkady93@gmail.com)
      */

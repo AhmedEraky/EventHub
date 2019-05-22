@@ -22,6 +22,7 @@ public interface SessionRepository extends BaseRepository<Session>{
     /**
      * retrieve list of {@link org.eventhub.common.model.entity.Session} based on startDate
      * @param startDate of {@link org.eventhub.common.model.entity.Session}
+     * @param pageable set number and size of pages 
      * @return {@link org.eventhub.common.model.entity.Session}
      * @author Amr Elkady (amrelkady93@gmail.com)
      */
@@ -31,6 +32,7 @@ public interface SessionRepository extends BaseRepository<Session>{
     /**
      * retrieve list of {@link org.eventhub.common.model.entity.Session} based on endData
      * @param endData of {@link org.eventhub.common.model.entity.Session}
+     * @param pageable set number and size of pages 
      * @return {@link org.eventhub.common.model.entity.Session}
      * @author Amr Elkady (amrelkady93@gmail.com)
      */
@@ -40,6 +42,7 @@ public interface SessionRepository extends BaseRepository<Session>{
     /**
      * retrieve list of {@link org.eventhub.common.model.entity.Session} based on capacity
      * @param capacity of {@link org.eventhub.common.model.entity.Session}
+     * @param pageable set number and size of pages 
      * @return {@link org.eventhub.common.model.entity.Session}
      * @author Amr Elkady (amrelkady93@gmail.com)
      */
@@ -49,6 +52,7 @@ public interface SessionRepository extends BaseRepository<Session>{
     /**
      * retrieve list of {@link org.eventhub.common.model.entity.Session} based on capacity
      * @param capacity of {@link org.eventhub.common.model.entity.Session}
+     * @param pageable set number and size of pages 
      * @return {@link org.eventhub.common.model.entity.Session}
      * @author Amr Elkady (amrelkady93@gmail.com)
      */
@@ -58,6 +62,7 @@ public interface SessionRepository extends BaseRepository<Session>{
     /**
      * retrieve list of {@link org.eventhub.common.model.entity.Session} based on capacity
      * @param capacity of {@link org.eventhub.common.model.entity.Session}
+     * @param pageable set number and size of pages 
      * @return {@link org.eventhub.common.model.entity.Session}
      * @author Amr Elkady (amrelkady93@gmail.com)
      */
@@ -76,6 +81,7 @@ public interface SessionRepository extends BaseRepository<Session>{
     /**
      * retrieve  {@link org.eventhub.common.model.entity.Session} based on {@link org.eventhub.common.model.entity.Event}
      * @param event {@link org.eventhub.common.model.entity.Event}
+     * @param pageable set number and size of pages 
      * @return {@link org.eventhub.common.model.entity.Session}
      * @author Amr Elkady (amrelkady93@gmail.com)
      */
@@ -86,6 +92,7 @@ public interface SessionRepository extends BaseRepository<Session>{
     /**
      * retrieve  {@link org.eventhub.common.model.entity.Session} based on {@link org.eventhub.common.model.entity.SessionType}
      * @param sessionType {@link org.eventhub.common.model.entity.SessionType}
+     * @param pageable set number and size of pages 
      * @return {@link org.eventhub.common.model.entity.Session}
      * @author Amr Elkady (amrelkady93@gmail.com)
      */

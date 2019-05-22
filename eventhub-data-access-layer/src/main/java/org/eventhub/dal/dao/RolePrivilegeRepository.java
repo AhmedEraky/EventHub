@@ -21,6 +21,7 @@ public interface RolePrivilegeRepository extends BaseRepository<RolePrivilege> {
     /**
      * retrieve  {@link org.eventhub.common.model.entity.RolePrivilege} based on {@link org.eventhub.common.model.entity.Privilege}
      * @param privilege {@link org.eventhub.common.model.entity.Privilege}
+     * @param pageable set number and size of pages 
      * @return {@link org.eventhub.common.model.entity.RolePrivilege}
      * @author Amr Elkady (amrelkady93@gmail.com)
      */
@@ -30,6 +31,7 @@ public interface RolePrivilegeRepository extends BaseRepository<RolePrivilege> {
     /**
      * retrieve  {@link org.eventhub.common.model.entity.RolePrivilege} based on {@link org.eventhub.common.model.entity.Role}
      * @param role {@link org.eventhub.common.model.entity.Role}
+     * @param pageable set number and size of pages 
      * @return {@link org.eventhub.common.model.entity.RolePrivilege}
      * @author Amr Elkady (amrelkady93@gmail.com)
      */

@@ -20,6 +20,7 @@ public interface SystemUserRepository extends BaseRepository<SystemUser> {
     /**
      * retrieve  {@link org.eventhub.common.model.entity.SystemUser} based on userName
      * @param userName of {@link org.eventhub.common.model.entity.SystemUser}
+     * @param pageable set number and size of pages 
      * @return {@link org.eventhub.common.model.entity.SystemUser}
      * @author Amr Elkady (amrelkady93@gmail.com)
      */
@@ -38,6 +39,7 @@ public interface SystemUserRepository extends BaseRepository<SystemUser> {
     /**
      * retrieve  {@link org.eventhub.common.model.entity.SystemUser} based on firstName
      * @param firstName of {@link org.eventhub.common.model.entity.SystemUser}
+     * @param pageable set number and size of pages 
      * @return {@link org.eventhub.common.model.entity.SystemUser}
      * @author Amr Elkady (amrelkady93@gmail.com)
      */
@@ -56,6 +58,7 @@ public interface SystemUserRepository extends BaseRepository<SystemUser> {
     /**
      * retrieve  {@link org.eventhub.common.model.entity.SystemUser} based on {@link org.eventhub.common.model.entity.Country}
      * @param country  {@link org.eventhub.common.model.entity.Country}
+     * @param pageable set number and size of pages 
      * @return {@link org.eventhub.common.model.entity.SystemUser}
      * @author Amr Elkady (amrelkady93@gmail.com)
      */
@@ -65,6 +68,7 @@ public interface SystemUserRepository extends BaseRepository<SystemUser> {
     /**
      * retrieve  {@link org.eventhub.common.model.entity.SystemUser} based on {@link org.eventhub.common.model.entity.JobTitle}
      * @param jobTitle  {@link org.eventhub.common.model.entity.JobTitle}
+     * @param pageable set number and size of pages 
      * @return {@link org.eventhub.common.model.entity.SystemUser}
      * @author Amr Elkady (amrelkady93@gmail.com)
      */
@@ -74,6 +78,7 @@ public interface SystemUserRepository extends BaseRepository<SystemUser> {
     /**
      * retrieve  {@link org.eventhub.common.model.entity.SystemUser} based on {@link org.eventhub.common.model.entity.Organization}
      * @param organization  {@link org.eventhub.common.model.entity.Organization}
+     * @param pageable set number and size of pages 
      * @return {@link org.eventhub.common.model.entity.SystemUser}
      * @author Amr Elkady (amrelkady93@gmail.com)
      */

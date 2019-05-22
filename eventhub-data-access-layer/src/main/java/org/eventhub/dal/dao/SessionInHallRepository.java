@@ -20,6 +20,7 @@ public interface SessionInHallRepository extends BaseRepository<SessionInHall> {
     /**
      * retrieve  {@link org.eventhub.common.model.entity.SessionInHall} based on {@link org.eventhub.common.model.entity.Hall}
      * @param hall {@link org.eventhub.common.model.entity.Hall}
+     * @param pageable set number and size of pages 
      * @return {@link org.eventhub.common.model.entity.SessionInHall}
      * @author Amr Elkady (amrelkady93@gmail.com)
      */
@@ -29,6 +30,7 @@ public interface SessionInHallRepository extends BaseRepository<SessionInHall> {
     /**
      * retrieve  {@link org.eventhub.common.model.entity.SessionInHall} based on {@link org.eventhub.common.model.entity.Session}
      * @param session {@link org.eventhub.common.model.entity.Session}
+     * @param pageable set number and size of pages 
      * @return {@link org.eventhub.common.model.entity.SessionInHall}
      * @author Amr Elkady (amrelkady93@gmail.com)
      */
