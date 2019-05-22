@@ -13,7 +13,6 @@ import org.eventhub.common.model.entity.EventCoordinator;
 import org.eventhub.common.model.entity.SystemUser;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.Query;
-import org.springframework.stereotype.Repository;
 
 /**
  * EventCoordinator interface has the needed methods to retrieve according to Unique key or join sql 
@@ -25,6 +24,7 @@ public interface EventCoordinatorRepository extends BaseRepository<EventCoordina
     /**
      *  retrieve EventCoordinator based on systemUser
      * @param systemUser {@link org.eventhub.common.model.entity.SystemUser}
+     * @param pageable set number and size of pages
      * @return EventCoordinator {@link org.eventhub.common.model.entity.EventCoordinator}
      * @author Aya Taha (aya.taha.ali.93@gmail.com)
      */
@@ -34,6 +34,7 @@ public interface EventCoordinatorRepository extends BaseRepository<EventCoordina
     /**
      *  retrieve EventCoordinator based on event
      * @param event {@link org.eventhub.common.model.entity.Event}
+     * @param pageable set number and size of pages
      * @return List of EventCoordinator {@link org.eventhub.common.model.entity.EventCoordinator}
      * @author Aya Taha (aya.taha.ali.93@gmail.com)
      */
