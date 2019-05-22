@@ -29,8 +29,8 @@ import java.util.Properties;
 @Configuration
 @EnableTransactionManagement
 @EnableJpaRepositories("org.eventhub.dal.dao")
-@PropertySource("org/eventhub/dal/config/datastore.properties")
-public class Config {
+@PropertySource("classpath:org/eventhub/dal/config/datastore.properties")
+public class AppConfig {
 
     @Value("${jdbc.driver}")
     private String driver;

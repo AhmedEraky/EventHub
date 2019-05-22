@@ -21,11 +21,12 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-
+        <javaee-api>8.0</javaee-api>
         <spring>5.1.6.RELEASE</spring>
         <spring.data.jpa>2.1.6.RELEASE</spring.data.jpa>
         <spring.web.mvc>5.1.6.RELEASE</spring.web.mvc>
         <spring.test>5.1.6.RELEASE</spring.test>
+        <spring.security.config>5.1.5.RELEASE</spring.security.config>
 
         <mysql.connectorj>8.0.15</mysql.connectorj>
         <hibernate.core>5.4.1.Final</hibernate.core>
@@ -92,6 +93,11 @@
                 <scope>test</scope>
             </dependency>
 
+            <dependency>
+                <groupId>org.springframework.security</groupId>
+                <artifactId>spring-security-config</artifactId>
+                <version>${spring.security.config}</version>
+            </dependency>
             <!-- https://mvnrepository.com/artifact/org.hibernate.validator/hibernate-validator -->
             <dependency>
                 <groupId>org.hibernate.validator</groupId>
@@ -173,7 +179,6 @@
                     <version>${maven.war}</version>
                     <configuration>
                         <warName>${project.artifactId}</warName>
-                        <failOnMissingWebXml>false</failOnMissingWebXml>
                     </configuration>
                     <executions>
                         <execution>

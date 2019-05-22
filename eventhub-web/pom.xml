@@ -22,7 +22,26 @@
             <groupId>org.eventhub</groupId>
             <artifactId>eventhub-business-layer</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-config</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-web</artifactId>
+            <version>5.1.5.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-api</artifactId>
+            <version>${javaee-api}</version>
+            <scope>provided</scope>
+        </dependency>
 
+        <dependency>
+            <groupId>org.eventhub</groupId>
+            <artifactId>eventhub-data-access-layer</artifactId>
+        </dependency>
     </dependencies>
 
 

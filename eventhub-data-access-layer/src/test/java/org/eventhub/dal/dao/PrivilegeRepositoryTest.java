@@ -3,7 +3,7 @@ package org.eventhub.dal.dao;
 import org.eventhub.common.model.entity.Privilege;
 import org.eventhub.common.model.entity.Role;
 import org.eventhub.common.model.entity.RolePrivilege;
-import org.eventhub.dal.config.Config;
+import org.eventhub.dal.config.AppConfig;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -20,7 +20,7 @@ import org.springframework.transaction.annotation.Transactional;
  * @author Menna Ahmed (menna4a.helmi@gmail.com)
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = {Config.class}, loader = AnnotationConfigContextLoader.class)
+@ContextConfiguration(classes = {AppConfig.class}, loader = AnnotationConfigContextLoader.class)
 @Transactional
 public class PrivilegeRepositoryTest implements BaseRepositoryTest{
 

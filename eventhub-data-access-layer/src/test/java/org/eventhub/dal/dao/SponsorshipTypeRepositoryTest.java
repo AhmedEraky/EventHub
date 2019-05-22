@@ -1,7 +1,8 @@
 package org.eventhub.dal.dao;
 
 import org.eventhub.common.model.entity.SponsorshipType;
-import org.eventhub.dal.config.Config;
+import org.eventhub.dal.config.AppConfig;
+import org.eventhub.dal.config.AppConfig;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +25,7 @@ import static org.junit.Assert.assertNull;
  */
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = {Config.class}, loader = AnnotationConfigContextLoader.class)
+@ContextConfiguration(classes = {AppConfig.class}, loader = AnnotationConfigContextLoader.class)
 @Transactional
 public class SponsorshipTypeRepositoryTest implements BaseRepositoryTest{
 
