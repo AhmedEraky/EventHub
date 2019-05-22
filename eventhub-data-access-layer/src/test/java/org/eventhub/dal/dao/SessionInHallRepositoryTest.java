@@ -19,7 +19,7 @@ import static org.junit.Assert.assertEquals;
 
 /**
  * Test Class for {@link org.eventhub.dal.dao.SessionInHallRepository}
- * @author Ahmed Eraky <ahmedmoeraky@gmail.com>
+ * @author Ahmed Eraky (ahmedmoeraky@gmail.com)
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = {AppConfig.class}, loader = AnnotationConfigContextLoader.class)
@@ -44,7 +44,7 @@ public class SessionInHallRepositoryTest implements BaseRepositoryTest  {
     /**
      * test count Method
      * {@link org.eventhub.dal.dao.SessionInHallRepository}
-     * @author Ahmed Eraky <ahmedmoeraky@gmail.com>
+     * @author Ahmed Eraky (ahmedmoeraky@gmail.com)
      */
     @Override
     @Test
@@ -58,7 +58,7 @@ public class SessionInHallRepositoryTest implements BaseRepositoryTest  {
     /**
      * test Soft Delete Using Method delete
      * {@link org.eventhub.dal.dao.SessionInHallRepository}
-     * @author Ahmed Eraky <ahmedmoeraky@gmail.com>
+     * @author Ahmed Eraky (ahmedmoeraky@gmail.com)
      */
     @Override
     @Test
@@ -74,7 +74,7 @@ public class SessionInHallRepositoryTest implements BaseRepositoryTest  {
     /**
      * test Soft Delete Using Method deleteByID
      * {@link org.eventhub.dal.dao.SessionInHallRepository}
-     * @author Ahmed Eraky <ahmedmoeraky@gmail.com>
+     * @author Ahmed Eraky (ahmedmoeraky@gmail.com)
      */
     @Override
     @Test
@@ -90,7 +90,7 @@ public class SessionInHallRepositoryTest implements BaseRepositoryTest  {
     /**
      * test Soft Delete Method
      * {@link org.eventhub.dal.dao.SessionInHallRepository}
-     * @author Ahmed Eraky <ahmedmoeraky@gmail.com>
+     * @author Ahmed Eraky (ahmedmoeraky@gmail.com)
      */
     @Test
     @Override
@@ -109,7 +109,7 @@ public class SessionInHallRepositoryTest implements BaseRepositoryTest  {
     /**
      * test save Method
      * {@link org.eventhub.dal.dao.SessionInHallRepository}
-     * @author Ahmed Eraky <ahmedmoeraky@gmail.com>
+     * @author Ahmed Eraky (ahmedmoeraky@gmail.com)
      */
     @Test
     @Override
@@ -123,7 +123,7 @@ public class SessionInHallRepositoryTest implements BaseRepositoryTest  {
     /**
      * test findAll Deleted Method
      * {@link org.eventhub.dal.dao.SessionInHallRepository}
-     * @author Ahmed Eraky <ahmedmoeraky@gmail.com>
+     * @author Ahmed Eraky (ahmedmoeraky@gmail.com)
      */
     @Test
     @Override
@@ -139,7 +139,7 @@ public class SessionInHallRepositoryTest implements BaseRepositoryTest  {
     /**
      * test findAll Method
      * {@link org.eventhub.dal.dao.SessionInHallRepository}
-     * @author Ahmed Eraky <ahmedmoeraky@gmail.com>
+     * @author Ahmed Eraky (ahmedmoeraky@gmail.com)
      */
     @Test
     @Override

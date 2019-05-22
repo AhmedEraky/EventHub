@@ -20,7 +20,7 @@ import static org.junit.Assert.*;
 
 /**
  * Test class for {@link org.eventhub.dal.dao.SystemUserRepository}
- * @author Amr Elkady <amrelkady93@gmail.com>
+ * @author Amr Elkady (amrelkady93@gmail.com)
  */
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -45,7 +45,7 @@ public class SystemUserRepositoryTest implements BaseRepositoryTest{
     /**
      * test count Method
      * {@link org.eventhub.dal.dao.SystemUserRepository}
-     * @author Amr Elkady <amrelkady93@gmail.com>
+     * @author Amr Elkady (amrelkady93@gmail.com)
      */
     @Test
     @Override
@@ -61,7 +61,7 @@ public class SystemUserRepositoryTest implements BaseRepositoryTest{
     /**
      * test Save Method
      * {@link org.eventhub.dal.dao.SystemUserRepository}
-     * @author Amr Elkady <amrelkady93@gmail.com>
+     * @author Amr Elkady (amrelkady93@gmail.com)
      */
     @Test
     @Override
@@ -77,7 +77,7 @@ public class SystemUserRepositoryTest implements BaseRepositoryTest{
     /**
      * test FindAllDeleted Method
      * {@link org.eventhub.dal.dao.SystemUserRepository}
-     * @author Amr Elkady <amrelkady93@gmail.com>
+     * @author Amr Elkady (amrelkady93@gmail.com)
      */
     @Test
     @Override
@@ -94,7 +94,7 @@ public class SystemUserRepositoryTest implements BaseRepositoryTest{
     /**
      * test FindAll Method
      * {@link org.eventhub.dal.dao.SystemUserRepository}
-     * @author Amr Elkady <amrelkady93@gmail.com>
+     * @author Amr Elkady (amrelkady93@gmail.com)
      */
     @Test
     @Override
@@ -110,7 +110,7 @@ public class SystemUserRepositoryTest implements BaseRepositoryTest{
     /**
      * test Update Method
      * {@link org.eventhub.dal.dao.SystemUserRepository}
-     * @author Amr Elkady <amrelkady93@gmail.com>
+     * @author Amr Elkady (amrelkady93@gmail.com)
      */
     @Test
     @Override
@@ -127,7 +127,7 @@ public class SystemUserRepositoryTest implements BaseRepositoryTest{
     /**
      * test SoftDelete Method
      * {@link org.eventhub.dal.dao.SystemUserRepository}
-     * @author Amr Elkady <amrelkady93@gmail.com>
+     * @author Amr Elkady (amrelkady93@gmail.com)
      */
     @Test
     @Override
@@ -146,7 +146,7 @@ public class SystemUserRepositoryTest implements BaseRepositoryTest{
     /**
      * test DeleteByID Method
      * {@link org.eventhub.dal.dao.SystemUserRepository}
-     * @author Amr Elkady <amrelkady93@gmail.com>
+     * @author Amr Elkady (amrelkady93@gmail.com)
      */
     @Test
     @Override
@@ -170,7 +170,7 @@ public class SystemUserRepositoryTest implements BaseRepositoryTest{
     /**
      * test Delete Method
      * {@link org.eventhub.dal.dao.VipRepository}
-     * @author Amr Elkady <amrelkady93@gmail.com>
+     * @author Amr Elkady (amrelkady93@gmail.com)
      */
     @Test
     @Override
@@ -189,7 +189,7 @@ public class SystemUserRepositoryTest implements BaseRepositoryTest{
     /**
      * test FindAllByUserName Method
      * {@link org.eventhub.dal.dao.SystemUserRepository}
-     * @author Amr Elkady <amrelkady93@gmail.com>
+     * @author Amr Elkady (amrelkady93@gmail.com)
      */
     @Test
     public void testFindAllByUserName(){
@@ -205,7 +205,7 @@ public class SystemUserRepositoryTest implements BaseRepositoryTest{
     /**
      * test FindByEmail Method
      * {@link org.eventhub.dal.dao.SystemUserRepository}
-     * @author Amr Elkady <amrelkady93@gmail.com>
+     * @author Amr Elkady (amrelkady93@gmail.com)
      */
     @Test
     public void testFindByEmail(){
@@ -220,7 +220,7 @@ public class SystemUserRepositoryTest implements BaseRepositoryTest{
     /**
      * test FindAllByFirstName Method
      * {@link org.eventhub.dal.dao.SystemUserRepository}
-     * @author Amr Elkady <amrelkady93@gmail.com>
+     * @author Amr Elkady (amrelkady93@gmail.com)
      */
     @Test
     public void testFindAllByFirstName(){
@@ -236,7 +236,7 @@ public class SystemUserRepositoryTest implements BaseRepositoryTest{
     /**
      * test FindBySystemUserPhones Method
      * {@link org.eventhub.dal.dao.SystemUserRepository}
-     * @author Amr Elkady <amrelkady93@gmail.com>
+     * @author Amr Elkady (amrelkady93@gmail.com)
      */
     @Test
     public void testFindBySystemUserPhones(){
@@ -259,7 +259,7 @@ public class SystemUserRepositoryTest implements BaseRepositoryTest{
     /**
      * test FindAllByCountry Method
      * {@link org.eventhub.dal.dao.SystemUserRepository}
-     * @author Amr Elkady <amrelkady93@gmail.com>
+     * @author Amr Elkady (amrelkady93@gmail.com)
      */
     @Test
     public void testFindAllByCountry(){
@@ -277,7 +277,7 @@ public class SystemUserRepositoryTest implements BaseRepositoryTest{
     /**
      * test AllByJobTitle Method
      * {@link org.eventhub.dal.dao.SystemUserRepository}
-     * @author Amr Elkady <amrelkady93@gmail.com>
+     * @author Amr Elkady (amrelkady93@gmail.com)
      */
     @Test
     public void findAllByJobTitle(){
@@ -295,7 +295,7 @@ public class SystemUserRepositoryTest implements BaseRepositoryTest{
     /**
      * test AllByOrganization Method
      * {@link org.eventhub.dal.dao.VipRepository}
-     * @author Amr Elkady <amrelkady93@gmail.com>
+     * @author Amr Elkady (amrelkady93@gmail.com)
      */
     @Test
     public void findAllByOrganization(){

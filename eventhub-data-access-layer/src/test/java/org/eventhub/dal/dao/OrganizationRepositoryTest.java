@@ -22,7 +22,7 @@ import java.util.Set;
 
 /**
  * Test class for {@link org.eventhub.dal.dao.OrganizationRepository}
- * @author Menna Ahmed <menna4a.helmi@gmail.com>
+ * @author Menna Ahmed (menna4a.helmi@gmail.com)
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = {AppConfig.class}, loader = AnnotationConfigContextLoader.class)
@@ -48,7 +48,7 @@ public class OrganizationRepositoryTest implements BaseRepositoryTest{
     /**
      * test count Method
      * {@link org.eventhub.dal.dao.OrganizationRepository}
-     * @author Menna Ahmed <menna4a.helmi@gmail.com>
+     * @author Menna Ahmed (menna4a.helmi@gmail.com)
      */
     @Test
     @Override
@@ -64,7 +64,7 @@ public class OrganizationRepositoryTest implements BaseRepositoryTest{
     /**
      * test delete Method
      * {@link org.eventhub.dal.dao.OrganizationRepository}
-     * @author Menna Ahmed <menna4a.helmi@gmail.com>
+     * @author Menna Ahmed (menna4a.helmi@gmail.com)
      */
     @Test
     @Override
@@ -80,7 +80,7 @@ public class OrganizationRepositoryTest implements BaseRepositoryTest{
     /**
      * test delete by Id Method
      * {@link org.eventhub.dal.dao.OrganizationRepository}
-     * @author Menna Ahmed <menna4a.helmi@gmail.com>
+     * @author Menna Ahmed (menna4a.helmi@gmail.com)
      */
     @Test
     @Override
@@ -95,7 +95,7 @@ public class OrganizationRepositoryTest implements BaseRepositoryTest{
     /**
      * test soft delete Method
      * {@link org.eventhub.dal.dao.OrganizationRepository}
-     * @author Menna Ahmed <menna4a.helmi@gmail.com>
+     * @author Menna Ahmed (menna4a.helmi@gmail.com)
      */
     @Test
     @Override
@@ -112,7 +112,7 @@ public class OrganizationRepositoryTest implements BaseRepositoryTest{
     /**
      * test find organization by name Method
      * {@link org.eventhub.dal.dao.OrganizationRepository}
-     * @author Menna Ahmed <menna4a.helmi@gmail.com>
+     * @author Menna Ahmed (menna4a.helmi@gmail.com)
      */
     @Test
     public void testFindByName() {
@@ -128,7 +128,7 @@ public class OrganizationRepositoryTest implements BaseRepositoryTest{
     /**
      * test save Method
      * {@link org.eventhub.dal.dao.OrganizationRepository}
-     * @author Menna Ahmed <menna4a.helmi@gmail.com>
+     * @author Menna Ahmed (menna4a.helmi@gmail.com)
      */
     @Test
     @Override
@@ -142,7 +142,7 @@ public class OrganizationRepositoryTest implements BaseRepositoryTest{
     /**
      * test find all deleted Organizations Method
      * {@link org.eventhub.dal.dao.OrganizationRepository}
-     * @author Menna Ahmed <menna4a.helmi@gmail.com>
+     * @author Menna Ahmed (menna4a.helmi@gmail.com)
      */
     @Test
     @Override
@@ -159,7 +159,7 @@ public class OrganizationRepositoryTest implements BaseRepositoryTest{
     /**
      * test find all Organization Method
      * {@link org.eventhub.dal.dao.OrganizationRepository}
-     * @author Menna Ahmed <menna4a.helmi@gmail.com>
+     * @author Menna Ahmed (menna4a.helmi@gmail.com)
      */
     @Test
     @Override
@@ -174,7 +174,7 @@ public class OrganizationRepositoryTest implements BaseRepositoryTest{
     /**
      * test update Method
      * {@link org.eventhub.dal.dao.OrganizationRepository}
-     * @author Menna Ahmed <menna4a.helmi@gmail.com>
+     * @author Menna Ahmed (menna4a.helmi@gmail.com)
      */
     @Test
     @Override
@@ -192,7 +192,7 @@ public class OrganizationRepositoryTest implements BaseRepositoryTest{
     /**
      * test find Organization By Vip Method
      * {@link org.eventhub.dal.dao.OrganizationRepository}
-     * @author Menna Ahmed <menna4a.helmi@gmail.com>
+     * @author Menna Ahmed (menna4a.helmi@gmail.com)
      */
     @Test
     public void testFindByVip(){
@@ -211,7 +211,7 @@ public class OrganizationRepositoryTest implements BaseRepositoryTest{
     /**
      * test find Organization by System Users Method
      * {@link org.eventhub.dal.dao.OrganizationRepository}
-     * @author Menna Ahmed <menna4a.helmi@gmail.com>
+     * @author Menna Ahmed (menna4a.helmi@gmail.com)
      */
     @Test
     public void testFindBySystemUsers(){
@@ -231,7 +231,7 @@ public class OrganizationRepositoryTest implements BaseRepositoryTest{
     /**
      * instantiate Organization Method
      * {@link org.eventhub.dal.dao.OrganizationRepository}
-     * @author Menna Ahmed <menna4a.helmi@gmail.com>
+     * @author Menna Ahmed (menna4a.helmi@gmail.com)
      */
     private Organization prepareOrganizationToSave(){
         Organization organization = new Organization(null,"IBM");
@@ -241,7 +241,7 @@ public class OrganizationRepositoryTest implements BaseRepositoryTest{
     /**
      * instantiate Vip Method
      * {@link org.eventhub.dal.dao.OrganizationRepository}
-     * @author Menna Ahmed <menna4a.helmi@gmail.com>
+     * @author Menna Ahmed (menna4a.helmi@gmail.com)
      */
     private Vip prepareVipToSave(Organization organization){
         Vip bvip = new Vip(null,"Engineer","Amr Elkady");

@@ -14,7 +14,7 @@ import org.springframework.stereotype.Repository;
 /**
  *  Vip interface has the needed methods to retrieve according to
  * Unique key or join sql
- * @author
+ * @author Aya Taha (aya.taha.ali.93@gmail.com)
  */
 
 public interface VipRepository extends BaseRepository<Vip> {
@@ -23,7 +23,7 @@ public interface VipRepository extends BaseRepository<Vip> {
      * retrieve Vip based on name
      * @param name
      * @return Vip {@link org.eventhub.common.model.entity.Vip}
-     * @author Aya Taha
+     * @author Aya Taha (aya.taha.ali.93@gmail.com)
      */
     @Query(value = "from Vip as v where lower(v.name) like lower(CONCAT('%',?1,'%')) and v.deleted=0")
     public List<Vip> findAllByName(String name, Pageable pageable);
@@ -33,7 +33,7 @@ public interface VipRepository extends BaseRepository<Vip> {
      * @param vipSpeaksInSession
      * {@link org.eventhub.common.model.entity.VipSpeaksInSession}
      * @return Vip {@link org.eventhub.common.model.entity.Vip}
-     * @author Aya Taha
+     * @author Aya Taha (aya.taha.ali.93@gmail.com)
      */
     @Query(value = "from Vip as v where ?1 member of v.vipSpeaksInSessions and  v.deleted=0")
     public Vip findByVipSpeaksInSession(VipSpeaksInSession vipSpeaksInSession);
@@ -42,7 +42,7 @@ public interface VipRepository extends BaseRepository<Vip> {
      *  retrieve Event based on jobTitle
      * @param jobTitle {@link org.eventhub.common.model.entity.JobTitle}
      * @return list of Vip {@link org.eventhub.common.model.entity.Vip}
-     * @author Aya Taha
+     * @author Aya Taha (aya.taha.ali.93@gmail.com)
      */
     @Query(value = "from Vip as v where v.jobTitle=?1 and  v.deleted=0")
     public List<Vip> findAllByJobTitle(JobTitle jobTitle, Pageable pageable);
@@ -51,7 +51,7 @@ public interface VipRepository extends BaseRepository<Vip> {
      *  retrieve Event based on organization
      * @param organization {@link org.eventhub.common.model.entity.Organization}
      * @return list of Vip {@link org.eventhub.common.model.entity.Vip}
-     * @author Aya Taha
+     * @author Aya Taha (aya.taha.ali.93@gmail.com)
      */
     @Query(value = "from Vip as v where v.organization=?1 and  v.deleted=0")
     public List<Vip> findAllByOrganization(Organization organization, Pageable pageable);

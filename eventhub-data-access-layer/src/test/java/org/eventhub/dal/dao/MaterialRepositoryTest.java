@@ -17,7 +17,7 @@ import java.util.Date;
 
 /**
  * Test class for {@link org.eventhub.dal.dao.MaterialRepository}
- * @author Menna Ahmed <menna4a.helmi@gmail.com>
+ * @author Menna Ahmed (menna4a.helmi@gmail.com)
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = {AppConfig.class}, loader = AnnotationConfigContextLoader.class)
@@ -54,7 +54,7 @@ public class MaterialRepositoryTest implements BaseRepositoryTest{
     /**
      * test count Method
      * {@link org.eventhub.dal.dao.MaterialRepository}
-     * @author Menna Ahmed <menna4a.helmi@gmail.com>
+     * @author Menna Ahmed (menna4a.helmi@gmail.com)
      */
     @Test
     @Override
@@ -83,7 +83,7 @@ public class MaterialRepositoryTest implements BaseRepositoryTest{
     /**
      * test delete Method
      * {@link org.eventhub.dal.dao.MaterialRepository}
-     * @author Menna Ahmed <menna4a.helmi@gmail.com>
+     * @author Menna Ahmed (menna4a.helmi@gmail.com)
      */
     @Test
     @Override
@@ -113,7 +113,7 @@ public class MaterialRepositoryTest implements BaseRepositoryTest{
     /**
      * test delete by Id Method
      * {@link org.eventhub.dal.dao.MaterialRepository}
-     * @author Menna Ahmed <menna4a.helmi@gmail.com>
+     * @author Menna Ahmed (menna4a.helmi@gmail.com)
      */
     @Test
     @Override
@@ -143,7 +143,7 @@ public class MaterialRepositoryTest implements BaseRepositoryTest{
     /**
      * test soft delete Method
      * {@link org.eventhub.dal.dao.MaterialRepository}
-     * @author Menna Ahmed <menna4a.helmi@gmail.com>
+     * @author Menna Ahmed (menna4a.helmi@gmail.com)
      */
     @Test
     @Override
@@ -173,7 +173,7 @@ public class MaterialRepositoryTest implements BaseRepositoryTest{
     /**
      * test save Method
      * {@link org.eventhub.dal.dao.MaterialRepository}
-     * @author Menna Ahmed <menna4a.helmi@gmail.com>
+     * @author Menna Ahmed (menna4a.helmi@gmail.com)
      */
     @Test
     @Override
@@ -201,7 +201,7 @@ public class MaterialRepositoryTest implements BaseRepositoryTest{
     /**
      * test find all deleted Material Method
      * {@link org.eventhub.dal.dao.MaterialRepository}
-     * @author Menna Ahmed <menna4a.helmi@gmail.com>
+     * @author Menna Ahmed (menna4a.helmi@gmail.com)
      */
     @Test
     @Override
@@ -233,7 +233,7 @@ public class MaterialRepositoryTest implements BaseRepositoryTest{
     /**
      * test find all Material Method
      * {@link org.eventhub.dal.dao.MaterialRepository}
-     * @author Menna Ahmed <menna4a.helmi@gmail.com>
+     * @author Menna Ahmed (menna4a.helmi@gmail.com)
      */
     @Test
     @Override
@@ -263,7 +263,7 @@ public class MaterialRepositoryTest implements BaseRepositoryTest{
     /**
      * test update Material Method
      * {@link org.eventhub.dal.dao.MaterialRepository}
-     * @author Menna Ahmed <menna4a.helmi@gmail.com>
+     * @author Menna Ahmed (menna4a.helmi@gmail.com)
      */
     @Test
     @Override
@@ -293,7 +293,7 @@ public class MaterialRepositoryTest implements BaseRepositoryTest{
     /**
      * test find Material by path Method
      * {@link org.eventhub.dal.dao.MaterialRepository}
-     * @author Menna Ahmed <menna4a.helmi@gmail.com>
+     * @author Menna Ahmed (menna4a.helmi@gmail.com)
      */
     @Test
     public void testFindAllByPath(){
@@ -319,7 +319,7 @@ public class MaterialRepositoryTest implements BaseRepositoryTest{
     /**
      * instantiate SystemUser Method
      * {@link org.eventhub.dal.dao.MaterialRepository}
-     * @author Menna Ahmed <menna4a.helmi@gmail.com>
+     * @author Menna Ahmed (menna4a.helmi@gmail.com)
      */
     private Event prepareEventToSave(SystemUser systemUser){
         Event event = new Event(null, "name", "shortDescription", "address", new Date(), new Date(), "style");
@@ -332,7 +332,7 @@ public class MaterialRepositoryTest implements BaseRepositoryTest{
     /**
      *  instantiate Session Method
      * {@link org.eventhub.dal.dao.MaterialRepository}
-     * @author Menna Ahmed <menna4a.helmi@gmail.com>
+     * @author Menna Ahmed (menna4a.helmi@gmail.com)
      */
     private Session prepareSessionToSave(Event event){
 
@@ -347,7 +347,7 @@ public class MaterialRepositoryTest implements BaseRepositoryTest{
     /**
      * instantiate Instructor Method
      * {@link org.eventhub.dal.dao.MaterialRepository}
-     * @author Menna Ahmed <menna4a.helmi@gmail.com>
+     * @author Menna Ahmed (menna4a.helmi@gmail.com)
      */
     private Instructor prepareInstructorToSave(SystemUser systemUser){
 
@@ -361,7 +361,7 @@ public class MaterialRepositoryTest implements BaseRepositoryTest{
     /**
      *  instantiate SessionInstructor Method
      * {@link org.eventhub.dal.dao.MaterialRepository}
-     * @author Menna Ahmed <menna4a.helmi@gmail.com>
+     * @author Menna Ahmed (menna4a.helmi@gmail.com)
      */
     private SessionInstructor prepareSessionInstructorToSave(Instructor instructor,Session session){
 
@@ -373,7 +373,7 @@ public class MaterialRepositoryTest implements BaseRepositoryTest{
     /**
      *  instantiate Material Method
      * {@link org.eventhub.dal.dao.MaterialRepository}
-     * @author Menna Ahmed <menna4a.helmi@gmail.com>
+     * @author Menna Ahmed (menna4a.helmi@gmail.com)
      */
     private Material prepareMaterialToSave(SessionInstructor sessionInstructor){
         Material material = new Material(null,"C:\\");

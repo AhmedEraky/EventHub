@@ -23,7 +23,7 @@ public interface SystemUserPhoneRepository extends BaseRepository<SystemUserPhon
      * @param systemUser {@link org.eventhub.common.model.entity.SystemUser}
      * @return list of SystemUserPhone
      * {@link org.eventhub.common.model.entity.SystemUserPhone}
-     * @author Aya Taha
+     * @author Aya Taha (aya.taha.ali.93@gmail.com)
      */
     @Query(value = "from SystemUserPhone as sp where sp.systemUser=?1 and  sp.deleted=0")
     public List<SystemUserPhone> findAllBySystemUser(SystemUser systemUser, Pageable pageable);

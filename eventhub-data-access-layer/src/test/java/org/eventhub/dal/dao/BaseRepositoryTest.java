@@ -5,7 +5,7 @@ import org.junit.Test;
 
 /**
  * Test Interface for {@link org.eventhub.dal.dao.BaseRepository}
- * @author Ahmed Eraky <ahmedmoeraky@gmail.com>
+ * @author Ahmed Eraky (ahmedmoeraky@gmail.com)
  */
 public interface BaseRepositoryTest {
     @Test

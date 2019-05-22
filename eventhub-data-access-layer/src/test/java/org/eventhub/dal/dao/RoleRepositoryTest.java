@@ -20,7 +20,7 @@ import static org.junit.Assert.assertNull;
 /**
  * Test Class for {@link org.eventhub.dal.dao.RoleRepository}
  *
- * @author Mohamed Gamal <mohamedj239@gmail.com>
+ * @author Mohamed Gamal (mohamedj239@gmail.com)
  */
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -37,7 +37,7 @@ public class RoleRepositoryTest implements BaseRepositoryTest {
      * test findByName Method
      * {@link org.eventhub.dal.dao.RoleRepository}
      *
-     * @author Mohamed Gamal <mohamedj239@gmail.com>
+     * @author Mohamed Gamal (mohamedj239@gmail.com)
      */
     @Test
     public void testFindByName() {
@@ -51,7 +51,7 @@ public class RoleRepositoryTest implements BaseRepositoryTest {
      * test save Method
      * {@link org.eventhub.dal.dao.RoleRepository}
      *
-     * @author Mohamed Gamal <mohamedj239@gmail.com>
+     * @author Mohamed Gamal (mohamedj239@gmail.com)
      */
     @Override
     @Test
@@ -68,7 +68,7 @@ public class RoleRepositoryTest implements BaseRepositoryTest {
      * test findAllDeleted Method
      * {@link org.eventhub.dal.dao.RoleRepository}
      *
-     * @author Mohamed Gamal <mohamedj239@gmail.com>
+     * @author Mohamed Gamal (mohamedj239@gmail.com)
      */
     @Override
     @Test
@@ -87,7 +87,7 @@ public class RoleRepositoryTest implements BaseRepositoryTest {
      * test findAll Method
      * {@link org.eventhub.dal.dao.RoleRepository}
      *
-     * @author Mohamed Gamal <mohamedj239@gmail.com>
+     * @author Mohamed Gamal (mohamedj239@gmail.com)
      */
     @Override
     @Test
@@ -106,7 +106,7 @@ public class RoleRepositoryTest implements BaseRepositoryTest {
      * test update Method
      * {@link org.eventhub.dal.dao.RoleRepository}
      *
-     * @author Mohamed Gamal <mohamedj239@gmail.com>
+     * @author Mohamed Gamal (mohamedj239@gmail.com)
      */
     @Override
     @Test
@@ -125,7 +125,7 @@ public class RoleRepositoryTest implements BaseRepositoryTest {
      * test softDelete Method
      * {@link org.eventhub.dal.dao.RoleRepository}
      *
-     * @author Mohamed Gamal <mohamedj239@gmail.com>
+     * @author Mohamed Gamal (mohamedj239@gmail.com)
      */
     @Override
     @Test
@@ -147,7 +147,7 @@ public class RoleRepositoryTest implements BaseRepositoryTest {
      * test Soft Delete Using Method deleteByID
      * {@link org.eventhub.dal.dao.RoleRepository}
      *
-     * @author Mohamed Gamal <mohamedj239@gmail.com>
+     * @author Mohamed Gamal (mohamedj239@gmail.com)
      */
 
     @Override
@@ -170,7 +170,7 @@ public class RoleRepositoryTest implements BaseRepositoryTest {
      * test count Method
      * {@link org.eventhub.dal.dao.RoleRepository}
      *
-     * @author Mohamed Gamal <mohamedj239@gmail.com>
+     * @author Mohamed Gamal (mohamedj239@gmail.com)
      */
     @Override
     @Test
@@ -188,7 +188,7 @@ public class RoleRepositoryTest implements BaseRepositoryTest {
      * test Soft Delete Using Method delete
      * {@link org.eventhub.dal.dao.RoleRepository}
      *
-     * @author Mohamed Gamal <mohamedj239@gmail.com>
+     * @author Mohamed Gamal (mohamedj239@gmail.com)
      */
     @Override
     @Test

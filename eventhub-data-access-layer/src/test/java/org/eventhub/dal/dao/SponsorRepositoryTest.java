@@ -21,7 +21,7 @@ import static org.junit.Assert.assertNull;
 /**
  * Test Class for {@link org.eventhub.dal.dao.SponsorRepository}
  *
- * @author Mohamed Gamal <mohamedj239@gmail.com>
+ * @author Mohamed Gamal (mohamedj239@gmail.com)
  */
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -50,7 +50,7 @@ public class SponsorRepositoryTest implements BaseRepositoryTest {
      * test count Method
      * {@link org.eventhub.dal.dao.SponsorRepository}
      *
-     * @author Mohamed Gamal <mohamedj239@gmail.com>
+     * @author Mohamed Gamal (mohamedj239@gmail.com)
      */
     @Override
     @Test
@@ -67,7 +67,7 @@ public class SponsorRepositoryTest implements BaseRepositoryTest {
      * test delete Method
      * {@link org.eventhub.dal.dao.SponsorRepository}
      *
-     * @author Mohamed Gamal <mohamedj239@gmail.com>
+     * @author Mohamed Gamal (mohamedj239@gmail.com)
      */
     @Override
     @Test
@@ -89,7 +89,7 @@ public class SponsorRepositoryTest implements BaseRepositoryTest {
      * test deleteById Method
      * {@link org.eventhub.dal.dao.SponsorRepository}
      *
-     * @author Mohamed Gamal <mohamedj239@gmail.com>
+     * @author Mohamed Gamal (mohamedj239@gmail.com)
      */
     @Override
     @Test
@@ -111,7 +111,7 @@ public class SponsorRepositoryTest implements BaseRepositoryTest {
      * test softDelete Method
      * {@link org.eventhub.dal.dao.SponsorRepository}
      *
-     * @author Mohamed Gamal <mohamedj239@gmail.com>
+     * @author Mohamed Gamal (mohamedj239@gmail.com)
      */
     @Override
     @Test
@@ -132,7 +132,7 @@ public class SponsorRepositoryTest implements BaseRepositoryTest {
      * test findByName Method
      * {@link org.eventhub.dal.dao.SponsorRepository}
      *
-     * @author Mohamed Gamal <mohamedj239@gmail.com>
+     * @author Mohamed Gamal (mohamedj239@gmail.com)
      */
 
     @Test
@@ -147,7 +147,7 @@ public class SponsorRepositoryTest implements BaseRepositoryTest {
      * test save Method
      * {@link org.eventhub.dal.dao.SponsorRepository}
      *
-     * @author Mohamed Gamal <mohamedj239@gmail.com>
+     * @author Mohamed Gamal (mohamedj239@gmail.com)
      */
     @Override
     @Test
@@ -163,7 +163,7 @@ public class SponsorRepositoryTest implements BaseRepositoryTest {
      * test findAllDeleted Method
      * {@link org.eventhub.dal.dao.SponsorRepository}
      *
-     * @author Mohamed Gamal <mohamedj239@gmail.com>
+     * @author Mohamed Gamal (mohamedj239@gmail.com)
      */
     @Override
     @Test
@@ -182,7 +182,7 @@ public class SponsorRepositoryTest implements BaseRepositoryTest {
      * test findAll Method
      * {@link org.eventhub.dal.dao.SponsorRepository}
      *
-     * @author Mohamed Gamal <mohamedj239@gmail.com>
+     * @author Mohamed Gamal (mohamedj239@gmail.com)
      */
     @Override
     @Test
@@ -199,7 +199,7 @@ public class SponsorRepositoryTest implements BaseRepositoryTest {
      * test update Method
      * {@link org.eventhub.dal.dao.SponsorRepository}
      *
-     * @author Mohamed Gamal <mohamedj239@gmail.com>
+     * @author Mohamed Gamal (mohamedj239@gmail.com)
      */
     @Override
     @Test

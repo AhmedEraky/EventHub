@@ -28,7 +28,7 @@ import org.springframework.transaction.annotation.Transactional;
 /**
  * Test Class for {@link org.eventhub.dal.dao.EventGuestRepositor}
  *
- * @author Aya Taha
+ * @author Aya Taha (aya.taha.ali.93@gmail.com)
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = {AppConfig.class}, loader = AnnotationConfigContextLoader.class)
@@ -47,7 +47,7 @@ public class EventGuestRepositoryTest implements BaseRepositoryTest {
     /**
      * test count Method {@link org.eventhub.dal.dao.EventGuestRepository}
      *
-     * @author Aya Taha
+     * @author Aya Taha (aya.taha.ali.93@gmail.com)
      */
     @Test
     @Override
@@ -63,7 +63,7 @@ public class EventGuestRepositoryTest implements BaseRepositoryTest {
      * test Soft Delete Using Method delete
      * {@link org.eventhub.dal.dao.EventGuestRepository}
      *
-     * @author Aya Taha
+     * @author Aya Taha (aya.taha.ali.93@gmail.com)
      */
     @Test
     @Override
@@ -82,7 +82,7 @@ public class EventGuestRepositoryTest implements BaseRepositoryTest {
      * test Soft Delete Using Method deleteByID
      * {@link org.eventhub.dal.dao.EventGuestRepository}
      *
-     * @author Aya Taha
+     * @author Aya Taha (aya.taha.ali.93@gmail.com)
      */
     @Test
     @Override
@@ -103,7 +103,7 @@ public class EventGuestRepositoryTest implements BaseRepositoryTest {
     /**
      * test save Method {@link org.eventhub.dal.dao.EventGuestRepository}
      *
-     * @author Aya Taha
+     * @author Aya Taha (aya.taha.ali.93@gmail.com)
      */
     @Test
     @Override
@@ -118,7 +118,7 @@ public class EventGuestRepositoryTest implements BaseRepositoryTest {
     /**
      * test Method update {@link org.eventhub.dal.dao.EventGuestRepository}
      *
-     * @author Aya Taha
+     * @author Aya Taha (aya.taha.ali.93@gmail.com)
      */
     @Test
     @Override
@@ -138,7 +138,7 @@ public class EventGuestRepositoryTest implements BaseRepositoryTest {
      * test findAll Deleted Method
      * {@link org.eventhub.dal.dao.EventGuestRepository}
      *
-     * @author Aya Taha
+     * @author Aya Taha (aya.taha.ali.93@gmail.com)
      */
     @Test
     @Override
@@ -154,7 +154,7 @@ public class EventGuestRepositoryTest implements BaseRepositoryTest {
     /**
      * test findAll Method {@link org.eventhub.dal.dao.EventGuestRepository}
      *
-     * @author Aya Taha
+     * @author Aya Taha (aya.taha.ali.93@gmail.com)
      */
     @Override
     @Test
@@ -170,7 +170,7 @@ public class EventGuestRepositoryTest implements BaseRepositoryTest {
     /**
      * test SoftDelete Method {@link org.eventhub.dal.dao.EventGuestRepository}
      *
-     * @author Aya Taha
+     * @author Aya Taha (aya.taha.ali.93@gmail.com)
      */
     @Test
     @Override
@@ -194,7 +194,7 @@ public class EventGuestRepositoryTest implements BaseRepositoryTest {
      * test findAllBySystemUser Method
      * {@link org.eventhub.dal.dao.EventGuestRepository}
      *
-     * @author Aya Taha
+     * @author Aya Taha (aya.taha.ali.93@gmail.com)
      */
     @Test
     public void testFindAllBySystemUser() {
@@ -211,7 +211,7 @@ public class EventGuestRepositoryTest implements BaseRepositoryTest {
      * test findAllByEvent Method
      * {@link org.eventhub.dal.dao.EventGuestRepository}
      *
-     * @author Aya Taha
+     * @author Aya Taha (aya.taha.ali.93@gmail.com)
      */
     @Test
     public void testFindAllByEvent() {

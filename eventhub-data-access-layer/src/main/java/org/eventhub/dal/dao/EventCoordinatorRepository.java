@@ -17,7 +17,7 @@ import org.springframework.stereotype.Repository;
 
 /**
  * EventCoordinator interface has the needed methods to retrieve according to Unique key or join sql 
- * @author Aya Taha
+ * @author Aya Taha (aya.taha.ali.93@gmail.com)
  */
 
 public interface EventCoordinatorRepository extends BaseRepository<EventCoordinator>{
@@ -26,7 +26,7 @@ public interface EventCoordinatorRepository extends BaseRepository<EventCoordina
      *  retrieve EventCoordinator based on systemUser
      * @param systemUser {@link org.eventhub.common.model.entity.SystemUser}
      * @return EventCoordinator {@link org.eventhub.common.model.entity.EventCoordinator}
-     * @author Aya Taha
+     * @author Aya Taha (aya.taha.ali.93@gmail.com)
      */
      @Query(value="from EventCoordinator as ec where  ec.systemUser=?1 and ec.deleted=0")   
     public List<EventCoordinator> findAllBySystemUser(SystemUser systemUser, Pageable pageable);
@@ -35,7 +35,7 @@ public interface EventCoordinatorRepository extends BaseRepository<EventCoordina
      *  retrieve EventCoordinator based on event
      * @param event {@link org.eventhub.common.model.entity.Event}
      * @return List of EventCoordinator {@link org.eventhub.common.model.entity.EventCoordinator}
-     * @author Aya Taha
+     * @author Aya Taha (aya.taha.ali.93@gmail.com)
      */
      @Query(value="from EventCoordinator as ec where  ec.event=?1 and ec.deleted=0")   
     public List<EventCoordinator> findAllByEvent(Event event, Pageable pageable);

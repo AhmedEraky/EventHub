@@ -17,7 +17,7 @@ import org.springframework.data.domain.Pageable;
  *
  *  Material interface has the needed methods to retrieve according to Unique
  * 
- *  @author Aya Taha
+ *  @author Aya Taha (aya.taha.ali.93@gmail.com)
  */
 @Repository
 public interface MaterialRepository extends BaseRepository<Material> {
@@ -26,7 +26,7 @@ public interface MaterialRepository extends BaseRepository<Material> {
      *  retrieve material based on Path
      * @param path
      * @return  Material {@link org.eventhub.common.model.entity.Material}
-     *  @author Aya Taha
+     *  @author Aya Taha (aya.taha.ali.93@gmail.com)
      */
     @Query(value = "from Material as m where  m.path=?1 and m.deleted=0")
     public Material findByPath(String path);
@@ -35,7 +35,7 @@ public interface MaterialRepository extends BaseRepository<Material> {
      *  retrieve material based on sessionInstructor
      * @param sessionInstructor {@link org.eventhub.common.model.entity.SessionInstructor}
      * @return list of Material {@link org.eventhub.common.model.entity.Material}
-     *  @author Aya Taha
+     *  @author Aya Taha (aya.taha.ali.93@gmail.com)
      */
     
     @Query(value = "from Material as m where  m.sessionInstructor=?1 and m.deleted=0")
