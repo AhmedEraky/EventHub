@@ -22,7 +22,7 @@ import javax.crypto.spec.SecretKeySpec;
 /**
  * Encryption utilities to be used across the application
  *
- * @author Amr Elkady <amrelkady93@gmail.com>
+ * @author Amr Elkady (amrelkady93@gmail.com)
  * @author Ibrahim Yousre (ib.yousre@gmail.com)
  */
 public class EncryptionUtils {
@@ -55,7 +55,7 @@ public class EncryptionUtils {
      * @param plainText plain text
      * @return encrypted text with encoding to base64
      * @author Amr Elkady (amrelkady93@gmail.com)
-     * {@link https://stackoverflow.com/a/30591269/5331778}
+     * 
      */
     public static String encrypt(String plainText) {
         try {
@@ -75,7 +75,7 @@ public class EncryptionUtils {
      * @param encryptionText encrypted text
      * @return original text
      * @author Amr Elkady (amrelkady93@gmail.com)
-     * {@link https://stackoverflow.com/a/30591269/5331778}
+     * 
      */
     public static String decrypt(String encryptionText) {
         try {
