@@ -39,7 +39,6 @@ public class RoleRepositoryTest implements BaseRepositoryTest {
      *
      * @author Mohamed Gamal <mohamedj239@gmail.com>
      */
-    @Override
     @Test
     public void testFindByName() {
         Role bRole = new Role(null, "dummyRole");
@@ -138,8 +137,10 @@ public class RoleRepositoryTest implements BaseRepositoryTest {
         assertEquals(bRole.getName(), aRole.getName());
 
         UUID id = bRole.getUuid();
+        Long count = roleRepository.count();
         roleRepository.softDelete(id);
         assertNull("Object Should not Exist", roleRepository.getOne(id));
+        assertEquals(count, (Long) roleRepository.count());
     }
 
     /**

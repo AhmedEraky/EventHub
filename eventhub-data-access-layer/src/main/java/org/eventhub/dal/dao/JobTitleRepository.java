@@ -15,7 +15,7 @@ import org.springframework.data.domain.Pageable;
  *  JobTitle interface has the needed methods to retrieve according to Unique key or join sql 
  * @author Aya Taha
  */
-@Repository
+
 public interface JobTitleRepository extends BaseRepository<JobTitle> {
 
      /**

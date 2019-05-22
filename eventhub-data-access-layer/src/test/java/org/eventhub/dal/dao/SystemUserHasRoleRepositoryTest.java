@@ -212,7 +212,6 @@ public class SystemUserHasRoleRepositoryTest implements BaseRepositoryTest {
      * @author Amr Elkady <amrelkady93@gmail.com>
      */
     @Test
-    @Override
     public void testFindByName() {
 
     }

@@ -17,7 +17,7 @@ import org.springframework.stereotype.Repository;
  *VipSpeaksInSession interface has the needed methods to retrieve according to Unique key or join sql 
  * @author Aya Taha
  */
-@Repository
+
 public interface VipSpeaksInSessionRepository  extends BaseRepository<VipSpeaksInSession>{
     
     /**
