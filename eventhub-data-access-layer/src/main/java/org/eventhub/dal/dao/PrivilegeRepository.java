@@ -23,7 +23,7 @@ public interface PrivilegeRepository extends BaseRepository<Privilege> {
      * @return {@link org.eventhub.common.model.entity.Privilege}
      * @author Amr Elkady (amrelkady93@gmail.com)
      */
-    @Query(value = "from Privilege p where lbower(p.name) like lower(CONCAT('%',?1, '%')) and p.deleted=0")
+    @Query(value = "from Privilege p where lower(p.name) like lower(CONCAT('%',?1, '%')) and p.deleted=0")
     List<Privilege> findAllByName(String name, Pageable pageable);
 
     /**
