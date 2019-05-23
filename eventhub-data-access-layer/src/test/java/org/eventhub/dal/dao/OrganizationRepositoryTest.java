@@ -17,8 +17,8 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.support.AnnotationConfigContextLoader;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Test class for {@link org.eventhub.dal.dao.OrganizationRepository}
@@ -199,7 +199,7 @@ public class OrganizationRepositoryTest implements BaseRepositoryTest{
         Organization organization = prepareOrganizationToSave();
         Vip vip = prepareVipToSave(organization);
         vipRepository.save(vip);
-        Set<Vip> vips = new HashSet<>();
+        List<Vip> vips = new ArrayList<>();
         vips.add(vip);
         organization.setVips(vips);
         organizationRepository.save(organization);
@@ -217,7 +217,7 @@ public class OrganizationRepositoryTest implements BaseRepositoryTest{
     public void testFindBySystemUsers(){
         SystemUser systemUser = new SystemUser(null,"MennaAhmed","Menna","41111","menna4a.helmi@gmail.com");
 
-        Set<SystemUser> systemUsers = new HashSet<>();
+        List<SystemUser> systemUsers = new ArrayList<>();
         systemUsers.add(systemUser);
         Organization organization = prepareOrganizationToSave();
         systemUser.setOrganization(organization);

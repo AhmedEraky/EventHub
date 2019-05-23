@@ -21,6 +21,7 @@ import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import java.util.Properties;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
 /**
  *
@@ -28,8 +29,9 @@ import java.util.Properties;
  */
 @Configuration
 @EnableTransactionManagement
-@EnableJpaRepositories("org.eventhub.dal.dao")
+@EnableJpaRepositories({"org.eventhub.dal.dao", "org.eventhub.dal.aspects"})
 @PropertySource("classpath:org/eventhub/dal/config/datastore.properties")
+@EnableAspectJAutoProxy
 public class AppConfig {
 
     @Value("${jdbc.driver}")
@@ -59,10 +61,10 @@ public class AppConfig {
         entityManagerFactoryBean.setPersistenceProvider(new HibernatePersistenceProvider());
         entityManagerFactoryBean.setPackagesToScan("org.eventhub.common.model.entity");
         entityManagerFactoryBean.setDataSource(dataSource);
-        Properties properties=new Properties();
-        properties.setProperty("hibernate.dialect","org.hibernate.dialect.MySQL8Dialect");
-        properties.setProperty("hibernate.show_sql","true");
-        properties.setProperty("hibernate.hbm2ddl.auto","update");
+        Properties properties = new Properties();
+        properties.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQL8Dialect");
+        properties.setProperty("hibernate.show_sql", "true");
+        properties.setProperty("hibernate.hbm2ddl.auto", "update");
         entityManagerFactoryBean.setJpaProperties(properties);
         return entityManagerFactoryBean;
     }
@@ -71,6 +73,5 @@ public class AppConfig {
     public PlatformTransactionManager transactionManager(EntityManagerFactory emf) {
         return new JpaTransactionManager(emf);
     }
-    
 
 }

@@ -6,7 +6,7 @@
 package org.eventhub.common.model.entity;
 
 import java.io.Serializable;
-import java.util.Set;
+import java.util.List;
 import java.util.UUID;
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
@@ -31,9 +31,9 @@ public class JobTitle extends BaseEntity implements Serializable {
     @Column(name = "name",length=45)
     private String name;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "jobTitle")
-    private Set<SystemUser> systemUsers;
+    private List<SystemUser> systemUsers;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "jobTitle")
-    private Set<Vip> vips;
+    private List<Vip> vips;
 
     public JobTitle() {
     }
@@ -56,20 +56,20 @@ public class JobTitle extends BaseEntity implements Serializable {
     }
 
     @XmlTransient
-    public Set<SystemUser> getSystemUsers() {
+    public List<SystemUser> getSystemUsers() {
         return systemUsers;
     }
 
-    public void setSystemUsers(Set<SystemUser> systemUsers) {
+    public void setSystemUsers(List<SystemUser> systemUsers) {
         this.systemUsers = systemUsers;
     }
 
     @XmlTransient
-    public Set<Vip> getVips() {
+    public List<Vip> getVips() {
         return vips;
     }
 
-    public void setVips(Set<Vip> vips) {
+    public void setVips(List<Vip> vips) {
         this.vips = vips;
     }
 
