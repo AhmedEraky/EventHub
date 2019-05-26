@@ -15,6 +15,8 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.support.AnnotationConfigContextLoader;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Date;
+
 import static junit.framework.TestCase.assertNotNull;
 import static org.junit.Assert.*;
 
@@ -45,7 +47,7 @@ public class SystemUserPhoneRepositoryTest implements BaseRepositoryTest {
     public void testCount() {
         SystemUserPhone bSystemUserPhone=new SystemUserPhone(null,"01117538430");
         SystemUser bSystemUser=
-                new SystemUser(null,"amrelkady","Amr","12345","amrelkady93@gmail.com", UserGender.Male);
+                getSystemUser();
         systemUserRepository.save(bSystemUser);
         bSystemUserPhone.setSystemUser(bSystemUser);
         long bSize=systemUserPhoneRepository.count();
@@ -64,7 +66,7 @@ public class SystemUserPhoneRepositoryTest implements BaseRepositoryTest {
     public void testSave(){
         SystemUserPhone bSystemUserPhone=new SystemUserPhone(null,"01117538430");
         SystemUser bSystemUser=
-                new SystemUser(null,"amrelkady","Amr","12345","amrelkady93@gmail.com", UserGender.Male);
+                getSystemUser();
         systemUserRepository.save(bSystemUser);
         bSystemUserPhone.setSystemUser(bSystemUser);
         systemUserPhoneRepository.save(bSystemUserPhone);
@@ -82,7 +84,7 @@ public class SystemUserPhoneRepositoryTest implements BaseRepositoryTest {
     public void testUpdate(){
         SystemUserPhone bSystemUserPhone=new SystemUserPhone(null,"01117538430");
         SystemUser bSystemUser=
-                new SystemUser(null,"amrelkady","Amr","12345","amrelkady93@gmail.com", UserGender.Male);
+                getSystemUser();
         systemUserRepository.save(bSystemUser);
         bSystemUserPhone.setSystemUser(bSystemUser);
         systemUserPhoneRepository.save(bSystemUserPhone);
@@ -102,7 +104,7 @@ public class SystemUserPhoneRepositoryTest implements BaseRepositoryTest {
     public void testFindAllDeleted() {
         SystemUserPhone bSystemUserPhone=new SystemUserPhone(null,"01117538430");
         SystemUser bSystemUser=
-                new SystemUser(null,"amrelkady","Amr","12345","amrelkady93@gmail.com", UserGender.Male);
+                getSystemUser();
         systemUserRepository.save(bSystemUser);
         bSystemUserPhone.setSystemUser(bSystemUser);
         long bSize=systemUserPhoneRepository.findAllDeleted(pageable).size();
@@ -122,7 +124,7 @@ public class SystemUserPhoneRepositoryTest implements BaseRepositoryTest {
     public void testDelete(){
         SystemUserPhone bSystemUserPhone=new SystemUserPhone(null,"01117538430");
         SystemUser bSystemUser=
-                new SystemUser(null,"amrelkady","Amr","12345","amrelkady93@gmail.com", UserGender.Male);
+                getSystemUser();
         systemUserRepository.save(bSystemUser);
         bSystemUserPhone.setSystemUser(bSystemUser);
         systemUserPhoneRepository.save(bSystemUserPhone);
@@ -142,7 +144,7 @@ public class SystemUserPhoneRepositoryTest implements BaseRepositoryTest {
     public void testSoftDelete(){
         SystemUserPhone bSystemUserPhone=new SystemUserPhone(null,"01117538430");
         SystemUser bSystemUser=
-                new SystemUser(null,"amrelkady","Amr","12345","amrelkady93@gmail.com", UserGender.Male);
+                getSystemUser();
         systemUserRepository.save(bSystemUser);
         bSystemUserPhone.setSystemUser(bSystemUser);
         systemUserPhoneRepository.save(bSystemUserPhone);
@@ -162,7 +164,7 @@ public class SystemUserPhoneRepositoryTest implements BaseRepositoryTest {
     public void testFindAll() {
         SystemUserPhone bSystemUserPhone=new SystemUserPhone(null,"01117538430");
         SystemUser bSystemUser=
-                new SystemUser(null,"amrelkady","Amr","12345","amrelkady93@gmail.com", UserGender.Male);
+                getSystemUser();
         systemUserRepository.save(bSystemUser);
         bSystemUserPhone.setSystemUser(bSystemUser);
         long bSize=systemUserPhoneRepository.findAll().size();
@@ -191,7 +193,7 @@ public class SystemUserPhoneRepositoryTest implements BaseRepositoryTest {
     public void testDeleteByID(){
         SystemUserPhone bSystemUserPhone=new SystemUserPhone(null,"01117538430");
         SystemUser bSystemUser=
-                new SystemUser(null,"amrelkady","Amr","12345","amrelkady93@gmail.com", UserGender.Male);
+                getSystemUser();
         systemUserRepository.save(bSystemUser);
         bSystemUserPhone.setSystemUser(bSystemUser);
         systemUserPhoneRepository.save(bSystemUserPhone);
@@ -211,12 +213,17 @@ public class SystemUserPhoneRepositoryTest implements BaseRepositoryTest {
 
         SystemUserPhone bSystemUserPhone=new SystemUserPhone(null,"01117538430");
         SystemUser bSystemUser=
-                new SystemUser(null,"amrelkady","Amr","12345","amrelkady93@gmail.com", UserGender.Male);
+                getSystemUser();
         systemUserRepository.save(bSystemUser);
         int bSize=systemUserPhoneRepository.findAllBySystemUser(bSystemUser,pageable).size();
         bSystemUserPhone.setSystemUser(bSystemUser);
         systemUserPhoneRepository.save(bSystemUserPhone);
         int aSize=systemUserPhoneRepository.findAllBySystemUser(bSystemUser,pageable).size();
         assertEquals(bSize+1,aSize);
+    }
+    public SystemUser getSystemUser() {
+        SystemUser systemUser =
+                new SystemUser(null, "amrelkady", "Amr", "12345", "amrelkady93@gmail.com",UserGender.Male,new Date());
+        return systemUser;
     }
 }

@@ -29,6 +29,7 @@ public class WebViewsConfig implements WebMvcConfigurer {
     public void configureViewResolvers(ViewResolverRegistry registry) {
         registry.tiles();
         registry.jsp("/WEB-INF/views/", ".jsp");
+
     }
 
     @Override

@@ -1,5 +1,6 @@
 package org.eventhub.web.controller.temp;
 
+import org.eventhub.common.model.entity.SystemUser;
 import org.eventhub.web.controller.temp.entity.Entity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,9 +24,9 @@ public class MyController {
 
     @GetMapping("/goBody")
     public String getBody(Model model) {
-        model.addAttribute("user", new Entity());
+        model.addAttribute("systemUser", new SystemUser());
         addCommonAttributes(model);
-        return "defBody";
+        return "formTemp";
     }
 
     private void addCommonAttributes(Model model) {

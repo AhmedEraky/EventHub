@@ -1,28 +1,33 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<spring:message code=""/>
+
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-        <title><spring:message code="app.title"/> </title>
+<head>
 
-        <spring:theme code="stylesheet" var="themeName" />
-        <link href='<spring:url value="/resources/css/${themeName}"/>' rel="stylesheet" />
+    <spring:theme code="stylesheet" var="themeName" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <c:set var="contextPath" value="${pageContext.request.contextPath}" />
+    <tiles:insertAttribute name="style" />
 
-    </head>
-    <body>
-        
+
+</head>
+<body class="nav-md">
+<div class="container body">
+    <div class="main_container">
+
+        <tiles:insertAttribute name="leftNav"/>
         <tiles:insertAttribute name="header" />
-
-        <tiles:insertAttribute name="body" />
-
+        <tiles:insertAttribute name="body"/>
         <tiles:insertAttribute name="footer" />
 
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    </body>
+    </div>
+</div>
+
+<tiles:insertAttribute name="script" />
+
+</body>
 </html>

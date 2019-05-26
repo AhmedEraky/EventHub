@@ -216,7 +216,7 @@ public class VipSpeaksInSessionRepositoryTest implements BaseRepositoryTest {
         SessionType sessionType = new SessionType(null, "dummySessionType", "dummyStyle");
         Event event = new Event(null, "dummyEvent", "dummyDesc", "dummyAddress", new Date(), new Date(), "dummyStyle");
         Organization organization = new Organization(null, "dummyOrganization");
-        SystemUser systemUser = new SystemUser(null, "dummyUserName", "dummy", "dummy", "dummy@dm.com",UserGender.Female);
+        SystemUser systemUser = new SystemUser(null, "dummyUserName", "dummy", "dummy", "dummy@dm.com",UserGender.Female,new Date());
         Vip vip = new Vip(null, "dummyBio", "dummyName");
         JobTitle jobTitle = new JobTitle(null, "dummyJobTitle");
 

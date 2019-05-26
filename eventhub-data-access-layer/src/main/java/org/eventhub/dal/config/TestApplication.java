@@ -5,6 +5,7 @@
  */
 package org.eventhub.dal.config;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -44,7 +45,7 @@ public class TestApplication {
     private SystemUser createUserIfNotPresent(String email, String password) {
         SystemUser user = systemUserRepository.findByEmail(email);
         if (user == null) {
-            user = new SystemUser(null, "username", "firstname", password, email, UserGender.Female);
+            user = new SystemUser(null, "username", "firstname", password, email, UserGender.Female,new Date());
             user.setUserName(email);
             systemUserRepository.save(user);
         }

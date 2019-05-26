@@ -16,6 +16,8 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.support.AnnotationConfigContextLoader;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Date;
+
 import static org.junit.Assert.assertEquals;
 
 /**
@@ -48,7 +50,7 @@ public class SystemUserHasRoleRepositoryTest implements BaseRepositoryTest {
         SystemUserHasRole systemUserHasRole =
                 new SystemUserHasRole();
         SystemUser bSystemUser=
-                new SystemUser(null,"amrelkady","Amr","12345","amrelkady93@gmail.com", UserGender.Male);
+                getSystemUser();
         Role role = new Role(null,"Admin");
         systemUserRepository.save(bSystemUser);
         roleRepository.save(role);
@@ -72,7 +74,7 @@ public class SystemUserHasRoleRepositoryTest implements BaseRepositoryTest {
         SystemUserHasRole systemUserHasRole =
                 new SystemUserHasRole();
         SystemUser bSystemUser=
-                new SystemUser(null,"amrelkady","Amr","12345","amrelkady93@gmail.com", UserGender.Male);
+                getSystemUser();
         Role role = new Role(null,"Admin");
         systemUserRepository.save(bSystemUser);
         roleRepository.save(role);
@@ -93,8 +95,7 @@ public class SystemUserHasRoleRepositoryTest implements BaseRepositoryTest {
     public void testUpdate() {
         SystemUserHasRole bsystemUserHasRole =
                 new SystemUserHasRole();
-        SystemUser bSystemUser=
-                new SystemUser(null,"amrelkady","Amr","12345","amrelkady93@gmail.com", UserGender.Male);
+        SystemUser bSystemUser= getSystemUser();
         Role role = new Role(null,"Admin");
         Role role2 = new Role(null,"User");
         systemUserRepository.save(bSystemUser);
@@ -122,7 +123,7 @@ public class SystemUserHasRoleRepositoryTest implements BaseRepositoryTest {
         SystemUserHasRole systemUserHasRole =
                 new SystemUserHasRole();
         SystemUser bSystemUser=
-                new SystemUser(null,"amrelkady","Amr","12345","amrelkady93@gmail.com", UserGender.Male);
+                getSystemUser();
         Role role = new Role(null,"Admin");
         systemUserRepository.save(bSystemUser);
         roleRepository.save(role);
@@ -146,7 +147,7 @@ public class SystemUserHasRoleRepositoryTest implements BaseRepositoryTest {
         SystemUserHasRole systemUserHasRole =
                 new SystemUserHasRole();
         SystemUser bSystemUser=
-                new SystemUser(null,"amrelkady","Amr","12345","amrelkady93@gmail.com", UserGender.Male);
+                getSystemUser();
         Role role = new Role(null,"Admin");
         systemUserRepository.save(bSystemUser);
         roleRepository.save(role);
@@ -170,7 +171,7 @@ public class SystemUserHasRoleRepositoryTest implements BaseRepositoryTest {
         SystemUserHasRole systemUserHasRole =
                 new SystemUserHasRole();
         SystemUser bSystemUser=
-                new SystemUser(null,"amrelkady","Amr","12345","amrelkady93@gmail.com", UserGender.Male);
+                getSystemUser();
         Role role = new Role(null,"Admin");
         systemUserRepository.save(bSystemUser);
         roleRepository.save(role);
@@ -194,7 +195,7 @@ public class SystemUserHasRoleRepositoryTest implements BaseRepositoryTest {
         SystemUserHasRole systemUserHasRole =
                 new SystemUserHasRole();
         SystemUser bSystemUser=
-                new SystemUser(null,"amrelkady","Amr","12345","amrelkady93@gmail.com", UserGender.Male);
+                getSystemUser();
         Role role = new Role(null,"Admin");
         systemUserRepository.save(bSystemUser);
         roleRepository.save(role);
@@ -228,7 +229,7 @@ public class SystemUserHasRoleRepositoryTest implements BaseRepositoryTest {
         SystemUserHasRole systemUserHasRole =
                 new SystemUserHasRole();
         SystemUser bSystemUser=
-                new SystemUser(null,"amrelkady","Amr","12345","amrelkady93@gmail.com", UserGender.Male);
+                getSystemUser();
         Role role = new Role(null,"Admin");
         systemUserRepository.save(bSystemUser);
         roleRepository.save(role);
@@ -251,7 +252,7 @@ public class SystemUserHasRoleRepositoryTest implements BaseRepositoryTest {
         SystemUserHasRole systemUserHasRole =
                 new SystemUserHasRole();
         SystemUser bSystemUser=
-                new SystemUser(null,"amrelkady","Amr","12345","amrelkady93@gmail.com", UserGender.Male);
+                getSystemUser();
         Role role = new Role(null,"Admin");
         systemUserRepository.save(bSystemUser);
         roleRepository.save(role);
@@ -274,7 +275,7 @@ public class SystemUserHasRoleRepositoryTest implements BaseRepositoryTest {
         SystemUserHasRole systemUserHasRole =
                 new SystemUserHasRole();
         SystemUser bSystemUser=
-                new SystemUser(null,"amrelkady","Amr","12345","amrelkady93@gmail.com", UserGender.Male);
+                getSystemUser();
         Role role = new Role(null,"Admin");
         systemUserRepository.save(bSystemUser);
         roleRepository.save(role);
@@ -284,5 +285,11 @@ public class SystemUserHasRoleRepositoryTest implements BaseRepositoryTest {
         systemUserHasRoleRepository.save(systemUserHasRole);
         long asize=systemUserHasRoleRepository.findAllBySystemUser(bSystemUser,pageable).size();
         assertEquals(bsize+1,asize);
+    }
+
+    public SystemUser getSystemUser() {
+        SystemUser systemUser =
+                new SystemUser(null, "amrelkady", "Amr", "12345", "amrelkady93@gmail.com",UserGender.Male,new Date());
+        return systemUser;
     }
 }

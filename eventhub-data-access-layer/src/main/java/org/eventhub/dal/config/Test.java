@@ -13,6 +13,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import java.util.Date;
 import java.util.Random;
 import java.util.UUID;
 
@@ -29,7 +30,7 @@ public class Test {
        
         SystemUserRepository systemUserRepository = context.getBean(SystemUserRepository.class);
         Random rand = new Random();
-        SystemUser user = new SystemUser(null, "user", "user","user", "user"+rand.nextInt(1000), UserGender.Male);
+        SystemUser user = new SystemUser(null, "user", "user","user", "user"+rand.nextInt(1000), UserGender.Male,new Date());
         UUID uuid = systemUserRepository.save(user).getUuid();
         systemUserRepository.softDelete(uuid);
         systemUserRepository.findAll().forEach(System.out::println);
