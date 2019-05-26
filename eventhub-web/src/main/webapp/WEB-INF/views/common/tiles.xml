@@ -17,9 +17,9 @@
 
 
 
-    <definition name="formTemp" extends="common">
+<!--    <definition name="formTemp" extends="common">
         <put-attribute name="body" value="/WEB-INF/views/user/formTemp.jsp"/>
-    </definition>
+    </definition>-->
 
     <definition name="signUp" extends="common">
         <put-attribute name="body" value="/WEB-INF/views/user/signUp.jsp"/>

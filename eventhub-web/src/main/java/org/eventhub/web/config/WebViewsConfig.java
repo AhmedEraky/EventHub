@@ -24,7 +24,6 @@ import java.util.concurrent.TimeUnit;
 @Configuration
 public class WebViewsConfig implements WebMvcConfigurer {
 
-
     @Override
     public void configureViewResolvers(ViewResolverRegistry registry) {
         registry.tiles();
@@ -54,7 +53,7 @@ public class WebViewsConfig implements WebMvcConfigurer {
 
     @Bean("messageSource")
     public MessageSource messageSource() {
-        ReloadableResourceBundleMessageSource messageSource=new ReloadableResourceBundleMessageSource();
+        ReloadableResourceBundleMessageSource messageSource = new ReloadableResourceBundleMessageSource();
         messageSource.setBasename("classpath:org/eventhub/web/config/locale/messages");
         messageSource.setDefaultEncoding("UTF-8");
         messageSource.setUseCodeAsDefaultMessage(true);
@@ -81,7 +80,8 @@ public class WebViewsConfig implements WebMvcConfigurer {
     @Bean
     public TilesConfigurer tilesConfigurer() {
         TilesConfigurer tilesConfigurer = new TilesConfigurer();
-        tilesConfigurer.setDefinitions("/WEB-INF/tiles-def.xml");
+        tilesConfigurer.setDefinitions(new String[]{"/WEB-INF/views/**/tiles.xml"});
+        tilesConfigurer.setCheckRefresh(true);
         return tilesConfigurer;
     }
 
