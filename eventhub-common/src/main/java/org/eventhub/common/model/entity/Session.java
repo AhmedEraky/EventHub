@@ -144,7 +144,6 @@ public class Session extends BaseEntity implements Serializable {
         this.sessionType = sessionType;
     }
 
-    @XmlTransient
     public List<SessionInHall> getSessionInHalls() {
         return sessionInHalls;
     }
@@ -153,7 +152,6 @@ public class Session extends BaseEntity implements Serializable {
         this.sessionInHalls = sessionInHalls;
     }
 
-    @XmlTransient
     public List<SessionInstructor> getSessionInstructors() {
         return sessionInstructors;
     }
@@ -162,7 +160,6 @@ public class Session extends BaseEntity implements Serializable {
         this.sessionInstructors = sessionInstructors;
     }
 
-    @XmlTransient
     public List<VipSpeaksInSession> getVipSpeaksInSessions() {
         return vipSpeaksInSessions;
     }
@@ -170,5 +167,4 @@ public class Session extends BaseEntity implements Serializable {
     public void setVipSpeaksInSessions(List<VipSpeaksInSession> vipSpeaksInSessions) {
         this.vipSpeaksInSessions = vipSpeaksInSessions;
     }
-
 }

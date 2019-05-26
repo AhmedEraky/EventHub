@@ -79,7 +79,6 @@ public class Organization extends BaseEntity implements Serializable {
         this.logo = logo;
     }
 
-    @XmlTransient
     public List<SystemUser> getSystemUsers() {
         return systemUsers;
     }
@@ -88,7 +87,6 @@ public class Organization extends BaseEntity implements Serializable {
         this.systemUsers = systemUsers;
     }
 
-    @XmlTransient
     public List<Event> getEvents() {
         return events;
     }
@@ -97,7 +95,6 @@ public class Organization extends BaseEntity implements Serializable {
         this.events = events;
     }
 
-    @XmlTransient
     public List<Vip> getVips() {
         return vips;
     }
@@ -105,5 +102,4 @@ public class Organization extends BaseEntity implements Serializable {
     public void setVips(List<Vip> vips) {
         this.vips = vips;
     }
-
 }

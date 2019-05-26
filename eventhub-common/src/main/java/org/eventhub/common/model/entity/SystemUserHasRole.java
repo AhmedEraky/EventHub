@@ -52,5 +52,4 @@ public class SystemUserHasRole extends BaseEntity implements Serializable {
     public void setSystemUser(SystemUser systemUser) {
         this.systemUser = systemUser;
     }
-    
 }

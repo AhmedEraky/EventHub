@@ -6,19 +6,11 @@
 package org.eventhub.common.model.entity;
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
 import java.util.UUID;
-import javax.persistence.Basic;
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.PrePersist;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
@@ -46,6 +38,11 @@ public class SystemUser extends BaseEntity implements Serializable {
     @Basic(optional = false)
     @Column(name = "email",length=45)
     private String email;
+    @Column(name = "gender",length=10)
+    private UserGender gender;
+    @Column(name = "end_date")
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date dateOfBirth;
     @Column(name = "profile_image",length=100)
     private String profileImage;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "systemUser")
@@ -77,20 +74,21 @@ public class SystemUser extends BaseEntity implements Serializable {
         super(uuid);
     }
 
-    public SystemUser(UUID uuid, String username, String firstName, String password, String email) {
+    public SystemUser(UUID uuid, String username, String firstName, String password, String email,UserGender gender) {
         super(uuid);
         this.userName = username;
         this.firstName = firstName;
         this.password = password;
         this.email = email;
+        this.gender=gender;
     }
 
-    public String getUsername() {
+    public String getUserName() {
         return userName;
     }
 
-    public void setUsername(String username) {
-        this.userName = username;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public String getFirstName() {
@@ -133,6 +131,14 @@ public class SystemUser extends BaseEntity implements Serializable {
         this.email = email;
     }
 
+    public UserGender getGender() {
+        return gender;
+    }
+
+    public void setGender(UserGender gender) {
+        this.gender = gender;
+    }
+
     public String getProfileImage() {
         return profileImage;
     }
@@ -141,7 +147,6 @@ public class SystemUser extends BaseEntity implements Serializable {
         this.profileImage = profileImage;
     }
 
-    @XmlTransient
     public List<SystemUserPhone> getSystemUserPhones() {
         return systemUserPhones;
     }
@@ -150,7 +155,6 @@ public class SystemUser extends BaseEntity implements Serializable {
         this.systemUserPhones = systemUserPhones;
     }
 
-    @XmlTransient
     public List<EventGuest> getEventGuests() {
         return eventGuests;
     }
@@ -159,7 +163,6 @@ public class SystemUser extends BaseEntity implements Serializable {
         this.eventGuests = eventGuests;
     }
 
-    @XmlTransient
     public List<Instructor> getInstructors() {
         return instructors;
     }
@@ -168,7 +171,6 @@ public class SystemUser extends BaseEntity implements Serializable {
         this.instructors = instructors;
     }
 
-    @XmlTransient
     public List<SystemUserHasRole> getSystemUserHasRoles() {
         return systemUserHasRoles;
     }
@@ -177,7 +179,6 @@ public class SystemUser extends BaseEntity implements Serializable {
         this.systemUserHasRoles = systemUserHasRoles;
     }
 
-    @XmlTransient
     public List<EventCoordinator> getEventCoordinators() {
         return eventCoordinators;
     }
@@ -210,14 +211,19 @@ public class SystemUser extends BaseEntity implements Serializable {
         this.organization = organization;
     }
 
-    @XmlTransient
-    public List<Event> getEventSet() {
+    public List<Event> getEvent() {
         return event;
     }
 
-    public void setEventSet(List<Event> event) {
+    public void setEvent(List<Event> event) {
         this.event = event;
     }
 
+    public Date getDateOfBirth() {
+        return dateOfBirth;
+    }
 
+    public void setDateOfBirth(Date dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+    }
 }

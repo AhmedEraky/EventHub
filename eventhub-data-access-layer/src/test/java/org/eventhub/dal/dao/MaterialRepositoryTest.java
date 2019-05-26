@@ -60,7 +60,7 @@ public class MaterialRepositoryTest implements BaseRepositoryTest{
     @Override
     public void testCount() {
 
-        SystemUser systemUser = new SystemUser(null,"MennaAhmed","Menna","41111","menna4a.helmi@gmail.com");
+        SystemUser systemUser = new SystemUser(null,"MennaAhmed","Menna","41111","menna4a.helmi@gmail.com",UserGender.Female);
         Instructor instructor = prepareInstructorToSave(systemUser);
         instructorRepository.save(instructor);
 
@@ -88,7 +88,7 @@ public class MaterialRepositoryTest implements BaseRepositoryTest{
     @Test
     @Override
     public void testDelete() {
-        SystemUser systemUser = new SystemUser(null,"MennaAhmed","Menna","41111","menna4a.helmi@gmail.com");
+        SystemUser systemUser = new SystemUser(null,"MennaAhmed","Menna","41111","menna4a.helmi@gmail.com",UserGender.Female);
         Instructor instructor = prepareInstructorToSave(systemUser);
         instructorRepository.save(instructor);
 
@@ -118,7 +118,7 @@ public class MaterialRepositoryTest implements BaseRepositoryTest{
     @Test
     @Override
     public void testDeleteByID() {
-        SystemUser systemUser = new SystemUser(null,"MennaAhmed","Menna","41111","menna4a.helmi@gmail.com");
+        SystemUser systemUser = new SystemUser(null,"MennaAhmed","Menna","41111","menna4a.helmi@gmail.com",UserGender.Female);
         Instructor instructor = prepareInstructorToSave(systemUser);
         instructorRepository.save(instructor);
 
@@ -148,7 +148,7 @@ public class MaterialRepositoryTest implements BaseRepositoryTest{
     @Test
     @Override
     public void testSoftDelete() {
-        SystemUser systemUser = new SystemUser(null,"MennaAhmed","Menna","41111","menna4a.helmi@gmail.com");
+        SystemUser systemUser = new SystemUser(null,"MennaAhmed","Menna","41111","menna4a.helmi@gmail.com",UserGender.Female);
         Instructor instructor = prepareInstructorToSave(systemUser);
         instructorRepository.save(instructor);
 
@@ -178,7 +178,7 @@ public class MaterialRepositoryTest implements BaseRepositoryTest{
     @Test
     @Override
     public void testSave() {
-        SystemUser systemUser = new SystemUser(null,"MennaAhmed","Menna","41111","menna4a.helmi@gmail.com");
+        SystemUser systemUser = new SystemUser(null,"MennaAhmed","Menna","41111","menna4a.helmi@gmail.com",UserGender.Female);
         Instructor instructor = prepareInstructorToSave(systemUser);
         instructorRepository.save(instructor);
 
@@ -207,7 +207,7 @@ public class MaterialRepositoryTest implements BaseRepositoryTest{
     @Override
     public void testFindAllDeleted() {
 
-        SystemUser systemUser = new SystemUser(null,"MennaAhmed","Menna","41111","menna4a.helmi@gmail.com");
+        SystemUser systemUser = new SystemUser(null,"MennaAhmed","Menna","41111","menna4a.helmi@gmail.com",UserGender.Female);
         Instructor instructor = prepareInstructorToSave(systemUser);
         instructorRepository.save(instructor);
 
@@ -238,7 +238,7 @@ public class MaterialRepositoryTest implements BaseRepositoryTest{
     @Test
     @Override
     public void testFindAll() {
-        SystemUser systemUser = new SystemUser(null,"MennaAhmed","Menna","41111","menna4a.helmi@gmail.com");
+        SystemUser systemUser = new SystemUser(null,"MennaAhmed","Menna","41111","menna4a.helmi@gmail.com",UserGender.Female);
         Instructor instructor = prepareInstructorToSave(systemUser);
         instructorRepository.save(instructor);
 
@@ -268,7 +268,7 @@ public class MaterialRepositoryTest implements BaseRepositoryTest{
     @Test
     @Override
     public void testUpdate() {
-        SystemUser systemUser = new SystemUser(null,"MennaAhmed","Menna","41111","menna4a.helmi@gmail.com");
+        SystemUser systemUser = new SystemUser(null,"MennaAhmed","Menna","41111","menna4a.helmi@gmail.com",UserGender.Female);
         Instructor instructor = prepareInstructorToSave(systemUser);
         instructorRepository.save(instructor);
 
@@ -297,7 +297,7 @@ public class MaterialRepositoryTest implements BaseRepositoryTest{
      */
     @Test
     public void testFindAllByPath(){
-        SystemUser systemUser = new SystemUser(null,"MennaAhmed","Menna","41111","menna4a.helmi@gmail.com");
+        SystemUser systemUser = new SystemUser(null,"MennaAhmed","Menna","41111","menna4a.helmi@gmail.com",UserGender.Female);
         Instructor instructor = prepareInstructorToSave(systemUser);
         instructorRepository.save(instructor);
 

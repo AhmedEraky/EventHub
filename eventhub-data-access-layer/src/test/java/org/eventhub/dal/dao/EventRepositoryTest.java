@@ -10,14 +10,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.List;
 import java.util.UUID;
-import org.eventhub.common.model.entity.Event;
-import org.eventhub.common.model.entity.Hall;
-import org.eventhub.common.model.entity.Organization;
-import org.eventhub.common.model.entity.Session;
-import org.eventhub.common.model.entity.SessionType;
-import org.eventhub.common.model.entity.Sponsor;
-import org.eventhub.common.model.entity.SponsorshipType;
-import org.eventhub.common.model.entity.SystemUser;
+
+import org.eventhub.common.model.entity.*;
 import org.eventhub.dal.config.AppConfig;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
@@ -404,7 +398,7 @@ public class EventRepositoryTest implements BaseRepositoryTest {
     public void testFindAllBySystemUser() {
         Pageable pageable = PageRequest.of(0, 555555);
         Event event = insertEvent();
-        SystemUser systemUser = new SystemUser(null, "username", "firstName", "password", "email");
+        SystemUser systemUser = new SystemUser(null, "username", "firstName", "password", "email", UserGender.Female);
         systemUserRepository.save(systemUser);
         event.setSystemUser(systemUser);
         eventRepository.save(event);
@@ -414,7 +408,7 @@ public class EventRepositoryTest implements BaseRepositoryTest {
 
     private Event insertEvent() {
         Event event = new Event(null, "name", "shortDescription", "address", new Date(), new Date(), "style");
-        SystemUser systemUser = new SystemUser(null, "username", "firstName", "password", "email");
+        SystemUser systemUser = new SystemUser(null, "username", "firstName", "password", "email",UserGender.Female);
         systemUserRepository.save(systemUser);
         Organization organization = new Organization(null, "org");
         organizationRepository.save(organization);

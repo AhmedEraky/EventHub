@@ -47,12 +47,12 @@ public class SessionInHall extends BaseEntity implements Serializable {
         this.orderNumber = order;
     }
 
-    public int getOrder() {
+    public int getOrderNumber() {
         return orderNumber;
     }
 
-    public void setOrder(int order) {
-        this.orderNumber = order;
+    public void setOrderNumber(int orderNumber) {
+        this.orderNumber = orderNumber;
     }
 
     public Hall getHall() {
@@ -70,5 +70,4 @@ public class SessionInHall extends BaseEntity implements Serializable {
     public void setSession(Session session) {
         this.session = session;
     }
-
 }

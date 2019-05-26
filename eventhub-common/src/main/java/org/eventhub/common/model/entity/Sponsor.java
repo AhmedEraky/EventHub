@@ -102,5 +102,4 @@ public class Sponsor extends BaseEntity implements Serializable {
     public void setSponsorshipType(SponsorshipType sponsorshipType) {
         this.sponsorshipType = sponsorshipType;
     }
-
 }

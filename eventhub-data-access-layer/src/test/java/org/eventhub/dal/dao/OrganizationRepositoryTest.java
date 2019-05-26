@@ -1,9 +1,6 @@
 package org.eventhub.dal.dao;
 
-import org.eventhub.common.model.entity.JobTitle;
-import org.eventhub.common.model.entity.Organization;
-import org.eventhub.common.model.entity.SystemUser;
-import org.eventhub.common.model.entity.Vip;
+import org.eventhub.common.model.entity.*;
 import org.eventhub.dal.config.AppConfig;
 import org.eventhub.dal.config.AppConfig;
 import org.junit.Assert;
@@ -215,7 +212,7 @@ public class OrganizationRepositoryTest implements BaseRepositoryTest{
      */
     @Test
     public void testFindBySystemUsers(){
-        SystemUser systemUser = new SystemUser(null,"MennaAhmed","Menna","41111","menna4a.helmi@gmail.com");
+        SystemUser systemUser = new SystemUser(null,"MennaAhmed","Menna","41111","menna4a.helmi@gmail.com", UserGender.Female);
 
         List<SystemUser> systemUsers = new ArrayList<>();
         systemUsers.add(systemUser);

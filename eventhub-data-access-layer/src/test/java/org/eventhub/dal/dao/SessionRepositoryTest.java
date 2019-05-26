@@ -162,7 +162,7 @@ public class SessionRepositoryTest implements BaseRepositoryTest{
     }
 
     SystemUser createSystemUser(){
-        SystemUser systemUser = new SystemUser(null, "username", "firstName", "password", "email");
+        SystemUser systemUser = new SystemUser(null, "username", "firstName", "password", "email",UserGender.Female);
         systemUserRepository.save(systemUser);
         return systemUser;
     }

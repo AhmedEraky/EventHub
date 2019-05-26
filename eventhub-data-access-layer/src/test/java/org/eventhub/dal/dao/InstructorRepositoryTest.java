@@ -3,6 +3,7 @@ package org.eventhub.dal.dao;
 
 import org.eventhub.common.model.entity.Instructor;
 import org.eventhub.common.model.entity.SystemUser;
+import org.eventhub.common.model.entity.UserGender;
 import org.eventhub.dal.config.AppConfig;
 import org.junit.Assert;
 import org.junit.Test;
@@ -216,7 +217,7 @@ public class InstructorRepositoryTest implements BaseRepositoryTest
     @Test
     public void testFindAllByBio(){
         Instructor instructor = new Instructor();
-        SystemUser systemUser = new SystemUser(null,"MennaAhmed","Menna","41111","menna4a.helmi@gmail.com");
+        SystemUser systemUser = new SystemUser(null,"MennaAhmed","Menna","41111","menna4a.helmi@gmail.com", UserGender.Female);
 
         systemUserRepository.save(systemUser);
         instructor.setSystemUser(systemUser);
@@ -235,7 +236,7 @@ public class InstructorRepositoryTest implements BaseRepositoryTest
     @Test
     public void testFindByJobTitle(){
 
-        SystemUser systemUser = new SystemUser(null,"MennaAhmed","Menna","41111","menna4a.helmi@gmail.com");
+        SystemUser systemUser = new SystemUser(null,"MennaAhmed","Menna","41111","menna4a.helmi@gmail.com",UserGender.Female);
 
         systemUserRepository.save(systemUser);
         Instructor instructor = prepareInstructorToSave(systemUser);
@@ -281,7 +282,7 @@ public class InstructorRepositoryTest implements BaseRepositoryTest
      * @author Menna Ahmed (menna4a.helmi@gmail.com)
      */
     private SystemUser prepareSystemUserToSave(){
-        SystemUser systemUser =  new SystemUser(null,"MennaAhmed","Menna","41111","menna4a.helmi@gmail.com");
+        SystemUser systemUser =  new SystemUser(null,"MennaAhmed","Menna","41111","menna4a.helmi@gmail.com",UserGender.Female);
         return systemUser;
     }
 

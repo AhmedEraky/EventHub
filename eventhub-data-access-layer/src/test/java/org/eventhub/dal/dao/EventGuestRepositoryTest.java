@@ -8,10 +8,8 @@ package org.eventhub.dal.dao;
 import java.util.Date;
 import java.util.List;
 import java.util.UUID;
-import org.eventhub.common.model.entity.Event;
-import org.eventhub.common.model.entity.EventGuest;
-import org.eventhub.common.model.entity.Organization;
-import org.eventhub.common.model.entity.SystemUser;
+
+import org.eventhub.common.model.entity.*;
 import org.eventhub.dal.config.AppConfig;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
@@ -225,7 +223,7 @@ public class EventGuestRepositoryTest implements BaseRepositoryTest {
     }
 
     private EventGuest insertEventGuest() {
-        SystemUser systemUser = new SystemUser(null, "username", "firstName", "password", "email");
+        SystemUser systemUser = new SystemUser(null, "username", "firstName", "password", "email", UserGender.Male);
         systemUserRepository.save(systemUser);
         Organization organization = new Organization(null, "org");
         organizationRepository.save(organization);

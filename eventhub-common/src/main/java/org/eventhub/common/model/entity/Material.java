@@ -59,5 +59,4 @@ public class Material extends BaseEntity implements Serializable {
     public void setSessionInstructor(SessionInstructor sessionInstructor) {
         this.sessionInstructor = sessionInstructor;
     }
-
 }

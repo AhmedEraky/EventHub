@@ -4,6 +4,7 @@ package org.eventhub.dal.dao;
 import org.eventhub.common.model.entity.Role;
 import org.eventhub.common.model.entity.SystemUser;
 import org.eventhub.common.model.entity.SystemUserHasRole;
+import org.eventhub.common.model.entity.UserGender;
 import org.eventhub.dal.config.AppConfig;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -47,7 +48,7 @@ public class SystemUserHasRoleRepositoryTest implements BaseRepositoryTest {
         SystemUserHasRole systemUserHasRole =
                 new SystemUserHasRole();
         SystemUser bSystemUser=
-                new SystemUser(null,"amrelkady","Amr","12345","amrelkady93@gmail.com");
+                new SystemUser(null,"amrelkady","Amr","12345","amrelkady93@gmail.com", UserGender.Male);
         Role role = new Role(null,"Admin");
         systemUserRepository.save(bSystemUser);
         roleRepository.save(role);
@@ -71,7 +72,7 @@ public class SystemUserHasRoleRepositoryTest implements BaseRepositoryTest {
         SystemUserHasRole systemUserHasRole =
                 new SystemUserHasRole();
         SystemUser bSystemUser=
-                new SystemUser(null,"amrelkady","Amr","12345","amrelkady93@gmail.com");
+                new SystemUser(null,"amrelkady","Amr","12345","amrelkady93@gmail.com", UserGender.Male);
         Role role = new Role(null,"Admin");
         systemUserRepository.save(bSystemUser);
         roleRepository.save(role);
@@ -93,7 +94,7 @@ public class SystemUserHasRoleRepositoryTest implements BaseRepositoryTest {
         SystemUserHasRole bsystemUserHasRole =
                 new SystemUserHasRole();
         SystemUser bSystemUser=
-                new SystemUser(null,"amrelkady","Amr","12345","amrelkady93@gmail.com");
+                new SystemUser(null,"amrelkady","Amr","12345","amrelkady93@gmail.com", UserGender.Male);
         Role role = new Role(null,"Admin");
         Role role2 = new Role(null,"User");
         systemUserRepository.save(bSystemUser);
@@ -121,7 +122,7 @@ public class SystemUserHasRoleRepositoryTest implements BaseRepositoryTest {
         SystemUserHasRole systemUserHasRole =
                 new SystemUserHasRole();
         SystemUser bSystemUser=
-                new SystemUser(null,"amrelkady","Amr","12345","amrelkady93@gmail.com");
+                new SystemUser(null,"amrelkady","Amr","12345","amrelkady93@gmail.com", UserGender.Male);
         Role role = new Role(null,"Admin");
         systemUserRepository.save(bSystemUser);
         roleRepository.save(role);
@@ -145,7 +146,7 @@ public class SystemUserHasRoleRepositoryTest implements BaseRepositoryTest {
         SystemUserHasRole systemUserHasRole =
                 new SystemUserHasRole();
         SystemUser bSystemUser=
-                new SystemUser(null,"amrelkady","Amr","12345","amrelkady93@gmail.com");
+                new SystemUser(null,"amrelkady","Amr","12345","amrelkady93@gmail.com", UserGender.Male);
         Role role = new Role(null,"Admin");
         systemUserRepository.save(bSystemUser);
         roleRepository.save(role);
@@ -169,7 +170,7 @@ public class SystemUserHasRoleRepositoryTest implements BaseRepositoryTest {
         SystemUserHasRole systemUserHasRole =
                 new SystemUserHasRole();
         SystemUser bSystemUser=
-                new SystemUser(null,"amrelkady","Amr","12345","amrelkady93@gmail.com");
+                new SystemUser(null,"amrelkady","Amr","12345","amrelkady93@gmail.com", UserGender.Male);
         Role role = new Role(null,"Admin");
         systemUserRepository.save(bSystemUser);
         roleRepository.save(role);
@@ -193,7 +194,7 @@ public class SystemUserHasRoleRepositoryTest implements BaseRepositoryTest {
         SystemUserHasRole systemUserHasRole =
                 new SystemUserHasRole();
         SystemUser bSystemUser=
-                new SystemUser(null,"amrelkady","Amr","12345","amrelkady93@gmail.com");
+                new SystemUser(null,"amrelkady","Amr","12345","amrelkady93@gmail.com", UserGender.Male);
         Role role = new Role(null,"Admin");
         systemUserRepository.save(bSystemUser);
         roleRepository.save(role);
@@ -227,7 +228,7 @@ public class SystemUserHasRoleRepositoryTest implements BaseRepositoryTest {
         SystemUserHasRole systemUserHasRole =
                 new SystemUserHasRole();
         SystemUser bSystemUser=
-                new SystemUser(null,"amrelkady","Amr","12345","amrelkady93@gmail.com");
+                new SystemUser(null,"amrelkady","Amr","12345","amrelkady93@gmail.com", UserGender.Male);
         Role role = new Role(null,"Admin");
         systemUserRepository.save(bSystemUser);
         roleRepository.save(role);
@@ -250,7 +251,7 @@ public class SystemUserHasRoleRepositoryTest implements BaseRepositoryTest {
         SystemUserHasRole systemUserHasRole =
                 new SystemUserHasRole();
         SystemUser bSystemUser=
-                new SystemUser(null,"amrelkady","Amr","12345","amrelkady93@gmail.com");
+                new SystemUser(null,"amrelkady","Amr","12345","amrelkady93@gmail.com", UserGender.Male);
         Role role = new Role(null,"Admin");
         systemUserRepository.save(bSystemUser);
         roleRepository.save(role);
@@ -273,7 +274,7 @@ public class SystemUserHasRoleRepositoryTest implements BaseRepositoryTest {
         SystemUserHasRole systemUserHasRole =
                 new SystemUserHasRole();
         SystemUser bSystemUser=
-                new SystemUser(null,"amrelkady","Amr","12345","amrelkady93@gmail.com");
+                new SystemUser(null,"amrelkady","Amr","12345","amrelkady93@gmail.com", UserGender.Male);
         Role role = new Role(null,"Admin");
         systemUserRepository.save(bSystemUser);
         roleRepository.save(role);

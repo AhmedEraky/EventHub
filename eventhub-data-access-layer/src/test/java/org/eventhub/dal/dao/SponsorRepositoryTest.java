@@ -218,7 +218,7 @@ public class SponsorRepositoryTest implements BaseRepositoryTest {
         Sponsor bSponsor = new Sponsor(null, "dummySponsor");
         Event event = new Event(null, "dummyEvent", "dummyShortDescription", "dummyAddress", new Date(), new Date(), "dummyStyle");
         Organization organization = new Organization(null, "dummyOrganization");
-        SystemUser systemUser = new SystemUser(null, "dummyUserName", "dummy", "dummy", "dummy@dm.com");
+        SystemUser systemUser = new SystemUser(null, "dummyUserName", "dummy", "dummy", "dummy@dm.com",UserGender.Male);
         SponsorshipType sponsorshipType = new SponsorshipType(null, "dummySponsorType");
 
         organizationRepository.save(organization);

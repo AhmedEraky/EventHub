@@ -64,7 +64,6 @@ public class SponsorshipType extends BaseEntity implements Serializable {
         this.description = description;
     }
 
-    @XmlTransient
     public List<Sponsor> getSponsors() {
         return sponsors;
     }
@@ -72,5 +71,4 @@ public class SponsorshipType extends BaseEntity implements Serializable {
     public void setSponsors(List<Sponsor> sponsors) {
         this.sponsors = sponsors;
     }
-
 }
