@@ -38,9 +38,11 @@ public class SystemUser extends BaseEntity implements Serializable {
     @Basic(optional = false)
     @Column(name = "email",length=45)
     private String email;
+    @Basic(optional = false)
     @Column(name = "gender",length=10)
     private UserGender gender;
-    @Column(name = "end_date")
+    @Basic(optional = false)
+    @Column(name = "dateOfBirth")
     @Temporal(TemporalType.TIMESTAMP)
     private Date dateOfBirth;
     @Column(name = "profile_image",length=100)
@@ -74,13 +76,18 @@ public class SystemUser extends BaseEntity implements Serializable {
         super(uuid);
     }
 
-    public SystemUser(UUID uuid, String username, String firstName, String password, String email,UserGender gender) {
+    public SystemUser(UUID uuid, String username, String firstName, String password, String email,UserGender gender,Date dateOfBirth) {
         super(uuid);
         this.userName = username;
         this.firstName = firstName;
         this.password = password;
         this.email = email;
         this.gender=gender;
+        this.dateOfBirth=dateOfBirth;
+    }
+
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
     }
 
     public String getUserName() {
@@ -137,6 +144,14 @@ public class SystemUser extends BaseEntity implements Serializable {
 
     public void setGender(UserGender gender) {
         this.gender = gender;
+    }
+
+    public Date getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    public void setDateOfBirth(Date dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
     }
 
     public String getProfileImage() {
@@ -217,13 +232,5 @@ public class SystemUser extends BaseEntity implements Serializable {
 
     public void setEvent(List<Event> event) {
         this.event = event;
-    }
-
-    public Date getDateOfBirth() {
-        return dateOfBirth;
-    }
-
-    public void setDateOfBirth(Date dateOfBirth) {
-        this.dateOfBirth = dateOfBirth;
     }
 }

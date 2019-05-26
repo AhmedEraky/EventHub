@@ -15,6 +15,7 @@ import org.springframework.test.context.support.AnnotationConfigContextLoader;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -212,7 +213,7 @@ public class OrganizationRepositoryTest implements BaseRepositoryTest{
      */
     @Test
     public void testFindBySystemUsers(){
-        SystemUser systemUser = new SystemUser(null,"MennaAhmed","Menna","41111","menna4a.helmi@gmail.com", UserGender.Female);
+        SystemUser systemUser =createSystemUser();
 
         List<SystemUser> systemUsers = new ArrayList<>();
         systemUsers.add(systemUser);
@@ -248,5 +249,11 @@ public class OrganizationRepositoryTest implements BaseRepositoryTest{
         bvip.setJobTitle(jobTitle);
         bvip.setOrganization(organization);
         return bvip;
+    }
+
+    SystemUser createSystemUser(){
+        SystemUser systemUser = new SystemUser(null, "username", "firstName", "password", "email",UserGender.Female,new Date());
+        systemUserRepository.save(systemUser);
+        return systemUser;
     }
 }

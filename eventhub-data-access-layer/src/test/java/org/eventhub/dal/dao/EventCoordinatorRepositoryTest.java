@@ -225,7 +225,7 @@ public class EventCoordinatorRepositoryTest implements BaseRepositoryTest {
     }
 
     private EventCoordinator insertEventCooridnator() {
-        SystemUser systemUser = new SystemUser(null, "username", "firstName", "password", "email", UserGender.Male);
+        SystemUser systemUser = new SystemUser(null, "username", "firstName", "password", "email", UserGender.Male,new Date());
         systemUserRepository.save(systemUser);
         Organization organization = new Organization(null, "org");
         organizationRepository.save(organization);

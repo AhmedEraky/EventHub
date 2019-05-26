@@ -398,7 +398,7 @@ public class EventRepositoryTest implements BaseRepositoryTest {
     public void testFindAllBySystemUser() {
         Pageable pageable = PageRequest.of(0, 555555);
         Event event = insertEvent();
-        SystemUser systemUser = new SystemUser(null, "username", "firstName", "password", "email", UserGender.Female);
+        SystemUser systemUser =createSystemUser();
         systemUserRepository.save(systemUser);
         event.setSystemUser(systemUser);
         eventRepository.save(event);
@@ -408,12 +408,18 @@ public class EventRepositoryTest implements BaseRepositoryTest {
 
     private Event insertEvent() {
         Event event = new Event(null, "name", "shortDescription", "address", new Date(), new Date(), "style");
-        SystemUser systemUser = new SystemUser(null, "username", "firstName", "password", "email",UserGender.Female);
+        SystemUser systemUser =createSystemUser();
         systemUserRepository.save(systemUser);
         Organization organization = new Organization(null, "org");
         organizationRepository.save(organization);
         event.setOrganization(organization);
         event.setSystemUser(systemUser);
         return event;
+    }
+
+    SystemUser createSystemUser(){
+        SystemUser systemUser = new SystemUser(null, "username", "firstName", "password", "email",UserGender.Female,new Date());
+        systemUserRepository.save(systemUser);
+        return systemUser;
     }
 }

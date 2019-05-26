@@ -174,8 +174,9 @@ public class SessionInstructorRepositoryTest implements BaseRepositoryTest {
         sessionInstructor.setSession(createSession());
         return sessionInstructor;
     }
+
     SystemUser createSystemUser(){
-        SystemUser systemUser = new SystemUser(null, "username", "firstName", "password", "email",UserGender.Female);
+        SystemUser systemUser = new SystemUser(null, "username", "firstName", "password", "email",UserGender.Female,new Date());
         systemUserRepository.save(systemUser);
         return systemUser;
     }

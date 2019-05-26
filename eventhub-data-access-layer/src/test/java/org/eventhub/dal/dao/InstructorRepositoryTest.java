@@ -16,6 +16,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.support.AnnotationConfigContextLoader;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Date;
 import java.util.Optional;
 
 /**
@@ -217,8 +218,7 @@ public class InstructorRepositoryTest implements BaseRepositoryTest
     @Test
     public void testFindAllByBio(){
         Instructor instructor = new Instructor();
-        SystemUser systemUser = new SystemUser(null,"MennaAhmed","Menna","41111","menna4a.helmi@gmail.com", UserGender.Female);
-
+        SystemUser systemUser =createSystemUser();
         systemUserRepository.save(systemUser);
         instructor.setSystemUser(systemUser);
         instructor.setBio("developer");
@@ -236,8 +236,7 @@ public class InstructorRepositoryTest implements BaseRepositoryTest
     @Test
     public void testFindByJobTitle(){
 
-        SystemUser systemUser = new SystemUser(null,"MennaAhmed","Menna","41111","menna4a.helmi@gmail.com",UserGender.Female);
-
+        SystemUser systemUser = createSystemUser();
         systemUserRepository.save(systemUser);
         Instructor instructor = prepareInstructorToSave(systemUser);
         instructorRepository.save(instructor);
@@ -282,7 +281,13 @@ public class InstructorRepositoryTest implements BaseRepositoryTest
      * @author Menna Ahmed (menna4a.helmi@gmail.com)
      */
     private SystemUser prepareSystemUserToSave(){
-        SystemUser systemUser =  new SystemUser(null,"MennaAhmed","Menna","41111","menna4a.helmi@gmail.com",UserGender.Female);
+        SystemUser systemUser =  new SystemUser(null,"MennaAhmed","Menna","41111","menna4a.helmi@gmail.com",UserGender.Female,new Date());
+        return systemUser;
+    }
+
+    SystemUser createSystemUser(){
+        SystemUser systemUser = new SystemUser(null, "username", "firstName", "password", "email",UserGender.Female,new Date());
+        systemUserRepository.save(systemUser);
         return systemUser;
     }
 

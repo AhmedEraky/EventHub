@@ -290,7 +290,7 @@ public class HallRepositoryTest implements BaseRepositoryTest {
     }
 
     private Hall insertHall() {
-        SystemUser systemUser = new SystemUser(null, "username", "firstName", "password", "email", UserGender.Male);
+        SystemUser systemUser = createSystemUser();
         systemUserRepository.save(systemUser);
         Organization organization = new Organization(null, "org");
         organizationRepository.save(organization);
@@ -316,5 +316,10 @@ public class HallRepositoryTest implements BaseRepositoryTest {
         List<Event> events = eventRepository.findAllByName("name2", pageable);
         hall1.setEvent(events.get(0));
         return hall1;
+    }
+    SystemUser createSystemUser(){
+        SystemUser systemUser = new SystemUser(null, "username", "firstName", "password", "email",UserGender.Female,new Date());
+        systemUserRepository.save(systemUser);
+        return systemUser;
     }
 }
