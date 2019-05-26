@@ -218,7 +218,7 @@ public class SponsorRepositoryTest implements BaseRepositoryTest {
         Sponsor bSponsor = new Sponsor(null, "dummySponsor");
         Event event = new Event(null, "dummyEvent", "dummyShortDescription", "dummyAddress", new Date(), new Date(), "dummyStyle");
         Organization organization = new Organization(null, "dummyOrganization");
-        SystemUser systemUser = new SystemUser(null, "dummyUserName", "dummy", "dummy", "dummy@dm.com");
+        SystemUser systemUser =getSystemUser();
         SponsorshipType sponsorshipType = new SponsorshipType(null, "dummySponsorType");
 
         organizationRepository.save(organization);
@@ -234,5 +234,8 @@ public class SponsorRepositoryTest implements BaseRepositoryTest {
         sponsorRepository.save(bSponsor);
 
         return bSponsor;
+    }
+    public SystemUser getSystemUser(){
+        return new SystemUser(null, "dummyUserName", "dummy", "dummy", "dummy@dm.com");
     }
 }
