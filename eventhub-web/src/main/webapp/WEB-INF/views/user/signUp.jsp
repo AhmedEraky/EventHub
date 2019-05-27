@@ -29,7 +29,7 @@
                         <br />
 
                         <!--SignUp Form-->
-                        <form:form id="demo-form2" method="post" class="form-horizontal form-label-left" modelAttribute="systemUser">
+                        <form:form id="demo-form2" method="post" class="form-horizontal form-label-left" modelAttribute="systemUser" enctype="multipart/form-data">
 
 
                             <!--First Name-->
@@ -38,27 +38,27 @@
                                 </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <form:input path="firstName" type="text" id="first-name" required="required" class="form-control col-md-7 col-xs-12"></form:input>
+                                    </div>
                                 </div>
-                            </div>
 
-                            <!--Last Name-->
-                            <div class="form-group">
-                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name"><spring:message code="systemUser.lastName" /> <span class="required">*</span>
+                                <!--Last Name-->
+                                <div class="form-group">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name"><spring:message code="systemUser.lastName" /> <span class="required">*</span>
                                 </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <form:input path="lastName" type="text" id="last-name" name="last-name" required="required" class="form-control col-md-7 col-xs-12"></form:input>
+                                    </div>
                                 </div>
-                            </div>
 
-                            <!--User Name-->
-                            <div class="form-group">
-                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name"><spring:message code="systemUser.userName" /><span class="required">*</span>
+                                <!--User Name-->
+                                <div class="form-group">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name"><spring:message code="systemUser.userName" /><span class="required">*</span>
                                 </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <form:input path="userName" type="text" id="user-name" name="user-name" required="required" class="form-control col-md-7 col-xs-12"></form:input>
-                                </div>
+                                    </div>
 
-                                <div class="col-md-3 col-sm-3 col-xs-12">
+                                    <div class="col-md-3 col-sm-3 col-xs-12">
                                     <form:errors path="userName"/>
                                 </div>
 
@@ -70,31 +70,31 @@
                                 </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <form:input path="email" type="email" id="email" required="required" class="form-control col-md-7 col-xs-12"></form:input>
+                                    </div>
                                 </div>
-                            </div>
 
-                            <!--PassWord-->
-                            <div class="form-group">
-                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name"><spring:message code="systemUser.password" /> <span class="required">*</span>
+                                <!--PassWord-->
+                                <div class="form-group">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name"><spring:message code="systemUser.password" /> <span class="required">*</span>
                                 </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <form:password path="password"  id="password" name="Password" required="required" class="form-control col-md-7 col-xs-12"></form:password>
+                                    </div>
                                 </div>
-                            </div>
 
-                            <!--Confirm Password-->
-                            <div class="form-group">
-                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name"><spring:message code="systemUser.confirmPassword" /><span class="required">*</span>
+                                <!--Confirm Password-->
+                                <div class="form-group">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name"><spring:message code="systemUser.confirmPassword" /><span class="required">*</span>
                                 </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <form:password path="" id="confirmPassword" name="confirmPassword" required="required" class="form-control col-md-7 col-xs-12"></form:password>
+                                    </div>
                                 </div>
-                            </div>
 
-                            <!--Gender-->
+                                <!--Gender-->
 
-                            <div class="form-group">
-                                <label class="control-label col-md-3 col-sm-3 col-xs-12"><spring:message code="systemUser.gender" /></label>
+                                <div class="form-group">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12"><spring:message code="systemUser.gender" /></label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <div class="radio">
                                         <label>
@@ -116,16 +116,24 @@
                                 </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <form:input path="dateOfBirth" type="date" id="birthday" class="date-picker form-control col-md-7 col-xs-12" required="required" ></form:input>
+                                    </div>
                                 </div>
-                            </div><div class="form-group">
-                            <label class="control-label col-md-3 col-sm-3 col-xs-12"><spring:message code="systemUser.country" /></label>
-                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-group">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12"><spring:message code="systemUser.country" /></label>
+                                <div class="col-md-6 col-sm-6 col-xs-12">
                                     <form:select path="country" items="${countries}" itemLabel="name" itemValue="uuid" class="form-control">
                                     </form:select>
                                 </div>
                             </div>
-
-
+                            <div class="form-group">
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12"><spring:message code="systemUser.profileImage" /></label>
+                                <label class="btn btn-primary btn-upload" for="inputImage" title="Upload image file">
+                                    <input type="file" class="sr-only" id="inputImage" name="attachment" accept="image/*">
+                                    <span class="docs-tooltip" data-toggle="tooltip" title="Upload image">
+                                        <span class="fa fa-upload"></span>
+                                    </span>
+                                </label>
+                            </div>
                             <div class="form-group">
                                 <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
                                     <input type="submit" class="btn btn-success" value="<spring:message code="systemUser.signUp" />"></input>
