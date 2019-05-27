@@ -50,4 +50,13 @@ public class UserController {
             return "redirect:/createEvent";
         }
     }
+
+
+    @RequestMapping(method = RequestMethod.GET,path = "/update/{id}")
+    public String getupdateForm(Model model,@PathVariable("id") Integer id) {
+        model.addAttribute("systemUser", new SystemUser());
+        model.addAttribute("countries",countryFacade.getCountries());
+        return "signUp";
+    }
+
 }
