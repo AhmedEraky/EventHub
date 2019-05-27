@@ -34,5 +34,4 @@
 
 <!-- Custom Theme Style -->
 <link href="${contextPath}/resources/build/css/custom.min.css" rel="stylesheet">
-<link href="${contextPath}/resources/css/${theme}" rel="stylesheet">
 
