@@ -34,9 +34,7 @@
         <dependency>
             <groupId>javax</groupId>
             <artifactId>javaee-api</artifactId>
-            <version>${javaee-api}</version>
-            <scope>provided</scope>
-        </dependency>
+           </dependency>
 
 
         <dependency>
@@ -52,6 +50,12 @@
         <dependency>
             <groupId>org.eventhub</groupId>
             <artifactId>eventhub-data-access-layer</artifactId>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator</artifactId>
         </dependency>
     </dependencies>
 

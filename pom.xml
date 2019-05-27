@@ -168,6 +168,17 @@
                 <version>${jstl}</version>
             </dependency>
 
+            <dependency>
+                <groupId>javax</groupId>
+                <artifactId>javaee-api</artifactId>
+                <version>${javaee-api}</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-validator</artifactId>
+                <version>${hibernate.validator}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 

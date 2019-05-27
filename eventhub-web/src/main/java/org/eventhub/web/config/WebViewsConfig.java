@@ -18,6 +18,7 @@ import org.springframework.web.servlet.i18n.LocaleChangeInterceptor;
 import org.springframework.web.servlet.theme.CookieThemeResolver;
 import org.springframework.web.servlet.theme.ThemeChangeInterceptor;
 import org.springframework.web.servlet.view.tiles3.TilesConfigurer;
+import org.springframework.web.servlet.view.tiles3.TilesViewResolver;
 
 import java.util.concurrent.TimeUnit;
 
@@ -26,8 +27,8 @@ public class WebViewsConfig implements WebMvcConfigurer {
 
     @Override
     public void configureViewResolvers(ViewResolverRegistry registry) {
-        registry.tiles();
-        registry.jsp("/WEB-INF/views/", ".jsp");
+        TilesViewResolver viewResolver = new TilesViewResolver();
+        registry.viewResolver(viewResolver);
 
     }
 

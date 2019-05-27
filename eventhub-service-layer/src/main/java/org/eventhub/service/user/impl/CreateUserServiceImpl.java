@@ -1,6 +1,7 @@
 package org.eventhub.service.user.impl;
 
 import org.eventhub.common.model.entity.SystemUser;
+import org.eventhub.dal.dao.CountryRepository;
 import org.eventhub.dal.dao.SystemUserRepository;
 import org.eventhub.service.user.CreateUserService;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -56,6 +56,11 @@
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <form:input path="userName" type="text" id="user-name" name="user-name" required="required" class="form-control col-md-7 col-xs-12"></form:input>
                                 </div>
+
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <form:errors path="userName"/>
+                                </div>
+
                             </div>
 
                             <!--email-->
@@ -86,19 +91,24 @@
                             </div>
 
                             <!--Gender-->
+
                             <div class="form-group">
                                 <label class="control-label col-md-3 col-sm-3 col-xs-12">Gender</label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <div id="gender" class="btn-group" data-toggle="buttons">
-                                        <label class="btn btn-default" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
-                                            <form:radiobutton path="gender" name="gender" value="Male"></form:radiobutton> &nbsp; Male &nbsp;
+                                    <div class="radio">
+                                        <label>
+                                            <form:radiobutton path="gender" checked="true" class="flat" value="Male" label="Male"/>
                                         </label>
-                                        <label class="btn btn-primary" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
-                                            <form:radiobutton  path="gender"  name="gender" value="Female"></form:radiobutton> Female
+                                    </div>
+                                    <div class="radio">
+                                        <label>
+                                            <form:radiobutton path="gender"  class="flat" value="Female"  label="UnChecked" />
                                         </label>
                                     </div>
                                 </div>
+                                <form:errors path="gender"/>
                             </div>
+
                             <!--Date Of Birth-->
                             <div class="form-group">
                                 <label class="control-label col-md-3 col-sm-3 col-xs-12">Date Of Birth <span class="required">*</span>
@@ -106,14 +116,14 @@
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <form:input path="dateOfBirth" type="date" id="birthday" class="date-picker form-control col-md-7 col-xs-12" required="required" ></form:input>
                                 </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="control-label col-md-3 col-sm-3 col-xs-12">Country</label>
-                                <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <form:input path="country" type="text" name="country" id="autocomplete-custom-append" class="form-control col-md-10"/>
+                            </div><div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12">Select</label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <form:select path="country" items="${countries}" itemLabel="name" itemValue="uuid" class="form-control">
+                                    </form:select>
                                 </div>
                             </div>
+
 
                             <div class="form-group">
                                 <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">

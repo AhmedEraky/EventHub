@@ -10,6 +10,8 @@ import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 import javax.persistence.*;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
@@ -22,6 +24,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class SystemUser extends BaseEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;
+    @Min(4)
     @Basic(optional = false)
     @Column(name = "user_name",length=45)
     private String userName;
