@@ -1,8 +1,10 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
-  User: Eraky
+  User: Eraky,Kady
+    
   Date: 5/26/2019
   Time: 9:32 PM
   To change this template use File | Settings | File Templates.
@@ -32,8 +34,7 @@
 
                             <!--First Name-->
                             <div class="form-group">
-                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">
-                                    First Name <span class="required">*</span>
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name"><spring:message code="systemUser.firstName" /><span class="required">*</span>
                                 </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <form:input path="firstName" type="text" id="first-name" required="required" class="form-control col-md-7 col-xs-12"></form:input>
@@ -42,7 +43,7 @@
 
                             <!--Last Name-->
                             <div class="form-group">
-                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Last Name <span class="required">*</span>
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name"><spring:message code="systemUser.lastName" /> <span class="required">*</span>
                                 </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <form:input path="lastName" type="text" id="last-name" name="last-name" required="required" class="form-control col-md-7 col-xs-12"></form:input>
@@ -51,7 +52,7 @@
 
                             <!--Last Name-->
                             <div class="form-group">
-                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">User Name <span class="required">*</span>
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name"><spring:message code="systemUser.userName" /><span class="required">*</span>
                                 </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <form:input path="userName" type="text" id="user-name" name="user-name" required="required" class="form-control col-md-7 col-xs-12"></form:input>
@@ -65,7 +66,7 @@
 
                             <!--email-->
                             <div class="form-group">
-                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Email <span class="required">*</span>
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name"><spring:message code="systemUser.email" /> <span class="required">*</span>
                                 </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <form:input path="email" type="email" id="email" required="required" class="form-control col-md-7 col-xs-12"></form:input>
@@ -74,7 +75,7 @@
 
                             <!--PassWord-->
                             <div class="form-group">
-                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Password <span class="required">*</span>
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name"><spring:message code="systemUser.password" /> <span class="required">*</span>
                                 </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <form:password path="password"  id="password" name="Password" required="required" class="form-control col-md-7 col-xs-12"></form:password>
@@ -83,7 +84,7 @@
 
                             <!--Confirm Password-->
                             <div class="form-group">
-                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Confirm Password <span class="required">*</span>
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name"><spring:message code="systemUser.confirmPassword" /><span class="required">*</span>
                                 </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <form:password path="" id="confirmPassword" name="confirmPassword" required="required" class="form-control col-md-7 col-xs-12"></form:password>
@@ -93,16 +94,16 @@
                             <!--Gender-->
 
                             <div class="form-group">
-                                <label class="control-label col-md-3 col-sm-3 col-xs-12">Gender</label>
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12"><spring:message code="systemUser.gender" /></label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <div class="radio">
                                         <label>
-                                            <form:radiobutton path="gender" checked="true" class="flat" value="Male" label="Male"/>
+                                            <form:radiobutton path="gender" checked="true" class="flat" value="Male" /><label><spring:message code="systemUser.gender_male" /></label>
                                         </label>
                                     </div>
                                     <div class="radio">
                                         <label>
-                                            <form:radiobutton path="gender"  class="flat" value="Female"  label="UnChecked" />
+                                            <form:radiobutton path="gender"  class="flat" value="Female"  /><label><spring:message code="systemUser.gender_female" /></label>
                                         </label>
                                     </div>
                                 </div>
@@ -111,13 +112,13 @@
 
                             <!--Date Of Birth-->
                             <div class="form-group">
-                                <label class="control-label col-md-3 col-sm-3 col-xs-12">Date Of Birth <span class="required">*</span>
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12"><spring:message code="systemUser.dateOfBirth" /> <span class="required">*</span>
                                 </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <form:input path="dateOfBirth" type="date" id="birthday" class="date-picker form-control col-md-7 col-xs-12" required="required" ></form:input>
                                 </div>
                             </div><div class="form-group">
-                            <label class="control-label col-md-3 col-sm-3 col-xs-12">Select</label>
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12"><spring:message code="systemUser.country" /></label>
                             <div class="col-md-6 col-sm-6 col-xs-12">
                                     <form:select path="country" items="${countries}" itemLabel="name" itemValue="uuid" class="form-control">
                                     </form:select>
@@ -127,7 +128,7 @@
 
                             <div class="form-group">
                                 <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-                                    <input type="submit" class="btn btn-success" value="SignUp"></input>
+                                    <input type="submit" class="btn btn-success" value="<spring:message code="systemUser.signUp" />"></input>
                                 </div>
                             </div>
 
