@@ -49,7 +49,7 @@
                                 </div>
                             </div>
 
-                            <!--Last Name-->
+                            <!--User Name-->
                             <div class="form-group">
                                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">User Name <span class="required">*</span>
                                 </label>
@@ -57,7 +57,7 @@
                                     <form:input path="userName" type="text" id="user-name" name="user-name" required="required" class="form-control col-md-7 col-xs-12"></form:input>
                                 </div>
 
-                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                <div class="col-md-3 col-sm-3 col-xs-12">
                                     <form:errors path="userName"/>
                                 </div>
 
@@ -93,7 +93,7 @@
                             <!--Gender-->
 
                             <div class="form-group">
-                                <label class="control-label col-md-3 col-sm-3 col-xs-12">Gender</label>
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12">Gender *</label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <div class="radio">
                                         <label>
@@ -102,7 +102,7 @@
                                     </div>
                                     <div class="radio">
                                         <label>
-                                            <form:radiobutton path="gender"  class="flat" value="Female"  label="UnChecked" />
+                                            <form:radiobutton path="gender"  class="flat" value="Female"  label="Female" />
                                         </label>
                                     </div>
                                 </div>

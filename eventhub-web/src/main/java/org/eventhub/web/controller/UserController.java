@@ -44,7 +44,7 @@ public class UserController {
     @RequestMapping(method = RequestMethod.POST,path = "/signup")
     protected String onSubmit(@Valid @ModelAttribute("systemUser") SystemUser user, BindingResult result) {
         if (result.hasErrors()){
-            return "signup";
+            return "signUp";
         }else {
             createUserFacade.createUser(user);
             return "redirect:/createEvent";
