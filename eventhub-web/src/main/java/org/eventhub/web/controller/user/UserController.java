@@ -1,4 +1,4 @@
-package org.eventhub.web.controller;
+package org.eventhub.web.controller.user;
 
 import java.io.IOException;
 import org.eventhub.common.model.entity.Country;
@@ -100,6 +100,7 @@ public class UserController {
      */
     @RequestMapping(method = RequestMethod.GET,path = "/update")
     public String getUpdateForm( Model model, HttpSession httpSession) {
+
         if(httpSession.getAttribute("user")!=null){
             model.addAttribute("systemUser",httpSession.getAttribute("user"));
             return "updateUser";
