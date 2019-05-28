@@ -59,7 +59,6 @@ public class SessionInstructor extends BaseEntity implements Serializable {
         this.session = session;
     }
 
-    @XmlTransient
     public List<Material> getMaterials() {
         return materials;
     }
@@ -67,5 +66,4 @@ public class SessionInstructor extends BaseEntity implements Serializable {
     public void setMaterials(List<Material> materials) {
         this.materials = materials;
     }
-
 }

@@ -7,6 +7,8 @@ package org.eventhub.dal.dao;
 
 import java.util.Date;
 import java.util.List;
+
+import org.eventhub.common.model.entity.*;
 import org.eventhub.dal.config.AppConfig;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -18,10 +20,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.support.AnnotationConfigContextLoader;
 import org.springframework.transaction.annotation.Transactional;
 import java.util.UUID;
-import org.eventhub.common.model.entity.Event;
-import org.eventhub.common.model.entity.EventCoordinator;
-import org.eventhub.common.model.entity.Organization;
-import org.eventhub.common.model.entity.SystemUser;
+
 import static org.junit.Assert.*;
 
 /**
@@ -226,7 +225,7 @@ public class EventCoordinatorRepositoryTest implements BaseRepositoryTest {
     }
 
     private EventCoordinator insertEventCooridnator() {
-        SystemUser systemUser = new SystemUser(null, "username", "firstName", "password", "email");
+        SystemUser systemUser = new SystemUser(null, "username", "firstName", "password", "email", UserGender.Male,new Date());
         systemUserRepository.save(systemUser);
         Organization organization = new Organization(null, "org");
         organizationRepository.save(organization);

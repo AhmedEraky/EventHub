@@ -61,7 +61,6 @@ public class Instructor extends BaseEntity implements Serializable {
         this.jobTitle = jobTitle;
     }
 
-    @XmlTransient
     public List<SessionInstructor> getSessionInstructors() {
         return sessionInstructors;
     }
@@ -77,5 +76,4 @@ public class Instructor extends BaseEntity implements Serializable {
     public void setSystemUser(SystemUser systemUser) {
         this.systemUser = systemUser;
     }
-
 }

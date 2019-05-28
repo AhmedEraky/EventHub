@@ -8,13 +8,8 @@ package org.eventhub.dal.dao;
 import java.util.Date;
 import java.util.List;
 import java.util.UUID;
-import org.eventhub.common.model.entity.Event;
-import org.eventhub.common.model.entity.Hall;
-import org.eventhub.common.model.entity.Organization;
-import org.eventhub.common.model.entity.Session;
-import org.eventhub.common.model.entity.SessionInHall;
-import org.eventhub.common.model.entity.SessionType;
-import org.eventhub.common.model.entity.SystemUser;
+
+import org.eventhub.common.model.entity.*;
 import org.eventhub.dal.config.AppConfig;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
@@ -295,7 +290,7 @@ public class HallRepositoryTest implements BaseRepositoryTest {
     }
 
     private Hall insertHall() {
-        SystemUser systemUser = new SystemUser(null, "username", "firstName", "password", "email");
+        SystemUser systemUser = createSystemUser();
         systemUserRepository.save(systemUser);
         Organization organization = new Organization(null, "org");
         organizationRepository.save(organization);
@@ -321,5 +316,10 @@ public class HallRepositoryTest implements BaseRepositoryTest {
         List<Event> events = eventRepository.findAllByName("name2", pageable);
         hall1.setEvent(events.get(0));
         return hall1;
+    }
+    SystemUser createSystemUser(){
+        SystemUser systemUser = new SystemUser(null, "username", "firstName", "password", "email",UserGender.Female,new Date());
+        systemUserRepository.save(systemUser);
+        return systemUser;
     }
 }

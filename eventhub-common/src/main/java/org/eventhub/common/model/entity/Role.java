@@ -65,7 +65,6 @@ public class Role extends BaseEntity implements Serializable {
         this.description = description;
     }
 
-    @XmlTransient
     public List<RolePrivilege> getRolePrivileges() {
         return rolePrivileges;
     }
@@ -74,7 +73,6 @@ public class Role extends BaseEntity implements Serializable {
         this.rolePrivileges = rolePrivileges;
     }
 
-    @XmlTransient
     public List<SystemUserHasRole> getSystemUserHasRoles() {
         return systemUserHasRoles;
     }
@@ -82,5 +80,4 @@ public class Role extends BaseEntity implements Serializable {
     public void setSystemUserHasRoles(List<SystemUserHasRole> systemUserHasRoles) {
         this.systemUserHasRoles = systemUserHasRoles;
     }
-
 }

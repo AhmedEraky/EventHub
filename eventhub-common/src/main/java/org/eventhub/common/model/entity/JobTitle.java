@@ -55,7 +55,6 @@ public class JobTitle extends BaseEntity implements Serializable {
         this.name = name;
     }
 
-    @XmlTransient
     public List<SystemUser> getSystemUsers() {
         return systemUsers;
     }
@@ -64,7 +63,6 @@ public class JobTitle extends BaseEntity implements Serializable {
         this.systemUsers = systemUsers;
     }
 
-    @XmlTransient
     public List<Vip> getVips() {
         return vips;
     }
@@ -72,5 +70,4 @@ public class JobTitle extends BaseEntity implements Serializable {
     public void setVips(List<Vip> vips) {
         this.vips = vips;
     }
-
 }

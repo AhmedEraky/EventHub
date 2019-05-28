@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+    
+    <definition name="formTemp" extends="common">
+        <put-attribute name="body" value="/WEB-INF/views/user/formTemp.jsp"/>
+    </definition>
+
+    <definition name="signUp" extends="common">
+        <put-attribute name="body" value="/WEB-INF/views/user/signUp.jsp"/>
+    </definition>
+
+    <definition name="updateUser" extends="common">
+        <put-attribute name="body" value="/WEB-INF/views/user/updateUser.jsp"/>
+    </definition>
+
+    <definition name="login" extends="common">
+        <put-attribute name="body" value="/WEB-INF/views/user/login.jsp"/>
+    </definition>
+
+    <definition name="success" extends="common">
+        <put-attribute name="body" value="/WEB-INF/views/user/success.jsp"/>
+    </definition>
+</tiles-definitions>

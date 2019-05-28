@@ -63,7 +63,6 @@ public class Privilege extends BaseEntity implements Serializable {
         this.description = description;
     }
 
-    @XmlTransient
     public List<RolePrivilege> getRolePrivileges() {
         return rolePrivileges;
     }
@@ -71,5 +70,4 @@ public class Privilege extends BaseEntity implements Serializable {
     public void setRolePrivileges(List<RolePrivilege> rolePrivileges) {
         this.rolePrivileges = rolePrivileges;
     }
-
 }

@@ -14,7 +14,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 
 @Configuration
 @EnableWebSecurity
-@Import({AppConfig.class})
+@Import({AppConfig.class, WebViewsConfig.class})
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
@@ -25,8 +25,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     public void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/admin/**").access("hasRole('ROLE_ADMIN')")
-                .antMatchers("/**").access("hasRole('ROLE_USER')");
+                .antMatchers("/admin/**").access("hasRole('ROLE_ADMIN')");
+//                .antMatchers("/**").access("hasRole('ROLE_USER')");
         http.formLogin();
     }
 

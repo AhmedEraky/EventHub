@@ -14,6 +14,7 @@ import org.springframework.test.context.support.AnnotationConfigContextLoader;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import static org.junit.Assert.*;
@@ -51,7 +52,7 @@ public class SystemUserRepositoryTest implements BaseRepositoryTest{
     @Override
     public void testCount() {
         SystemUser bSystemUser=
-                new SystemUser(null,"amrelkady","Amr","12345","amrelkady93@gmail.com");
+                getSystemUser();
         long bSize=systemUserRepository.count();
         systemUserRepository.save(bSystemUser);
         long aSize=systemUserRepository.count();
@@ -67,7 +68,7 @@ public class SystemUserRepositoryTest implements BaseRepositoryTest{
     @Override
     public void testSave(){
         SystemUser bSystemUser=
-                new SystemUser(null,"amrelkady","Amr","12345","amrelkady93@gmail.com");
+                getSystemUser();
         systemUserRepository.save(bSystemUser);
         SystemUser aSystemUser=systemUserRepository.getOne(bSystemUser.getUuid());
         assertEquals(aSystemUser.getEmail(),bSystemUser.getEmail());
@@ -83,7 +84,7 @@ public class SystemUserRepositoryTest implements BaseRepositoryTest{
     @Override
     public void testFindAllDeleted() {
         SystemUser bSystemUser=
-                new SystemUser(null,"amrelkady","Amr","12345","amrelkady93@gmail.com");
+                getSystemUser();
         long bSize=systemUserRepository.findAllDeleted(pageable).size();
         systemUserRepository.save(bSystemUser);
         systemUserRepository.delete(bSystemUser);
@@ -100,7 +101,7 @@ public class SystemUserRepositoryTest implements BaseRepositoryTest{
     @Override
     public void testFindAll() {
         SystemUser bSystemUser=
-                new SystemUser(null,"amrelkady","Amr","12345","amrelkady93@gmail.com");
+                getSystemUser();
         long bSize=systemUserRepository.findAll().size();
         systemUserRepository.save(bSystemUser);
         long aSize=systemUserRepository.findAll().size();
@@ -116,7 +117,7 @@ public class SystemUserRepositoryTest implements BaseRepositoryTest{
     @Override
     public void testUpdate(){
         SystemUser bSystemUser=
-                new SystemUser(null,"amrelkady","Amr","12345","amrelkady93@gmail.com");
+                getSystemUser();
         systemUserRepository.save(bSystemUser);
         bSystemUser.setEmail("afterupdate@iti.com");
         systemUserRepository.update(bSystemUser);
@@ -133,7 +134,7 @@ public class SystemUserRepositoryTest implements BaseRepositoryTest{
     @Override
     public void testSoftDelete(){
         SystemUser bSystemUser=
-                new SystemUser(null,"amrelkady","Amr","12345","amrelkady93@gmail.com");
+                getSystemUser();
         systemUserRepository.save(bSystemUser);
         SystemUser aSystemUser=systemUserRepository.getOne(bSystemUser.getUuid());
         assertEquals(aSystemUser.getEmail(),bSystemUser.getEmail());
@@ -152,7 +153,7 @@ public class SystemUserRepositoryTest implements BaseRepositoryTest{
     @Override
     public void testDeleteByID(){
         SystemUser bSystemUser=
-                new SystemUser(null,"amrelkady","Amr","12345","amrelkady93@gmail.com");
+                getSystemUser();
         systemUserRepository.save(bSystemUser);
         SystemUser aSystemUser=systemUserRepository.getOne(bSystemUser.getUuid());
         // to make sure insert in data base
@@ -176,7 +177,7 @@ public class SystemUserRepositoryTest implements BaseRepositoryTest{
     @Override
     public void testDelete(){
         SystemUser bSystemUser=
-                new SystemUser(null,"amrelkady","Amr","12345","amrelkady93@gmail.com");
+                getSystemUser();
         systemUserRepository.save(bSystemUser);
         SystemUser aSystemUser=systemUserRepository.getOne(bSystemUser.getUuid());
         // to make sure insert in data base
@@ -195,8 +196,8 @@ public class SystemUserRepositoryTest implements BaseRepositoryTest{
     public void testFindAllByUserName(){
 
         SystemUser bSystemUser=
-                new SystemUser(null,"amrelkady","Amr","12345","amrelkady93@gmail.com");
-        int bSize=systemUserRepository.findAllByUsername(bSystemUser.getUsername(),pageable).size();
+                getSystemUser();
+        int bSize=systemUserRepository.findAllByUsername(bSystemUser.getUserName(),pageable).size();
         systemUserRepository.save(bSystemUser);
         int aSize=systemUserRepository.findAllByUsername("elkady",pageable).size();
         assertEquals(bSize+1,aSize);
@@ -211,7 +212,7 @@ public class SystemUserRepositoryTest implements BaseRepositoryTest{
     public void testFindByEmail(){
 
         SystemUser bSystemUser=
-                new SystemUser(null,"amrelkady","Amr","12345","amrelkady93@gmail.com");
+                getSystemUser();
         systemUserRepository.save(bSystemUser);
         SystemUser aSystemUser=systemUserRepository.findByEmail(bSystemUser.getEmail());
         assertEquals(bSystemUser.getUuid(),aSystemUser.getUuid());
@@ -226,7 +227,7 @@ public class SystemUserRepositoryTest implements BaseRepositoryTest{
     public void testFindAllByFirstName(){
 
         SystemUser bSystemUser=
-                new SystemUser(null,"amrelkady","Amr","12345","amrelkady93@gmail.com");
+                getSystemUser();
         int bSize=systemUserRepository.findAllByFirstName(bSystemUser.getFirstName(),pageable).size();
         systemUserRepository.save(bSystemUser);
         int aSize=systemUserRepository.findAllByFirstName(bSystemUser.getFirstName(),pageable).size();
@@ -243,7 +244,7 @@ public class SystemUserRepositoryTest implements BaseRepositoryTest{
 
         List<SystemUserPhone> testSet=new ArrayList<>();
         SystemUser bSystemUser=
-                new SystemUser(null,"amrelkady","Amr","12345","amrelkady93@gmail.com");
+                getSystemUser();
         SystemUserPhone systemUserPhone =new SystemUserPhone(null,"01117538430");
         systemUserRepository.save(bSystemUser);
         systemUserPhone.setSystemUser(bSystemUser);
@@ -264,7 +265,7 @@ public class SystemUserRepositoryTest implements BaseRepositoryTest{
     @Test
     public void testFindAllByCountry(){
         SystemUser bSystemUser=
-                new SystemUser(null,"amrelkady","Amr","12345","amrelkady93@gmail.com");
+                getSystemUser();
         Country country=new Country(null,"Egypt");
         countryRepository.save(country);
         bSystemUser.setCountry(country);
@@ -282,7 +283,7 @@ public class SystemUserRepositoryTest implements BaseRepositoryTest{
     @Test
     public void findAllByJobTitle(){
         SystemUser bSystemUser=
-                new SystemUser(null,"amrelkady","Amr","12345","amrelkady93@gmail.com");
+                getSystemUser();
         JobTitle jobTitle=new JobTitle(null,"Engineer");
         jobTitleRepository.save(jobTitle);
         bSystemUser.setJobTitle(jobTitle);
@@ -299,8 +300,7 @@ public class SystemUserRepositoryTest implements BaseRepositoryTest{
      */
     @Test
     public void findAllByOrganization(){
-        SystemUser bSystemUser=
-                new SystemUser(null,"amrelkady","Amr","12345","amrelkady93@gmail.com");
+        SystemUser bSystemUser= getSystemUser();
         Organization organization=new Organization(null,"ITI");
         organizationRepository.save(organization);
         bSystemUser.setOrganization(organization);
@@ -308,6 +308,12 @@ public class SystemUserRepositoryTest implements BaseRepositoryTest{
         systemUserRepository.save(bSystemUser);
         int aSize=systemUserRepository.findAllByOrganization(bSystemUser.getOrganization(),pageable).size();
         assertEquals(bSize+1,aSize);
+    }
+
+    public SystemUser getSystemUser() {
+        SystemUser systemUser =
+                new SystemUser(null, "amrelkady", "Amr", "12345", "amrelkady93@gmail.com",UserGender.Male,new Date());
+        return systemUser;
     }
 
 

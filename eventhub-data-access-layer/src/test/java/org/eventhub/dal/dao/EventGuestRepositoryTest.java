@@ -8,10 +8,8 @@ package org.eventhub.dal.dao;
 import java.util.Date;
 import java.util.List;
 import java.util.UUID;
-import org.eventhub.common.model.entity.Event;
-import org.eventhub.common.model.entity.EventGuest;
-import org.eventhub.common.model.entity.Organization;
-import org.eventhub.common.model.entity.SystemUser;
+
+import org.eventhub.common.model.entity.*;
 import org.eventhub.dal.config.AppConfig;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
@@ -26,7 +24,7 @@ import org.springframework.test.context.support.AnnotationConfigContextLoader;
 import org.springframework.transaction.annotation.Transactional;
 
 /**
- * Test Class for {@link org.eventhub.dal.dao.EventGuestRepositor}
+ * Test Class for {@link org.eventhub.dal.dao.EventGuestRepository}
  *
  * @author Aya Taha (aya.taha.ali.93@gmail.com)
  */
@@ -225,7 +223,7 @@ public class EventGuestRepositoryTest implements BaseRepositoryTest {
     }
 
     private EventGuest insertEventGuest() {
-        SystemUser systemUser = new SystemUser(null, "username", "firstName", "password", "email");
+        SystemUser systemUser = createSystemUser();
         systemUserRepository.save(systemUser);
         Organization organization = new Organization(null, "org");
         organizationRepository.save(organization);
@@ -252,5 +250,11 @@ public class EventGuestRepositoryTest implements BaseRepositoryTest {
         List<Event> events = eventRepository.findAllByName("name2", pageable);
         eventGuest1.setEvent(events.get(0));
         return eventGuest1;
+    }
+
+    SystemUser createSystemUser(){
+        SystemUser systemUser = new SystemUser(null, "username", "firstName", "password", "email",UserGender.Female,new Date());
+        systemUserRepository.save(systemUser);
+        return systemUser;
     }
 }

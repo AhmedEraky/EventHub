@@ -204,7 +204,7 @@ public class PrivilegeRepositoryTest implements BaseRepositoryTest{
      * @author Menna Ahmed (menna4a.helmi@gmail.com)
      */
     private RolePrivilege prepareRolePrivilegeToSave(Privilege privilege, Role role){
-        RolePrivilege rolePrivilege = new RolePrivilege(null);
+        RolePrivilege rolePrivilege = new RolePrivilege();
         rolePrivilege.setPrivilege(privilege);
         rolePrivilege.setRole(role);
         return rolePrivilege;

@@ -52,5 +52,4 @@ public class VipSpeaksInSession extends BaseEntity implements Serializable {
     public void setVip(Vip vip) {
         this.vip = vip;
     }
-
 }

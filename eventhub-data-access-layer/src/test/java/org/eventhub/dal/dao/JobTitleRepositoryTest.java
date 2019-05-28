@@ -2,6 +2,7 @@ package org.eventhub.dal.dao;
 
 import org.eventhub.common.model.entity.JobTitle;
 import org.eventhub.common.model.entity.SystemUser;
+import org.eventhub.common.model.entity.UserGender;
 import org.eventhub.dal.config.AppConfig;
 import org.eventhub.dal.config.AppConfig;
 import org.junit.Assert;
@@ -14,6 +15,8 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.support.AnnotationConfigContextLoader;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.Date;
 
 /**
  * Test class for {@link org.eventhub.dal.dao.JobTitleRepository}
@@ -179,4 +182,10 @@ public class JobTitleRepositoryTest implements BaseRepositoryTest{
         Assert.assertEquals(jobTitle.getName(),jobTitleTest.getName());
     }
 
+
+    SystemUser createSystemUser(){
+        SystemUser systemUser = new SystemUser(null, "username", "firstName", "password", "email",UserGender.Female,new Date());
+        systemUserRepository.save(systemUser);
+        return systemUser;
+    }
 }

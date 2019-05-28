@@ -5,17 +5,15 @@
  */
 package org.eventhub.dal.config;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
-import org.eventhub.common.model.entity.SystemUser;
+
+import org.eventhub.common.model.entity.*;
 import org.eventhub.dal.dao.SystemUserRepository;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.eventhub.common.model.entity.Privilege;
-import org.eventhub.common.model.entity.Role;
-import org.eventhub.common.model.entity.RolePrivilege;
-import org.eventhub.common.model.entity.SystemUserHasRole;
 import org.eventhub.dal.dao.PrivilegeRepository;
 import org.eventhub.dal.dao.RolePrivilegeRepository;
 import org.eventhub.dal.dao.RoleRepository;
@@ -47,8 +45,8 @@ public class TestApplication {
     private SystemUser createUserIfNotPresent(String email, String password) {
         SystemUser user = systemUserRepository.findByEmail(email);
         if (user == null) {
-            user = new SystemUser(null, "username", "firstname", password, email);
-            user.setUsername(email);
+            user = new SystemUser(null, "username", "firstname", password, email, UserGender.Female,new Date());
+            user.setUserName(email);
             systemUserRepository.save(user);
         }
         return user;

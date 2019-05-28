@@ -96,7 +96,6 @@ public class Hall extends BaseEntity implements Serializable {
         this.event = event;
     }
 
-    @XmlTransient
     public List<SessionInHall> getSessionInHalls() {
         return sessionInHalls;
     }
@@ -104,5 +103,4 @@ public class Hall extends BaseEntity implements Serializable {
     public void setSessionInHalls(List<SessionInHall> sessionInHalls) {
         this.sessionInHalls = sessionInHalls;
     }
-
 }

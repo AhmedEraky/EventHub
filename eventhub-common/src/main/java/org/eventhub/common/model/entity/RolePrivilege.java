@@ -33,10 +33,6 @@ public class RolePrivilege extends BaseEntity implements Serializable {
     public RolePrivilege() {
     }
 
-    public RolePrivilege(UUID uuid) {
-        super(uuid);
-    }
-
     public Privilege getPrivilege() {
         return privilege;
     }
@@ -52,5 +48,4 @@ public class RolePrivilege extends BaseEntity implements Serializable {
     public void setRole(Role role) {
         this.role = role;
     }
-
 }

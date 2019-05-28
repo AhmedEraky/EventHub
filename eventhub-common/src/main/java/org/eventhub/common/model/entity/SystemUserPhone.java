@@ -59,5 +59,4 @@ public class SystemUserPhone extends BaseEntity implements Serializable {
     public void setSystemUser(SystemUser systemUser) {
         this.systemUser = systemUser;
     }
-
 }

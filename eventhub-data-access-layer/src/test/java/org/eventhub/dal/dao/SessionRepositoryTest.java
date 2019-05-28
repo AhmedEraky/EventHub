@@ -161,8 +161,9 @@ public class SessionRepositoryTest implements BaseRepositoryTest{
         assertEquals(bSession.getName(),aSession.getName());
     }
 
+
     SystemUser createSystemUser(){
-        SystemUser systemUser = new SystemUser(null, "username", "firstName", "password", "email");
+        SystemUser systemUser = new SystemUser(null, "username", "firstName", "password", "email",UserGender.Female,new Date());
         systemUserRepository.save(systemUser);
         return systemUser;
     }

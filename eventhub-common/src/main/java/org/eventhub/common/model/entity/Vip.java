@@ -85,7 +85,6 @@ public class Vip extends BaseEntity implements Serializable {
         this.image = image;
     }
 
-    @XmlTransient
     public List<VipSpeaksInSession> getVipSpeaksInSessions() {
         return vipSpeaksInSessions;
     }
@@ -109,5 +108,4 @@ public class Vip extends BaseEntity implements Serializable {
     public void setOrganization(Organization organization) {
         this.organization = organization;
     }
-
 }

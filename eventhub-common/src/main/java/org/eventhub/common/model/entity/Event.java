@@ -207,7 +207,14 @@ public class Event extends BaseEntity implements Serializable {
         this.published = published;
     }
 
-    @XmlTransient
+    public String getStyle() {
+        return style;
+    }
+
+    public void setStyle(String style) {
+        this.style = style;
+    }
+
     public List<Sponsor> getSponsors() {
         return sponsors;
     }
@@ -216,7 +223,6 @@ public class Event extends BaseEntity implements Serializable {
         this.sponsors = sponsors;
     }
 
-    @XmlTransient
     public List<Session> getSessions() {
         return sessions;
     }
@@ -225,7 +231,6 @@ public class Event extends BaseEntity implements Serializable {
         this.sessions = sessions;
     }
 
-    @XmlTransient
     public List<Hall> getHalls() {
         return halls;
     }
@@ -234,7 +239,6 @@ public class Event extends BaseEntity implements Serializable {
         this.halls = halls;
     }
 
-    @XmlTransient
     public List<EventGuest> getEventGuests() {
         return eventGuests;
     }
@@ -243,7 +247,6 @@ public class Event extends BaseEntity implements Serializable {
         this.eventGuests = eventGuests;
     }
 
-    @XmlTransient
     public List<EventCoordinator> getEventCoordinators() {
         return eventCoordinators;
     }
@@ -267,13 +270,4 @@ public class Event extends BaseEntity implements Serializable {
     public void setSystemUser(SystemUser systemUser) {
         this.systemUser = systemUser;
     }
-
-    public String getStyle() {
-        return style;
-    }
-
-    public void setStyle(String style) {
-        this.style = style;
-    }
-
 }
