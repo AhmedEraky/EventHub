@@ -16,4 +16,9 @@ public class CreateUserFacadeImpl implements CreateUserFacade {
     public SystemUser createUser(SystemUser systemUser) {
         return createUserService.createSystemUser(systemUser);
     }
+
+    @Override
+    public void UpdateUser(SystemUser systemUser) {
+        createUserService.updateUser(systemUser);
+    }
 }

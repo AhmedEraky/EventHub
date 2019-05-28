@@ -11,4 +11,8 @@
     <definition name="signUp" extends="common">
         <put-attribute name="body" value="/WEB-INF/views/user/signUp.jsp"/>
     </definition>
+
+    <definition name="updateUser" extends="common">
+        <put-attribute name="body" value="/WEB-INF/views/user/updateUser.jsp"/>
+    </definition>
 </tiles-definitions>

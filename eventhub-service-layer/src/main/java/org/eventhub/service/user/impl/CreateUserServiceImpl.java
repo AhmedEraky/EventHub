@@ -18,4 +18,9 @@ public class CreateUserServiceImpl implements CreateUserService {
         SystemUser user=systemUserRepository.save(systemUser);
         return user;
     }
+
+    @Override
+    public void updateUser(SystemUser systemUser) {
+        systemUserRepository.update(systemUser);
+    }
 }

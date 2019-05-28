@@ -24,7 +24,6 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class SystemUser extends BaseEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;
-    @Min(4)
     @Basic(optional = false)
     @Column(name = "user_name",length=45)
     private String userName;
