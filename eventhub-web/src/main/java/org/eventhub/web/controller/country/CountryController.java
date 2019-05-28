@@ -63,7 +63,7 @@ public class CountryController {
         if (result.hasErrors()) {
             return "editCountry";
         } else {
-            managementFacade.createCountry(country);
+            managementFacade.updateCountry(country);
             return "redirect:editCountry?success&id=" + country.getUuid().toString();
         }
     }

@@ -6,14 +6,22 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
+import java.util.UUID;
 import org.eventhub.facade.country.CountryRetrivalFacade;
 
 @Component
 public class CountryFacadeImpl implements CountryRetrivalFacade {
+
     @Autowired
     CountryService countryService;
+
     @Override
     public List<Country> getCountries() {
         return countryService.getCountries();
+    }
+
+    @Override
+    public Country getById(UUID uuid) {
+        return countryService.getById(uuid);
     }
 }
