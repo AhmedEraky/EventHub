@@ -106,9 +106,10 @@
                                 </div>
                             </div>
 
+
                             <div id="inputsWrapper" class="form-group">
                                 <div>
-                                    <c:forEach items="${user.systemUserPhones}" varStatus="systemUserPhone">
+                                    <c:forEach items="${systemUser.systemUserPhones}" varStatus="systemUserPhone">
                                         <form:input type="tel"
                                                     class="form-control col-md-7 col-xs-12 multivaluedInput"
                                                     path="systemUserPhones[${systemUserPhone.index}].phoneNumber"
@@ -119,6 +120,8 @@
                                     </c:forEach>
                                 </div>
                             </div>
+
+
                             <div id="addMoreFileId">
                                 <a href="#" id="addMoreFileBox" class="btn btn-info">Add field</a><br><br>
                             </div>
