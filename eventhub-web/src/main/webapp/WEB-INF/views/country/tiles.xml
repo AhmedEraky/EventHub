@@ -6,4 +6,7 @@
     <definition name="addCountry" extends="common">
         <put-attribute name="body" value="/WEB-INF/views/country/pages/addCountry.jsp"/>
     </definition>
+    <definition name="editCountry" extends="common">
+        <put-attribute name="body" value="/WEB-INF/views/country/pages/editCountry.jsp"/>
+    </definition>
 </tiles-definitions>
