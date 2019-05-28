@@ -10,7 +10,9 @@ import org.eventhub.common.model.entity.Event;
 import org.eventhub.facade.event.EventRetrivalFacade;
 import org.eventhub.service.event.EventRetrivalService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class EventRetrivalFacadeImpl implements EventRetrivalFacade {
 
     @Autowired

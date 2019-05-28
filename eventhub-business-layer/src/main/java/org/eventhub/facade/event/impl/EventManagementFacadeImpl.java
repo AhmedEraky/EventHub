@@ -9,7 +9,9 @@ import org.eventhub.common.model.entity.Event;
 import org.eventhub.facade.event.EventManagementFacade;
 import org.eventhub.service.event.EventManagementService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class EventManagementFacadeImpl implements EventManagementFacade {
 
     @Autowired
