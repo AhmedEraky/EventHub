@@ -47,10 +47,10 @@
 
                                 <!--Event Long Description-->
                                 <div class="form-group">
-                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="long-description"><spring:message code="addevent.event.long.description" /><span class="required">*</span>
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="long-description"><spring:message code="addevent.event.long.description" />
                                 </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <form:textarea path="longDescription" type="text" id="long-description" name="long-description" required="required" class="form-control col-md-7 col-xs-12"></form:textarea>
+                                    <form:textarea path="longDescription" type="text" id="long-description" name="long-description" class="form-control col-md-7 col-xs-12"></form:textarea>
                                     </div>
 
                                     <!--<div class="col-md-3 col-sm-3 col-xs-12">-->
@@ -70,10 +70,10 @@
 
                                 <!--Abbreviation-->
                                 <div class="form-group">
-                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="abbreviation"><spring:message code="addevent.event.abbreviation" /> <span class="required">*</span>
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="abbreviation"><spring:message code="addevent.event.abbreviation" />
                                 </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <form:input path="abbreviation"  id="abbreviation" name="abbreviation" required="required" class="form-control col-md-7 col-xs-12"></form:input>
+                                    <form:input path="abbreviation"  id="abbreviation" name="abbreviation" class="form-control col-md-7 col-xs-12"></form:input>
                                     </div>
                                 </div>
 
@@ -96,9 +96,9 @@
                                 </div>   
                                     
                             <div class="form-group">
-                                <label class="control-label col-md-3 col-sm-3 col-xs-12"><spring:message code="addevent.event.organization" /></label>
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12"><spring:message code="addevent.event.organization" /><span class="required">*</span></label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <form:select path="organization" items="${organizations}" itemLabel="name" itemValue="uuid" class="form-control">
+                                    <form:select path="organization" items="${organizations}" itemLabel="name" itemValue="uuid" class="form-control" required="required">
                                     </form:select>
                                 </div>
                             </div>
