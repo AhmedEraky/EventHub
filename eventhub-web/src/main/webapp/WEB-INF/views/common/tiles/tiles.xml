@@ -5,12 +5,12 @@
 <tiles-definitions>
 
     <definition name="common" template="/WEB-INF/views/layout.jsp">
-        <put-attribute name="style" value="/WEB-INF/views/common/style.jsp"/>
-        <put-attribute name="leftNav" value="/WEB-INF/views/common/leftNav.jsp"/>
-        <put-attribute name="header" value="/WEB-INF/views/common/header.jsp"/>
+        <put-attribute name="style" value="/WEB-INF/views/common/styles/style.jsp"/>
+        <put-attribute name="leftNav" value="/WEB-INF/views/common/leftNav/leftNav.jsp"/>
+        <put-attribute name="header" value="/WEB-INF/views/common/headers/header.jsp"/>
         <put-attribute name="body" value=""/>
-        <put-attribute name="footer" value="/WEB-INF/views/common/footer.jsp"/>
-        <put-attribute name="script" value="/WEB-INF/views/common/script.jsp"/>
+        <put-attribute name="footer" value="/WEB-INF/views/common/footers/footer.jsp"/>
+        <put-attribute name="script" value="/WEB-INF/views/common/scripts/script.jsp"/>
 
     </definition>
 
