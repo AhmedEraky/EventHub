@@ -10,7 +10,9 @@ import org.eventhub.common.model.entity.Event;
 import org.eventhub.dal.dao.EventRepository;
 import org.eventhub.service.event.EventRetrivalService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class EventRetrivalServiceImpl implements EventRetrivalService {
 
     @Autowired
