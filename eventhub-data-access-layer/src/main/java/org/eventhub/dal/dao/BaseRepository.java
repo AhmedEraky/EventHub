@@ -31,7 +31,6 @@ public interface BaseRepository<T extends BaseEntity> extends JpaRepository<T, U
      */
     @Query("update #{#entityName} e set e.deleted=true where e.uuid=?1")
     @Modifying
-    @Transactional
     public void softDelete(UUID uuid);
 
     /**
@@ -54,7 +53,6 @@ public interface BaseRepository<T extends BaseEntity> extends JpaRepository<T, U
      */
     @Query("update #{#entityName} e set e.deleted=true where e.uuid=?1")
     @Modifying
-    @Transactional
     @Override
     void deleteById(UUID uuid);
 
