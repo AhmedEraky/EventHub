@@ -3,7 +3,6 @@ package org.eventhub.web.controller;
 import java.io.IOException;
 import org.eventhub.common.model.entity.Country;
 import org.eventhub.common.model.entity.SystemUser;
-import org.eventhub.facade.country.CountryFacade;
 import org.eventhub.facade.user.CreateUserFacade;
 import org.eventhub.facade.user.RetrieveUserFacade;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +23,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.ws.rs.FormParam;
 import org.springframework.web.multipart.MultipartFile;
+import org.eventhub.facade.country.CountryRetrivalFacade;
 
 @Controller
 @RequestMapping
@@ -34,7 +34,7 @@ public class UserController {
     @Autowired
     RetrieveUserFacade retrieveUserFacade;
     @Autowired
-    CountryFacade countryFacade;
+    CountryRetrivalFacade countryFacade;
 
     /**
      *
