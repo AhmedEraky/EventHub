@@ -24,8 +24,8 @@ public class CreateEvent {
     public ModelAndView createEvent(HttpSession httpSession){
 
         SystemUser systemUser=retrieveUserFacade.getAllUsers().get(0);
-        if(systemUser!=null&&httpSession.getAttribute("userID")==null){
-            httpSession.setAttribute("userID",systemUser.getUuid());
+        if(systemUser!=null&&httpSession.getAttribute("user")==null){
+            httpSession.setAttribute("user",systemUser);
         }
         ModelAndView modelAndView=new ModelAndView();
         modelAndView.setViewName("createEvent");

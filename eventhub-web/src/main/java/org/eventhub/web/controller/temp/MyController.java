@@ -68,7 +68,7 @@ public class MyController {
 //            Logger.getLogger(InsertController.class.getName()).log(Level.SEVERE, null, ex);
 //        }
 
-        return "success";
+        return "user/success";
     }
 
 }

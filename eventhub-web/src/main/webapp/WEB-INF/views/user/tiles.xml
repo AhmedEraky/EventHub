@@ -15,4 +15,12 @@
     <definition name="updateUser" extends="common">
         <put-attribute name="body" value="/WEB-INF/views/user/updateUser.jsp"/>
     </definition>
+
+    <definition name="login" extends="common">
+        <put-attribute name="body" value="/WEB-INF/views/user/login.jsp"/>
+    </definition>
+
+    <definition name="success" extends="common">
+        <put-attribute name="body" value="/WEB-INF/views/user/success.jsp"/>
+    </definition>
 </tiles-definitions>

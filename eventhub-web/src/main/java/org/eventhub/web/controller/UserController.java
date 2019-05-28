@@ -36,23 +36,51 @@ public class UserController {
     @Autowired
     CountryFacade countryFacade;
 
+    /**
+     *
+     * get method to display the signup form
+     * @param model
+     * @return
+     */
     @RequestMapping(method = RequestMethod.GET, path = "/signup")
     public String getBody(Model model) {
         model.addAttribute("systemUser", new SystemUser());
-        model.addAttribute("countries", countryFacade.getCountries());
         return "signUp";
     }
 
+    /**
+     *
+     * method to fill the country data
+     * @param model
+     */
+    @ModelAttribute
+    public void setCountry(Model model){
+        model.addAttribute("countries", countryFacade.getCountries());
+    }
+
+    /**
+     * To Convert data to a right format
+     * @param request
+     * @param binder
+     * @throws Exception
+     */
     @InitBinder
     protected void initBinder(HttpServletRequest request, ServletRequestDataBinder binder) throws Exception {
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         binder.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, true));
     }
 
-   /* @RequestMapping(method = RequestMethod.POST, path = "/signup")
+    /**
+     *
+     * @param user
+     * @param attachement
+     * @param result
+     * @return
+     */
+    @RequestMapping(method = RequestMethod.POST, path = "/signup")
     protected String onSubmit(@Valid @ModelAttribute("systemUser") SystemUser user,
-            @FormParam("attachment") MultipartFile attachement,
-            BindingResult result) {
+                              @FormParam("attachment") MultipartFile attachement,
+                              BindingResult result) {
         if (result.hasErrors()) {
             return "signUp";
         } else {
@@ -62,28 +90,69 @@ public class UserController {
             return "redirect:/createEvent";
         }
     }
-*/
 
+    /**
+     * Get method to Display Update User Form
+     * @param  model
+     * @param httpSession
+     * @return String
+     * @author Ahmed Eraky (ahmedmoeraky@gmail.com)
+     */
     @RequestMapping(method = RequestMethod.GET,path = "/update")
-    public String getupdateForm( Model model, HttpSession httpSession) {
-        SystemUser systemUser=new SystemUser();
-        if(httpSession.getAttribute("userID")!=null){
-            UUID uuid= (UUID) httpSession.getAttribute("userID");
-            systemUser=retrieveUserFacade.getUserByUUID(uuid);
+    public String getUpdateForm( Model model, HttpSession httpSession) {
+        if(httpSession.getAttribute("user")!=null){
+            model.addAttribute("systemUser",httpSession.getAttribute("user"));
+            return "updateUser";
+        }else {
+            return "redirect:/login";
         }
-        model.addAttribute("countries",countryFacade.getCountries());
-        model.addAttribute("systemUser",systemUser);
-        return "updateUser";
     }
 
 
+    /**
+     * post method to update the user Data
+     * @param user
+     * @param result
+     * @param httpSession
+     * @return String
+     * @author Ahmed Eraky (ahmedmoeraky@gmail.com)
+     */
     @RequestMapping(method = RequestMethod.POST, path = "/update")
-    protected String onSubmit(@Valid @ModelAttribute("systemUser") SystemUser user, BindingResult result) {
+    public String onSubmit(@Valid @ModelAttribute("systemUser") SystemUser user, BindingResult result, HttpSession httpSession) {
         if (result.hasErrors()) {
             return "updateUser";
-        } else {
-            createUserFacade.UpdateUser(user);
-            return "redirect:/createEvent";
+        }
+        else {
+            // check if user ID is same as the ID on Session
+            SystemUser currentSystemUser= (SystemUser) httpSession.getAttribute("user");
+            if(user.getUuid().equals(currentSystemUser.getUuid())) {
+                user.setPassword(currentSystemUser.getPassword());
+                createUserFacade.UpdateUser(user);
+                return "redirect:/success";
+            }else {
+                return "redirect:/login";
+            }
         }
     }
+
+
+    /**
+     * get method to display login form
+     * @return
+     */
+    @RequestMapping(method = RequestMethod.GET, path = "/login")
+    public String getLoginForm(){
+        return "login";
+    }
+
+
+    /**
+     * get method to display login form
+     * @return
+     */
+    @RequestMapping(method = RequestMethod.GET, path = "/success")
+    public String getSuccessPage(){
+        return "success";
+    }
+
 }

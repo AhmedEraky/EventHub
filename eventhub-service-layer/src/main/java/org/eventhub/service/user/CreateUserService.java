@@ -5,5 +5,5 @@ import org.eventhub.common.model.entity.SystemUser;
 public interface CreateUserService {
 
     SystemUser createSystemUser(SystemUser systemUser);
-    void updateUser(SystemUser systemUser);
+    public void updateUser(SystemUser systemUser);
 }
