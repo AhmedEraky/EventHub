@@ -38,6 +38,7 @@
                                 </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <form:input path="name" type="text" id="name" required="required" class="form-control col-md-7 col-xs-12"></form:input>
+                                    <form:errors path="name"/>
                                 </div>
                             </div>
 
@@ -48,6 +49,7 @@
                                 </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <form:textarea path="description" id="org-desc" name="org-desc" required="required" class="form-control col-md-7 col-xs-12"></form:textarea>
+                                    <form:errors path="description"/>
                                 </div>
                             </div>
 

@@ -5,12 +5,11 @@
   Time: 5:36 AM
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
 <!-- page content -->
 <div class="right_col" role="main">
@@ -46,7 +45,7 @@
 
                             <div class="form-group">
                                 <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-                                    <input type="submit" class="btn btn-success" value="update Organization"></input>
+                                    <input type="submit" class="btn btn-success" value="<spring:message code="jobTitle.update"/>">
                                 </div>
                             </div>
 
