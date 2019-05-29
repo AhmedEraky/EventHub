@@ -10,11 +10,13 @@ import org.eventhub.common.model.entity.Hall;
 import org.eventhub.facade.hall.HallRetrivalFacade;
 import org.eventhub.service.hall.HallRetrivalService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 /**
  *
  * @author Amr Elkady (amrelkady93@gmail.com)
  */
+@Component
 public class HallRetrivalFacadeImpl implements HallRetrivalFacade{
     
     @Autowired
