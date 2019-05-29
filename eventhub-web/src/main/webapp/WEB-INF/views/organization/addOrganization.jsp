@@ -52,7 +52,7 @@
                             </div>
 
                             <!--Org Logo-->
-                            <div class="form-group">
+<!--                            <div class="form-group">
                                 <label class="control-label col-md-3 col-sm-3 col-xs-12">Organization Logo </label>
                                 <label class="btn btn-primary btn-upload" for="inputImage" title="Upload image file">
                                     <input type="file" class="sr-only" id="inputImage" name="logo" accept="image/*">
@@ -60,7 +60,7 @@
                                         <span class="fa fa-upload"></span>
                                     </span>
                                 </label>
-                            </div>
+                            </div>-->
 
 
 

@@ -13,7 +13,6 @@ import javax.ws.rs.FormParam;
 import java.util.UUID;
 
 @Controller
-@RequestMapping("/org")
 public class OrganizationController
 {
     @Autowired

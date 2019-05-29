@@ -46,7 +46,7 @@
 
                             <div class="form-group">
                                 <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-                                    <input type="submit" class="btn btn-success" value="Add Organization"></input>
+                                    <input type="submit" class="btn btn-success" value="update Organization"></input>
                                 </div>
                             </div>
 
