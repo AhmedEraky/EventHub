@@ -11,7 +11,7 @@ import org.eventhub.common.model.entity.Hall;
  *
  * @author Amr Elkady (amrelkady93@gmail.com)
  */
-public interface HallManagementFacaed {
+public interface HallManagementFacade {
 
     public void creatHall(Hall hall);
 

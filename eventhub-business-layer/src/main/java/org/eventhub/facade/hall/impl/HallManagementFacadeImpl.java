@@ -6,7 +6,7 @@
 package org.eventhub.facade.hall.impl;
 
 import org.eventhub.common.model.entity.Hall;
-import org.eventhub.facade.hall.HallManagementFacaed;
+import org.eventhub.facade.hall.HallManagementFacade;
 import org.eventhub.service.hall.HallManagementService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -16,7 +16,7 @@ import org.springframework.stereotype.Component;
  * @author Amr Elkady (amrelkady93@gmail.com)
  */
 @Component
-public class HallManagementFacaedImpl implements HallManagementFacaed {
+public class HallManagementFacadeImpl implements HallManagementFacade {
 
     @Autowired
     HallManagementService hallManagementServic;

@@ -9,6 +9,10 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.UUID;
 
+/**
+ *
+ * @author Mohamed Elhoseny (mohamed.elhosany1995@gmail.com)
+ */
 @Service
 public class RetrieveOrganizationServiceImpl implements RetrieveOrganizationService
 {
