@@ -34,10 +34,11 @@
                             <!--Job Title Name-->
                             <div class="form-group">
                                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">
-                                    Job Title Name: <span class="required">*</span>
+                                    <spring:message code="jobTitle.name"/> <span class="required">*</span>
                                 </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <form:input path="name" type="text" id="name" required="required" class="form-control col-md-7 col-xs-12"></form:input>
+                                    <form:errors path="name"/>
                                 </div>
                             </div>
 
