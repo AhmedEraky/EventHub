@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+
+    <definition name="addJobtitle" extends="common">
+        <put-attribute name="body" value="/WEB-INF/views/jobtitle/addJobtitle.jsp"/>
+    </definition>
+
+    <definition name="editJobTitle" extends="common">
+        <put-attribute name="body" value="/WEB-INF/views/jobtitle/editJobTitle.jsp"/>
+    </definition>
+
+    <definition name="success" extends="common">
+        <put-attribute name="body" value="/WEB-INF/views/jobtitle/success.jsp"/>
+    </definition>
+</tiles-definitions>
