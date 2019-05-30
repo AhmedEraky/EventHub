@@ -6,4 +6,6 @@ import org.springframework.web.multipart.MultipartFile;
 public interface CreateUserService {
 
     SystemUser createSystemUser(SystemUser systemUser, MultipartFile imageResource);
+
+    public void updateUser(SystemUser systemUser);
 }
