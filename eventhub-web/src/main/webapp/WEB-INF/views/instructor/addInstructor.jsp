@@ -19,7 +19,7 @@
                 <div class="x_panel">
 
                     <div class="x_title sign-up-direction ">
-                        <h2><spring:message code="page.header"/></h2>
+                        <h2><spring:message code="instructor.page.header"/></h2>
                         <div class="clearfix"></div>
                     </div>
 
@@ -194,7 +194,6 @@
                                 </div>
 
                             </div>
-
 
                             <div class="form-group">
                                 <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
