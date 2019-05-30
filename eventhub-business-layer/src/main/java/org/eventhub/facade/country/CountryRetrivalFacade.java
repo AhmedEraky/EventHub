@@ -1,13 +1,13 @@
-package org.eventhub.service.country;
+package org.eventhub.facade.country;
 
 import org.eventhub.common.model.entity.Country;
 
 import java.util.List;
 import java.util.UUID;
 
-public interface CountryService {
-
-    List<Country> getCountries();
+public interface CountryRetrivalFacade {
 
     Country getById(UUID uuid);
+
+    List<Country> getCountries();
 }

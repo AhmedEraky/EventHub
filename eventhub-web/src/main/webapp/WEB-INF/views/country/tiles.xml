@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+    <definition name="addCountry" extends="common">
+        <put-attribute name="body" value="/WEB-INF/views/country/pages/addCountry.jsp"/>
+    </definition>
+    <definition name="editCountry" extends="common">
+        <put-attribute name="body" value="/WEB-INF/views/country/pages/editCountry.jsp"/>
+    </definition>
+</tiles-definitions>
