@@ -7,5 +7,9 @@
     <definition name="addEvent" extends="common">
         <put-attribute name="body" value="/WEB-INF/views/event/create-event.jsp"/>
     </definition>
+   
+    <definition name="editEvent" extends="common">
+        <put-attribute name="body" value="/WEB-INF/views/event/edit-event.jsp"/>
+    </definition>
 
 </tiles-definitions>
