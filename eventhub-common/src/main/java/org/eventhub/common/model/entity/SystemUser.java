@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.UUID;
 import javax.persistence.*;
 import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 
@@ -24,32 +25,50 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class SystemUser extends BaseEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;
-    @Min(4)
+
+    @Size(min = 2,max = 45)
     @Basic(optional = false)
     @Column(name = "user_name",length=45)
     private String userName;
+
+    @Size(min = 2,max = 45)
     @Basic(optional = false)
     @Column(name = "first_name",length=45)
     private String firstName;
+
+    @Size(min = 2,max = 45)
     @Column(name = "middle_name",length=45)
     private String middleName;
+
+    @Size(min = 2,max = 45)
     @Column(name = "last_name",length=45)
     private String lastName;
+
+    @Size(min = 2,max = 45)
     @Basic(optional = false)
     @Column(name = "password",length=45)
     private String password;
+
+    @Size(min = 5,max = 45)
     @Basic(optional = false)
     @Column(name = "email",length=45)
     private String email;
+
+    @NotNull
     @Basic(optional = false)
     @Column(name = "gender",length=10)
     private UserGender gender;
+
+    @NotNull
     @Basic(optional = false)
     @Column(name = "dateOfBirth")
     @Temporal(TemporalType.TIMESTAMP)
     private Date dateOfBirth;
+
+    @Size(min = 2,max = 100)
     @Column(name = "profile_image",length=100)
     private String profileImage;
+
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "systemUser")
     private List<SystemUserPhone> systemUserPhones;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "systemUser")

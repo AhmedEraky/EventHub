@@ -18,4 +18,9 @@ public class CreateUserFacadeImpl implements CreateUserFacade {
     public SystemUser createUser(SystemUser systemUser, MultipartFile imageResource) {
         return createUserService.createSystemUser(systemUser, imageResource);
     }
+
+    @Override
+    public void UpdateUser(SystemUser systemUser) {
+        createUserService.updateUser(systemUser);
+    }
 }

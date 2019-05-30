@@ -1,6 +1,7 @@
 package org.eventhub.web.config;
 
 import org.eventhub.facade.config.AppConfig;
+import org.eventhub.web.convertor.OrganizationConverter;
 import org.eventhub.web.convertor.CountryConverter;
 import org.springframework.context.annotation.*;
 import org.springframework.format.FormatterRegistry;
@@ -17,11 +18,12 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 @EnableWebSecurity
 @ComponentScan("org.eventhub.web")
 @Import(AppConfig.class)
-public class WebAppConfig implements WebMvcConfigurer{
+public class WebAppConfig implements WebMvcConfigurer {
 
     @Override
     public void addFormatters(FormatterRegistry registry) {
         registry.addConverter(new CountryConverter());
+        registry.addConverter(new OrganizationConverter());
     }
 
     @Override
