@@ -41,7 +41,7 @@ public class InstructorController {
     @RequestMapping(method = RequestMethod.GET, path = "/addinstruct")
     public String getBody(Model model){
         model.addAttribute("instructor", new Instructor());
-        return "addInstructor";
+        return "instructor/addInstructor";
     }
     
 //    /**
@@ -63,7 +63,7 @@ public class InstructorController {
     @RequestMapping(method = RequestMethod.POST, path = "/addinstruct")
     protected String onSubmit(@Valid @ModelAttribute("instructor") Instructor instructor,BindingResult result){
         if(result.hasErrors()){
-            return "addInstructor";
+            return "instructor/addInstructor";
         } else {
             createInstructorFacade.createInstructor(instructor);
             return "redirect:/createEvent";
