@@ -6,12 +6,18 @@ import org.eventhub.facade.organization.OrganizationRetrivalFacade;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.validation.Valid;
 import javax.ws.rs.FormParam;
 import java.util.UUID;
 
+/**
+ *
+ * @author Mohamed Elhoseny (mohamed.elhosany1995@gmail.com)
+ */
 @Controller
 public class OrganizationController
 {
@@ -37,20 +43,30 @@ public class OrganizationController
     }
 
     @PostMapping("/addOrganization")
-    public String addOrganization(@ModelAttribute("organization") Organization organization,
+    public String addOrganization(@Valid @ModelAttribute("organization") Organization organization,
                                   @FormParam("logo") MultipartFile attachement,
+                                  BindingResult bindingResult,
                                   Model model) {
-        organization.setLogo(null);
-        Organization org = organizationManagementFacade.createOrganization(organization);
-        return "redirect:/addOrgnaization?Done";
+        if (bindingResult.hasErrors())
+            return "addOrgnaization";
+        else {
+            organization.setLogo(null);
+            Organization org = organizationManagementFacade.createOrganization(organization);
+            return "redirect:/addOrgnaization?Done+id="+org.getUuid();
+        }
     }
 
     @PostMapping("/updateOrganization")
-    public String updateOrganization(@ModelAttribute("organization") Organization organization,
+    public String updateOrganization(@Valid @ModelAttribute("organization") Organization organization,
                                   @FormParam("logo") MultipartFile attachement,
+                                  BindingResult bindingResult,
                                   Model model) {
-        organization.setLogo(null);
-        organizationManagementFacade.updateOrganization(organization);
-        return "redirect:/updateOrgnaization?Done";
+        if (bindingResult.hasErrors())
+            return "updateOrgnaization";
+        else {
+            organization.setLogo(null);
+            organizationManagementFacade.updateOrganization(organization);
+            return "redirect:/updateOrgnaization?Done";
+        }
     }
 }

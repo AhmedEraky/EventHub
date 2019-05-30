@@ -1,7 +1,6 @@
 package org.eventhub.web.controller.temp;
 
 import org.eventhub.common.model.entity.SystemUser;
-import org.eventhub.facade.country.CountryFacade;
 import org.eventhub.facade.user.RetrieveUserFacade;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
@@ -18,12 +17,13 @@ import javax.servlet.http.HttpSession;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import org.eventhub.facade.country.CountryRetrivalFacade;
 
 @Controller
 @RequestMapping
 public class TempController {
     @Autowired
-    CountryFacade countryFacade;
+    CountryRetrivalFacade countryFacade;
     @Autowired
     RetrieveUserFacade retrieveUserFacade;
 
