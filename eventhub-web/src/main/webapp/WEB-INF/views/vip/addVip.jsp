@@ -28,8 +28,8 @@
                         <br />
 
                         <!--Add Vip Form-->
-                        <%--<form:form id="demo-form2" method="post" class="form-horizontal form-label-left" modelAttribute="vip" enctype="multipart/form-data">--%>
-                        <form:form id="demo-form2" method="post" class="form-horizontal form-label-left" modelAttribute="vip">
+                        <form:form id="demo-form2" method="post" class="form-horizontal form-label-left" modelAttribute="vip" enctype="multipart/form-data">
+
                             <!-- Name-->
                             <div class="form-group">
                                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name"><spring:message code="vip.name" /><span class="required">*</span>
@@ -58,15 +58,15 @@
 
                             <%--<!-- Image-->--%>
 
-                            <%--<div class="form-group">--%>
-                                <%--<label class="control-label col-md-3 col-sm-3 col-xs-12"><spring:message code="vip.image" /></label>--%>
-                                <%--<label class="btn btn-primary btn-upload" for="inputImage" title="Upload image file">--%>
-                                    <%--<input type="file" class="sr-only" id="inputImage" name="attachment" accept="image/*">--%>
-                                    <%--<span class="docs-tooltip" data-toggle="tooltip" title="Upload image">--%>
-                                        <%--<span class="fa fa-upload"></span>--%>
-                                    <%--</span>--%>
-                                <%--</label>--%>
-                            <%--</div>--%>
+                            <div class="form-group">
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12"><spring:message code="vip.image" /></label>
+                                <label class="btn btn-primary btn-upload" for="inputImage" title="Upload image file">
+                                    <input type="file" class="sr-only" id="inputImage" name="attachment" accept="image/*">
+                                    <span class="docs-tooltip" data-toggle="tooltip" title="Upload image">
+                                        <span class="fa fa-upload"></span>
+                                    </span>
+                                </label>
+                            </div>
 
 
 
@@ -76,8 +76,7 @@
                                 </div>
                             </div>
 
-                            <%--<form:hidden path="jobTitle.name" value="${param.jobTitle}"/>--%>
-                            <%--<form:hidden path="organization.name" value="${param.organization}"/>--%>
+
                             <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
                         </form:form>
 
