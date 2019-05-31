@@ -10,7 +10,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<c:set var="contextPath" value="${pageContext.request.contextPath}" />
+<c:set var="contextPath" value="${pageContext.request.contextPath}"/>
 <!-- page content -->
 <div class="right_col" role="main">
     <div class="">
@@ -21,15 +21,17 @@
                 <div class="x_panel">
 
                     <div class="x_title sign-up-direction ">
-                        <h2><spring:message code="page.header" /></h2>
+                        <h2><spring:message code="page.header"/></h2>
                         <div class="clearfix"></div>
                     </div>
 
                     <div class="x_content">
-                        <br />
+                        <br/>
 
                         <%--@elvariable id="organization" type="org.eventhub.common.model.entity.Organization"--%>
-                        <form:form id="demo-form2" method="post" class="form-horizontal form-label-left" modelAttribute="organization" enctype="multipart/form-data">
+                        <form:form id="demo-form2" method="post"
+                                   class="form-horizontal form-label-left"
+                                   modelAttribute="organization" enctype="multipart/form-data">
 
                             <!--Org Name-->
                             <div class="form-group">
@@ -53,17 +55,16 @@
                                 </div>
                             </div>
 
-                            <!--Org Logo-->
+                            <!-- Org Logo-->
                             <div class="form-group">
                                 <label class="control-label col-md-3 col-sm-3 col-xs-12"><spring:message code="organization.logo"/> </label>
                                 <label class="btn btn-primary btn-upload" for="inputImage" title="Upload image file">
-                                    <input type="file" class="sr-only" id="inputImage" name="logo" accept="image/*">
+                                    <input type="file" class="sr-only" id="inputImage" name="logo_image" accept="image/*">
                                     <span class="docs-tooltip" data-toggle="tooltip" title="Upload image">
                                         <span class="fa fa-upload"></span>
                                     </span>
                                 </label>
                             </div>
-
 
 
                             <div class="form-group">

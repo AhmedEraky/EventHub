@@ -28,7 +28,8 @@ import javax.validation.Valid;
  * @author Mohamed Elhosany (mohamed.elhosany1995@gmail.
  */
 @Controller
-public class JobTitleController {
+public class JobTitleController
+{
 
     @Autowired
     JobTitleManagementFacade jobTitleManagementFacade;
