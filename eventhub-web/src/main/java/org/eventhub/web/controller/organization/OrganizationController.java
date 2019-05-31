@@ -1,5 +1,6 @@
 package org.eventhub.web.controller.organization;
 
+import java.io.IOException;
 import org.eventhub.common.model.entity.Organization;
 import org.eventhub.facade.organization.OrganizationManagementFacade;
 import org.eventhub.facade.organization.OrganizationRetrivalFacade;
@@ -45,12 +46,12 @@ public class OrganizationController
     @PostMapping("/addOrganization")
     public String addOrganization(@Valid @ModelAttribute("organization") Organization organization,
                                   @FormParam("logo") MultipartFile attachement,
-                                  BindingResult bindingResult,
-                                  Model model) {
+                                  BindingResult bindingResult) throws IOException {
         if (bindingResult.hasErrors())
             return "addOrgnaization";
         else {
-            organization.setLogo(null);
+            if(!attachement.isEmpty())
+                organization.setLogo(attachement.getBytes());
             Organization org = organizationManagementFacade.createOrganization(organization);
             return "redirect:/addOrgnaization?Done+id="+org.getUuid();
         }

@@ -21,7 +21,7 @@
                 <div class="x_panel">
 
                     <div class="x_title sign-up-direction ">
-                        <h2><spring:message code="page.header" /></h2>
+                        <h2><spring:message code="jobTitle.header" /></h2>
                         <div class="clearfix"></div>
                     </div>
 
@@ -35,6 +35,7 @@
                             <div class="form-group">
                                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">
                                     <spring:message code="jobTitle.name"/> <span class="required">*</span>
+                                    
                                 </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <form:input path="name" type="text" id="name" required="required" class="form-control col-md-7 col-xs-12"></form:input>
