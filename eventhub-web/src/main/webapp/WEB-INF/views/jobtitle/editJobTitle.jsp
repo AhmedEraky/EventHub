@@ -42,7 +42,7 @@
                                 </div>
                             </div>
 
-
+                            <form:hidden path="uuid" />
                             <div class="form-group">
                                 <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
                                     <input type="submit" class="btn btn-success" value="<spring:message code="jobTitle.update"/>">

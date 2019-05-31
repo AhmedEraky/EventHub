@@ -50,7 +50,7 @@ public class JobTitleController {
             return "addJobtitle";
         } else {
             jobTitleManagementFacade.creatJobTitle(jobTitle);
-            return "redirect:/addJobtitle?Done+id=" + jobTitle.getUuid();
+            return "redirect:/success?id=" + jobTitle.getUuid();
         }
     }
 
@@ -70,7 +70,7 @@ public class JobTitleController {
             return "editJobTitle";
         } else {
             jobTitleManagementFacade.updateJobTitle(jobTitle);
-            return "redirect:/editJobTitle?Done+id=" + jobTitle.getUuid();
+            return "redirect:/success?id=" + jobTitle.getUuid();
         }
     }
 }

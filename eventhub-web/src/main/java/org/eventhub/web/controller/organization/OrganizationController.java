@@ -35,7 +35,21 @@ public class OrganizationController
         return "addOrganization";
     }
 
-    @GetMapping(value = "/updateOrganization")
+    @PostMapping("/addOrganization")
+    public String addOrganization(@Valid @ModelAttribute("organization") Organization organization,
+                                  @FormParam("logo_image") MultipartFile attachement,
+                                  BindingResult bindingResult) throws IOException {
+        if (bindingResult.hasErrors())
+            return "addOrgnaization?error";
+        else {
+           
+              //  organization.setLogo(attachement.getBytes());
+            Organization org = organizationManagementFacade.createOrganization(organization);
+            return "redirect:/success?id="+org.getUuid();
+        }
+    }
+    
+     @GetMapping(value = "/updateOrganization",params = "id")
     public String getUpdateOrganizationForm(@RequestParam("id") String id, Model model)
     {
         UUID uuid = UUID.fromString(id);
@@ -43,31 +57,20 @@ public class OrganizationController
         return "updateOrganization";
     }
 
-    @PostMapping("/addOrganization")
-    public String addOrganization(@Valid @ModelAttribute("organization") Organization organization,
-                                  @FormParam("logo") MultipartFile attachement,
-                                  BindingResult bindingResult) throws IOException {
-        if (bindingResult.hasErrors())
-            return "addOrgnaization";
-        else {
-            if(!attachement.isEmpty())
-                organization.setLogo(attachement.getBytes());
-            Organization org = organizationManagementFacade.createOrganization(organization);
-            return "redirect:/addOrgnaization?Done+id="+org.getUuid();
-        }
-    }
-
     @PostMapping("/updateOrganization")
-    public String updateOrganization(@Valid @ModelAttribute("organization") Organization organization,
-                                  @FormParam("logo") MultipartFile attachement,
+    public String updateOrganization(@Valid @ModelAttribute("organization") Organization updatedOrganization,
+                                  @FormParam("logo_image") MultipartFile attachement,
+                                  @RequestParam("id") String id,
                                   BindingResult bindingResult,
-                                  Model model) {
+                                  Model model) throws IOException {
         if (bindingResult.hasErrors())
-            return "updateOrgnaization";
+            return "updateOrgnaization?error";
         else {
-            organization.setLogo(null);
-            organizationManagementFacade.updateOrganization(organization);
-            return "redirect:/updateOrgnaization?Done";
+            
+//            organization.setLogo(attachement.getBytes());
+            updatedOrganization.setUuid(UUID.fromString(id));
+            organizationManagementFacade.updateOrganization(updatedOrganization);
+            return "redirect:/success?Done";
         }
     }
 }

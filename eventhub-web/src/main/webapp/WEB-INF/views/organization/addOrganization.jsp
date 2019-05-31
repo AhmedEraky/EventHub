@@ -57,7 +57,7 @@
                             <div class="form-group">
                                 <label class="control-label col-md-3 col-sm-3 col-xs-12"><spring:message code="organization.logo"/> </label>
                                 <label class="btn btn-primary btn-upload" for="inputImage" title="Upload image file">
-                                    <input type="file" class="sr-only" id="inputImage" name="logo" accept="image/*">
+                                    <input type="file" class="sr-only" id="inputImage" name="logo_image" accept="image/*">
                                     <span class="docs-tooltip" data-toggle="tooltip" title="Upload image">
                                         <span class="fa fa-upload"></span>
                                     </span>
