@@ -28,7 +28,8 @@ import javax.validation.Valid;
  * @author Mohamed Elhosany (mohamed.elhosany1995@gmail.
  */
 @Controller
-public class JobTitleController {
+public class JobTitleController
+{
 
     @Autowired
     JobTitleManagementFacade jobTitleManagementFacade;
@@ -44,15 +45,13 @@ public class JobTitleController {
 
     @PostMapping("/addJobTitle")
     public String addJobTitle(@Valid @ModelAttribute("jobtitle") JobTitle jobTitle,
-                              BindingResult bindingResult,
-                              HttpSession session)
+            BindingResult bindingResult)
     {
-        if (bindingResult.hasErrors())
+        if (bindingResult.hasErrors()) {
             return "addJobtitle";
-        else
-        {
+        } else {
             jobTitleManagementFacade.creatJobTitle(jobTitle);
-            return "redirect:/addJobtitle?Done+id="+jobTitle.getUuid();
+            return "redirect:/success?id=" + jobTitle.getUuid();
         }
     }
 
@@ -66,14 +65,13 @@ public class JobTitleController {
 
     @PostMapping("/editJobTitle")
     public String onEditJobTitle(@Valid @ModelAttribute JobTitle jobTitle,
-                                    BindingResult bindingResult,
-                                    HttpSession session)
+            BindingResult bindingResult)
     {
-        if (bindingResult.hasErrors())
+        if (bindingResult.hasErrors()) {
             return "editJobTitle";
-        else {
+        } else {
             jobTitleManagementFacade.updateJobTitle(jobTitle);
-            return "redirect:/editJobTitle?Done+id=" + jobTitle.getUuid();
+            return "redirect:/success?id=" + jobTitle.getUuid();
         }
     }
 }

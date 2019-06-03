@@ -28,7 +28,7 @@ import javax.xml.bind.annotation.XmlTransient;
 public class JobTitle extends BaseEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;
-    @Size(min = 2, max = 45)
+    @Size(min = 2, max = 45,message = "{jobTitle.name.size}")
     @Basic(optional = false)
     @Column(name = "name",length=45)
     private String name;

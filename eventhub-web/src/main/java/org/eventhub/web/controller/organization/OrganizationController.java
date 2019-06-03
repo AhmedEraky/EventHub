@@ -1,5 +1,7 @@
 package org.eventhub.web.controller.organization;
 
+import java.io.IOException;
+
 import org.eventhub.common.model.entity.Organization;
 import org.eventhub.facade.organization.OrganizationManagementFacade;
 import org.eventhub.facade.organization.OrganizationRetrivalFacade;
@@ -15,12 +17,10 @@ import javax.ws.rs.FormParam;
 import java.util.UUID;
 
 /**
- *
  * @author Mohamed Elhoseny (mohamed.elhosany1995@gmail.com)
  */
 @Controller
-public class OrganizationController
-{
+public class OrganizationController {
     @Autowired
     OrganizationManagementFacade organizationManagementFacade;
 
@@ -28,45 +28,42 @@ public class OrganizationController
     OrganizationRetrivalFacade organizationRetrivalFacade;
 
     @GetMapping("/addOrganization")
-    public String getOrganizationForm(Model model)
-    {
+    public String getOrganizationForm(Model model) {
         model.addAttribute(new Organization());
         return "addOrganization";
     }
 
-    @GetMapping(value = "/updateOrganization")
-    public String getUpdateOrganizationForm(@RequestParam("id") String id, Model model)
-    {
+    @PostMapping("/addOrganization")
+    public String addOrganization(@Valid @ModelAttribute("organization") Organization organization, @FormParam("logo_image") MultipartFile attachement, BindingResult bindingResult) throws IOException {
+        if (bindingResult.hasErrors()) return "addOrgnaization?error";
+        else {
+
+            //  organization.setLogo(attachement.getBytes());
+            Organization org = organizationManagementFacade.createOrganization(organization);
+            return "redirect:/success?id=" + org.getUuid();
+        }
+    }
+
+    @GetMapping(value = "/updateOrganization", params = "id")
+    public String getUpdateOrganizationForm(@RequestParam("id") String id, Model model) {
         UUID uuid = UUID.fromString(id);
         model.addAttribute(organizationRetrivalFacade.getOrganizationByUUID(uuid));
         return "updateOrganization";
     }
 
-    @PostMapping("/addOrganization")
-    public String addOrganization(@Valid @ModelAttribute("organization") Organization organization,
-                                  @FormParam("logo") MultipartFile attachement,
-                                  BindingResult bindingResult,
-                                  Model model) {
-        if (bindingResult.hasErrors())
-            return "addOrgnaization";
-        else {
-            organization.setLogo(null);
-            Organization org = organizationManagementFacade.createOrganization(organization);
-            return "redirect:/addOrgnaization?Done+id="+org.getUuid();
-        }
-    }
-
     @PostMapping("/updateOrganization")
-    public String updateOrganization(@Valid @ModelAttribute("organization") Organization organization,
-                                  @FormParam("logo") MultipartFile attachement,
-                                  BindingResult bindingResult,
-                                  Model model) {
+    public String updateOrganization(@Valid @ModelAttribute("organization") Organization updatedOrganization,
+                                     @FormParam("logo_image") MultipartFile attachement,
+                                     @RequestParam("id") String id,
+                                     BindingResult bindingResult, Model model) throws IOException
+    {
         if (bindingResult.hasErrors())
-            return "updateOrgnaization";
+            return "updateOrgnaization?error";
         else {
-            organization.setLogo(null);
-            organizationManagementFacade.updateOrganization(organization);
-            return "redirect:/updateOrgnaization?Done";
+//            organization.setLogo(attachement.getBytes());
+            updatedOrganization.setUuid(UUID.fromString(id));
+            organizationManagementFacade.updateOrganization(updatedOrganization);
+            return "redirect:/success?Done";
         }
     }
 }
