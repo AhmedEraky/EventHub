@@ -46,7 +46,7 @@ public class VipController {
      * @param model mvc model
      * @param jobTitleId UUID of {@link org.eventhub.common.model.entity.JobTitle}
      * @param organizationId UUID of {@link org.eventhub.common.model.entity.Organization}
-     * @return  String logical view name
+     * @return  String represents the logical view name
      * @author Aya Taha (aya.taha.ali.93@gmail.com)
      */
     @RequestMapping(method = RequestMethod.GET, path = "/addVip",params={"jobTitleId","organizationId"})
@@ -62,7 +62,7 @@ public class VipController {
      * @param jobTitleId UUID of {@link org.eventhub.common.model.entity.JobTitle}
      * @param organizationId UUID of {@link org.eventhub.common.model.entity.Organization}
      * @param result  binding result
-     * @return String logical view name
+     * @return  String represents the logical view name
      * @author Aya Taha (aya.taha.ali.93@gmail.com)
      */
 
@@ -74,24 +74,25 @@ public class VipController {
             return "addVip?error";
         }
         else {
-            // add method on retrieve jobtitle service
-            JobTitle jobTitle1 = jobTitleRepository.findById(jobTitleId).get();
-            if(jobTitle1 ==null){
+
+            JobTitle jobTitle = jobTitleRepository.findById(jobTitleId).get();
+            if(jobTitle ==null){
                 vip.setJobTitle(new JobTitle());
                 vip.getJobTitle().setUuid(jobTitleId);
             }
             else {
-                vip.setJobTitle(jobTitle1);
+                vip.setJobTitle(jobTitle);
             }
-            Organization orgn = retrieveOrganizationService.getOrganizationByUUID(organizationId);
-            if(orgn ==null){
+            //add method in organisation service to return object by UUID
+            Organization organization = retrieveOrganizationService.getOrganizationByUUID(organizationId);
+            if(organization ==null){
                 vip.setOrganization(new Organization());
                 vip.getOrganization().setUuid(organizationId);
             }
             else {
-                vip.setOrganization(orgn);
+                vip.setOrganization(organization);
             }
-            //add image
+            /**add image **/
             try {
                 vip.setImage(vipImage.getBytes());
             } catch (IOException e) {
