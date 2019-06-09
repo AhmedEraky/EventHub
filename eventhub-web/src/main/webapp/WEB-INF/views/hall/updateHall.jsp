@@ -80,6 +80,7 @@
 
 
                             <form:hidden path="uuid" />
+                            <form:hidden path="event.uuid" />
                         </form:form>
 
                     </div>

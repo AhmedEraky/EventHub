@@ -2,6 +2,7 @@ package org.eventhub.web.config;
 
 import org.eventhub.facade.config.AppConfig;
 import org.eventhub.web.convertor.CountryConverter;
+import org.eventhub.web.convertor.EventConverter;
 import org.springframework.context.annotation.*;
 import org.springframework.format.FormatterRegistry;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -20,6 +21,7 @@ public class WebAppConfig implements WebMvcConfigurer{
     @Override
     public void addFormatters(FormatterRegistry registry) {
         registry.addConverter(new CountryConverter());
+        registry.addConverter(new EventConverter());
     }
 
     @Override

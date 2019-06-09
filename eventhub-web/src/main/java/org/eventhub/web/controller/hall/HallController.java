@@ -65,6 +65,7 @@ public class HallController
         }
         else
         {
+            System.out.println(hall.getEvent());
             hallManagementFacade.creatHall(hall);
             return "redirect:/createEvent";
         }
@@ -85,10 +86,18 @@ public class HallController
         return "updatehall";
     }
 
-    /*@RequestMapping(method = RequestMethod.POST, path = "/updateHall")
+    @RequestMapping(method = RequestMethod.POST, path = "/updateHall")
     public String onUpdateSubmit(@Valid @ModelAttribute("hall") Hall hall, BindingResult result)
     {
-
-    }*/
+        if(result.hasErrors())
+        {
+            return "updatehall";
+        }
+        else
+        {
+            hallManagementFacade.updateHall(hall);
+            return "redirect:/createEvent";
+        }
+    }
 
 }
