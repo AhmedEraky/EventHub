@@ -5,7 +5,7 @@
 <tiles-definitions>
     
 
-    <definition name="addinstruct" extends="common">
+    <definition name="instructor/addInstructor" extends="common">
         <put-attribute name="body" value="/WEB-INF/views/instructor/addInstructor.jsp"/>
     </definition>
 

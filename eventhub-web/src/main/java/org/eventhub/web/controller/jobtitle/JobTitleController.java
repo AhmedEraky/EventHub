@@ -12,18 +12,24 @@ import org.eventhub.facade.jobtitle.JobTitleRetrivalFacade;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
+
 /**
  *
  * @author Amr Elkady (amrelkady93@gmail.com)
+ * @author Mohamed Elhosany (mohamed.elhosany1995@gmail.
  */
 @Controller
-public class JobTitleController {
+public class JobTitleController
+{
 
     @Autowired
     JobTitleManagementFacade jobTitleManagementFacade;
@@ -38,21 +44,34 @@ public class JobTitleController {
     }
 
     @PostMapping("/addJobTitle")
-    public String addJobTitle(@ModelAttribute("jobtitle") JobTitle jobTitle) {
-        jobTitleManagementFacade.creatJobTitle(jobTitle);
-        return "redirect:/addJobtitle?Done+id="+jobTitle.getUuid();
+    public String addJobTitle(@Valid @ModelAttribute("jobtitle") JobTitle jobTitle,
+            BindingResult bindingResult)
+    {
+        if (bindingResult.hasErrors()) {
+            return "addJobtitle";
+        } else {
+            jobTitleManagementFacade.creatJobTitle(jobTitle);
+            return "redirect:/success?id=" + jobTitle.getUuid();
+        }
     }
 
     @GetMapping("/editJobTitle")
     public String editJobTitle(Model model, @RequestParam("id") String id) {
         UUID uuid = UUID.fromString(id);
-        model.addAttribute("jobtitle", jobTitleRetrivailFacade.getJobTitleById(uuid));
+        JobTitle jobTitle = jobTitleRetrivailFacade.getJobTitleById(uuid);
+        model.addAttribute(jobTitle);
         return "editJobTitle";
     }
 
     @PostMapping("/editJobTitle")
-    public String onEditJobTitle(@ModelAttribute("jobtitle") JobTitle jobTitle) {
-        jobTitleManagementFacade.updateJobTitle(jobTitle);
-        return "redirect:/editJobTitle?Done+id="+jobTitle.getUuid();
+    public String onEditJobTitle(@Valid @ModelAttribute JobTitle jobTitle,
+            BindingResult bindingResult)
+    {
+        if (bindingResult.hasErrors()) {
+            return "editJobTitle";
+        } else {
+            jobTitleManagementFacade.updateJobTitle(jobTitle);
+            return "redirect:/success?id=" + jobTitle.getUuid();
+        }
     }
 }
