@@ -3,7 +3,6 @@ package org.eventhub.web.controller.user;
 import java.io.IOException;
 import org.eventhub.common.model.entity.Country;
 import org.eventhub.common.model.entity.SystemUser;
-import org.eventhub.facade.country.CountryFacade;
 import org.eventhub.facade.user.CreateUserFacade;
 import org.eventhub.facade.user.RetrieveUserFacade;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +23,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.ws.rs.FormParam;
 import org.springframework.web.multipart.MultipartFile;
+import org.eventhub.facade.country.CountryRetrivalFacade;
+import org.eventhub.facade.dto.SystemUserDTO;
 
 @Controller
 @RequestMapping
@@ -34,32 +35,35 @@ public class UserController {
     @Autowired
     RetrieveUserFacade retrieveUserFacade;
     @Autowired
-    CountryFacade countryFacade;
+    CountryRetrivalFacade countryFacade;
 
     /**
      *
      * get method to display the signup form
+     *
      * @param model
      * @return
      */
     @RequestMapping(method = RequestMethod.GET, path = "/signup")
     public String getBody(Model model) {
-        model.addAttribute("systemUser", new SystemUser());
+        model.addAttribute("systemUser", new SystemUserDTO());
         return "signUp";
     }
 
     /**
      *
      * method to fill the country data
+     *
      * @param model
      */
     @ModelAttribute
-    public void setCountry(Model model){
+    public void setCountry(Model model) {
         model.addAttribute("countries", countryFacade.getCountries());
     }
 
     /**
      * To Convert data to a right format
+     *
      * @param request
      * @param binder
      * @throws Exception
@@ -72,46 +76,47 @@ public class UserController {
 
     /**
      *
-     * @param user
-     * @param attachement
+     * @param userDto
      * @param result
      * @return
      */
     @RequestMapping(method = RequestMethod.POST, path = "/signup")
-    protected String onSubmit(@Valid @ModelAttribute("systemUser") SystemUser user,
-                              @FormParam("attachment") MultipartFile attachement,
-                              BindingResult result) {
+    protected String onSubmit(@Valid @ModelAttribute("systemUser") SystemUserDTO userDto,
+            BindingResult result) {
         if (result.hasErrors()) {
             return "signUp";
         } else {
-            System.out.println(attachement.getOriginalFilename());
-            user.setProfileImage(attachement.getOriginalFilename());
-            createUserFacade.createUser(user);
+            try {
+                createUserFacade.createUser(userDto.getEntity(), userDto.getProfileImageMultipart());
+            } catch (IllegalArgumentException | IllegalAccessException ex) {
+                Logger.getLogger(UserController.class.getName()).log(Level.SEVERE, null, ex);
+            }
             return "redirect:/createEvent";
         }
     }
 
     /**
      * Get method to Display Update User Form
-     * @param  model
+     *
+     * @param model
      * @param httpSession
      * @return String
      * @author Ahmed Eraky (ahmedmoeraky@gmail.com)
      */
-    @RequestMapping(method = RequestMethod.GET,path = "/update")
-    public String getUpdateForm( Model model, HttpSession httpSession) {
+    @RequestMapping(method = RequestMethod.GET, path = "/update")
+    public String getUpdateForm(Model model, HttpSession httpSession) {
 
-        if(httpSession.getAttribute("user")!=null){
-            model.addAttribute("systemUser",httpSession.getAttribute("user"));
+        if (httpSession.getAttribute("user") != null) {
+            model.addAttribute("systemUser", httpSession.getAttribute("user"));
             return "updateUser";
-        }else {
+        } else {
             return "redirect:/login";
         }
     }
 
-
     /**
      * post method to update the user Data
+     *
      * @param user
      * @param result
      * @param httpSession
@@ -122,37 +127,36 @@ public class UserController {
     public String onSubmit(@Valid @ModelAttribute("systemUser") SystemUser user, BindingResult result, HttpSession httpSession) {
         if (result.hasErrors()) {
             return "updateUser";
-        }
-        else {
+        } else {
             // check if user ID is same as the ID on Session
-            SystemUser currentSystemUser= (SystemUser) httpSession.getAttribute("user");
-            if(user.getUuid().equals(currentSystemUser.getUuid())) {
+            SystemUser currentSystemUser = (SystemUser) httpSession.getAttribute("user");
+            if (user.getUuid().equals(currentSystemUser.getUuid())) {
                 user.setPassword(currentSystemUser.getPassword());
                 createUserFacade.UpdateUser(user);
                 return "redirect:/success";
-            }else {
+            } else {
                 return "redirect:/login";
             }
         }
     }
 
-
     /**
      * get method to display login form
+     *
      * @return
      */
     @RequestMapping(method = RequestMethod.GET, path = "/login")
-    public String getLoginForm(){
+    public String getLoginForm() {
         return "login";
     }
 
-
     /**
      * get method to display login form
+     *
      * @return
      */
     @RequestMapping(method = RequestMethod.GET, path = "/success")
-    public String getSuccessPage(){
+    public String getSuccessPage() {
         return "success";
     }
 

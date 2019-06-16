@@ -5,6 +5,8 @@
  */
 package org.eventhub.common.model.entity;
 
+import com.sun.istack.NotNull;
+
 import java.io.Serializable;
 import java.util.List;
 import java.util.UUID;
@@ -17,6 +19,7 @@ import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 
@@ -30,9 +33,14 @@ import javax.xml.bind.annotation.XmlTransient;
 public class Vip extends BaseEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;
+    @NotNull
+    @Size(min =10,max=100)
     @Basic(optional = false)
     @Column(name = "bio",length=100)
     private String bio;
+
+    @NotNull
+    @Size(min =2,max=45)
     @Basic(optional = false)
     @Column(name = "name",length=45)
     private String name;

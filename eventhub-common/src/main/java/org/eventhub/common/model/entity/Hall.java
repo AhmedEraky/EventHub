@@ -16,6 +16,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 
@@ -29,10 +30,13 @@ import javax.xml.bind.annotation.XmlTransient;
 public class Hall extends BaseEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;
+    @Size(max=45,message="Floor name shouldn't exceed 45 characters.")
     @Column(name = "floor",length=45)
     private String floor;
+    @Size(max=45,message="Building name shouldn't exceed 45 characters.")
     @Column(name = "building",length=45)
     private String building;
+    @Size(max=30,message="Hall name shouldn't exceed 30 characters.")
     @Basic(optional = false)
     @Column(name = "name",length=30)
     private String name;
