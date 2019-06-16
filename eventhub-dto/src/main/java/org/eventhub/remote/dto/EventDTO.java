@@ -3,97 +3,51 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package org.eventhub.common.model.entity;
+package org.eventhub.remote.dto;
 
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 import java.util.UUID;
-import javax.persistence.Basic;
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.Lob;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
  * @author Ibrahim Yousre (ib.yousre@gmail.com)
  */
-@Entity
-@Table(name = "event")
-@XmlRootElement
-public class Event extends BaseEntity implements Serializable {
+public class EventDTO extends BaseDTO implements Serializable {
 
     private static final long serialVersionUID = 1L;
-    @Basic(optional = false)
-    @Column(name = "name",length=45)
     private String name;
-    @Basic(optional = false)
-    @Column(name = "short_description",length=200)
     private String shortDescription;
 
-    @Column(name = "long_description",length=1000)
     private String longDescription;
-    @Basic(optional = false)
-    @Column(name = "address",length=100)
     private String address;
-    @Column(name = "latitude",length=45)
     private String latitude;
-    @Column(name = "longitude",length=45)
     private String longitude;
-    @Column(name = "slogan",length=45)
     private String slogan;
-    @Column(name = "abbreviation",length=45)
     private String abbreviation;
-    @Column(name = "start_date")
-    @Temporal(TemporalType.TIMESTAMP)
     private Date startDate;
-    @Column(name = "end_date")
-    @Temporal(TemporalType.TIMESTAMP)
     private Date endDate;
-    @Lob
-    @Column(name = "logo")
     private byte[] logo;
-    @Column(name = "background",length=100)
     private String background;
-    @Column(name = "published")
     private Short published;
-    @Basic(optional = false)
-    @Column(name = "style",length=10)
     private String style;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "event")
-    private List<Sponsor> sponsors;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "event")
-    private List<Session> sessions;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "event")
-    private List<Hall> halls;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "event")
-    private List<EventGuest> eventGuests;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "event")
-    private List<EventCoordinator> eventCoordinators;
-    @JoinColumn(name = "organization", referencedColumnName = "uuid")
-    @ManyToOne(optional = false)
-    private Organization organization;
-    @JoinColumn(name = "system_user", referencedColumnName = "uuid")
-    @ManyToOne(optional = false)
-    private SystemUser systemUser;
+    private List<SponsorDTO> sponsors;
+    private List<SessionDTO> sessions;
+    private List<HallDTO> halls;
+    private List<EventGuestDTO> eventGuests;
+    private List<EventCoordinatorDTO> eventCoordinators;
+    private OrganizationDTO organization;
+    private SystemUserDTO systemUser;
 
-    public Event() {
+    public EventDTO() {
     }
 
-    public Event(UUID uuid) {
+    public EventDTO(UUID uuid) {
         super(uuid);
     }
 
-    public Event(UUID uuid, String name, String shortDescription, String address, Date startDate, Date endDate,String style) {
+    public EventDTO(UUID uuid, String name, String shortDescription, String address, Date startDate, Date endDate,String style) {
         super(uuid);
         this.name = name;
         this.shortDescription = shortDescription;
@@ -215,59 +169,59 @@ public class Event extends BaseEntity implements Serializable {
         this.style = style;
     }
 
-    public List<Sponsor> getSponsors() {
+    public List<SponsorDTO> getSponsors() {
         return sponsors;
     }
 
-    public void setSponsors(List<Sponsor> sponsors) {
+    public void setSponsors(List<SponsorDTO> sponsors) {
         this.sponsors = sponsors;
     }
 
-    public List<Session> getSessions() {
+    public List<SessionDTO> getSessions() {
         return sessions;
     }
 
-    public void setSessions(List<Session> sessions) {
+    public void setSessions(List<SessionDTO> sessions) {
         this.sessions = sessions;
     }
 
-    public List<Hall> getHalls() {
+    public List<HallDTO> getHalls() {
         return halls;
     }
 
-    public void setHalls(List<Hall> halls) {
+    public void setHalls(List<HallDTO> halls) {
         this.halls = halls;
     }
 
-    public List<EventGuest> getEventGuests() {
+    public List<EventGuestDTO> getEventDTOGuests() {
         return eventGuests;
     }
 
-    public void setEventGuests(List<EventGuest> eventGuests) {
+    public void setEventDTOGuests(List<EventGuestDTO> eventGuests) {
         this.eventGuests = eventGuests;
     }
 
-    public List<EventCoordinator> getEventCoordinators() {
+    public List<EventCoordinatorDTO> getEventDTOCoordinators() {
         return eventCoordinators;
     }
 
-    public void setEventCoordinators(List<EventCoordinator> eventCoordinators) {
+    public void setEventDTOCoordinators(List<EventCoordinatorDTO> eventCoordinators) {
         this.eventCoordinators = eventCoordinators;
     }
 
-    public Organization getOrganization() {
+    public OrganizationDTO getOrganization() {
         return organization;
     }
 
-    public void setOrganization(Organization organization) {
+    public void setOrganization(OrganizationDTO organization) {
         this.organization = organization;
     }
 
-    public SystemUser getSystemUser() {
+    public SystemUserDTO getSystemUser() {
         return systemUser;
     }
 
-    public void setSystemUser(SystemUser systemUser) {
+    public void setSystemUser(SystemUserDTO systemUser) {
         this.systemUser = systemUser;
     }
 }

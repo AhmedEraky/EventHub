@@ -3,38 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package org.eventhub.common.model.entity;
+package org.eventhub.remote.dto;
 
 import java.util.UUID;
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.MappedSuperclass;
-import javax.persistence.PrePersist;
-import org.hibernate.annotations.GenericGenerator;
 
-/**
- *
- * @author Ibrahim Yousre (ib.yousre@gmail.com)
- */
-@MappedSuperclass
-public class BaseEntity {
+public class BaseDTO {
 
-    @Id
-    @Basic(optional = false)
-    @GeneratedValue(generator = "uuid2")
-    @GenericGenerator(name = "uuid2", strategy = "uuid2")
-    @Column(columnDefinition = "BINARY(16)")
     private UUID uuid;
-    @Basic(optional = false)
-    @Column(name = "deleted")
     private boolean deleted;
 
-    public BaseEntity() {
+    public BaseDTO() {
     }
 
-    public BaseEntity(UUID uuid) {
+    public BaseDTO(UUID uuid) {
         this.uuid = uuid;
     }
 
@@ -67,7 +48,7 @@ public class BaseEntity {
         if (!(this.getClass().equals(object.getClass()))) {
             return false;
         }
-        BaseEntity other = (BaseEntity) object;
+        BaseDTO other = (BaseDTO) object;
         if ((this.uuid == null && other.uuid != null) || (this.uuid != null && !this.uuid.equals(other.uuid))) {
             return false;
         }
@@ -79,7 +60,6 @@ public class BaseEntity {
         return this.getClass().getName() + "[ uuid=" + uuid + " ]";
     }
 
-    @PrePersist
     void prePersist() {
         this.deleted = false;
     }

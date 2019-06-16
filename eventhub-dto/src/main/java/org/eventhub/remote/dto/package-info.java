@@ -4,4 +4,4 @@
  * @author Amr Saber
  * @author Hamada Abdrabou
  */
-package org.eventhub.eventhub.dto;
+package org.eventhub.remote.dto;

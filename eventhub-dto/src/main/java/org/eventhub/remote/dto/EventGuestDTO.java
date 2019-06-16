@@ -3,42 +3,27 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package org.eventhub.common.model.entity;
+package org.eventhub.remote.dto;
 
 import java.io.Serializable;
 import java.util.UUID;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
-import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
  * @author Ibrahim Yousre (ib.yousre@gmail.com)
  */
-@Entity
-@Table(name = "event_guest")
-@XmlRootElement
-public class EventGuest extends BaseEntity implements Serializable {
+public class EventGuestDTO extends BaseDTO implements Serializable {
 
     private static final long serialVersionUID = 1L;
-    @Column(name = "feedback_rating")
     private Integer feedbackRating;
-    @Column(name = "feedback_review",length=45)
     private String feedbackReview;
-    @JoinColumn(name = "event", referencedColumnName = "uuid")
-    @ManyToOne(optional = false)
-    private Event event;
-    @JoinColumn(name = "system_user", referencedColumnName = "uuid")
-    @ManyToOne(optional = false)
-    private SystemUser systemUser;
+    private EventDTO event;
+    private SystemUserDTO systemUser;
 
-    public EventGuest() {
+    public EventGuestDTO() {
     }
 
-    public EventGuest(UUID uuid) {
+    public EventGuestDTO(UUID uuid) {
         super(uuid);
     }
 
@@ -58,19 +43,19 @@ public class EventGuest extends BaseEntity implements Serializable {
         this.feedbackReview = feedbackReview;
     }
 
-    public Event getEvent() {
+    public EventDTO getEvent() {
         return event;
     }
 
-    public void setEvent(Event event) {
+    public void setEvent(EventDTO event) {
         this.event = event;
     }
 
-    public SystemUser getSystemUser() {
+    public SystemUserDTO getSystemUser() {
         return systemUser;
     }
 
-    public void setSystemUser(SystemUser systemUser) {
+    public void setSystemUser(SystemUserDTO systemUser) {
         this.systemUser = systemUser;
     }
 

@@ -3,54 +3,33 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package org.eventhub.common.model.entity;
+package org.eventhub.remote.dto;
 
 import java.io.Serializable;
 import java.util.UUID;
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.Lob;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
-import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
  * @author Ibrahim Yousre (ib.yousre@gmail.com)
  */
-@Entity
-@Table(name = "sponsor")
-@XmlRootElement
-public class Sponsor extends BaseEntity implements Serializable {
+public class SponsorDTO extends BaseDTO implements Serializable {
 
     private static final long serialVersionUID = 1L;
-    @Basic(optional = false)
-    @Column(name = "name",length=45)
     private String name;
-    @Column(name = "description",length=500)
     private String description;
-    @Lob
-    @Column(name = "logo")
     private byte[] logo;
-    @Column(name = "url",length=45)
     private String url;
-    @JoinColumn(name = "event", referencedColumnName = "uuid")
-    @ManyToOne(optional = false)
-    private Event event;
-    @JoinColumn(name = "sponsorship_type", referencedColumnName = "uuid")
-    @ManyToOne(optional = false)
-    private SponsorshipType sponsorshipType;
+    private EventDTO event;
+    private SponsorshipTypeDTO sponsorshipType;
 
-    public Sponsor() {
+    public SponsorDTO() {
     }
 
-    public Sponsor(UUID uuid) {
+    public SponsorDTO(UUID uuid) {
         super(uuid);
     }
 
-    public Sponsor(UUID uuid, String name) {
+    public SponsorDTO(UUID uuid, String name) {
         super(uuid);
         this.name = name;
     }
@@ -87,19 +66,19 @@ public class Sponsor extends BaseEntity implements Serializable {
         this.url = url;
     }
 
-    public Event getEvent() {
+    public EventDTO getEvent() {
         return event;
     }
 
-    public void setEvent(Event event) {
+    public void setEvent(EventDTO event) {
         this.event = event;
     }
 
-    public SponsorshipType getSponsorshipType() {
+    public SponsorshipTypeDTO getSponsorDTOshipType() {
         return sponsorshipType;
     }
 
-    public void setSponsorshipType(SponsorshipType sponsorshipType) {
+    public void setSponsorDTOshipType(SponsorshipTypeDTO sponsorshipType) {
         this.sponsorshipType = sponsorshipType;
     }
 }

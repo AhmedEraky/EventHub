@@ -3,46 +3,34 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package org.eventhub.common.model.entity;
+package org.eventhub.remote.dto;
 
 import java.io.Serializable;
 import java.util.List;
 import java.util.UUID;
-import javax.persistence.Basic;
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlTransient;
+
 
 /**
  *
  * @author Ibrahim Yousre (ib.yousre@gmail.com)
  */
-@Entity
-@Table(name = "privilege")
-@XmlRootElement
-public class Privilege extends BaseEntity implements Serializable {
+
+public class RoleDTO extends BaseDTO implements Serializable {
 
     private static final long serialVersionUID = 1L;
-    @Basic(optional = false)
-    @Column(name = "name",length=45)
     private String name;
-    @Column(name = "description",length=100)
     private String description;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "privilege")
-    private List<RolePrivilege> rolePrivileges;
+    private List<RolePrivilegeDTO> rolePrivileges;
+    private List<SystemUserHasRoleDTO> systemUserHasRoleDTOs;
 
-    public Privilege() {
+    public RoleDTO() {
     }
 
-    public Privilege(UUID uuid) {
+    public RoleDTO(UUID uuid) {
         super(uuid);
     }
 
-    public Privilege(UUID uuid, String name) {
+    public RoleDTO(UUID uuid, String name) {
         super(uuid);
         this.name = name;
     }
@@ -63,11 +51,19 @@ public class Privilege extends BaseEntity implements Serializable {
         this.description = description;
     }
 
-    public List<RolePrivilege> getRolePrivileges() {
+    public List<RolePrivilegeDTO> getRoleDTOPrivileges() {
         return rolePrivileges;
     }
 
-    public void setRolePrivileges(List<RolePrivilege> rolePrivileges) {
+    public void setRoleDTOPrivileges(List<RolePrivilegeDTO> rolePrivileges) {
         this.rolePrivileges = rolePrivileges;
+    }
+
+    public List<SystemUserHasRoleDTO> getSystemUserHasRoleDTOs() {
+        return systemUserHasRoleDTOs;
+    }
+
+    public void setSystemUserHasRoleDTOs(List<SystemUserHasRoleDTO> systemUserHasRoleDTOs) {
+        this.systemUserHasRoleDTOs = systemUserHasRoleDTOs;
     }
 }

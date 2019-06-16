@@ -3,49 +3,32 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package org.eventhub.common.model.entity;
+package org.eventhub.remote.dto;
 
 import java.io.Serializable;
 import java.util.List;
 import java.util.UUID;
-import javax.persistence.Basic;
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
  * @author Ibrahim Yousre (ib.yousre@gmail.com)
  */
-@Entity
-@Table(name = "session_type")
-@XmlRootElement
-public class SessionType extends BaseEntity implements Serializable {
+public class SessionTypeDTO extends BaseDTO implements Serializable {
 
     private static final long serialVersionUID = 1L;
-    @Basic(optional = false)
-    @Column(name = "name",length=45)
     private String name;
-    @Basic(optional = false)
-    @Column(name = "style",length=10)
     private String style;
-    @Column(name = "description",length=500)
     private String description;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "sessionType")
-    private List<Session> sessions;
+    private List<SessionDTO> sessions;
 
-    public SessionType() {
+    public SessionTypeDTO() {
     }
 
-    public SessionType(UUID uuid) {
+    public SessionTypeDTO(UUID uuid) {
         super(uuid);
     }
 
-    public SessionType(UUID uuid, String name,String style) {
+    public SessionTypeDTO(UUID uuid, String name,String style) {
         super(uuid);
         this.name = name;
         this.style=style;
@@ -75,11 +58,11 @@ public class SessionType extends BaseEntity implements Serializable {
         this.description = description;
     }
 
-    public List<Session> getSessions() {
+    public List<SessionDTO> getSessions() {
         return sessions;
     }
 
-    public void setSessions(List<Session> sessions) {
+    public void setSessions(List<SessionDTO> sessions) {
         this.sessions = sessions;
     }
 }

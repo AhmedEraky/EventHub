@@ -3,43 +3,31 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package org.eventhub.common.model.entity;
+package org.eventhub.remote.dto;
 
 import java.io.Serializable;
 import java.util.List;
 import java.util.UUID;
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
-import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
  * @author Ibrahim Yousre (ib.yousre@gmail.com)
  */
-@Entity
-@Table(name = "country")
-@XmlRootElement
-public class Country extends BaseEntity implements Serializable {
+public class CountryDTO extends BaseDTO implements Serializable {
 
     private static final long serialVersionUID = 1L;
-    @Basic(optional = false)
-    @Column(name = "name",length=45)
     private String name;
-    @OneToMany(mappedBy = "country")
-    private List<SystemUser> systemUsers;
+    private List<SystemUserDTO> systemUsers;
 
-    public Country() {
+    public CountryDTO() {
     }
 
-    public Country(UUID uuid) {
+    public CountryDTO(UUID uuid) {
         super(uuid);
     }
 
-    public Country(UUID uuid, String name) {
+    public CountryDTO(UUID uuid, String name) {
         super(uuid);
         this.name = name;
     }
@@ -53,11 +41,11 @@ public class Country extends BaseEntity implements Serializable {
     }
 
     @XmlTransient
-    public List<SystemUser> getSystemUsers() {
+    public List<SystemUserDTO> getSystemUsers() {
         return systemUsers;
     }
 
-    public void setSystemUsers(List<SystemUser> systemUsers) {
+    public void setSystemUsers(List<SystemUserDTO> systemUsers) {
         this.systemUsers = systemUsers;
     }
 
