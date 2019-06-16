@@ -5,7 +5,9 @@
  */
 package org.eventhub.remote.adapter;
 
+import org.eventhub.common.model.entity.BaseEntity;
 import org.eventhub.common.model.entity.JobTitle;
+import org.eventhub.remote.dto.BaseDTO;
 import org.eventhub.remote.dto.JobTitleDTO;
 import org.springframework.stereotype.Component;
 
@@ -14,13 +16,15 @@ import org.springframework.stereotype.Component;
  * @author FARES-LAP
  */
 @Component
-public class JobTitleAdapter {
+public class JobTitleAdapter implements DtoAdapter {
 
-    public JobTitleDTO toJobTitleDTO(JobTitle jobTitle) {
+    @Override
+    public BaseEntity fromDto(BaseDTO baseDTO) {
         return null;
     }
 
-    JobTitle fromJobTitleDTO(JobTitle jobTitle) {
+    @Override
+    public BaseDTO toDto(BaseEntity baseEntity) {
         return null;
     }
 }

@@ -5,7 +5,9 @@
  */
 package org.eventhub.remote.adapter;
 
+import org.eventhub.common.model.entity.BaseEntity;
 import org.eventhub.common.model.entity.Organization;
+import org.eventhub.remote.dto.BaseDTO;
 import org.eventhub.remote.dto.OrganizationDTO;
 import org.springframework.stereotype.Component;
 
@@ -14,13 +16,15 @@ import org.springframework.stereotype.Component;
  * @author FARES-LAP
  */
 @Component
-public class OrganizationAdapter {
+public class OrganizationAdapter implements DtoAdapter{
 
-    public OrganizationDTO toOrganizationDTO(Organization organization) {
+    @Override
+    public BaseEntity fromDto(BaseDTO baseDTO) {
         return null;
     }
 
-    Organization fromOrganizationDTO(Organization organization) {
+    @Override
+    public BaseDTO toDto(BaseEntity baseEntity) {
         return null;
     }
 }

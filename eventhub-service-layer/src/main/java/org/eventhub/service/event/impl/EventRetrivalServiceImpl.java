@@ -5,15 +5,16 @@
  */
 package org.eventhub.service.event.impl;
 
+import java.util.List;
 import java.util.UUID;
 import org.eventhub.common.model.entity.Event;
 import org.eventhub.dal.dao.EventRepository;
-import org.eventhub.service.event.EventRetrivalService;
+import org.eventhub.service.event.EventRetrievalService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class EventRetrivalServiceImpl implements EventRetrivalService {
+public class EventRetrivalServiceImpl implements EventRetrievalService {
 
     @Autowired
     private EventRepository eventRepository;
@@ -21,6 +22,11 @@ public class EventRetrivalServiceImpl implements EventRetrivalService {
     @Override
     public Event getById(UUID uuid) {
         return eventRepository.findById(uuid).get();
+    }
+
+    @Override
+    public List<Event> getAll() {
+        return eventRepository.findAll();
     }
 
 }

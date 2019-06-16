@@ -5,10 +5,11 @@
  */
 package org.eventhub.facade.event.impl;
 
+import java.util.List;
 import java.util.UUID;
 import org.eventhub.common.model.entity.Event;
 import org.eventhub.facade.event.EventRetrivalFacade;
-import org.eventhub.service.event.EventRetrivalService;
+import org.eventhub.service.event.EventRetrievalService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -16,12 +17,17 @@ import org.springframework.stereotype.Component;
 public class EventRetrivalFacadeImpl implements EventRetrivalFacade {
 
     @Autowired
-    private EventRetrivalService eventRetrivalService;
+    private EventRetrievalService eventRetrivalService;
 
     @Override
 
     public Event getById(UUID uuid) {
         return eventRetrivalService.getById(uuid);
+    }
+
+    @Override
+    public List<Event> getAllEvents() {
+        return eventRetrivalService.getAll();
     }
 
 }

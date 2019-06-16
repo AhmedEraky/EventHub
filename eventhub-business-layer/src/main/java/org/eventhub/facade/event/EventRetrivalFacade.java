@@ -5,6 +5,7 @@
  */
 package org.eventhub.facade.event;
 
+import java.util.List;
 import java.util.UUID;
 import org.eventhub.common.model.entity.Event;
 
@@ -16,4 +17,5 @@ public interface EventRetrivalFacade {
 
     public Event getById(UUID uuid);
 
+    public List<Event> getAllEvents();
 }
