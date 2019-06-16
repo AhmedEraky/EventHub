@@ -6,9 +6,11 @@
 package org.eventhub.remote.dto;
 
 import java.io.Serializable;
+
 /**
- *
- * @author Ibrahim Yousre (ib.yousre@gmail.com)
+ * @author Mohamed Ali
+ * @author Amr Saber
+ * @author Hamada Abdrabou
  */
 
 public class RolePrivilegeDTO extends BaseDTO implements Serializable {

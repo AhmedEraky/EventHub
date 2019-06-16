@@ -9,9 +9,11 @@ import java.io.Serializable;
 import java.util.UUID;
 
 /**
- *
- * @author Ibrahim Yousre (ib.yousre@gmail.com)
+ * @author Mohamed Ali
+ * @author Amr Saber
+ * @author Hamada Abdrabou
  */
+
 public class SessionInHallDTO extends BaseDTO implements Serializable {
 
     private static final long serialVersionUID = 1L;

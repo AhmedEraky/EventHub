@@ -11,8 +11,9 @@ import java.util.UUID;
 import javax.xml.bind.annotation.XmlTransient;
 
 /**
- *
- * @author Ibrahim Yousre (ib.yousre@gmail.com)
+ * @author Mohamed Ali
+ * @author Amr Saber
+ * @author Hamada Abdrabou
  */
 public class CountryDTO extends BaseDTO implements Serializable {
 

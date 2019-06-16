@@ -10,9 +10,11 @@ import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
+
 /**
- *
- * @author Ibrahim Yousre (ib.yousre@gmail.com)
+ * @author Mohamed Ali
+ * @author Amr Saber
+ * @author Hamada Abdrabou
  */
 public class EventDTO extends BaseDTO implements Serializable {
 

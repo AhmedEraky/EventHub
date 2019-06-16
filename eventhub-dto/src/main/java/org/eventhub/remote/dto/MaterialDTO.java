@@ -7,9 +7,11 @@ package org.eventhub.remote.dto;
 
 import java.io.Serializable;
 import java.util.UUID;
+
 /**
- *
- * @author Ibrahim Yousre (ib.yousre@gmail.com)
+ * @author Mohamed Ali
+ * @author Amr Saber
+ * @author Hamada Abdrabou
  */
 public class MaterialDTO extends BaseDTO implements Serializable {
 

@@ -7,6 +7,11 @@ package org.eventhub.remote.dto;
 
 import java.util.UUID;
 
+/**
+ * @author Mohamed Ali
+ *@author Amr Saber
+ * @author Hamada Abdrabou
+ */
 public class BaseDTO {
 
     private UUID uuid;
