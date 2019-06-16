@@ -2,6 +2,7 @@ package org.eventhub.web.config;
 
 import org.eventhub.facade.config.AppConfig;
 import org.eventhub.web.convertor.OrganizationConverter;
+import org.eventhub.web.convertor.SponsorshipTypeConverter;
 import org.eventhub.web.convertor.CountryConverter;
 import org.eventhub.web.convertor.EventConverter;
 import org.springframework.context.annotation.*;
@@ -26,6 +27,7 @@ public class WebAppConfig implements WebMvcConfigurer {
         registry.addConverter(new CountryConverter());
         registry.addConverter(new EventConverter());
         registry.addConverter(new OrganizationConverter());
+        registry.addConverter(new SponsorshipTypeConverter());
     }
 
     @Override

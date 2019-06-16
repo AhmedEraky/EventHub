@@ -27,6 +27,8 @@
         <spring.web.mvc>5.1.6.RELEASE</spring.web.mvc>
         <spring.test>5.1.6.RELEASE</spring.test>
         <spring.security.config>5.1.5.RELEASE</spring.security.config>
+        <apache.commons.fileupload>1.4</apache.commons.fileupload>
+        <apache.commons.io>2.6</apache.commons.io>
 
         <mysql.connectorj>8.0.15</mysql.connectorj>
         <hibernate.core>5.4.1.Final</hibernate.core>
@@ -155,6 +157,18 @@
                 <groupId>org.eventhub</groupId>
                 <artifactId>eventhub-web</artifactId>
                 <version>${eventhub.web}</version>
+            </dependency>
+            
+            <dependency>
+                <groupId>commons-fileupload</groupId>
+                <artifactId>commons-fileupload</artifactId>
+                <version>${apache.commons.fileupload}</version>
+            </dependency>
+            
+            <dependency>
+                <groupId>commons-io</groupId>
+                <artifactId>commons-io</artifactId>
+                <version>${apache.commons.io}</version>
             </dependency>
 
             <dependency>
