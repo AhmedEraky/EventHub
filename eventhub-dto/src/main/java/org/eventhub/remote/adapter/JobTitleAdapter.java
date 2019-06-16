@@ -16,15 +16,15 @@ import org.springframework.stereotype.Component;
  * @author FARES-LAP
  */
 @Component
-public class JobTitleAdapter implements DtoAdapter {
+public class JobTitleAdapter implements DtoAdapter<JobTitle, JobTitleDTO> {
 
     @Override
-    public BaseEntity fromDto(BaseDTO baseDTO) {
+    public JobTitle fromDto(JobTitleDTO baseDTO) {
         return null;
     }
 
     @Override
-    public BaseDTO toDto(BaseEntity baseEntity) {
+    public JobTitleDTO toDto(JobTitle baseEntity) {
         return null;
     }
 }

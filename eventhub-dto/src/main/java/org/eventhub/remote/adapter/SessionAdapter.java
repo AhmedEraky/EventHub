@@ -9,14 +9,14 @@ import org.springframework.stereotype.Component;
 @Component
 public class SessionAdapter implements DtoAdapter<Session, SessionDTO> {
 
+    @Override
+    public Session fromDto(SessionDTO baseDTO) {
+        return null;
+    }
 
-	@Override
-	public Session fromDto(SessionDTO baseDTO) {
-		return null;
-	}
+    @Override
+    public SessionDTO toDto(Session baseEntity) {
+        return null;
+    }
 
-	@Override
-	public SessionDTO toDto(Session baseEntity) {
-		return null;
-	}
 }

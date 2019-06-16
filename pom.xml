@@ -48,6 +48,7 @@
         <eventhub.business.layer>1.0-SNAPSHOT</eventhub.business.layer>
         <eventhub.web>1.0-SNAPSHOT</eventhub.web>
         <eventhub.dto>1.0-SNAPSHOT</eventhub.dto>
+        <jackson>2.9.4</jackson>
 
         <junit>4.12</junit>
         <h2>1.4.199</h2>
@@ -207,6 +208,12 @@
                 <groupId>org.hibernate</groupId>
                 <artifactId>hibernate-validator</artifactId>
                 <version>${hibernate.validator}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
+                <version>${jackson}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
