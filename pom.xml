@@ -14,6 +14,7 @@
         <module>eventhub-data-access-layer</module>
         <module>eventhub-common</module>
         <module>eventhub-business-layer</module>
+        <module>eventhub-dto</module>
     </modules>
 
     <properties>
@@ -44,6 +45,7 @@
         <eventhub.service.layer>1.0-SNAPSHOT</eventhub.service.layer>
         <eventhub.business.layer>1.0-SNAPSHOT</eventhub.business.layer>
         <eventhub.web>1.0-SNAPSHOT</eventhub.web>
+        <eventhub.dto>1.0-SNAPSHOT</eventhub.dto>
 
         <junit>4.12</junit>
         <h2>1.4.199</h2>
@@ -157,6 +159,12 @@
                 <version>${eventhub.web}</version>
             </dependency>
 
+            <dependency>
+                <groupId>org.eventhub</groupId>
+                <artifactId>eventhub-dto</artifactId>
+                <version>${eventhub.dto}</version>
+            </dependency>
+            
             <dependency>
                 <groupId>com.h2database</groupId>
                 <artifactId>h2</artifactId>
