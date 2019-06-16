@@ -8,4 +8,11 @@
     </parent>
     <artifactId>eventhub-dto</artifactId>
     <packaging>jar</packaging>
+    
+    <dependencies>
+        <dependency>
+            <groupId>org.eventhub</groupId>
+            <artifactId>eventhub-common</artifactId>
+        </dependency>
+    </dependencies>
 </project>

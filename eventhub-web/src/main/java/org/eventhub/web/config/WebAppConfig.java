@@ -44,7 +44,7 @@ public class WebAppConfig implements WebMvcConfigurer {
         viewResolver.setSuffix(".jsp");
         return viewResolver;
     }
-    
+
     @Bean
     public MultipartResolver multipartResolver() {
         return new StandardServletMultipartResolver();
