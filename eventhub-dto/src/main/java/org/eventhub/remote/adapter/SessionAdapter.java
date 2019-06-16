@@ -7,16 +7,15 @@ import org.eventhub.remote.dto.SessionDTO;
 import org.springframework.stereotype.Component;
 
 @Component
-public class SessionAdapter implements DtoAdapter {
+public class SessionAdapter implements DtoAdapter<Session, SessionDTO> {
 
+    @Override
+    public Session fromDto(SessionDTO baseDTO) {
+        return null;
+    }
 
-	@Override
-	public BaseEntity fromDto(BaseDTO baseDTO) {
-		return null;
-	}
-
-	@Override
-	public BaseDTO toDto(BaseEntity baseEntity) {
-		return null;
-	}
+    @Override
+    public SessionDTO toDto(Session baseEntity) {
+        return null;
+    }
 }

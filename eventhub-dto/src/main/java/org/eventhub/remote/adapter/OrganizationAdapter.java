@@ -16,15 +16,15 @@ import org.springframework.stereotype.Component;
  * @author FARES-LAP
  */
 @Component
-public class OrganizationAdapter implements DtoAdapter{
+public class OrganizationAdapter implements DtoAdapter<Organization, OrganizationDTO> {
 
     @Override
-    public BaseEntity fromDto(BaseDTO baseDTO) {
+    public Organization fromDto(OrganizationDTO baseDTO) {
         return null;
     }
 
     @Override
-    public BaseDTO toDto(BaseEntity baseEntity) {
+    public OrganizationDTO toDto(Organization baseEntity) {
         return null;
     }
 }
