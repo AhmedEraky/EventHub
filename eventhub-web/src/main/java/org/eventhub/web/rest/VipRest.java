@@ -38,7 +38,7 @@ public class VipRest {
     @Autowired
     VipAdapter vipAdapter;
 
-    @GetMapping(name = "/vips")
+    /*@GetMapping(name = "/vips")
     public JResponse getAllVips() {
         List<VipDTO> vipList = new ArrayList<>();
         Iterator<Vip> vipsIterator = retrieveVipFacade.getAll().iterator();
@@ -75,5 +75,5 @@ public class VipRest {
         JResponse vipResponse = new JResponse();
         vipResponse.setDtoContent(vipAdapter.toVipDTO(vip));
         return vipResponse;
-    }
+    }*/
 }
