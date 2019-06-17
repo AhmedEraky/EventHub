@@ -11,6 +11,7 @@ import org.eventhub.dal.dao.HallRepository;
 import org.eventhub.service.hall.HallRetrivalService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  *
@@ -23,9 +24,12 @@ public class HallRetrivalServiceImpl implements HallRetrivalService {
     HallRepository hallRepository;
 
     @Override
+    @Transactional
     public Hall getHallById(UUID uuid) {
 
-        return hallRepository.findById(uuid).get();
+        Hall hall = hallRepository.findById(uuid).get();
+        hall.getSessionInHalls();
+        return hall;
     }
 
 }

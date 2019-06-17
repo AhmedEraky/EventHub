@@ -7,6 +7,7 @@ import org.eventhub.web.rest.remote.adapter.HallAdapter;
 import org.eventhub.web.rest.remote.dto.HallDTO;
 import org.eventhub.web.rest.remote.dto.JResponse;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.UUID;
@@ -42,6 +43,7 @@ public class HallRest
         Hall hall = hallRetrivalFacade.getHallById(uuid);
         JResponse hallRetrievalResponse = new JResponse();
         hallRetrievalResponse.setDtoContent(hallAdapter.toHallDTO(hall));
+        hallRetrievalResponse.setStatus("success");
         return hallRetrievalResponse;
     }
 
