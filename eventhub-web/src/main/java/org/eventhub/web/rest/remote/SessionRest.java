@@ -12,6 +12,7 @@ import org.eventhub.facade.session.SessionRetrievalFacade;
 import org.eventhub.web.rest.remote.adapter.SessionAdapter;
 import org.eventhub.web.rest.remote.dto.JResponse;
 import org.eventhub.web.rest.remote.dto.SessionDTO;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -25,8 +26,10 @@ import org.springframework.web.bind.annotation.RestController;
 public class SessionRest {
 
     //Amr
+    @Autowired
     SessionRetrievalFacade sessionRetrievalFacade;
 
+    @Autowired
     SessionAdapter sessionAdapter;
 
     @GetMapping("/sessions")
