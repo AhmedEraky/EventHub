@@ -78,11 +78,11 @@ public class HallDTO extends BaseDTO implements Serializable {
         this.event = event;
     }
 
-    public List<SessionInHallDTO> getSessionInHallDTOs() {
+    public List<SessionInHallDTO> getSessionInHalls() {
         return sessionInHallDTOs;
     }
 
-    public void setSessionInHallDTOs(List<SessionInHallDTO> sessionInHallDTOs) {
+    public void setSessionInHalls(List<SessionInHallDTO> sessionInHallDTOs) {
         this.sessionInHallDTOs = sessionInHallDTOs;
     }
 }

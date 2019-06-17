@@ -47,11 +47,11 @@ public class InstructorDTO extends BaseDTO implements Serializable {
         this.jobTitle = jobTitle;
     }
 
-    public List<SessionInstructorDTO> getSessionInstructorDTOs() {
+    public List<SessionInstructorDTO> getSessionInstructors() {
         return sessionInstructorDTOs;
     }
 
-    public void setSessionInstructorDTOs(List<SessionInstructorDTO> sessionInstructorDTOs) {
+    public void setSessionInstructors(List<SessionInstructorDTO> sessionInstructorDTOs) {
         this.sessionInstructorDTOs = sessionInstructorDTOs;
     }
 

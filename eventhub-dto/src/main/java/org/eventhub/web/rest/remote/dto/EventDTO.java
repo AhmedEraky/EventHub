@@ -195,19 +195,19 @@ public class EventDTO extends BaseDTO implements Serializable {
         this.halls = halls;
     }
 
-    public List<EventGuestDTO> getEventDTOGuests() {
+    public List<EventGuestDTO> getEventGuests() {
         return eventGuests;
     }
 
-    public void setEventDTOGuests(List<EventGuestDTO> eventGuests) {
+    public void setEventGuests(List<EventGuestDTO> eventGuests) {
         this.eventGuests = eventGuests;
     }
 
-    public List<EventCoordinatorDTO> getEventDTOCoordinators() {
+    public List<EventCoordinatorDTO> getEventCoordinators() {
         return eventCoordinators;
     }
 
-    public void setEventDTOCoordinators(List<EventCoordinatorDTO> eventCoordinators) {
+    public void setEventCoordinators(List<EventCoordinatorDTO> eventCoordinators) {
         this.eventCoordinators = eventCoordinators;
     }
 
