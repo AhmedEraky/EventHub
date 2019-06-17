@@ -103,35 +103,35 @@ public class SessionDTO extends BaseDTO implements Serializable {
         this.event = event;
     }
 
-    public SessionTypeDTO getSessionDTOType() {
+    public SessionTypeDTO getSessionType() {
         return sessionType;
     }
 
-    public void setSessionDTOType(SessionTypeDTO sessionType) {
+    public void setSessionType(SessionTypeDTO sessionType) {
         this.sessionType = sessionType;
     }
 
-    public List<SessionInHallDTO> getSessionDTOInHalls() {
+    public List<SessionInHallDTO> getSessionInHalls() {
         return sessionInHalls;
     }
 
-    public void setSessionDTOInHalls(List<SessionInHallDTO> sessionInHalls) {
+    public void setSessionInHalls(List<SessionInHallDTO> sessionInHalls) {
         this.sessionInHalls = sessionInHalls;
     }
 
-    public List<SessionInstructorDTO> getSessionDTOInstructors() {
+    public List<SessionInstructorDTO> getSessionInstructors() {
         return sessionInstructors;
     }
 
-    public void setSessionDTOInstructors(List<SessionInstructorDTO> sessionInstructors) {
+    public void setSessionInstructors(List<SessionInstructorDTO> sessionInstructors) {
         this.sessionInstructors = sessionInstructors;
     }
 
-    public List<VipSpeaksInSessionDTO> getVipSpeaksInSessionDTOs() {
+    public List<VipSpeaksInSessionDTO> getVipSpeaksInSessions() {
         return vipSpeaksInSessionDTOs;
     }
 
-    public void setVipSpeaksInSessionDTOs(List<VipSpeaksInSessionDTO> vipSpeaksInSessionDTOs) {
+    public void setVipSpeaksInSessions(List<VipSpeaksInSessionDTO> vipSpeaksInSessionDTOs) {
         this.vipSpeaksInSessionDTOs = vipSpeaksInSessionDTOs;
     }
 }
