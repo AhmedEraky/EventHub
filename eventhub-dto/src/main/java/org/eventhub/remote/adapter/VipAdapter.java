@@ -7,6 +7,8 @@ import org.eventhub.common.model.entity.Vip;
 import org.eventhub.common.model.entity.VipSpeaksInSession;
 import org.eventhub.remote.dto.VipDTO;
 import org.eventhub.remote.dto.VipSpeaksInSessionDTO;
+import org.eventhub.remote.dto.adapter.JobTitleAdapter;
+import org.eventhub.remote.dto.adapter.OrganizationAdapter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

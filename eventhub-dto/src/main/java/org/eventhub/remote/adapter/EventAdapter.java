@@ -1,8 +1,6 @@
 package org.eventhub.remote.adapter;
 
-import org.eventhub.common.model.entity.BaseEntity;
 import org.eventhub.common.model.entity.Event;
-import org.eventhub.remote.dto.BaseDTO;
 import org.eventhub.remote.dto.EventDTO;
 import org.springframework.stereotype.Component;
 
