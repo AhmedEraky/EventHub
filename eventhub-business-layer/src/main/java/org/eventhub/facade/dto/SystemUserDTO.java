@@ -202,7 +202,7 @@ public class SystemUserDTO {
                 systemUser.setProfileImage(multipartFile.getOriginalFilename());
             } else {
                 System.out.println("=======" + field.get(this));
-                field.set(systemUser, field.get(this));
+                //field.set(systemUser, field.get(this));
             }
         }
 

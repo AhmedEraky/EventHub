@@ -10,6 +10,8 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8" %>
 <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
+
+<!-- page content -->
 <div class="right_col" role="main">
     <div class="">
         <div class="clearfix"></div>
@@ -26,9 +28,10 @@
                     <div class="x_content">
                         <br/>
 
-                        <!--addInstructor Form-->
+                        <!--SignUp Form-->
                         <form:form id="demo-form2" method="post" class="form-horizontal form-label-left"
-                                   modelAttribute="instructor">
+                                   modelAttribute="instructor" enctype="multipart/form-data">
+
 
                             <!--First Name-->
                             <div class="form-group">
@@ -37,7 +40,7 @@
                                         class="required">*</span>
                                 </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <form:input path="systemUser.firstName" type="text" id="first-name"
+                                    <form:input path="systemUserDTO.firstName" type="text" id="first-name"
                                                 required="required"
                                                 class="form-control col-md-7 col-xs-12"></form:input>
                                 </div>
@@ -49,8 +52,8 @@
                                         code="systemUser.lastName"/> <span class="required">*</span>
                                 </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <form:input path="systemUser.lastName" type="text" id="last-name" name="last-name"
-                                                required="required"
+                                    <form:input path="systemUserDTO.lastName" type="text" id="last-name"
+                                                name="last-name" required="required"
                                                 class="form-control col-md-7 col-xs-12"></form:input>
                                 </div>
                             </div>
@@ -61,13 +64,13 @@
                                         code="systemUser.userName"/><span class="required">*</span>
                                 </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <form:input path="systemUser.userName" type="text" id="user-name" name="user-name"
-                                                required="required"
+                                    <form:input path="systemUserDTO.userName" type="text" id="user-name"
+                                                name="user-name" required="required"
                                                 class="form-control col-md-7 col-xs-12"></form:input>
                                 </div>
 
                                 <div class="col-md-3 col-sm-3 col-xs-12">
-                                    <form:errors path="systemUser.userName"/>
+                                    <form:errors path="systemUserDTO.userName"/>
                                 </div>
 
                             </div>
@@ -79,7 +82,7 @@
                                         class="required">*</span>
                                 </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <form:input path="systemUser.email" type="email" id="email" required="required"
+                                    <form:input path="systemUserDTO.email" type="email" id="email" required="required"
                                                 class="form-control col-md-7 col-xs-12"></form:input>
                                 </div>
                             </div>
@@ -90,7 +93,7 @@
                                         code="systemUser.password"/> <span class="required">*</span>
                                 </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <form:password path="systemUser.password" id="password" name="Password"
+                                    <form:password path="systemUserDTO.password" id="password" name="Password"
                                                    required="required"
                                                    class="form-control col-md-7 col-xs-12"></form:password>
                                 </div>
@@ -116,20 +119,20 @@
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <div class="radio">
                                         <label>
-                                            <form:radiobutton path="systemUser.gender" checked="true" class="flat"
+                                            <form:radiobutton path="systemUserDTO.gender" checked="true" class="flat"
                                                               value="Male"/><label><spring:message
                                                 code="systemUser.gender_male"/></label>
                                         </label>
                                     </div>
                                     <div class="radio">
                                         <label>
-                                            <form:radiobutton path="systemUser.gender" class="flat"
+                                            <form:radiobutton path="systemUserDTO.gender" class="flat"
                                                               value="Female"/><label><spring:message
                                                 code="systemUser.gender_female"/></label>
                                         </label>
                                     </div>
                                 </div>
-                                <form:errors path="systemUser.gender"/>
+                                <form:errors path="systemUserDTO.gender"/>
                             </div>
 
                             <!--Date Of Birth-->
@@ -138,7 +141,7 @@
                                         code="systemUser.dateOfBirth"/> <span class="required">*</span>
                                 </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <form:input path="systemUser.dateOfBirth" type="date" id="birthday"
+                                    <form:input path="systemUserDTO.dateOfBirth" type="date" id="birthday"
                                                 class="date-picker form-control col-md-7 col-xs-12"
                                                 required="required"></form:input>
                                 </div>
@@ -147,15 +150,26 @@
                                 <label class="control-label col-md-3 col-sm-3 col-xs-12"><spring:message
                                         code="systemUser.country"/></label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <form:select path="systemUser.country" items="${countries}" itemLabel="name"
-                                                 itemValue="uuid"
-                                                 class="form-control">
+                                    <form:select path="systemUserDTO.country" items="${countries}" itemLabel="name"
+                                                 itemValue="uuid" class="form-control">
                                     </form:select>
                                 </div>
                             </div>
+
+                            <!--Job title-->
+                            <div class="form-group">
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12"><spring:message
+                                        code="instructor.jobTitle"/> <span class="required">*</span>
+                                </label>
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <form:input path="jobTitle" type="text" id="jobTitle" name="jobTitle" required="required"
+                                                class="form-control col-md-7 col-xs-12"></form:input>
+                                </div>
+                            </div>
+
                             <!--bio-->
                             <div class="form-group">
-                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="bio"><spring:message
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12"><spring:message
                                         code="instructor.bio"/> <span class="required">*</span>
                                 </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
@@ -164,37 +178,19 @@
                                 </div>
                             </div>
 
-                            <!--Job title-->
+
+                            <!-- User Image-->
                             <div class="form-group">
                                 <label class="control-label col-md-3 col-sm-3 col-xs-12"><spring:message
-                                        code="instructor.jobTitle"/><span class="required">*</span>
-                                </label>
-                                <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <form:input path="jobTitle" type="text" id="job-title" name="job-title"
-                                                required="required"
-                                                class="form-control col-md-7 col-xs-12"></form:input>
-                                </div>
-
-                                <div class="col-md-3 col-sm-3 col-xs-12">
-                                    <form:errors path="jobTitle"/>
-                                </div>
-
-                                <!--User Image -->
-                                <div class="form-group">
-                                    <label class="control-label col-md-3 col-sm-3 col-xs-12"><spring:message
-                                            code="systemUser.profileImage"/></label>
-                                    <label class="btn btn-primary btn-upload" for="inputImage"
-                                           title="Upload image file">
-                                        <input type="file" class="sr-only" id="inputImage" name="attachment"
-                                               accept="image/*">
-                                        <span class="docs-tooltip" data-toggle="tooltip" title="Upload image">
+                                        code="systemUser.profileImage"/></label>
+                                <label class="btn btn-primary btn-upload" for="inputImage" title="Upload image file">
+                                    <form:input type="file" class="sr-only" id="inputImage"
+                                                path="systemUserDTO.profileImageMultipart" accept="image/*"/>
+                                    <span class="docs-tooltip" data-toggle="tooltip" title="Upload image">
                                         <span class="fa fa-upload"></span>
                                     </span>
-                                    </label>
-                                </div>
-
+                                </label>
                             </div>
-
                             <div class="form-group">
                                 <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
                                     <input type="submit" class="btn btn-success"
@@ -204,7 +200,7 @@
 
 
                         </form:form>
-                        <!--add instructor Form-->
+                        <!--SignUp Of Login Form-->
                     </div>
 
                 </div>
@@ -212,4 +208,5 @@
         </div>
 
     </div>
+</div>
 </div>

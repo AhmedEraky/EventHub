@@ -2,6 +2,9 @@ package org.eventhub.web.controller.instructor;
 
 import org.eventhub.common.model.entity.Instructor;
 import org.eventhub.common.model.entity.SystemUser;
+import org.eventhub.facade.country.CountryRetrivalFacade;
+import org.eventhub.facade.dto.InstructorDTO;
+import org.eventhub.facade.dto.SystemUserDTO;
 import org.eventhub.facade.instructor.CreateInstructorFacade;
 import org.eventhub.facade.instructor.RetrieveInstructorFacade;
 import org.eventhub.facade.user.CreateUserFacade;
@@ -35,6 +38,8 @@ public class InstructorController {
     RetrieveInstructorFacade retrieveInstructorFacade;
     @Autowired
     CreateUserFacade createUserFacade;
+    @Autowired
+    CountryRetrivalFacade countryFacade;
 //    /**
 //     *
 //     * get method to display the persistence form
@@ -44,7 +49,7 @@ public class InstructorController {
 
     @RequestMapping(method = RequestMethod.GET, path = "/addInstructor")
     public String getBody(Model model) {
-        model.addAttribute("instructor", new Instructor());
+        model.addAttribute("instructor", new InstructorDTO());
         return "instructor/addInstructor";
     }
 
@@ -65,13 +70,20 @@ public class InstructorController {
 //     * @return
 //     */
     @RequestMapping(method = RequestMethod.POST, path = "/addInstructor")
-    protected String onSubmit(@Valid @ModelAttribute("instructor") Instructor instructor, BindingResult result) {
+    protected String onSubmit(@Valid @ModelAttribute("instructor") InstructorDTO instructorDTO, BindingResult result) {
         if (result.hasErrors()) {
             return "instructor/addInstructor";
         } else {
-            SystemUser user = instructor.getSystemUser();
-            createUserFacade.createUser(user, null);
-            createInstructorFacade.createInstructor(instructor);
+            SystemUserDTO  systemUserDTO = instructorDTO.getSystemUserDTO();
+            if(systemUserDTO == null){
+                System.out.println("its null");
+            }
+            try {
+                createUserFacade.createUser(systemUserDTO.getEntity(), systemUserDTO.getProfileImageMultipart());
+                createInstructorFacade.createInstructor(instructorDTO.getEntity());
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            }
             return "redirect:/createEvent";
         }
     }
@@ -121,5 +133,10 @@ public class InstructorController {
     protected void initBinder(HttpServletRequest request, ServletRequestDataBinder binder) throws Exception {
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         binder.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, true));
+    }
+
+    @ModelAttribute
+    public void setCountry(Model model) {
+        model.addAttribute("countries", countryFacade.getCountries());
     }
 }
