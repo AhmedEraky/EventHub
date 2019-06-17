@@ -6,8 +6,9 @@
 package org.eventhub.facade.user.impl;
 
 import org.eventhub.facade.user.UserPasswordFacade;
+import org.springframework.stereotype.Component;
 
-
+@Component
 public class UserPasswordFacadeImpl implements UserPasswordFacade {
 
     @Override
