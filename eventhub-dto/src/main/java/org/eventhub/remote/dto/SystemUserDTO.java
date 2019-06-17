@@ -55,10 +55,6 @@ public class SystemUserDTO extends BaseDTO implements Serializable {
         this.dateOfBirth=dateOfBirth;
     }
 
-    public static long getSerialVersionUID() {
-        return serialVersionUID;
-    }
-
     public String getUserName() {
         return userName;
     }
@@ -131,11 +127,11 @@ public class SystemUserDTO extends BaseDTO implements Serializable {
         this.profileImage = profileImage;
     }
 
-    public List<SystemUserPhoneDTO> getSystemUserDTOPhones() {
+    public List<SystemUserPhoneDTO> getSystemUserPhones() {
         return systemUserPhones;
     }
 
-    public void setSystemUserDTOPhones(List<SystemUserPhoneDTO> systemUserPhones) {
+    public void setSystemUserPhones(List<SystemUserPhoneDTO> systemUserPhones) {
         this.systemUserPhones = systemUserPhones;
     }
 
@@ -155,11 +151,11 @@ public class SystemUserDTO extends BaseDTO implements Serializable {
         this.instructors = instructors;
     }
 
-    public List<SystemUserHasRoleDTO> getSystemUserDTOHasRoles() {
+    public List<SystemUserHasRoleDTO> getSystemUserHasRoles() {
         return systemUserHasRoles;
     }
 
-    public void setSystemUserDTOHasRoles(List<SystemUserHasRoleDTO> systemUserHasRoles) {
+    public void setSystemUserHasRoles(List<SystemUserHasRoleDTO> systemUserHasRoles) {
         this.systemUserHasRoles = systemUserHasRoles;
     }
 

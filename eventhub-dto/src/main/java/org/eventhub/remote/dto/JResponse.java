@@ -6,13 +6,14 @@
 package org.eventhub.remote.dto;
 
 /**
+ * @param D DTO which can be object or array of objects
  * @author Mohamed Ali
  * @author Amr Saber
  * @author Hamada Abdrabou
  */
-public class JResponse {
+public class JResponse<D> {
     String status;
-    Object dtoContent;
+    D dtoContent;
 
     public String getStatus() {
         return status;
@@ -22,11 +23,11 @@ public class JResponse {
         this.status = status;
     }
 
-    public Object getDtoContent() {
+    public D getDtoContent() {
         return dtoContent;
     }
 
-    public void setDtoContent(Object dtoContent) {
+    public void setDtoContent(D dtoContent) {
         this.dtoContent = dtoContent;
     }
     

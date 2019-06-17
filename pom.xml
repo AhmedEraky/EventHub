@@ -133,6 +133,12 @@
                 <artifactId>eventhub-common</artifactId>
                 <version>${eventhub.common}</version>
             </dependency>
+            
+            <dependency>
+                <groupId>org.eventhub</groupId>
+                <artifactId>eventhub-dto</artifactId>
+                <version>${eventhub.dto}</version>
+            </dependency>
 
 
             <dependency>
