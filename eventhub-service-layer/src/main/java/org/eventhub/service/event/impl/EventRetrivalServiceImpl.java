@@ -21,8 +21,17 @@ public class EventRetrivalServiceImpl implements EventRetrievalService {
     private EventRepository eventRepository;
 
     @Override
+    @Transactional
     public Event getById(UUID uuid) {
-        return eventRepository.findById(uuid).get();
+        Event event= eventRepository.findById(uuid).get();
+        System.out.println(event.getEventGuests());
+        System.out.println(event.getHalls());
+        System.out.println(event.getSessions());
+        System.out.println(event.getEventCoordinators());
+        System.out.println(event.getSponsors());
+        System.out.println(event.getOrganization().getVips()+" vips");
+        System.out.println(event.getOrganization().getSystemUsers());
+        return event;
     }
 
     @Override
