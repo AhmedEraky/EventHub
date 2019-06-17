@@ -5,6 +5,7 @@
  */
 package org.eventhub.service.session.impl;
 
+import java.util.List;
 import java.util.UUID;
 import org.eventhub.common.model.entity.Session;
 import org.eventhub.dal.dao.SessionRepository;
@@ -26,6 +27,11 @@ public class SessionRetrievalServiceImpl implements SessionRetrievalService{
     @Override
     public Session getSessionById(UUID uuid) {
         return sessionRepository.findById(uuid).get();
+    }
+
+    @Override
+    public List<Session> getAllSession() {
+        return sessionRepository.findAll();
     }
     
 }

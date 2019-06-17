@@ -5,6 +5,7 @@
  */
 package org.eventhub.service.session;
 
+import java.util.List;
 import java.util.UUID;
 import org.eventhub.common.model.entity.Session;
 
@@ -14,4 +15,5 @@ import org.eventhub.common.model.entity.Session;
  */
 public interface SessionRetrievalService {
     public Session getSessionById(UUID uuid);
+    public List<Session> getAllSession();
 }

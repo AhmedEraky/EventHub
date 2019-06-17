@@ -5,6 +5,7 @@
  */
 package org.eventhub.facade.session.impl;
 
+import java.util.List;
 import java.util.UUID;
 import org.eventhub.common.model.entity.Session;
 import org.eventhub.facade.session.SessionRetrievalFacade;
@@ -28,6 +29,11 @@ public class SessionRetrievalFacadeImpl implements SessionRetrievalFacade {
     @Override
     public Session getSessionById(UUID uuid) {
         return sessionRetrievalService.getSessionById(uuid);
+    }
+
+    @Override
+    public List<Session> getAllSession() {
+        return sessionRetrievalService.getAllSession();
     }
     
 }
