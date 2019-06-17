@@ -49,11 +49,11 @@ public class PrivilegeDTO extends BaseDTO implements Serializable {
         this.description = description;
     }
 
-    public List<RolePrivilegeDTO> getRolePrivilegeDTOs() {
+    public List<RolePrivilegeDTO> getRolePrivileges() {
         return rolePrivilegeDTOs;
     }
 
-    public void setRolePrivilegeDTOs(List<RolePrivilegeDTO> rolePrivilegeDTOs) {
+    public void setRolePrivileges(List<RolePrivilegeDTO> rolePrivilegeDTOs) {
         this.rolePrivilegeDTOs = rolePrivilegeDTOs;
     }
 }

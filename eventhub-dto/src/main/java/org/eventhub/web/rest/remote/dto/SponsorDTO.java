@@ -75,11 +75,11 @@ public class SponsorDTO extends BaseDTO implements Serializable {
         this.event = event;
     }
 
-    public SponsorshipTypeDTO getSponsorDTOshipType() {
+    public SponsorshipTypeDTO getSponsorshipType() {
         return sponsorshipType;
     }
 
-    public void setSponsorDTOshipType(SponsorshipTypeDTO sponsorshipType) {
+    public void setSponsorshipType(SponsorshipTypeDTO sponsorshipType) {
         this.sponsorshipType = sponsorshipType;
     }
 }

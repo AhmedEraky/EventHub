@@ -53,19 +53,19 @@ public class RoleDTO extends BaseDTO implements Serializable {
         this.description = description;
     }
 
-    public List<RolePrivilegeDTO> getRoleDTOPrivileges() {
+    public List<RolePrivilegeDTO> getRolePrivileges() {
         return rolePrivileges;
     }
 
-    public void setRoleDTOPrivileges(List<RolePrivilegeDTO> rolePrivileges) {
+    public void setRolePrivileges(List<RolePrivilegeDTO> rolePrivileges) {
         this.rolePrivileges = rolePrivileges;
     }
 
-    public List<SystemUserHasRoleDTO> getSystemUserHasRoleDTOs() {
+    public List<SystemUserHasRoleDTO> getSystemUserHasRoles() {
         return systemUserHasRoleDTOs;
     }
 
-    public void setSystemUserHasRoleDTOs(List<SystemUserHasRoleDTO> systemUserHasRoleDTOs) {
+    public void setSystemUserHasRoles(List<SystemUserHasRoleDTO> systemUserHasRoleDTOs) {
         this.systemUserHasRoleDTOs = systemUserHasRoleDTOs;
     }
 }

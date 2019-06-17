@@ -58,8 +58,11 @@ public abstract class GenericAdapter<E, D> {
 						}
 						else if(!converting) {
 							entityAdapter.converting = true;
-							setter.invoke(returnObj, ((List) getter.invoke(entity)).stream()
-									.map(e -> entityAdapter.toDTO(e)).collect(Collectors.toList()));
+							List list = (List) getter.invoke(entity);
+							if(list != null) {
+								setter.invoke(returnObj, list.stream()
+										.map(e -> entityAdapter.toDTO(e)).collect(Collectors.toList()));
+							}
 							entityAdapter.converting = false;
 						}
 					}
@@ -105,8 +108,11 @@ public abstract class GenericAdapter<E, D> {
 							setter.invoke(returnObj, getter.invoke(dto));
 						} else if (!converting) {
 							entityAdapter.converting = true;
-							setter.invoke(returnObj, ((List) getter.invoke(dto)).stream()
-									.map(e -> entityAdapter.fromDTO(e)).collect(Collectors.toList()));
+							List list = (List) getter.invoke(dto);
+							if(list != null) {
+								setter.invoke(returnObj, list.stream()
+										.map(e -> entityAdapter.fromDTO(e)).collect(Collectors.toList()));
+							}
 							entityAdapter.converting = false;
 						}
 					} else {
