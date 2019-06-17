@@ -6,10 +6,12 @@ import org.eventhub.common.model.entity.SessionInHall;
 import org.eventhub.remote.dto.HallDTO;
 import org.eventhub.remote.dto.SessionInHallDTO;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
 public class HallAdapter implements DtoAdapter<Hall, HallDTO>
 {
     @Autowired
@@ -28,9 +30,9 @@ public class HallAdapter implements DtoAdapter<Hall, HallDTO>
         hall.setFloor(hallDTO.getFloor());
         hall.setBuilding(hallDTO.getBuilding());
         hall.setEvent(eventAdapter.fromDto(hallDTO.getEvent()));
-        List<SessionInHall> sessionsInHall = new ArrayList<>();
+        /*List<SessionInHall> sessionsInHall = new ArrayList<>();
         hallDTO.getSessionInHallDTOs().forEach(sessionInHallDTO -> sessionsInHall.add(sessionAdapter.fromDto(sessionInHallDTO)));
-        hall.setSessionInHalls(sessionsInHall);
+        hall.setSessionInHalls(sessionsInHall);*/
         return hall;
     }
 
@@ -44,9 +46,9 @@ public class HallAdapter implements DtoAdapter<Hall, HallDTO>
         hallDTO.setFloor(hall.getFloor());
         hallDTO.setBuilding(hall.getBuilding());
         hallDTO.setEvent(eventAdapter.toDto(hall.getEvent()));
-        List<SessionInHallDTO> sessionInHallDTOs = new ArrayList<>();
+        /*List<SessionInHallDTO> sessionInHallDTOs = new ArrayList<>();
         hall.getSessionInHalls().forEach(sessionInHall -> sessionInHallDTOs.add(sessionAdapter.toDto(sessionInHall)));
-        hallDTO.setSessionInHallDTOs(sessionInHallDTOs);
+        hallDTO.setSessionInHallDTOs(sessionInHallDTOs);*/
         return hallDTO;
     }
 }

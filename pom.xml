@@ -215,6 +215,7 @@
                 <artifactId>jackson-databind</artifactId>
                 <version>${jackson}</version>
             </dependency>
+
         </dependencies>
     </dependencyManagement>
 

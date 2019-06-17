@@ -22,8 +22,8 @@ public class HallManagementFacadeImpl implements HallManagementFacade {
     HallManagementService hallManagementServic;
     
     @Override
-    public void creatHall(Hall hall) {
-        hallManagementServic.creatHall(hall);
+    public Hall creatHall(Hall hall) {
+        return hallManagementServic.creatHall(hall);
     }
 
     @Override

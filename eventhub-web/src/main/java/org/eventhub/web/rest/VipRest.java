@@ -107,5 +107,5 @@ public class VipRest {
         JResponse vipResponse = new JResponse();
         vipResponse.setDtoContent(vipAdapter.toDto(vip));
         return vipResponse;
-    }*/
+    }
 }

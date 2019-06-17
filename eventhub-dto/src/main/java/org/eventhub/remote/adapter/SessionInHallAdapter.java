@@ -3,7 +3,9 @@ package org.eventhub.remote.adapter;
 import org.eventhub.common.model.entity.SessionInHall;
 import org.eventhub.remote.dto.SessionInHallDTO;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class SessionInHallAdapter implements DtoAdapter<SessionInHall, SessionInHallDTO>
 {
     @Autowired
