@@ -8,7 +8,6 @@ package org.eventhub.web.rest.remote.dto;
 import java.io.Serializable;
 import java.util.List;
 import java.util.UUID;
-import javax.xml.bind.annotation.XmlTransient;
 
 /**
  * @author Mohamed Ali
@@ -41,7 +40,7 @@ public class CountryDTO extends BaseDTO implements Serializable {
         this.name = name;
     }
 
-    @XmlTransient
+  
     public List<SystemUserDTO> getSystemUsers() {
         return systemUsers;
     }
