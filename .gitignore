@@ -20,3 +20,18 @@ pom.xml.versionsBackup
 *.ear
 #############
 
+### Eclipse ###
+.metadata
+bin/
+tmp/
+.project
+.classpath
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.settings/
+.loadpath
+.recommenders
+.springBeans

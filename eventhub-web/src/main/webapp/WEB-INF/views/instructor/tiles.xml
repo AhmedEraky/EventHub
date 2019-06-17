@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+    
+
+    <definition name="instructor/addInstructor" extends="common">
+        <put-attribute name="body" value="/WEB-INF/views/instructor/addInstructor.jsp"/>
+    </definition>
+
+   
+
+    <definition name="success" extends="common">
+        <put-attribute name="body" value="/WEB-INF/views/user/success.jsp"/>
+    </definition>
+</tiles-definitions>

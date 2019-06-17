@@ -11,6 +11,7 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 import org.eventhub.common.model.entity.*;
+import org.eventhub.dal.dao.OrganizationRepository;
 import org.eventhub.dal.dao.SystemUserRepository;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -32,6 +33,7 @@ public class TestApplication {
     RoleRepository roleRepository;
     RolePrivilegeRepository rolePrivilegeRepository;
     SystemUserHasRoleRepository systemUserHasRoleRepository;
+    OrganizationRepository organizationRepository;
 
     public TestApplication() {
         context = new AnnotationConfigApplicationContext(AppConfig.class);
@@ -40,12 +42,13 @@ public class TestApplication {
         roleRepository = context.getBean(RoleRepository.class);
         rolePrivilegeRepository = context.getBean(RolePrivilegeRepository.class);
         systemUserHasRoleRepository = context.getBean(SystemUserHasRoleRepository.class);
+        organizationRepository = context.getBean(OrganizationRepository.class);
     }
 
     private SystemUser createUserIfNotPresent(String email, String password) {
         SystemUser user = systemUserRepository.findByEmail(email);
         if (user == null) {
-            user = new SystemUser(null, "username", "firstname", password, email, UserGender.Female,new Date());
+            user = new SystemUser(null, "username", "firstname", password, email, UserGender.Female, new Date());
             user.setUserName(email);
             systemUserRepository.save(user);
         }
@@ -110,6 +113,12 @@ public class TestApplication {
         }
     }
 
+    void addOrganization(String orgName) {
+        Organization org = new Organization(null, orgName);
+        organizationRepository.save(org);
+        System.out.println(org.getUuid().toString());
+    }
+
     void run() {
         SystemUser user = createUserIfNotPresent("user@user.com", "user");
         SystemUser admin = createUserIfNotPresent("admin@admin.com", "admin");
@@ -121,6 +130,8 @@ public class TestApplication {
         addPrivilegesToRole(userRole, userPrivilege);
         addRolesToUser(admin, adminRole);
         addRolesToUser(user, userRole);
+        addOrganization("Org1");
+        addOrganization("Org2");
     }
 
     public static void main(String arg[]) {

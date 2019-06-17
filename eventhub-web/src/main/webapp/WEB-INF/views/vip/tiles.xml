@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+
+
+    <definition name="addVip" extends="common">
+        <put-attribute name="body" value="/WEB-INF/views/vip/addVip.jsp"/>
+    </definition>
+
+    <definition name="updateVip" extends="common">
+        <put-attribute name="body" value="/WEB-INF/views/vip/updateVip.jsp"/>
+    </definition>
+
+
+
+    <definition name="success" extends="common">
+        <put-attribute name="body" value="/WEB-INF/views/vip/success.jsp"/>
+    </definition>
+</tiles-definitions>
