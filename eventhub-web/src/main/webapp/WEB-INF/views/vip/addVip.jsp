@@ -50,18 +50,12 @@
 
 
 
-
-
-
-
-
-
-                            <%--<!-- Image-->--%>
+                            <!-- Image-->
 
                             <div class="form-group">
                                 <label class="control-label col-md-3 col-sm-3 col-xs-12"><spring:message code="vip.image" /></label>
                                 <label class="btn btn-primary btn-upload" for="inputImage" title="Upload image file">
-                                    <input type="file" class="sr-only" id="inputImage" name="attachment" accept="image/*">
+                                    <input type="file" class="sr-only" id="inputImage" name="vipImage" accept="image/*">
                                     <span class="docs-tooltip" data-toggle="tooltip" title="Upload image">
                                         <span class="fa fa-upload"></span>
                                     </span>
@@ -69,6 +63,7 @@
                             </div>
 
 
+                                <!-- Submit data-->
 
                             <div class="form-group">
                                 <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">

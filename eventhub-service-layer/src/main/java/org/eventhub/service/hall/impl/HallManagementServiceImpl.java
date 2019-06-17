@@ -23,8 +23,8 @@ public class HallManagementServiceImpl implements HallManagementService{
     HallRepository hallRepository;
 
     @Override
-    public void creatHall(Hall hall) {
-        hallRepository.save(hall);
+    public Hall creatHall(Hall hall) {
+       return hallRepository.save(hall);
     }
 
     @Override

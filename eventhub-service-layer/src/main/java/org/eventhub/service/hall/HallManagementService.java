@@ -13,7 +13,7 @@ import org.eventhub.common.model.entity.Hall;
  */
 public interface HallManagementService {
     
-    public void creatHall(Hall hall);
+    public Hall creatHall(Hall hall);
     
     public void updateHall(Hall hall);
     

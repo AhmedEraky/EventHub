@@ -1,5 +1,6 @@
 package org.eventhub.facade.vip.impl;
 
+import java.util.List;
 import org.eventhub.common.model.entity.Vip;
 import org.eventhub.facade.vip.RetrieveVipFacade;
 import org.eventhub.service.vip.RetrieveVipService;
@@ -12,9 +13,15 @@ import java.util.UUID;
 public class RetrieveVipFacadeImpl implements RetrieveVipFacade {
 
     @Autowired
-    RetrieveVipService  retrieveVipService;
+    RetrieveVipService retrieveVipService;
+
     @Override
     public Vip getVipById(UUID uuid) {
         return retrieveVipService.getById(uuid);
+    }
+
+    @Override
+    public List<Vip> getAll() {
+        return retrieveVipService.getAll();
     }
 }

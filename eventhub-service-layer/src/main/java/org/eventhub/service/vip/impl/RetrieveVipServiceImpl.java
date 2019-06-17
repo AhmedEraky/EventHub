@@ -1,5 +1,6 @@
 package org.eventhub.service.vip.impl;
 
+import java.util.List;
 import org.eventhub.common.model.entity.Vip;
 import org.eventhub.dal.dao.VipRepository;
 import org.eventhub.service.vip.RetrieveVipService;
@@ -11,12 +12,18 @@ import java.util.UUID;
 
 @Service
 public class RetrieveVipServiceImpl implements RetrieveVipService {
+
     @Autowired
     VipRepository vipRepository;
 
     @Transactional
     @Override
     public Vip getById(UUID uuid) {
-       return vipRepository.getOne(uuid);
+        return vipRepository.getOne(uuid);
+    }
+
+    @Override
+    public List<Vip> getAll() {
+        return vipRepository.findAll();
     }
 }
