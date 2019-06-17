@@ -24,7 +24,7 @@ public class HallDTO extends BaseDTO implements Serializable {
     private String name;
     private Integer capacity;
     private EventDTO event;
-    private List<SessionInHallDTO> sessionInHallDTOs;
+    //private List<SessionInHallDTO> sessionInHallDTOs;
 
     public HallDTO() {
     }
@@ -78,11 +78,11 @@ public class HallDTO extends BaseDTO implements Serializable {
         this.event = event;
     }
 
-    public List<SessionInHallDTO> getSessionInHalls() {
+    /*public List<SessionInHallDTO> getSessionInHalls() {
         return sessionInHallDTOs;
     }
 
     public void setSessionInHalls(List<SessionInHallDTO> sessionInHallDTOs) {
         this.sessionInHallDTOs = sessionInHallDTOs;
-    }
+    }*/
 }
