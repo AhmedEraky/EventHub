@@ -36,45 +36,50 @@ public abstract class GenericAdapter<E, D> {
 	}
 	
 	protected D toDTO(E entity) {
-		try {
-			D returnObj = dtoClass.newInstance();
-			for(Method setter : dtoSetters) {
-				String setterMethod = setter.getName().substring(3);
-				Method getter;
-				try {
-					getter = entityClass.getMethod("get" + setterMethod);
-				} catch (NoSuchMethodException ex) {
-					getter = entityClass.getMethod("is" + setterMethod);
-				}
-				if(getter.getReturnType().equals(List.class)) {
-					Class entityClass = (Class) ((ParameterizedType) getter.getGenericReturnType()).getActualTypeArguments()[0];
-					GenericAdapter entityAdapter = getEntityAdapter(entityClass);
-					if(entityAdapter == null) {
-						setter.invoke(returnObj, getter.invoke(entity));
-					}
-					else if(!converting) {
-						entityAdapter.converting = true;
-						setter.invoke(returnObj, ((List) getter.invoke(entity)).stream()
-								.map(e -> entityAdapter.toDTO(e)).collect(Collectors.toList()));
-						entityAdapter.converting = false;
-					}
-				}
-				else {
-					GenericAdapter entityAdapter = getEntityAdapter(getter.getReturnType());
-					if(entityAdapter == null) {
-						setter.invoke(returnObj, getter.invoke(entity));
-					}
-					else if(!converting) {
-						entityAdapter.converting = true;
-						setter.invoke(returnObj, entityAdapter.toDTO(getter.invoke(entity)));
-						entityAdapter.converting = false;
-					}
-				}
-			}
-			return returnObj;
-		} catch (InstantiationException | IllegalAccessException | NoSuchMethodException | InvocationTargetException e) {
-			e.printStackTrace();
+		if(entity == null) {
 			return null;
+		}
+		else {
+			try {
+				D returnObj = dtoClass.newInstance();
+				for(Method setter : dtoSetters) {
+					String setterMethod = setter.getName().substring(3);
+					Method getter;
+					try {
+						getter = entityClass.getMethod("get" + setterMethod);
+					} catch (NoSuchMethodException ex) {
+						getter = entityClass.getMethod("is" + setterMethod);
+					}
+					if(getter.getReturnType().equals(List.class)) {
+						Class entityClass = (Class) ((ParameterizedType) getter.getGenericReturnType()).getActualTypeArguments()[0];
+						GenericAdapter entityAdapter = getEntityAdapter(entityClass);
+						if(entityAdapter == null) {
+							setter.invoke(returnObj, getter.invoke(entity));
+						}
+						else if(!converting) {
+							entityAdapter.converting = true;
+							setter.invoke(returnObj, ((List) getter.invoke(entity)).stream()
+									.map(e -> entityAdapter.toDTO(e)).collect(Collectors.toList()));
+							entityAdapter.converting = false;
+						}
+					}
+					else {
+						GenericAdapter entityAdapter = getEntityAdapter(getter.getReturnType());
+						if(entityAdapter == null) {
+							setter.invoke(returnObj, getter.invoke(entity));
+						}
+						else if(!converting) {
+							entityAdapter.converting = true;
+							setter.invoke(returnObj, entityAdapter.toDTO(getter.invoke(entity)));
+							entityAdapter.converting = false;
+						}
+					}
+				}
+				return returnObj;
+			} catch (InstantiationException | IllegalAccessException | NoSuchMethodException | InvocationTargetException e) {
+				e.printStackTrace();
+				return null;
+			}
 		}
 	}
 	
