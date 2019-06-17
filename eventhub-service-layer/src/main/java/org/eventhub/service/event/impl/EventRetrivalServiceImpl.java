@@ -12,6 +12,7 @@ import org.eventhub.dal.dao.EventRepository;
 import org.eventhub.service.event.EventRetrievalService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class EventRetrivalServiceImpl implements EventRetrievalService {
@@ -25,8 +26,20 @@ public class EventRetrivalServiceImpl implements EventRetrievalService {
     }
 
     @Override
+    @Transactional
     public List<Event> getAll() {
-        return eventRepository.findAll();
+        List<Event> events=eventRepository.findAll();
+        for (Event event:events){
+            System.out.println(event.getEventGuests());
+            System.out.println(event.getHalls());
+            System.out.println(event.getSessions());
+            System.out.println(event.getEventCoordinators());
+            System.out.println(event.getSponsors());
+            System.out.println(event.getOrganization().getVips()+" vips");
+            System.out.println(event.getOrganization().getSystemUsers());
+
+        }
+        return events;
     }
 
 }
