@@ -20,9 +20,6 @@ public class SessionRest {
     
     //Amr
     
-    public List<SessionDTO> getAllSession(){
-        
-    }
     
     //menna
     
