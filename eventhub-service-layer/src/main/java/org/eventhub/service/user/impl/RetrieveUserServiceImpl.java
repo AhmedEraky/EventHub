@@ -17,6 +17,7 @@ public class RetrieveUserServiceImpl implements RetrieveUserService {
     SystemUserRepository systemUserRepository;
 
     @Override
+    @Transactional
     public List<SystemUser> getAllUsers() {
         List<SystemUser> systemUsers=systemUserRepository.findAll();
         return systemUsers;
