@@ -9,6 +9,7 @@ import javax.servlet.ServletException;
 import javax.servlet.ServletRegistration;
 import org.eventhub.web.config.AppConfig;
 import org.eventhub.web.config.SecurityConfig;
+import org.eventhub.web.config.SwaggerConfig;
 import org.eventhub.web.config.WebAppConfig;
 import org.springframework.web.multipart.support.MultipartFilter;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
@@ -22,7 +23,7 @@ public class WebApplicationInit extends AbstractAnnotationConfigDispatcherServle
 
     @Override
     protected Class<?>[] getServletConfigClasses() {
-        return new Class[]{WebAppConfig.class};
+        return new Class[]{WebAppConfig.class, SwaggerConfig.class};
     }
 
     @Override
