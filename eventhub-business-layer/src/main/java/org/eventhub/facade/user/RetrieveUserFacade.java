@@ -8,4 +8,5 @@ import java.util.UUID;
 public interface RetrieveUserFacade {
     List<SystemUser> getAllUsers();
     public SystemUser getUserByUUID(UUID uuid);
+    public SystemUser getUserByEmail(String email);
 }

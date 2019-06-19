@@ -30,6 +30,13 @@ public class RetrieveUserServiceImpl implements RetrieveUserService {
         systemUser.getSystemUserPhones();
         return systemUser;
     }
+    
+    @Transactional
+    @Override
+    public SystemUser getUserByEmail(String email) {
+        SystemUser systemUser=systemUserRepository.findByEmail(email);
+        return systemUser;
+    }
 
 
 }

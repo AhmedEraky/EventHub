@@ -22,4 +22,9 @@ public class RetrieveUserFacadeImpl implements RetrieveUserFacade {
     public SystemUser getUserByUUID(UUID uuid) {
         return retrieveUserService.getUserByUUID(uuid);
     }
+    
+    @Override
+    public SystemUser getUserByEmail(String email) {
+        return retrieveUserService.getUserByEmail(email);
+    }
 }
