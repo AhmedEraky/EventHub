@@ -41,7 +41,7 @@ public class HallRest
     public JResponse retrieveHallById(@RequestParam("id") UUID uuid)
     {
         Hall hall = hallRetrivalFacade.getHallById(uuid);
-        JResponse hallRetrievalResponse = new JResponse();
+        JResponse<HallDTO> hallRetrievalResponse = new JResponse<>();
         hallRetrievalResponse.setDtoContent(hallAdapter.toHallDTO(hall));
         hallRetrievalResponse.setStatus("success");
         return hallRetrievalResponse;
@@ -79,6 +79,7 @@ public class HallRest
         hallManagementFacade.updateHall(hall);
         JResponse<HallDTO> hallResponse = new JResponse<>();
         hallResponse.setDtoContent(hallAdapter.toHallDTO(hall));
+        hallResponse.setStatus("success");
         return hallResponse;
     }
 
