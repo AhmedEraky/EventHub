@@ -1,6 +1,6 @@
-package org.eventhub.web.rest.remote;
+/*package org.eventhub.web.rest.remote;
 
-/*import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 
 import java.util.ArrayList;

@@ -9,4 +9,7 @@
     <definition name="editCountry" extends="common">
         <put-attribute name="body" value="/WEB-INF/views/country/pages/editCountry.jsp"/>
     </definition>
+    <definition name="countries" extends="common">
+        <put-attribute name="body" value="/WEB-INF/views/country/pages/countries.jsp"/>
+    </definition>
 </tiles-definitions>

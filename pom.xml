@@ -52,6 +52,7 @@
 
         <junit>4.12</junit>
         <h2>1.4.199</h2>
+        <swagger>2.9.2</swagger>
     </properties>
 
     <dependencyManagement>
@@ -133,7 +134,7 @@
                 <artifactId>eventhub-common</artifactId>
                 <version>${eventhub.common}</version>
             </dependency>
-            
+
             <dependency>
                 <groupId>org.eventhub</groupId>
                 <artifactId>eventhub-dto</artifactId>
@@ -167,13 +168,13 @@
                 <artifactId>eventhub-web</artifactId>
                 <version>${eventhub.web}</version>
             </dependency>
-            
+
             <dependency>
                 <groupId>commons-fileupload</groupId>
                 <artifactId>commons-fileupload</artifactId>
                 <version>${apache.commons.fileupload}</version>
             </dependency>
-            
+
             <dependency>
                 <groupId>commons-io</groupId>
                 <artifactId>commons-io</artifactId>
@@ -185,7 +186,7 @@
                 <artifactId>eventhub-dto</artifactId>
                 <version>${eventhub.dto}</version>
             </dependency>
-            
+
             <dependency>
                 <groupId>com.h2database</groupId>
                 <artifactId>h2</artifactId>
@@ -221,6 +222,20 @@
                 <artifactId>jackson-databind</artifactId>
                 <version>${jackson}</version>
             </dependency>
+
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger2</artifactId>
+                <version>${swagger}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger-ui</artifactId>
+                <version>${swagger}</version>
+            </dependency>
+
+
 
         </dependencies>
     </dependencyManagement>
