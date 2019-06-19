@@ -29,9 +29,16 @@
                         <div class="clearfix"></div>
                     </div>
                     <div class="x_content">
-                       <display:table name="countries" style="odd">
+                        <display:table name="${countries}" style="odd">
                             <display:column property="name" title="Countries"/>
-                       </display:table>
+                            <display:column title="Edit"> 
+<!--                                <a href="details.jsp?${row.id}">Details</a>-->
+                                <a href="#">edit</a>
+                            </display:column>
+                            <display:column title="Delete"> 
+                                <a href="#">delete</a>
+                            </display:column>
+                        </display:table>
                     </div>
                 </div>
             </div>

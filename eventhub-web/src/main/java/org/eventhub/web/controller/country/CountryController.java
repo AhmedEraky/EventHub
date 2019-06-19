@@ -77,12 +77,13 @@ public class CountryController {
      *
      */
     @GetMapping(path = "/countries")
-    public String displayCountry(ModelAndView modelAndView) {
+    public String displayCountry(Model modelAndView) {
         ArrayList<Country> countryList = (ArrayList<Country>) retrivalFacade.getCountries();
         for (int i = 0; i < countryList.size(); i++) {
             System.out.println(countryList.get(i).getName());
         }
-        modelAndView.addObject("countries", countryList);
+        modelAndView.addAttribute("countries", countryList);
+        modelAndView.addAttribute("test","ahmed");
         return "countries";
-    }
+    }   
 }
