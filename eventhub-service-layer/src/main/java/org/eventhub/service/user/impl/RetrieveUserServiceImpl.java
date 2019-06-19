@@ -17,6 +17,7 @@ public class RetrieveUserServiceImpl implements RetrieveUserService {
     SystemUserRepository systemUserRepository;
 
     @Override
+    @Transactional
     public List<SystemUser> getAllUsers() {
         List<SystemUser> systemUsers=systemUserRepository.findAll();
         return systemUsers;
@@ -27,6 +28,13 @@ public class RetrieveUserServiceImpl implements RetrieveUserService {
     public SystemUser getUserByUUID(UUID uuid) {
         SystemUser systemUser=systemUserRepository.getOne(uuid);
         systemUser.getSystemUserPhones();
+        return systemUser;
+    }
+    
+    @Transactional
+    @Override
+    public SystemUser getUserByEmail(String email) {
+        SystemUser systemUser=systemUserRepository.findByEmail(email);
         return systemUser;
     }
 

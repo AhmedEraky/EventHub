@@ -1,5 +1,6 @@
 package org.eventhub.web.controller.country;
 
+import java.util.ArrayList;
 import java.util.UUID;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -11,6 +12,7 @@ import org.eventhub.common.model.entity.Country;
 import org.eventhub.facade.country.CountryManagementFacade;
 import org.eventhub.facade.country.CountryRetrivalFacade;
 import org.springframework.ui.Model;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class CountryController {
@@ -66,5 +68,21 @@ public class CountryController {
             managementFacade.updateCountry(country);
             return "redirect:editCountry?success&id=" + country.getUuid().toString();
         }
+    }
+
+    /**
+     * get method to display all countries in countries page
+     *
+     * @return
+     *
+     */
+    @GetMapping(path = "/countries")
+    public String displayCountry(ModelAndView modelAndView) {
+        ArrayList<Country> countryList = (ArrayList<Country>) retrivalFacade.getCountries();
+        for (int i = 0; i < countryList.size(); i++) {
+            System.out.println(countryList.get(i).getName());
+        }
+        modelAndView.addObject("countries", countryList);
+        return "countries";
     }
 }
